@@ -1286,7 +1286,7 @@
         <nav id="main-nav">
             <ul class="nav">
                 <li>
-                    <a id="first" class="active" onclick="goToX('page1')">
+                    <a id="first" class="active" onclick="goTo('home')">
                         <img id="menu-img-home"
                              style="margin-bottom:-5px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1299,10 +1299,10 @@
                              title="SThout">-->
                     </a>
                 </li>
-                <li><a id="page2" class="link" onclick="goToX('page2')">VERHAAL</a></li>
-                <li><a id="page3" class="link" onclick="goToX('page3')">PORTFOLIO</a></li>
-                <li><a id="page4" class="link" onclick="goToX('page4')">EVENEMENTEN</a></li>
-                <li><a id="last" class="link" onclick="goToX('page5')">CONTACT</a></li>
+                <li><a id="page2" class="link" onclick="goTo('about')">VERHAAL</a></li>
+                <li><a id="page3" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
+                <li><a id="page4" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
+                <li><a id="last" class="link" onclick="goTo('contact')">CONTACT</a></li>
             </ul>
         </nav>
     </header>
@@ -1331,7 +1331,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a id="first" class="active" onclick="goToX('page1')">
+                    <a id="first" class="active" onclick="goTo('home')">
                         <img id="menu-img-home"
                              style="margin-bottom:-5px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1344,10 +1344,10 @@
                              title="SThout">-->
                     </a>
                 </li>
-                <li><a id="page2" class="link" onclick="goToX('page2')">VERHAAL</a></li>
-                <li><a id="page3" class="link" onclick="goToX('page3')">PORTFOLIO</a></li>
-                <li><a id="page4" class="link" onclick="goToX('page4')">EVENEMENTEN</a></li>
-                <li><a id="last" class="link" onclick="goToX('page5')">CONTACT</a></li>
+                <li><a id="page2" class="link" onclick="goTo('about')">VERHAAL</a></li>
+                <li><a id="page3" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
+                <li><a id="page4" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
+                <li><a id="last" class="link" onclick="goTo('contact')">CONTACT</a></li>
             </ul>
         </nav>
     </aside>
@@ -1355,7 +1355,7 @@
     <div class="content">
         <section id="home" data-role="page" class="page1">
             <section>
-                <a class="link" onclick="goToX('page2')">
+                <a class="link" onclick="goTo('about')">
                     <img class="logo"
                          id="front-logo"
                          src="Images\stHout.png"
@@ -1404,7 +1404,7 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <article>
-                            <a class="link" onclick="goToX('page2')">
+                            <a class="link" onclick="goTo('about')">
                                 <p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p>
                             </a>
                         </article>
@@ -1416,7 +1416,7 @@
         <section id="about" class="page2">
             <h1>
                 <span>
-                    <a class="link" onclick="goToX('page1')">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1430,7 +1430,7 @@
                     </a>
                     <strong> | </strong>
                 </span>
-                <a class="link" onclick="goToX('page2')">UPCYCLING MET EEN VERHAAL</a>
+                <a class="link" onclick="goTo('about')">UPCYCLING MET EEN VERHAAL</a>
             </h1>
             <article>
                 <p>
@@ -1438,13 +1438,13 @@
                 </p>
                 <p>
                     In mijn jarenlange constante zoektocht naar ideaal bronmateriaal schuim ik rommelmarkten, kringwinkels, brocantehuizen of stockverkopen af.  Daar zoek ik naar oude spullen die mij pakken en doen dromen.  Ze moeten interessant genoeg zijn om te kunnen herwerken tot een nieuw functioneel interieurelement, waarbij ik steeds een glimlach probeer uit te lokken. Zo krijg je duurzame, nieuwe "piece-uniques" met een apart verhaal, kortweg
-                    <a class="link" onclick="goToX('page3')">SThout</a>.
+                    <a class="link" onclick="goTo('portfolio')">SThout</a>.
                 </p>
                 <p>
                     Indien jullie zelf gehecht zijn aan bepaalde elementen met emotionele waarde (uit grootmoeders tijd, industrieel erfstuk,...), herwerk ik deze graag in samenspraak!
                 </p>
                 <p>
-                    Aarzel niet om me vrijblijvend te <a class="link" onclick="goToX('page5')">contacteren</a>!
+                    Aarzel niet om me vrijblijvend te <a class="link" onclick="goTo('contact')">contacteren</a>!
                 </p>
             </article>
         </section>
@@ -1452,7 +1452,7 @@
         <section id="portfolio" class="page3">
             <h2>
                 <span>
-                    <a class="link" onclick="goToX('page1')">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px;"
                              src="Images\stHout.png"
@@ -1466,7 +1466,7 @@
                     </a>
                     <strong> | </strong>
                 </span>
-                <a class="link" onclick="goToX('page3')">PORTFOLIO</a>
+                <a class="link" onclick="goTo('portfolio')">PORTFOLIO</a>
             </h2>
             <section id="products" class="btn-group">
                 <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#meubel">meubel</button>
@@ -1538,7 +1538,7 @@
         <section id="events" class="page4">
             <h2>
                 <span>
-                    <a class="link" onclick="goToX('page1')">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1552,7 +1552,7 @@
                     </a>
                     <strong> | </strong>
                 </span>
-                <a class="link" onclick="goToX('page4')">EVENEMENTEN</a>
+                <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
             </h2>
             <section id="years" class="btn-group">
                 <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#2021">2021</button>
@@ -1702,7 +1702,7 @@
         <section id="contact" class="page5">
             <h2>
                 <span>
-                    <a class="link" onclick="goToX('page1')">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1716,7 +1716,7 @@
                     </a>
                     <strong> | </strong>
                 </span>
-                <a class="link" onclick="goToX('page5')">CONTACT</a>
+                <a class="link" onclick="goTo('contact')">CONTACT</a>
             </h2>
             <section id="link">
                 <ul class="contact">
@@ -1861,7 +1861,7 @@
 
     <script>
         function selectProducts(target) {
-            goToX('page3');
+            goTo('portfolio');
             var header = document.getElementById("products");
             var btns = header.getElementsByClassName("productBtn");
             for (var i = 0; i < btns.length; i++) {
@@ -1942,12 +1942,12 @@
     </script>
 
     <!--GoTo using class-->
-    <script>
+    <!--<script>
         function goToPreviousX() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNextX() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToX(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
         function goToActiveC() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
-    </script>
+    </script>-->
 
     <!-- Set upcoming and past events -->
     <script>
