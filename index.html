@@ -1404,7 +1404,7 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <article>
-                            <a class="link" onclick="goTo('about')">
+                            <a class="link" onclick="goTo('page2')">
                                 <p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p>
                             </a>
                         </article>
@@ -1937,7 +1937,8 @@
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        function goTo(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
+        //function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
         function goToActive() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
     </script>
 
