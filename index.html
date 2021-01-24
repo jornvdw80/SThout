@@ -1331,7 +1331,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a id="first" href="#home" class="active">
+                    <a id="first" class="active" onclick="goToX('page1')" href="#home">
                         <img id="menu-img-home"
                              style="margin-bottom:-5px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1344,10 +1344,10 @@
                              title="SThout">-->
                     </a>
                 </li>
-                <li><a id="page2" href="#about">VERHAAL</a></li>
-                <li><a id="page3" href="#portfolio">PORTFOLIO</a></li>
-                <li><a id="page4" href="#events">EVENEMENTEN</a></li>
-                <li><a id="last" href="#contact">CONTACT</a></li>
+                <li><a id="page2" class="link" onclick="goToX('page2')" href="#about">VERHAAL</a></li>
+                <li><a id="page3" class="link" onclick="goToX('page3')" href="#portfolio">PORTFOLIO</a></li>
+                <li><a id="page4" class="link" onclick="goToX('page4')" href="#events">EVENEMENTEN</a></li>
+                <li><a id="last" class="link" onclick="goToX('last')" href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </aside>
@@ -1357,7 +1357,7 @@
             <section>
                 <a href="#about">
                     <img class="logo"
-                         id="front-logo"                        
+                         id="front-logo"
                          src="Images\stHout.png"
                          alt="STHOUT"
                          title="SThout">
@@ -1404,7 +1404,7 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <article>
-                            <a class="link" onclick="goTo('page2')">
+                            <a class="link" onclick="goToX('page2')">
                                 <p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p>
                             </a>
                         </article>
@@ -1933,13 +1933,20 @@
         function onScroll(t) { toggleMenu(); var o = $(document).scrollTop() + 156, a = $(".active"); $("#main-nav a").each(function () { var t = $(this), a = $(t.attr("href")); a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active") }), $("#aside-nav a").each(function () { var t = $(this), a = $(t.attr("href")); a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active") }), 0 == $(".active").length && a.addClass("active") } var t = -1; $(document).ready(function () { t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100) });
     </script>
 
-    <!--GoTo-->
+    <!--GoTo using id-->
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goTo(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
-        //function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
         function goToActive() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
+    </script>
+
+    <!--GoTo using class-->
+    <script>
+        function goToPreviousX() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
+        function goToNextX() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
+        function goToX(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
+        function goToActiveC() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
     </script>
 
     <!-- Set upcoming and past events -->
