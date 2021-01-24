@@ -1931,7 +1931,7 @@
 
     <!--Highlight active page on menu-->
     <script>
-        function onScrollX(t)
+        function onScroll(t)
         {
             toggleMenu();
             var o = $(document).scrollTop() + 166, a = $(".active");
@@ -1956,14 +1956,24 @@
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goTo(o) {
-            $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900)
-            //$("#aside-nav a").each(function () {
-            //    var t = $(this), a = $(t.attr("name"));
-            //    t.removeClass("active")
-            //}), a.addClass("active")
-        }
-        //function goTo(o) { }
+        //function goTo(o) {
+        //    //ert(o);
+        //    $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
+        //    //$("#aside-nav a").each(function () {
+        //    //    //var t = $(this), a = $(t.attr("name"));
+        //    //    //if (a.replace("#", "") != o) {
+        //    //    //    $(this).addClass("active");
+        //    //    //}
+        //    //    //else {
+        //    //    $(this).addClass("active");
+        //    //   //}
+                
+        //    //});
+        //    //ert(o);
+        //   //alert($("#aside-nav a").getElementsById(page1));
+        //   //("#aside-nav a").getElementsByName("#" + o).removeClass("active");
+        //}
+       function goTo(o) { }
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
 
