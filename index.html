@@ -1916,7 +1916,7 @@
     <!--Scroll to page-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script>
-        //$(document).ready(function () { function e(e) { return e.replace(/^\//, "").replace(/(index|default).[a-zA-Z]{3,4}$/, "").replace(/\/$/, "") } $("a[href*=#]").each(function () { if (e(location.pathname) == e(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, "")) { var a = $(this.hash), n = $("[name=" + this.hash.slice(1) + "]"), h = a.length ? a : n.length ? n : !1; h && $(this).click(function () { return $("#main-nav ul").slideUp(300), $("#main-nav").removeClass("menu-down"), $("#header").css({ opacity: "0.9" }), goTo(this.hash.slice(1)), !1 }) } }) });
+        $(document).ready(function () { function e(e) { return e.replace(/^\//, "").replace(/(index|default).[a-zA-Z]{3,4}$/, "").replace(/\/$/, "") } $("a[href*=#]").each(function () { if (e(location.pathname) == e(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, "")) { var a = $(this.hash), n = $("[name=" + this.hash.slice(1) + "]"), h = a.length ? a : n.length ? n : !1; h && $(this).click(function () { return $("#main-nav ul").slideUp(300), $("#main-nav").removeClass("menu-down"), $("#header").css({ opacity: "0.9" }), goTo(this.hash.slice(1)), !1 }) } }) });
     </script>
 
     <!-- First load -->
@@ -1938,7 +1938,8 @@
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        //function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        function goTo(o) { alert(o) }
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
 
