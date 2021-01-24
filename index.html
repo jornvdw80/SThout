@@ -1331,7 +1331,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a id="first" class="active" onclick="goToX('page1')">
+                    <a id="first" class="active" onclick="goTo('about')">
                         <img id="menu-img-home"
                              style="margin-bottom:-5px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1344,10 +1344,10 @@
                              title="SThout">-->
                     </a>
                 </li>
-                <li><a id="page2" class="link" onclick="goToX('page2')">VERHAAL</a></li>
-                <li><a id="page3" class="link" onclick="goToX('page3')">PORTFOLIO</a></li>
-                <li><a id="page4" class="link" onclick="goToX('page4')">EVENEMENTEN</a></li>
-                <li><a id="last" class="link" onclick="goToX('page5')">CONTACT</a></li>
+                <li><a id="page2" class="link" onclick="goToX('about')">VERHAAL</a></li>
+                <li><a id="page3" class="link" onclick="goToX('portfolio')">PORTFOLIO</a></li>
+                <li><a id="page4" class="link" onclick="goToX('events')">EVENEMENTEN</a></li>
+                <li><a id="last" class="link" onclick="goToX('contact')">CONTACT</a></li>
             </ul>
         </nav>
     </aside>
@@ -1404,7 +1404,7 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <article>
-                            <a class="link" onclick="goToX('page2')">
+                            <a class="link" onclick="goTo('about')">
                                 <p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p>
                             </a>
                         </article>
@@ -1942,12 +1942,12 @@
     </script>
 
     <!--GoTo using class-->
-    <script>
+    <!--<script>
         function goToPreviousX() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNextX() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToX(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
         function goToActiveC() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
-    </script>
+    </script>-->
 
     <!-- Set upcoming and past events -->
     <script>
