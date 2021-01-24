@@ -1936,10 +1936,10 @@
 
     <!--GoTo using id-->
     <script>
-        function goToPrevious() { if ($(".active")[0].id == "first") { alert("first"); goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goToNext() { if ($(".active")[0].id == "last") { alert("first"); goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        //function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
-        function goTo(o) { location.replace("#" + o) }
+        function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
+        function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
+        function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        //function goTo(o) { location.replace("#" + o) }
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
 
