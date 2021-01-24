@@ -1973,7 +1973,11 @@
         //   //alert($("#aside-nav a").getElementsById(page1));
         //   //("#aside-nav a").getElementsByName("#" + o).removeClass("active");
         //}
-       function goTo(o) { }
+        function goTo(o) {
+            var element = document.querySelector("#" + o);
+            // smooth scroll to element and align it at the bottom
+            element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
 
