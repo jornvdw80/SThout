@@ -1916,7 +1916,7 @@
     <!--Scroll to page-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script>
-        $(document).ready(function () { function e(e) { return e.replace(/^\//, "").replace(/(index|default).[a-zA-Z]{3,4}$/, "").replace(/\/$/, "") } $("a[href*=#]").each(function () { if (e(location.pathname) == e(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, "")) { var a = $(this.hash), n = $("[name=" + this.hash.slice(1) + "]"), h = a.length ? a : n.length ? n : !1; h && $(this).click(function () { return $("#main-nav ul").slideUp(300), $("#main-nav").removeClass("menu-down"), $("#header").css({ opacity: "0.9" }), goTo(this.hash.slice(1)), !1 }) } }) });
+        //$(document).ready(function () { function e(e) { return e.replace(/^\//, "").replace(/(index|default).[a-zA-Z]{3,4}$/, "").replace(/\/$/, "") } $("a[href*=#]").each(function () { if (e(location.pathname) == e(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, "")) { var a = $(this.hash), n = $("[name=" + this.hash.slice(1) + "]"), h = a.length ? a : n.length ? n : !1; h && $(this).click(function () { return $("#main-nav ul").slideUp(300), $("#main-nav").removeClass("menu-down"), $("#header").css({ opacity: "0.9" }), goTo(this.hash.slice(1)), !1 }) } }) });
     </script>
 
     <!-- First load -->
