@@ -1931,10 +1931,10 @@
 
     <!--Highlight active page on menu-->
     <script>
-        function onScrollX(t)
+        function onScroll(t)
         {
             toggleMenu();
-            var o = $(document).scrollTop() + 156, a = $(".active");
+            var o = $(document).scrollTop() + 171, a = $(".active");
             $("#main-nav a").each(function ()
             {
                 var t = $(this), a = $(t.attr("name"));
@@ -1956,7 +1956,13 @@
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900); }
+        function goTo(o) {
+            $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900)
+            //$("#aside-nav a").each(function () {
+            //    var t = $(this), a = $(t.attr("name"));
+            //    t.removeClass("active")
+            //}), a.addClass("active")
+        }
         //function goTo(o) { }
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
