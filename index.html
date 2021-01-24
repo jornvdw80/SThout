@@ -1931,15 +1931,15 @@
 
     <!--Highlight active page on menu-->
     <script>
-        function onScroll(t) { toggleMenu(); var o = $(document).scrollTop() + 171, a = $(".active"); $("#main-nav a").each(function () { var t = $(this), a = $(t.attr("name")); a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active") }), $("#aside-nav a").each(function () { var t = $(this), a = $(t.attr("name"));a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active") }), 0 == $(".active").length && a.addClass("active") } var t = -1; $(document).ready(function () { t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100) });
+        function onScroll(t) { toggleMenu(); var o = $(document).scrollTop() + 156, a = $(".active"); $("#main-nav a").each(function () { var t = $(this), a = $(t.attr("name")); a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active") }), $("#aside-nav a").each(function () { var t = $(this), a = $(t.attr("name"));a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active") }), 0 == $(".active").length && a.addClass("active") } var t = -1; $(document).ready(function () { t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100) });
     </script>
 
     <!--GoTo using id-->
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        //function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
-        function goTo(o) { }
+        function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        //function goTo(o) { }
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
 
