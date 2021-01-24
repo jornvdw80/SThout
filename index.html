@@ -1286,7 +1286,7 @@
         <nav id="main-nav">
             <ul class="nav">
                 <li>
-                    <a id="first" href="#home" class="active">
+                    <a id="first" class="active" onclick="goTo('home')">
                         <img id="menu-img-home"
                              style="margin-bottom:-5px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1299,10 +1299,10 @@
                              title="SThout">-->
                     </a>
                 </li>
-                <li><a id="page2" href="#about">VERHAAL</a></li>
-                <li><a id="page3" href="#portfolio">PORTFOLIO</a></li>
-                <li><a id="page4" href="#events">EVENEMENTEN</a></li>
-                <li><a id="last" href="#contact">CONTACT</a></li>
+                <li><a id="page2" class="link" onclick="goTo('about')">VERHAAL</a></li>
+                <li><a id="page3" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
+                <li><a id="page4" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
+                <li><a id="last" class="link" onclick="goTo('contact')">CONTACT</a></li>
             </ul>
         </nav>
     </header>
@@ -1344,10 +1344,10 @@
                              title="SThout">-->
                     </a>
                 </li>
-                <li><a id="page2" class="link" onclick="goToX('about')">VERHAAL</a></li>
-                <li><a id="page3" class="link" onclick="goToX('portfolio')">PORTFOLIO</a></li>
-                <li><a id="page4" class="link" onclick="goToX('events')">EVENEMENTEN</a></li>
-                <li><a id="last" class="link" onclick="goToX('contact')">CONTACT</a></li>
+                <li><a id="page2" class="link" onclick="goTo('about')">VERHAAL</a></li>
+                <li><a id="page3" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
+                <li><a id="page4" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
+                <li><a id="last" class="link" onclick="goTo('contact')">CONTACT</a></li>
             </ul>
         </nav>
     </aside>
@@ -1355,7 +1355,7 @@
     <div class="content">
         <section id="home" data-role="page" class="page1">
             <section>
-                <a href="#about">
+                <a class="link" onclick="goTo('about')">
                     <img class="logo"
                          id="front-logo"
                          src="Images\stHout.png"
@@ -1416,7 +1416,7 @@
         <section id="about" class="page2">
             <h1>
                 <span>
-                    <a href="#home">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1452,7 +1452,7 @@
         <section id="portfolio" class="page3">
             <h2>
                 <span>
-                    <a href="#home">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px;"
                              src="Images\stHout.png"
@@ -1538,7 +1538,7 @@
         <section id="events" class="page4">
             <h2>
                 <span>
-                    <a href="#home">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
@@ -1702,7 +1702,7 @@
         <section id="contact" class="page5">
             <h2>
                 <span>
-                    <a href="#home">
+                    <a class="link" onclick="goTo('home')">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
                              src="Images\stHout.png"
