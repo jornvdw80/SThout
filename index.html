@@ -66,11 +66,14 @@
         }
 
         body {
+            background-image: url("https://jornvdw80.github.io/SThout/Images/Common/backgroundBody.jpg");
             background-position: center top;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            background-image: url("https://jornvdw80.github.io/SThout/Images/Common/backgroundBody.jpg");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
         }
 
         /*        body {
@@ -1934,7 +1937,7 @@
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goTo(o) { alert("test");$("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
         function goToActive() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
     </script>
 
