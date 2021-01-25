@@ -1300,7 +1300,7 @@
                              title="SThout">-->
                     </a>
                 </li>
-                <li><a id="page2" name="#about"class="link" onclick="goTo('about')">VERHAAL</a></li>
+                <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
                 <li><a id="page3" name="#portfolio" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
                 <li><a id="page4" name="#events" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
                 <li><a id="last" name="#contact" class="link" onclick="goTo('contact')">CONTACT</a></li>
@@ -1339,10 +1339,10 @@
                              alt="STHOUT"
                              title="SThout">
                         <!--<img id="menu-img-home"
-                 style="margin-bottom:-5px;width:90px;padding-left:15px"
-                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                 alt="STHOUT"
-                 title="SThout">-->
+                        style="margin-bottom:-5px;width:90px;padding-left:15px"
+                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                        alt="STHOUT"
+                        title="SThout">-->
                     </a>
                 </li>
                 <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
@@ -1725,7 +1725,7 @@
                         <a class="link" href="mailto:info@sthout.be" alt="mail" title="mail">info@sthout.be</a>
                     </li>
                     <li>
-                        <a class="link" href="https://www.facebook.com/sthout.be/" target="_blank">
+                        <a class="link" onclick= openUrl("https://www.facebook.com/sthout.be/")>
                             <img class="menu-icon"
                                  style="width:35px;height:35px;margin:0px;padding:5px"
                                  src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
@@ -1737,6 +1737,12 @@
             </section>
         </section>
     </div>
+
+    <script>
+        function openUrl(url) {
+            return !window.open(url);
+        }
+    </script>
 
     <!-- Background image -->
     <script>
@@ -1931,23 +1937,19 @@
 
     <!--Highlight active page on menu-->
     <script>
-        function onScroll(t)
-        {
+        function onScroll(t) {
             toggleMenu();
             var o = $(document).scrollTop() + 156, a = $(".active");
-            $("#main-nav a").each(function ()
-            {
+            $("#main-nav a").each(function () {
                 var t = $(this), a = $(t.attr("name"));
                 a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
             }),
-            $("#aside-nav a").each(function ()
-            {
-                var t = $(this), a = $(t.attr("name"));
-                a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-            }), 0 == $(".active").length && a.addClass("active")
+                $("#aside-nav a").each(function () {
+                    var t = $(this), a = $(t.attr("name"));
+                    a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+                }), 0 == $(".active").length && a.addClass("active")
         }
-        var t = -1; $(document).ready(function ()
-        {
+        var t = -1; $(document).ready(function () {
             t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100)
         });
     </script>
@@ -1970,7 +1972,7 @@
                     var t = $(this), a = $(t.attr("name"));
                     a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
                 });
-            }          
+            }
             //$("#aside-nav a").each(function () {
             //    //var t = $(this), a = $(t.attr("name"));
             //    //if (a.replace("#", "") != o) {
@@ -1979,11 +1981,11 @@
             //    //else {
             //    $(this).addClass("active");
             //   //}
-                
+
             //});
             //ert(o);
-           //alert($("#aside-nav a").getElementsById(page1));
-           //("#aside-nav a").getElementsByName("#" + o).removeClass("active");
+            //alert($("#aside-nav a").getElementsById(page1));
+            //("#aside-nav a").getElementsByName("#" + o).removeClass("active");
         }
         //function goTo(o) {
         //    var element = document.querySelector("#" + o);
@@ -2000,7 +2002,6 @@
         function goToX(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
         function goToActiveX() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
     </script>-->
-
     <!-- Set upcoming and past events -->
     <script>
         function setEvents() { $("#eventsList li").each(function () { var t = "future", e = (new Date).toDateString(); Date.parse(e) > Date.parse($(this).attr("id")) && (t = "past"), $(this).addClass(t) }) }
