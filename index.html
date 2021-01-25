@@ -1959,7 +1959,8 @@
         function goTo(o) {
             //ert(o);
             $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
-            if (o != $(".active").attr("name")) {
+            //alert($(".active").attr("name").replace("#", "") + "   " + o);
+            if (o != $(".active").attr("name").replace("#", "")) {
                 //var o = $(document).scrollTop() + 156, a = $(".active");
                 $("#main-nav a").each(function () {
                     var t = $(this), a = $(t.attr("name"));
