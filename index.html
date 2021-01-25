@@ -1956,28 +1956,28 @@
     <script>
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goTo(o) {
-            //ert(o);
-            $("html,body").animate({ scrollTop: $("#" + o).offset().top - 88 }, 900);
-            //$("#aside-nav a").each(function () {
-            //    //var t = $(this), a = $(t.attr("name"));
-            //    //if (a.replace("#", "") != o) {
-            //    //    $(this).addClass("active");
-            //    //}
-            //    //else {
-            //    $(this).addClass("active");
-            //   //}
-                
-            //});
-            //ert(o);
-           //alert($("#aside-nav a").getElementsById(page1));
-           //("#aside-nav a").getElementsByName("#" + o).removeClass("active");
-        }
         //function goTo(o) {
-        //    var element = document.querySelector("#" + o);
-        //    // smooth scroll to element and align it at the bottom
-        //    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        //    //ert(o);
+        //    $("html,body").animate({ scrollTop: $("#" + o).offset().top - 88 }, 900);
+        //    //$("#aside-nav a").each(function () {
+        //    //    //var t = $(this), a = $(t.attr("name"));
+        //    //    //if (a.replace("#", "") != o) {
+        //    //    //    $(this).addClass("active");
+        //    //    //}
+        //    //    //else {
+        //    //    $(this).addClass("active");
+        //    //   //}
+                
+        //    //});
+        //    //ert(o);
+        //   //alert($("#aside-nav a").getElementsById(page1));
+        //   //("#aside-nav a").getElementsByName("#" + o).removeClass("active");
         //}
+        function goTo(o) {
+            var element = document.querySelector("#" + o);
+            // smooth scroll to element and align it at the bottom
+            element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
 
