@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 
-<!-- TODO: google: smartphone css > CSS Media Queries for Desktop, Tablet, Mobile. https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488 or https://css-tricks.com/snippets/css/media-queries-for-standard-devices/-->
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" onselectstart='return false;'>
+<html lang="nl-be" xmlns="http://www.w3.org/1999/xhtml" onselectstart='return false;'>
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0" />
+    <meta name="description" content="TODO" />
     <title>STHOUT | upcycling met een verhaal</title>
     <link href="http://static.websitecreator.eu/var/m_0/03/03f/1089/57554-favicon.ico" rel="SHORTCUT ICON" type="image/x-icon" />
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-pagination {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .swiper-button-prev, .swiper-button-next {
+            opacity: .5;
+            color: dimgrey;
+        }
+
+            .swiper-button-prev:hover, .swiper-button-next:hover {
+                opacity: .9;
+            }
+
+        @media screen and (max-width:420px) {
+            .swiper-button-prev, .swiper-button-next {
+                display: none;
+            }
+        }
+    </style>
+
     <style>
         /*Smartphones: Remove background while tapping */
         :focus {
@@ -18,6 +69,10 @@
             margin: 0;
             padding: 0;
             -webkit-tap-highlight-color: transparent;
+        }
+
+        img {
+            text-align: center;
         }
 
         #header, aside {
@@ -55,7 +110,7 @@
                 text-decoration: none
             }
 
-        .page5 .mail, a, h1 {
+        .page5 .mail, a, h1, h2 {
             font-weight: 700
         }
 
@@ -100,8 +155,8 @@
             width: 120px;
             margin: 50px 0 0 5%;
             padding: 5px 10px 10px;
-            border: 2px dashed #d3d3d3;
-            border-radius: 10px
+            border: 3px dotted #d3d3d3;
+            border-radius: 20px
         }
 
         #aside-nav ul, #main-nav ul {
@@ -121,7 +176,7 @@
                 font-weight: 700
             }
 
-                #aside-nav ul li a.active, #aside-nav ul li a:hover, #main-nav ul li a.active, #main-nav ul li a:hover, .future article a:hover, .link:hover, .past article a:hover {
+                #aside-nav ul li a.active, #aside-nav ul li a:hover, #main-nav ul li a.active, #main-nav ul li a:hover, .future article a:hover, .link:hover, .past article a:hover, .page1 article a p:hover {
                     color: #46b8da
                 }
 
@@ -146,6 +201,12 @@
 
         .hashtag {
             font-weight: bold;
+            font-size: 14px;
+        }
+
+        .page1 .hashtag {
+            font-weight: bold;
+            font-size: 12px;
         }
 
         .page1 section, .page1 section a {
@@ -153,7 +214,10 @@
         }
 
         .page1 #front-logo {
-            padding: 0 0 15px
+            margin: auto;
+            padding: 0 0 15px;
+            width: 240px;
+            padding-left: 20px
         }
 
         .page2 article {
@@ -164,11 +228,20 @@
             width: 360px
         }
 
-        #eventsSection ul, .page5 article, h1 {
-            text-align: center
+        .page1 article {
+            padding: 0;
+            padding-top: 30px;
+            position: relative;
+            margin: auto;
+            text-align: center;
+            width: 220px;
         }
 
-        .page2 article p {
+            #eventsSection ul, .page5 article, h1, h2 {
+                text-align: center
+            }
+
+        .page1 article p, .page2 article p {
             padding: 0;
             margin: 10px 0 0
         }
@@ -196,6 +269,7 @@
 
             .page4 #eventsSection {
                 position: relative;
+                display: inline-block;
                 margin: auto;
                 text-align: center;
                 width: 330px
@@ -209,6 +283,10 @@
             #eventsSection ul li {
                 margin-bottom: 5px;
             }
+
+        .page4 .eventTitle {
+            font-weight: normal;
+        }
 
         .page4 article a, .page4 article p {
             margin: 0;
@@ -237,35 +315,59 @@
         }
 
         .past .eventTitle:hover, .future .eventTitle:hover, .hasInfo .eventTitle:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
 
         /*.eventInfo,*/
         #eventsList li article {
-            outline: none;
             position: relative;
+            display: inline-block;
+            width: 100%;
             margin: 0;
             padding: 0;
             padding-top: 7px;
             padding-bottom: 7px;
-            padding-left: 7px;
-            padding-right: 7px;
+            padding-left: 15px;
+            padding-right: 15px;
             border: 2px dotted;
             border-color: #d3d3d3;
             border-radius: 20px;
+            text-align: center;
             /*cursor: pointer;*/
         }
+
+            #eventsList li article:hover /*, aside:hover*/ {
+                background-color: #fbfbfb;
+            }
 
         .past .eventTitle, .future .eventTitle, .hasInfo .eventTitle {
             margin-bottom: 3px;
         }
 
         .eventInfo {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0;
             padding-top: 10px;
+            padding-bottom: 2px;
+            text-align: center;
+        }
+
+        #more {
+            width: 10px;
+            height: 10px;
+            margin: 0 auto;
+            padding: 0;
+            padding-top: 15px;
+            float: right;
         }
 
         .hasInfo {
             cursor: pointer;
+        }
+
+        .noInfo .eventTitle {
+            cursor: default;
         }
 
         .page5 {
@@ -281,7 +383,7 @@
                 width: 280px;
             }
 
-            .page5 .mail, h1, section {
+            .page5 .mail, h1, h2, section {
                 margin: 0 auto
             }
 
@@ -299,17 +401,17 @@
             padding: 10px 0
         }
 
-        h1 {
+        h1, h2 {
             font-size: 16px;
             padding: 0 0 20px
         }
 
-            h1 span {
+            h1 span, h2 span {
                 display: inline;
                 padding: 0
             }
 
-                h1 span strong {
+                h1 span strong, h2 span strong {
                     display: normal;
                     padding: 0
                 }
@@ -355,9 +457,150 @@
             border-radius: 10px
         }
 
-            .enlarge:hover {
+        .slides {
+            display: none;
+        }
+
+        .slideshow-container {
+            max-width: 500px;
+            max-height: 500px;
+            position: relative;
+            margin: auto;
+            margin-top: 25px;
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+        .slideImg {
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            left: -600px;
+            clip: rect(0 200px 200px 0);
+            border-radius: 24px;
+            /*margin-top: 20px;*/
+            text-align: center;
+            vertical-align: top;
+            object-fit: scale-down;
+            cursor: pointer;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 3px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 1.5s ease;
+            cursor: pointer;
+        }
+
+        .arrowLeft {
+            opacity: .8;
+            width: 10px;
+            height: 10px;
+            margin: 0 10px;
+            padding: 0px;
+            transform: rotate(-90deg);
+            cursor: pointer;
+        }
+
+        .arrowRight {
+            opacity: .8;
+            width: 10px;
+            height: 10px;
+            margin: 0 10px;
+            padding: 0px;
+            transform: rotate(90deg);
+            cursor: pointer;
+        }
+
+        /*.current {
+            background-color: #717171;
+        }*/
+
+        /* Fading animation */
+        .fade {
+            /*-webkit-animation-name: fade;
+            -webkit-animation-duration: 3s;
+            animation-name: fade;
+            animation-duration: 3s;*/
+            -webkit-animation: fadeinout 4.5s linear forwards;
+            animation: fadeinout 4.5s linear forwards;
+        }
+
+        @-webkit-keyframes fadeinout {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeinout {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .1
+            }
+
+            to {
                 opacity: 1
             }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .1
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .thumbEventInfo {
+            width: auto;
+            height: auto;
+            max-width: 160px;
+            max-height: 160px;
+            clip: rect(0 60px 60px 0);
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            opacity: .8;
+            border: 1px solid #DCDCDC;
+            border-radius: 0px;
+        }
+
+            .thumbEventInfo:hover {
+                opacity: 1;
+            }
+
+        .enlarge:hover /*, .slides:hover, .slideImg:hover*/ {
+            opacity: 1
+        }
 
         @media screen and (max-width:1100px) {
             aside {
@@ -387,32 +630,72 @@
         }
 
         @media screen and (max-width:520px) {
+            .page1 #front-logo {
+                margin: auto;
+                padding: 0 0 15px;
+                width: 200px;
+                padding-left: 20px
+            }
+
             .page3 .thumbs {
                 position: relative;
                 width: 250px;
                 margin: 10px auto;
                 padding: 0 15px 10px
             }
+
+            .slideshow-container {
+                max-width: 90%;
+                max-height: 500px;
+                position: relative;
+                margin: auto;
+                margin-top: 25px;
+                margin-bottom: 50px;
+            }
+
+            .slideImg {
+                width: 250px;
+                height: 230px;
+                /*margin-top: 25px;*/
+            }
         }
 
         @media screen and (max-width:500px) {
+            /*.dot {
+                height: 12px;
+                width: 12px;
+                margin: 0 5px;
+            }
+
+            .arrowLeft .arrowRight {
+                height: 12px;
+                width: 12px;
+                margin: 0 5px;
+            }*/
+
             .page2 article, .page4 #eventsSection {
                 position: relative;
-                margin: auto;
+                display: inline-block;
+                margin: 0;
+                padding: 0;
                 width: 280px;
             }
 
-            h1 {
+            .page4 #eventsSection {
+                margin-right: 30px;
+            }
+
+            h1, h2 {
                 margin-bottom: 5px;
             }
 
-                h1 span {
+                h1 span, h2 span {
                     display: inline-block;
                     padding: 50px, 0px;
                     margin-bottom: 10px;
                 }
 
-                    h1 span strong {
+                    h1 span strong, h2 span strong {
                         display: none;
                         padding: 0px;
                     }
@@ -421,8 +704,14 @@
         @media screen and (max-width:420px) {
             .page2 article, .page4 #eventsSection {
                 position: relative;
-                margin: auto;
+                display: inline-block;
+                margin: 0;
+                padding: 0;
                 width: 70%;
+            }
+
+            .page4 #eventsSection {
+                margin-right: 30px;
             }
         }
 
@@ -430,7 +719,7 @@
             color: black;
             border: none;
             outline: none;
-            background-color: none;
+            background-color: #f8f8f8;
             border-radius: 4px;
             padding: 4px;
             width: auto;
@@ -605,7 +894,7 @@
                         }
 
             #swipebox-slider .slide-loading {
-                background: url('http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/61942-loader.gif') center center no-repeat
+                background: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/61942-loader.gif') center center no-repeat
             }
 
         #swipebox-bottom-bar, #swipebox-top-bar {
@@ -643,7 +932,7 @@
         }
 
         #swipebox-close, #swipebox-next, #swipebox-prev {
-            background-image: url('http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/61941-icons.png');
+            background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/61941-icons.png');
             background-repeat: no-repeat;
             border: none !important;
             text-decoration: none !important;
@@ -812,15 +1101,16 @@
     </style>
 </head>
 
-<body>
+<body oncopy='return false' oncut='return false'>
     <header id="header">
-        <section id="navigate">
+        <section id="navigate" ondblclick="goToActive()">
             <ul>
                 <li class="menu">
                     <img class="menu-icon"
                          style="width:25px;height:25px;padding:0px;padding-left:5px"
-                         src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png"
+                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png"
                          alt="upcycling"
+                         title="menu"
                          onclick="toggleMenuClick()">
                 </li>
                 <li>
@@ -828,7 +1118,7 @@
                         <li class="previous">
                             <img class="menu-icon-light"
                                  style="width:15px;height:15px;margin:0px;padding:0px"
-                                 src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
                                  alt="vorige"
                                  title="vorige"
                                  onclick="goToPrevious()">
@@ -836,7 +1126,7 @@
                         <li class="next">
                             <img class="menu-icon-light"
                                  style="width:15px;height:15px;margin:0px;padding:0px"
-                                 src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
                                  alt="volgende"
                                  title="volgende"
                                  onclick="goToNext()">
@@ -851,8 +1141,9 @@
                     <a id="first" href="#home" class="active">
                         <img id="menu-img-home"
                              style="margin-bottom:-5px;width:90px;padding-left:15px"
-                             src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT">
+                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                             alt="STHOUT"
+                             title="SThout">
                     </a>
                 </li>
                 <li><a id="page2" href="#about">VERHAAL</a></li>
@@ -871,7 +1162,7 @@
                         <li class="previous">
                             <img class="menu-icon-light"
                                  style="width:15px;height:15px;margin:0px;padding:0px"
-                                 src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
                                  alt="vorige"
                                  title="vorige"
                                  onclick="goToPrevious()">
@@ -879,7 +1170,7 @@
                         <li class="next">
                             <img class="menu-icon-light"
                                  style="width:15px;height:15px;margin:0px;padding:0px"
-                                 src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
                                  alt="volgende"
                                  title="volgende"
                                  onclick="goToNext()">
@@ -890,8 +1181,9 @@
                     <a id="first" href="#home" class="active">
                         <img id="menu-img-home"
                              style="margin-bottom:-5px;width:90px;padding-left:15px"
-                             src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT">
+                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                             alt="STHOUT"
+                             title="SThout">
                     </a>
                 </li>
                 <li><a id="page2" href="#about">VERHAAL</a></li>
@@ -905,24 +1197,58 @@
 
 
     <div class="content">
-        <section id="home" class="page1">
+        <section id="home" data-role="page" class="page1">
             <section>
                 <a href="#about">
                     <img class="logo"
                          id="front-logo"
-                         style="margin:auto;width:240px;padding-left:20px"
-                         src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                         alt="STHOUT">
+                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                         alt="STHOUT"
+                         title="SThout">
                 </a>
             </section>
+            <!-- Swiper -->
             <section>
-                <a href="#portfolio">
-                    <img id="image-start"
-                         style="margin:auto;width:160px"
-                         src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/57676-NieuwSamengesteldGezin.png"
-                         alt="nieuw samengesteld gezin"
-                         title="nieuw samengesteld gezin">
-                </a>
+                <div id="mainslides" class="slideshow-container">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="slideImg" onclick="selectProducts('meubel')"
+                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397572-salonTafel-e4da3.png" alt="lamp" title="portfolio | lamp" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slideImg" onclick="selectProducts('verlichting')"
+                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png" alt="lamp" title="portfolio | lamp" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slideImg" onclick="selectProducts('decoratie')"
+                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397569-dino-d3d94.png" alt="dino" title="portfolio | decoratie" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slideImg" onclick="selectProducts('meubel')"
+                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397568-bijzettafel-6512b.png" alt="bijzettafel" title="portfolio | meubel" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slideImg" onclick="selectProducts('decoratie')"
+                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397570-duif-aab32.jpg" alt="duif" title="portfolio | decoratie" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slideImg" onclick="selectProducts('meubel')"
+                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" alt="tafel" title="portfolio | meubel" />
+                            </div>-->
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <article>
+                            <a class="link" onclick="goTo('about')">
+                                <p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p>
+                            </a>
+                        </article>
+                    </div>
+                </div>
             </section>
         </section>
 
@@ -932,8 +1258,9 @@
                     <a href="#home">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
-                             src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT">
+                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                             alt="STHOUT"
+                             title="SThout">
                     </a>
                     <strong> | </strong>
                 </span>
@@ -957,94 +1284,100 @@
         </section>
 
         <section id="portfolio" class="page3">
-            <h1>
+            <h2>
                 <span>
                     <a href="#home">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px;"
-                             src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT">
+                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                             alt="STHOUT"
+                             title="SThout">
                     </a>
                     <strong> | </strong>
                 </span>
                 <a class="link" onclick="goTo('portfolio')">PORTFOLIO</a>
-            </h1>
+            </h2>
             <section id="products" class="btn-group">
                 <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#meubel">meubel</button>
                 <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#verlichting">verlichting</button>
+                <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#decoratie">decoratie</button>
+                <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#popup">pop-up</button>
             </section>
             <section class="thumbs">
                 <div id="meubel" class="collapse">
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swipebox" title="sthout01">
-                        <img class="enlarge" alt="sthout01" title="sthout01" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60769-IMG_1188.png" />
+                    <a rel="gallery-1" href="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swipebox" title="sthout03">
+                        <img class="enlarge" alt="Nieuw samengesteld gezin" title="Nieuw samengesteld gezin" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swipebox" title="sthout01">
-                        <img class="enlarge" alt="sthout02" title="sthout02" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60779-IMG_1259.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swipebox" title="sthout06">
+                        <img class="enlarge" alt="sthout06" title="sthout06" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swipebox" title="sthout03">
-                        <img class="enlarge" alt="Nieuw samengesteld gezin" title="Nieuw samengesteld gezin" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swipebox" title="sthout01">
+                        <img class="enlarge" alt="sthout01" title="sthout01" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60769-IMG_1188.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swipebox" title="sthout04">
-                        <img class="enlarge" alt="sthout04" title="sthout04" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60770-IMG_1193.png" />
-                    </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swipebox" title="sthout05">
-                        <img class="enlarge" alt="sthout05" title="sthout05" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60781-IMG_1266.png" />
-                    </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swipebox" title="sthout06">
-                        <img class="enlarge" alt="sthout06" title="sthout06" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png" />
-                    </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swipebox" title="sthout07">
-                        <img class="enlarge" alt="sthout07" title="sthout07" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swipebox" title="sthout04">
+                        <img class="enlarge" alt="sthout04" title="sthout04" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60770-IMG_1193.png" />
                     </a>
                 </div>
                 <div id="verlichting" class="collapse">
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swipebox" title="sthout08">
-                        <img class="enlarge" alt="sthout08" title="sthout08" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60772-IMG_1222.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swipebox" title="sthout08">
+                        <img class="enlarge" alt="sthout08" title="sthout08" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60772-IMG_1222.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swipebox" title="sthout09">
-                        <img class="enlarge" alt="sthout09" title="sthout09" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60774-IMG_1230.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swipebox" title="sthout09">
+                        <img class="enlarge" alt="sthout09" title="sthout09" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60774-IMG_1230.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swipebox" title="sthout10">
-                        <img class="enlarge" alt="sthout10" title="sthout10" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60780-IMG_1260.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swipebox" title="sthout10">
+                        <img class="enlarge" alt="sthout10" title="sthout10" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60780-IMG_1260.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swipebox" title="sthout11">
-                        <img class="enlarge" alt="sthout11" title="sthout11" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60775-IMG_1235.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swipebox" title="sthout11">
+                        <img class="enlarge" alt="sthout11" title="sthout11" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60775-IMG_1235.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swipebox" title="sthout12">
-                        <img class="enlarge" alt="sthout12" title="sthout12" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60776-IMG_1238.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swipebox" title="sthout12">
+                        <img class="enlarge" alt="sthout12" title="sthout12" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60776-IMG_1238.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swipebox" title="sthout13">
-                        <img class="enlarge" alt="sthout13" title="sthout13" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60773-IMG_1226.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swipebox" title="sthout13">
+                        <img class="enlarge" alt="sthout13" title="sthout13" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60773-IMG_1226.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swipebox" title="sthout14">
-                        <img class="enlarge" alt="sthout14" title="sthout14" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60782-IMG_1270.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swipebox" title="sthout14">
+                        <img class="enlarge" alt="sthout14" title="sthout14" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60782-IMG_1270.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swipebox" title="sthout15">
-                        <img class="enlarge" alt="sthout15" title="sthout15" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60783-IMG_1284.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swipebox" title="sthout15">
+                        <img class="enlarge" alt="sthout15" title="sthout15" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60783-IMG_1284.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swipebox" title="sthout16">
-                        <img class="enlarge" alt="sthout16" title="sthout16" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60777-IMG_1247.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swipebox" title="sthout16">
+                        <img class="enlarge" alt="sthout16" title="sthout16" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60777-IMG_1247.png" />
                     </a>
-                    <a rel="gallery-1" href="http://unpub.eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swipebox" title="sthout17">
-                        <img class="enlarge" alt="sthout17" title="sthout17" src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60784-IMG_1285.png" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swipebox" title="sthout17">
+                        <img class="enlarge" alt="sthout17" title="sthout17" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60784-IMG_1285.png" />
+                    </a>
+                </div>
+                <div id="decoratie" class="collapse">
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swipebox" title="sthout05">
+                        <img class="enlarge" alt="sthout05" title="sthout05" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60781-IMG_1266.png" />
+                    </a>
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swipebox" title="sthout01">
+                        <img class="enlarge" alt="sthout02" title="sthout02" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60779-IMG_1259.png" />
+                    </a>
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swipebox" title="sthout07">
+                        <img class="enlarge" alt="sthout07" title="sthout07" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
                     </a>
                 </div>
             </section>
         </section>
 
         <section id="events" class="page4">
-            <h1>
+            <h2>
                 <span>
                     <a href="#home">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
-                             src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT">
+                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                             alt="STHOUT"
+                             title="SThout">
                     </a>
                     <strong> | </strong>
                 </span>
-                <a class="link" onclick="goTo('events')">EVENEMENTEN
-            </h1>
+                <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
+            </h2>
             <section id="years" class="btn-group">
                 <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#2021">2021</button>
                 <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#2020">2020</button>
@@ -1056,35 +1389,46 @@
                 </div>
                 <div id="2020" class="collapse">
                     <ul id="eventsList">
-                        <li id="2020-06-06" class="hasInfo" onclick="toggleEventsInfo('#info002')">
+                        <li id="2020-10-07" class="noInfo">
                             <article>
-                                <p class="eventTitle">6 juni 2020 (fictief)</p>
-                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">event tralala</a>
-                                <!--<div>
-                                    <img class="menu-icon-light"
-                                         style="width:10px;height:10px;margin:0px;padding:0px"
-                                         src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                </div>-->
+                                <p class="eventTitle">7 oktober 2020 (fictief)</p>
+                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">event tralala | Mars</a>
+                            </article>
+                        </li>
+                        <li id="2020-08-07" class="noInfo">
+                            <article>
+                                <p class="eventTitle">7 augustus 2020 (fictief)</p>
+                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">event tralala | Timboektoe</a>
+                            </article>
+                        </li>
+                        <li id="2020-06-07" class="hasInfo" onclick="toggleEventsInfo(this, '#info002')">
+                            <article>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
+                                <p class="eventTitle">7 juni 2020 (fictief)</p>
+                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">event tralala | Antwerpen</a>
                                 <div class="eventInfo" id='info002'>
+                                    <p>Dit is wat bijkomende info</p>
                                     <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                    <img class="thumbEventInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
                                     <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
                                 </div>
                             </article>
                         </li>
-                        <li id="2020-01-19" class="hasInfo" onclick="toggleEventsInfo('#info001')">
+                        <li id="2020-01-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info001')">
                             <article>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
                                 <p class="eventTitle">19 januari 2020 (fictief)</p>
-                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">event abc</a>
-                                <!--<div>
-                                    <img class="menu-icon-light"
-                                         style="width:10px;height:10px;margin:0px;padding:0px"
-                                         src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                </div>-->
+                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">event abc | Zwevezele</a>
                                 <div class="eventInfo" id='info001'>
+                                    <img class="thumbEventInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60772-IMG_1222.png" />
                                     <p>Dit is wat bijkomende info</p>
                                     <p>kjvghsdkjsdbv;dfbvk:vn: dfvbnsdf;bnsdf; vjkdfnkvbdfn</p>
                                 </div>
@@ -1096,75 +1440,82 @@
                 </div>
                 <div id="ouder" class="collapse">
                     <ul id="eventsList">
-                        <li id="2016-11-19">
+                        <li id="2016-11-19" class="noInfo">
                             <article>
                                 <p class="eventTitle">3 en 4 december 2016</p>
-                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">Braderie de l'Art - Roubaix</a>
+                                <a href="https://www.facebook.com/BraderieDeLArt/?fref =ts" target="_blank">Braderie de l'Art | Roubaix</a>
                             </article>
                         </li>
-                        <li id="2016-11-19" class="hasInfo" onclick="toggleEventsInfo('#info000')">
+                        <li id="2016-11-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info000')">
                             <article>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
                                 <p class="eventTitle">19 en 20 november 2016</p>
-                                <a href="https://www.facebook.com/events/1815157395384830/" target="_blank">Maker City - Gent</a>
-                                <!--<div>
-                                    <img class="menu-icon-light"
-                                         style="width:10px;height:10px;margin:0px;padding:0px"
-                                         src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                </div>-->
+                                <a href="https://www.facebook.com/events/1815157395384830/" target="_blank">Maker City | Gent</a>
                                 <div class="eventInfo" id='info000'>
                                     <p>Dit is wat bijkomende info</p>
                                     <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
                                 </div>
                             </article>
                         </li>
-                        <li id="2016-05-13">
+                        <li id="2016-05-13" class="noInfo">
                             <article>
                                 <p class="eventTitle">13 tot 15 mei 2016</p>
-                                <a href="https://www.facebook.com/events/754602384640862/" target="_blank">Fashion & Art Event - Gent </a>
+                                <a href="https://www.facebook.com/events/754602384640862/" target="_blank">Fashion & Art Event | Gent </a>
                             </article>
                         </li>
-                        <li id="2016-03-17">
+                        <li id="2016-03-17" class="noInfo">
                             <article>
                                 <p class="eventTitle">17 maart 2016</p>
-                                <a href="http://www.straatwoordenaar.be/" target="_blank">Eco-design - Gent</a>
+                                <a href="http://www.straatwoordenaar.be/" target="_blank">Eco-design | Gent</a>
                             </article>
                         </li>
-                        <li id="2016-03-13">
+                        <li id="2016-03-13" class="noInfo">
                             <article>
                                 <p class="eventTitle">13 maart 2016</p>
-                                <a href="https://www.facebook.com/recreationhall" target="_blank">Re-Creation Hall Market - Brussel</a>
+                                <a href="https://www.facebook.com/recreationhall" target="_blank">Re-Creation Hall Market | Brussel</a>
                             </article>
                         </li>
-                        <li id="2016-02-14">
+                        <li id="2016-02-14" class="noInfo">
                             <article>
                                 <p class="eventTitle">13 & 14 februari 2016</p>
-                                <a href="https://www.facebook.com/events/1682977095316523/" target="_blank">Wild Jo's Market - Antwerpen</a>
+                                <a href="https://www.facebook.com/events/1682977095316523/" target="_blank">Wild Jo's Market | Antwerpen</a>
                             </article>
                         </li>
-                        <li id="2016-02-06">
+                        <li id="2016-02-06" class="noInfo">
                             <article>
                                 <p class="eventTitle">6 februari 2016</p>
-                                <a href="https://www.facebook.com/Iederszennemeug/?fref=ts" target="_blank">Ieders Zenne Meug - Antwerpen</a>
+                                <a href="https://www.facebook.com/Iederszennemeug/?fref=ts" target="_blank">Ieders Zenne Meug | Antwerpen</a>
                             </article>
                         </li>
-                        <li id="2016-01-31">
+                        <li id="2016-01-31" class="noInfo">
                             <article>
                                 <p class="eventTitle">januari 2016</p>
-                                <a href="https://www.facebook.com/EcomooseBarLokeren/" target="_blank">Ecomoose - Lokeren</a>
+                                <a href="https://www.facebook.com/EcomooseBarLokeren/" target="_blank">Ecomoose | Lokeren</a>
                             </article>
                         </li>
-                        <li id="2015-12-31">
+                        <li id="2015-12-31" class="noInfo">
                             <article>
                                 <p class="eventTitle">december 2015</p>
-                                <a href="https://www.facebook.com/media/set/?set=a.738764329600965.1073741832.709516979192367&type=3" target="_blank">Wij gaan lokaal - Zele</a>
+                                <a href="https://www.facebook.com/media/set/?set=a.738764329600965.1073741832.709516979192367&type=3" target="_blank">Wij gaan lokaal | Zele</a>
                             </article>
                         </li>
-                        <li id="2015-11-29">
+                        <li id="2015-11-29" class="hasInfo" onclick="toggleEventsInfo(this, '#info012')">
                             <article>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
                                 <p class="eventTitle">29 november 2015</p>
-                                <a href="https://www.facebook.com/events/717199101758146/" target="_blank">Markt - Brugge</a>
+                                <a href="https://www.facebook.com/events/717199101758146/" target="_blank">Markt | Brugge</a>
+                                <div class="eventInfo" id='info012'>
+                                    <p>Dit is wat bijkomende info</p>
+                                    <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                </div>
                             </article>
                         </li>
                     </ul>
@@ -1173,18 +1524,19 @@
         </section>
 
         <section id="contact" class="page5">
-            <h1>
+            <h2>
                 <span>
                     <a href="#home">
                         <img class="logo"
                              style="margin:-8px;width:90px;padding-left:15px"
-                             src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT">
+                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                             alt="STHOUT"
+                             title="SThout">
                     </a>
                     <strong> | </strong>
                 </span>
-                <a class="link" onclick="goTo('contact')">CONTACT
-            </h1>
+                <a class="link" onclick="goTo('contact')">CONTACT</a>
+            </h2>
             <section id="link">
                 <ul class="contact">
                     <li>
@@ -1194,7 +1546,7 @@
                         <a class="link" href="https://www.facebook.com/sthout.be/" target="_blank">
                             <img class="menu-icon"
                                  style="width:35px;height:35px;margin:0px;padding:5px"
-                                 src="http://unpub.static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
                                  alt="sthout | facebook"
                                  title="sthout | facebook">
                         </a>
@@ -1203,6 +1555,75 @@
             </section>
         </section>
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 200,
+            loop: true,
+            effect: 'flip',
+            flipEffect: {
+                rotate: 30,
+                slideShadows: false,
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
+    <!--Automatic Slideshow-->
+    <script>
+        var timeout;
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            if (slideIndex < 1) { slideIndex = slides.length }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" current", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " current";
+            timeout = setTimeout(showSlides, 4500);
+        }
+
+        function selectWithIndicator(index) {
+            clearTimeout(timeout);
+            slideIndex = index;
+            showSlides();
+        }
+
+        function selectWithArrow(index) {
+            clearTimeout(timeout);
+            slideIndex += (index - 1);
+            showSlides();
+        }
+    </script>
 
     <script>
         // Add active class to the current button (highlight it)
@@ -1240,6 +1661,25 @@
         }
     </script>
 
+    <script>
+        function selectProducts(target) {
+            goTo('portfolio');
+            var header = document.getElementById("products");
+            var btns = header.getElementsByClassName("productBtn");
+            for (var i = 0; i < btns.length; i++) {
+                var item = btns[i];
+                item.className = item.className.replace(" activeProductBtn", "");
+                if (item.innerHTML === target) {
+                    item.className += " activeProductBtn";
+                    document.getElementById(item.innerHTML).className = "collapse in";
+                }
+                else {
+                    document.getElementById(item.innerHTML).className = "collapse";
+                }
+            }
+        }
+    </script>
+
     <!--Collapse-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -1254,11 +1694,13 @@
     </script>
 
     <script>
-        function toggleEventsInfo(info) {
+        function toggleEventsInfo(e, info) {
             var test = true;
             if ($(info).is(":visible")) { test = false; }
             $(".eventInfo").slideUp();
-            if (test) { $(info).slideDown(); } else { $(info).slideUp(); }
+            if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+            //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
         }
     </script>
 
@@ -1298,6 +1740,7 @@
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
         function goTo(o) { $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) }
+        function goToActive() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
     </script>
 
     <!-- Set upcoming and past events -->
