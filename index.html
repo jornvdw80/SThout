@@ -1954,12 +1954,16 @@
 
     <!--GoTo using id-->
     <script>
-        function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-        function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
+        function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); goTo(o) } }
+        function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); goTo(o) } }
         function goTo(o) {
             //ert(o);
             $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
 
+            //$("#main-nav a").each(function () {
+            //    var t = $(this), a = $(t.attr("name"));
+            //    a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+            //});
             $("#aside-nav a").each(function () {
                 var t = $(this), a = $(t.attr("name"));
                 a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
