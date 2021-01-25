@@ -1959,15 +1959,15 @@
         function goTo(o) {
             //ert(o);
             $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
-
-            //$("#main-nav a").each(function () {
-            //    var t = $(this), a = $(t.attr("name"));
-            //    a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-            //});
+            var o = $(document).scrollTop() + 156, a = $(".active");
+            $("#main-nav a").each(function () {
+                var t = $(this), a = $(t.attr("name"));
+                a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+            }),
             $("#aside-nav a").each(function () {
                 var t = $(this), a = $(t.attr("name"));
                 a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-            });
+            }), 0 == $(".active").length && a.addClass("active")
             //$("#aside-nav a").each(function () {
             //    //var t = $(this), a = $(t.attr("name"));
             //    //if (a.replace("#", "") != o) {
