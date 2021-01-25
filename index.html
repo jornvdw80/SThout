@@ -1959,7 +1959,7 @@
         function goTo(o) {
             //ert(o);
             $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
-            var o = $(document).scrollTop() + 156, a = $(".active");
+            //var o = $(document).scrollTop() + 156, a = $(".active");
             $("#main-nav a").each(function () {
                 var t = $(this), a = $(t.attr("name"));
                 a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
