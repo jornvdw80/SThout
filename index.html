@@ -2036,6 +2036,12 @@
                 nextEl: '.swiper-button-next2',
                 prevEl: '.swiper-button-prev2',
             },
+            lazy: {
+                //  tell swiper to load images before they appear
+                loadPrevNext: true,
+                // amount of images to load
+                loadPrevNextAmount: 2,
+            },
         });
     </script>
 
@@ -2060,6 +2066,12 @@
                 navigation: {
                     nextEl: '.swiper-button-next2',
                     prevEl: '.swiper-button-prev2',
+                },
+                lazy: {
+                    //  tell swiper to load images before they appear
+                    loadPrevNext: true,
+                    // amount of images to load
+                    loadPrevNextAmount: 2,
                 },
             });
             swiper2.slideTo(index, false, false);
