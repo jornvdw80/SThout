@@ -686,7 +686,7 @@
             background-color: white;
             border: 1px solid #d3d3d3;
             border-radius: 20px;
-            opacity:.8
+            opacity: .8
         }
 
         /* The dots/bullets/indicators */
@@ -1697,7 +1697,7 @@
                             <div class="swiper-container swiper2">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg')" class="popupslideImg" />
+                                        <img style="background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg')" class="popupslideImg"/>
                                     </div>
                                     <div class="swiper-slide">
                                         <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png')" class="popupslideImg" />
@@ -2036,11 +2036,12 @@
                 nextEl: '.swiper-button-next2',
                 prevEl: '.swiper-button-prev2',
             },
+            // Enable lazy loading
             lazy: {
                 //  tell swiper to load images before they appear
                 loadPrevNext: true,
                 // amount of images to load
-                loadPrevNextAmount: 2,
+                loadPrevNextAmount: 5,
             },
         });
     </script>
@@ -2067,11 +2068,12 @@
                     nextEl: '.swiper-button-next2',
                     prevEl: '.swiper-button-prev2',
                 },
+                // Enable lazy loading
                 lazy: {
                     //  tell swiper to load images before they appear
                     loadPrevNext: true,
                     // amount of images to load
-                    loadPrevNextAmount: 2,
+                    loadPrevNextAmount: 5,
                 },
             });
             swiper2.slideTo(index, false, false);
