@@ -12,90 +12,15 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-    <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_lightbox-->
     <style>
-        /* The Modal (background) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 99999;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            /*overflow: auto;*/
-            overflow-x: hidden;
-            overflow-y: hidden;
-            background-color: white;
-        }
-
-
-        /* Modal Content */
-        .modal-content {
-            position: relative;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 0;
-            width: 90%;
-            max-width: 1200px;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #999;
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            font-size: 35px;
-            font-weight: bold;
-            /* top: 0;
-            right: 0;
-            position: absolute;
-            z-index: 9999;*/
-            background-position: 15px 12px
-        }
-
-            .close:hover,
-            .close:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-        /*.mySlides {
-            display: none;
-        }*/
-
-        /*.cursor {
-            cursor: pointer;
-        }*/
-
-        .caption-container {
-            text-align: center;
-            background-color: black;
-            padding: 2px 16px;
-            color: black;
-        }
-
-        /*img.hover-shadow {
-            transition: 0.3s;
-        }
-
-        .hover-shadow:hover {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }*/
-    </style>
-
-    <style>
-        .swiper-container, .swiper-popup-container {
+        .swiper-container {
             width: 100%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .swiper-slide, .swiper-popup-slide {
+        .swiper-slide {
             text-align: center;
             font-size: 18px;
             background: transparent; /*#fff;*/
@@ -114,22 +39,22 @@
             align-items: center;
         }
 
-        .swiper-pagination, .swiper-popup-pagination {
+        .swiper-pagination {
             position: relative;
-            margin-top: 30px;            
+            margin-top: 30px;
         }
 
-        .swiper-button-prev, .swiper-button-next, .swiper-popup-button-prev, .swiper-popup-button-next {
+        .swiper-button-prev, .swiper-button-next {
             opacity: .5;
             color: dimgrey;
         }
 
-            .swiper-button-prev:hover, .swiper-button-next:hover, .swiper-popup-button-prev:hover, .swiper-popup-button-next:hover {
+            .swiper-button-prev:hover, .swiper-button-next:hover {
                 opacity: .9;
             }
 
         @media screen and (max-width:420px) {
-            .swiper-button-prev, .swiper-button-next, .swiper-popup-button-prev, .swiper-popup-button-next {
+            .swiper-button-prev, .swiper-button-next {
                 display: none;
             }
         }
@@ -646,15 +571,14 @@
             margin: 5px 5px 0 0;
             opacity: .5;
             border: 1px solid #DCDCDC;
-            border-radius: 10px;
-            transition: 0.3s;
+            border-radius: 10px
         }
 
         .slides {
             display: none;
         }
 
-        .slideshow-container, slideshow-popup-container {
+        .slideshow-container {
             max-width: 500px;
             max-height: 500px;
             position: relative;
@@ -668,20 +592,6 @@
             margin: auto;
             width: 300px;
             height: 300px;
-            left: -600px;
-            clip: rect(0 200px 200px 0);
-            border-radius: 24px;
-            /*margin-top: 20px;*/
-            text-align: center;
-            vertical-align: top;
-            object-fit: scale-down;
-            cursor: pointer;
-        }
-
-        .popupslideImg {
-            margin: auto;
-            width: 500px;
-            height: 500px;
             left: -600px;
             clip: rect(0 200px 200px 0);
             border-radius: 24px;
@@ -806,8 +716,7 @@
             }
 
         .enlarge:hover /*, .slides:hover, .slideImg:hover*/ {
-            opacity: .9;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            opacity: 1
         }
 
         @media screen and (max-height:520px) {
@@ -866,7 +775,7 @@
                 /*padding: 0 15px 10px*/
             }
 
-            .slideshow-container, slideshow-popup-container {
+            .slideshow-container {
                 max-width: 90%;
                 max-height: 500px;
                 position: relative;
@@ -1034,8 +943,8 @@
     </style>
 
     <style>
-        /*! Swipebox v1.3.0 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
-        /*html.swipebox-html {
+        ! Swipebox v1.3.0 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox 
+        html.swipebox-html {
             overflow-x: hidden;
             overflow-y: hidden
         }
@@ -1338,7 +1247,7 @@
             font-size: 15px;
             line-height: 43px;
             font-family: Helvetica,Arial,sans-serif
-        }*/
+        }
     </style>
 </head>
 
@@ -1552,10 +1461,10 @@
                              alt="STHOUT"
                              title="SThout">
                         <!--<img class="logo"
-                        style="margin:-8px;width:90px;padding-left:15px;"
-                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                        alt="STHOUT"
-                        title="SThout">-->
+                             style="margin:-8px;width:90px;padding-left:15px;"
+                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                             alt="STHOUT"
+                             title="SThout">-->
                     </a>
                     <strong> | </strong>
                 </span>
@@ -1569,17 +1478,17 @@
             </section>
             <section class="thumbs">
                 <div id="meubel" class="collapse">
-                    <a>
-                        <img title="Nieuw samengesteld gezin" alt="Nieuw samengesteld gezin" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="enlarge" onclick="openModal();" />
+                    <a rel="gallery-1" href="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swipebox" title="sthout03">
+                        <img class="enlarge" alt="Nieuw samengesteld gezin" title="Nieuw samengesteld gezin" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" />
                     </a>
-                    <a>
-                        <img title="sthout06" alt="sthout06" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png" class="enlarge" onclick="openModal();" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swipebox" title="sthout06">
+                        <img class="enlarge" alt="sthout06" title="sthout06" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png" />
                     </a>
-                    <a>
-                        <img title="sthout01" alt="sthout01" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60769-IMG_1188.png" class="enlarge" onclick="openModal();" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swipebox" title="sthout01">
+                        <img class="enlarge" alt="sthout01" title="sthout01" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60769-IMG_1188.png" />
                     </a>
-                    <a>
-                        <img title="sthout04" alt="sthout04" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60770-IMG_1193.png" class="enlarge" onclick="openModal();" />
+                    <a rel="gallery-1" href="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swipebox" title="sthout04">
+                        <img class="enlarge" alt="sthout04" title="sthout04" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60770-IMG_1193.png" />
                     </a>
                 </div>
                 <div id="verlichting" class="collapse">
@@ -1626,33 +1535,6 @@
                     </a>
                 </div>
             </section>
-            <div id="myModal" class="modal" onscroll="return false">
-                <span class="close cursor" onclick="closeModal()">&times;</span>
-                <div class="modal-content">
-                    <!-- Swiper -->
-                    <section>
-                        <div id="popupslides" class="slideshow-popup-container">
-                            <div class="swiper-popup-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img class="slideImg"
-                                             src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397572-salonTafel-e4da3.png" alt="lamp" title="portfolio | lamp" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="slideImg"
-                                             src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png" alt="lamp" title="portfolio | lamp" />
-                                    </div>
-                                </div>
-                                <!-- Add Pagination -->
-                                <div class="swiper-pagination"></div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
         </section>
 
         <section id="events" class="page4">
@@ -1857,19 +1739,15 @@
         </section>
     </div>
 
-
-    <script>
-        function openModal() {
-            document.getElementById("myModal").style.display = "block";
+    <!--<script>
+        function openUrl(url) {
+            return !window.open(url);
         }
-
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-    </script>
+    </script>-->
 
     <script>
         function openUrl(url) {
+            //alert($(this.attr('title')));
             return !window.open(url);
         }
     </script>
@@ -1921,29 +1799,6 @@
             },
         });
     </script>
-
-    <script>
-        var swiperPopup = new Swiper('.swiper-popup-container', {
-            slidesPerView: 1,
-            spaceBetween: 200,
-            loop: true,
-            effect: 'flip',
-            flipEffect: {
-                rotate: 30,
-                slideShadows: false,
-            },            
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
-
 
     <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
     <!--Automatic Slideshow-->
