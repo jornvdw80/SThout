@@ -19,12 +19,12 @@
             display: none;
             position: fixed;
             z-index: 99999;
-            padding-top: 50px;
+            padding-top:20px;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow: hidden;
             background-color: white;
             border: none;
         }
@@ -44,12 +44,13 @@
         /* The Close Button */
         .close {
             color: #999;
-            position: absolute;
-            top: 10px;
-            right: 25px;
+            /*position: absolute;*/
+            margin: 0 auto;
+            /*top: 10px;
+            right: 25px;*/
             font-size: 35px;
             font-weight: bold;
-            background-position: 15px 12px
+            /*background-position: 15px 12px*/
         }
 
             .close:hover,
@@ -832,7 +833,7 @@
 
         @media screen and (max-height:520px) {
             .page5 {
-                min-height: 450px;
+                min-height: 400px;
                 margin: 0;
             }
         }
@@ -2008,7 +2009,7 @@
         }
         /* Create an alert to show if the browser is IE or not */
         if (isIE()) {
-            alert('U maakt gebruik van Internet Explorer. Deze website werkt daardoor niet optimaal. Maak gebruik van een recentere browser!');
+            alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak gebruik van een recentere browser!');
         }
     </script>
 
@@ -2018,7 +2019,7 @@
         }
     </script>
 
-    <!-- Background image -->
+    <!-- Background image = NOT USED -->
     <script>
         function easy_background(selector, a1, a2, b1, b2, c1, c2, d1, d2, e1, e2) {
             function empty_var(x) { if (x) { return x; } else { return 0; } }
