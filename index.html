@@ -388,9 +388,14 @@
                 margin-bottom: 5px;
             }
 
-        .page4 .eventTitle {
+        /*.page4 .eventTitle {
             font-weight: normal;
-        }
+        }*/
+
+            .page4 .eventTitle, .page4 .newsTitle {
+                font-weight: bold;
+                font-size: 13px;
+            }
 
         .page4 article a, .page4 article p {
             margin: 0;
@@ -402,8 +407,12 @@
             margin: 0;
             padding: 0;
             opacity: .7;
-            font-size: 14px;
+            font-size: 16px;
             color: #000;
+        }
+
+        .past .newsSubTitle, .future .newsSubTitle {
+            font-size: 18px;
         }
 
         /*.past .eventInfo p {
@@ -419,6 +428,10 @@
         }
 
         .past .eventTitle:hover, .future .eventTitle:hover, .hasInfo .eventTitle:hover {
+            text-decoration: none;
+        }
+
+        .past .newsTitle:hover, .future .newsTitle:hover, .hasInfo .newsTitle:hover {
             text-decoration: none;
         }
 
@@ -452,6 +465,10 @@
             margin-bottom: 3px;
         }
 
+        .past .newsTitle, .future .newsTitle, .hasInfo .newsTitle {
+            margin-bottom: 3px;
+        }
+
         .eventInfo {
             display: inline-block;
             margin: 0 auto;
@@ -474,7 +491,7 @@
             cursor: pointer;
         }
 
-        .noInfo .eventTitle {
+        .noInfo .eventTitle, .noInfo .newsTitle {
             cursor: default;
         }
 
@@ -1481,8 +1498,10 @@
                                  src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
                                  alt="..."
                                  title="meer...">
-                            <p class="eventTitle">SThout is geselecteerd als</p>
-                            <a title="https://www.toerisme-leiestreek.be/nl/leiespots/sthout" onclick="openUrl(this.title);">Leiespot 2020</a>
+                            <p class="newsTitle">SThout is geselecteerd als</p>
+                            <a title="https://www.toerisme-leiestreek.be/nl/leiespots/sthout" class="newsSubTitle" onclick="openUrl(this.title);">
+                                Leiespot 2020
+                            </a>
                             <div class="eventInfo" id='info003'>
                                 <p>Dit is wat bijkomende info</p>
                                 <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
@@ -1491,8 +1510,10 @@
                     </li>
                     <li id="2020-09-05" class="noInfo past">
                         <article>
-                            <p class="eventTitle">In de gazet</p>
-                            <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" onclick="openUrl(this.title);">SThout Art & Design 2020</a>
+                            <p class="newsTitle">In de gazet</p>
+                            <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
+                                SThout Art & Design 2020
+                            </a>
                         </article>
                     </li>
                 </ul>
@@ -1502,7 +1523,9 @@
                     <li id="2016-11-19" class="noInfo past">
                         <article>
                             <p class="eventTitle">blabla</p>
-                            <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" onclick="openUrl(this.title);">POPUP</a>
+                            <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
+                                POPUP
+                            </a>
                         </article>
                     </li>
                 </ul>
