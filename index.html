@@ -183,12 +183,12 @@
             padding: 0
         }
 
-        #eventsSection ul, #navigate ul {
+        #eventsSection ul, #newsSection ul, #navigate ul {
             display: block;
             list-style-type: none
         }
 
-            #eventsSection ul li, a, page5 #link ul li {
+            a, #eventsSection ul li, #newsSection ul li, page5 #link ul li {
                 text-decoration: none
             }
 
@@ -196,7 +196,7 @@
             font-weight: 700
         }
 
-        #eventsSection ul, #navigate ul, .page5 #link ul, li {
+        #eventsSection ul, #newsSection ul, #navigate ul, .page5 #link ul, li {
             list-style-type: none
         }
 
@@ -331,7 +331,7 @@
             width: 220px;
         }
 
-        #eventsSection ul, .page5 article, h1, h2 {
+        #eventsSection ul, #newsSection ul, .page5 article, h1, h2 {
             text-align: center
         }
 
@@ -371,7 +371,7 @@
             margin: 0 0 100px
         }
 
-            .page4 #eventsSection {
+            .page4 #eventsSection, .page4 #newsSection {
                 position: relative;
                 display: inline-block;
                 margin: auto;
@@ -379,12 +379,12 @@
                 width: 330px
             }
 
-        #eventsSection ul {
+        #eventsSection ul, #newsSection ul {
             margin: 0;
             padding: 0
         }
 
-            #eventsSection ul li {
+            #eventsSection ul li, #newsSection ul li {
                 margin-bottom: 5px;
             }
 
@@ -423,7 +423,7 @@
         }
 
         /*.eventInfo,*/
-        #eventsList li article {
+        #eventsList li article, #newsList li article {
             position: relative;
             display: inline-block;
             width: 100%;
@@ -442,7 +442,7 @@
             /*cursor: pointer;*/
         }
 
-            #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover {
+            #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
                 background-color: #fbfbfb;
                 /*border: 3px dotted;*/
                 border-color: #808080;
@@ -804,7 +804,7 @@
                 margin: 0 5px;
             }*/
 
-            .page2 article, .page4 #eventsSection {
+            .page2 article, .page4 #eventsSection, .page4 #newsSection {
                 position: relative;
                 display: inline-block;
                 margin: 0;
@@ -819,7 +819,7 @@
                 padding-right: 15px;
             }
 
-            .page4 #eventsSection {
+            .page4 #eventsSection, .page4 #newsSection {
                 margin-right: 30px;
             }
 
@@ -840,7 +840,7 @@
         }
 
         @media screen and (max-width:420px) {
-            .page2 article, .page4 #eventsSection {
+            .page2 article, .page4 #eventsSection, .page4 #newsSection {
                 position: relative;
                 display: inline-block;
                 margin: 0;
@@ -855,12 +855,12 @@
                 padding-right: 15px;
             }
 
-            .page4 #eventsSection {
+            .page4 #eventsSection, .page4 #newsSection {
                 margin-right: 30px;
             }
         }
 
-        .button, .yearBtn, .productBtn {
+        .button, .yearBtn, .newsBtn, .productBtn {
             color: black;
             border: 1px solid;
             border-color: #d3d3d3;
@@ -880,7 +880,7 @@
             float: center;
         }
 
-            .activeBtn, .activeYearBtn, .activeProductBtn, .button:hover, .yearBtn:hover, .productBtn:hover {
+            .activeBtn, .activeYearBtn, .activeNewsBtn, .activeProductBtn, .button:hover, .yearBtn:hover, .newsBtn:hover, .productBtn:hover {
                 outline: none;
                 border: 2px solid;
                 border-color: #46b8da;
@@ -924,7 +924,7 @@
             margin: auto;
         }
 
-        .activeYearBtn, .activeProductBtn {
+        .activeYearBtn, .activeNewsBtn, .activeProductBtn {
             background-color: #46b8da;
             color: white;
         }
@@ -1364,10 +1364,10 @@
                          alt="STHOUT"
                          title="SThout">
                     <!--<img class="logo"
-                         id="front-logo"
-                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                         alt="STHOUT"
-                         title="SThout">-->
+                id="front-logo"
+                src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                alt="STHOUT"
+                title="SThout">-->
                 </a>
             </section>
             <!-- Swiper -->
@@ -1425,10 +1425,10 @@
                              alt="STHOUT"
                              title="SThout">
                         <!--<img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px"
-                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT"
-                             title="SThout">-->
+                    style="margin:-8px;width:90px;padding-left:15px"
+                    src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                    alt="STHOUT"
+                    title="SThout">-->
                     </a>
                     <strong> | </strong>
                 </span>
@@ -1451,6 +1451,59 @@
             </article>
         </section>
 
+        <section id="news" class="page4">
+        <h2>
+            <span>
+                <a class="link" onclick="goTo('home')">
+                    <img class="logo"
+                         style="margin:-8px;width:90px;padding-left:15px"
+                         src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                         alt="STHOUT"
+                         title="SThout">
+                </a>
+                <strong> | </strong>
+            </span>
+            <a class="link" onclick="goTo('news')">IN DE WERELD</a>
+        </h2>
+        <section id="newsBloc" class="btn-group">
+            <button onclick="hideAllNews()" class="newsBtn" data-toggle="collapse" data-target="#actueel">actueel</button>
+            <button onclick="hideAllNews()" class="newsBtn" data-toggle="collapse" data-target="#nieuwsarchief">nieuwsarchief</button>
+        </section>
+        <section id="newsSection">
+            <div id="actueel" class="collapse">
+                <ul id="newsList">
+                    <li id="2020-06-07" class="hasInfo past" onclick="toggleNewsInfo(this, '#info003')">
+                        <article>
+                            <img id="more"
+                                 class="menu-icon-light"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                 alt="..."
+                                 title="meer...">
+                            <p class="eventTitle">7 juni 2020 (fictief)</p>
+                            <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Antwerpenxxx</a>
+                            <div class="eventInfo" id='info003'>
+                                <p>Dit is wat bijkomende info</p>
+                                <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                <img class="thumbEventInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
+                                <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            <div id="nieuwsarchief" class="collapse">
+                <ul id="newsList">
+                    <li id="2016-11-19" class="noInfo past">
+                        <article>
+                            <p class="eventTitle">3 en 4 december 2016</p>
+                            <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">Braderie de l'Art | Roubaixxxxx</a>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+
         <section id="portfolio" class="page3">
             <h2>
                 <span>
@@ -1461,10 +1514,10 @@
                              alt="STHOUT"
                              title="SThout">
                         <!--<img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px;"
-                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT"
-                             title="SThout">-->
+                    style="margin:-8px;width:90px;padding-left:15px;"
+                    src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                    alt="STHOUT"
+                    title="SThout">-->
                     </a>
                     <strong> | </strong>
                 </span>
@@ -1547,25 +1600,21 @@
                              alt="STHOUT"
                              title="SThout">
                         <!--<img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px"
-                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT"
-                             title="SThout">-->
+                    style="margin:-8px;width:90px;padding-left:15px"
+                    src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                    alt="STHOUT"
+                    title="SThout">-->
                     </a>
                     <strong> | </strong>
                 </span>
                 <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
             </h2>
             <section id="years" class="btn-group">
-                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#2021">2021</button>
-                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#2020">2020</button>
-                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#2019">2019</button>
-                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#ouder">ouder</button>
+                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#recent">recent</button>
+                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#archief">archief</button>
             </section>
             <section id="eventsSection">
-                <div id="2021" class="collapse">
-                </div>
-                <div id="2020" class="collapse">
+                <div id="recent" class="collapse">
                     <ul id="eventsList">
                         <li id="2020-10-07" class="noInfo">
                             <article>
@@ -1614,9 +1663,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id="2019" class="collapse">
-                </div>
-                <div id="ouder" class="collapse">
+                <div id="archief" class="collapse">
                     <ul id="eventsList">
                         <li id="2016-11-19" class="noInfo">
                             <article>
@@ -1711,10 +1758,10 @@
                              alt="STHOUT"
                              title="SThout">
                         <!--<img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px"
-                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                             alt="STHOUT"
-                             title="SThout">-->
+                    style="margin:-8px;width:90px;padding-left:15px"
+                    src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                    alt="STHOUT"
+                    title="SThout">-->
                     </a>
                     <strong> | </strong>
                 </span>
@@ -1739,15 +1786,8 @@
         </section>
     </div>
 
-    <!--<script>
-        function openUrl(url) {
-            return !window.open(url);
-        }
-    </script>-->
-
     <script>
         function openUrl(url) {
-            //alert($(this.attr('title')));
             return !window.open(url);
         }
     </script>
@@ -1842,12 +1882,11 @@
         // Add active class to the current button (highlight it)
         var header = document.getElementById("years");
         var btns = header.getElementsByClassName("yearBtn");
-
         for (var i = 0; i < btns.length; i++) {
             var item = btns[i];
             var currentYear = new Date().getFullYear();
             var currentItem = new Date(item.innerHTML).getFullYear();
-            if (currentItem == currentYear) {
+            if (currentItem == currentYear || i == 0) {
                 item.className += " activeYearBtn";
                 document.getElementById(item.innerHTML).className = "collapse in";
             }
@@ -1870,6 +1909,23 @@
                 var current = document.getElementsByClassName("activeProductBtn");
                 current[0].className = current[0].className.replace(" activeProductBtn", "");
                 this.className += " activeProductBtn";
+            });
+        }
+
+        var header = document.getElementById("news");
+        var btns = header.getElementsByClassName("newsBtn");
+        for (var i = 0; i < btns.length; i++) {
+            var item = btns[i];
+            var currentYear = new Date().getFullYear();
+            var currentItem = new Date(item.innerHTML).getFullYear();
+            if (currentItem == currentYear || i == 0) {
+                item.className += " activeNewsBtn";
+                document.getElementById(item.innerHTML).className = "collapse in";
+            }
+            item.addEventListener("click", function () {
+                var current = document.getElementsByClassName("activeNewsBtn");
+                current[0].className = current[0].className.replace(" activeNewsBtn", "");
+                this.className += " activeNewsBtn";
             });
         }
     </script>
@@ -1911,6 +1967,27 @@
             var test = true;
             if ($(info).is(":visible")) { test = false; }
             $(".eventInfo").slideUp();
+            if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+            //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
+        }
+    </script>
+
+    <script>
+        function hideAllNews() {
+            var btns = document.getElementsByClassName("newsBtn");
+            for (var i = 0; i < btns.length; i++) {
+                var item = btns[i];
+                document.getElementById(item.innerHTML).className = "collapse";
+            };
+        }
+    </script>
+
+    <script>
+        function toggleNewsInfo(e, info) {
+            var test = true;
+            if ($(info).is(":visible")) { test = false; }
+            $(".newsInfo").slideUp();
             if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
             e.scrollIntoView({ behavior: "smooth", block: "center" });
             //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
@@ -1967,11 +2044,8 @@
         function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); goTo(o) } }
         function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); goTo(o) } }
         function goTo(o) {
-            //ert(o);
             $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
-            //alert($(".active").attr("name").replace("#", "") + "   " + o);
             if (o != $(".active").attr("name").replace("#", "")) {
-                //var o = $(document).scrollTop() + 156, a = $(".active");
                 $("#main-nav a").each(function () {
                     var t = $(this), a = $(t.attr("name"));
                     a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
@@ -1981,25 +2055,7 @@
                     a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
                 });
             }
-            //$("#aside-nav a").each(function () {
-            //    //var t = $(this), a = $(t.attr("name"));
-            //    //if (a.replace("#", "") != o) {
-            //    //    $(this).addClass("active");
-            //    //}
-            //    //else {
-            //    $(this).addClass("active");
-            //   //}
-
-            //});
-            //ert(o);
-            //alert($("#aside-nav a").getElementsById(page1));
-            //("#aside-nav a").getElementsByName("#" + o).removeClass("active");
         }
-        //function goTo(o) {
-        //    var element = document.querySelector("#" + o);
-        //    // smooth scroll to element and align it at the bottom
-        //    element.scrollIntoView({ behavior: 'smooth' });
-        //}
         function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
     </script>
 
