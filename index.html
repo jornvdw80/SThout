@@ -2130,8 +2130,8 @@
     <script>
         var swiper1 = new Swiper('.swiper1', {          
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next1',
+                prevEl: '.swiper-button-prev1',
             },
             loop: true,
             preloadImages: false,
@@ -2141,7 +2141,6 @@
             effect: 'flip',
             flipEffect: {
                 slideShadows: false,
-                limitRotation: true,
             },
             pagination: {
                 el: '.swiper-pagination1',
@@ -2160,7 +2159,7 @@
         //    },
         //    preloadImages: false,
         //    lazy: true,
-        //    loop: true,
+        //    loop: false,
         //    slidesPerView: 1,
         //    //spaceBetween: 200,
         //    effect: 'flip',
@@ -2173,6 +2172,7 @@
         //        clickable: true,
         //    },
         //});
+        //swiper2.destroy();
     </script>
 
     <script>
@@ -2184,9 +2184,9 @@
                     nextEl: '.swiper-button-next2',
                     prevEl: '.swiper-button-prev2',
                 },
+                loop: false,
                 preloadImages: false,
                 lazy: true,
-                loop: true,
                 slidesPerView: 1,
                 //spaceBetween: 200,
                 effect: 'flip',
@@ -2197,17 +2197,18 @@
                 pagination: {
                     el: '.swiper-pagination2',
                     clickable: true,
+                    dynamicBullets: true,
                 },             
             });
-            //swiper2.slideTo(index);
-            swiper2.slideToLoop(index);
+            swiper2.slideTo(index);
+            //swiper2.slideToLoop(index);
         }
 
         function closeModal() {
             goTo('portfolio');
             document.getElementById("myModal").style.display = "none";
             goTo('portfolio');
-            //swiper2.destroy();
+            swiper2.destroy();
         }
     </script>
 
