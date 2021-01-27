@@ -41,9 +41,16 @@
             position: relative;
             background-color: #fefefe;
             margin: auto;
-            padding: 0;
-            width: 100%;
+            /*margin-left:5px;*/
+            /*margin-right:5px;*/
+            padding:0;
+  /*          padding-left: 5px;
+            padding-right: 5px;*/
+            width: 500px;
             height: 100%;
+            /*background-color: white;*/
+/*            border: 2px solid #d3d3d3;*/
+            /*border-radius: 20px;*/
             overflow: hidden;
         }
 
@@ -99,10 +106,6 @@
             -ms-flex-align: center;
             -webkit-align-items: center;
         }
-
-        /*.swiper-lazy-preloader{
-            background-repeat: no-repeat;
-        }*/
 
         .swiper-pagination {
             position: relative;
@@ -520,7 +523,7 @@
             /*cursor: pointer;*/
         }
 
-            #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover, .popupslideImg:hover {
+            #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
                 background-color: #fbfbfb;
                 /*border: 3px dotted;*/
                 border-color: #808080;
@@ -696,15 +699,7 @@
 
         .swiper-block {
             width: 500px;
-            height: 300px;
-            background-size: contain;
-            -webkit-background-size: contain;
-            -moz-background-size: contain;
-            -o-background-size: contain;
-            background-position: center center;
-            background-repeat: no-repeat;
-            border-radius: 20px;
-            opacity: .8
+            height: 300px;           
         }
 
         .slideImg {
@@ -730,7 +725,8 @@
             background-position: center center;
             background-repeat: no-repeat;
             border-radius: 20px;
-            opacity: .8
+            opacity: .8;
+            cursor: pointer;
         }
 
         .popupslideImg {
@@ -742,10 +738,11 @@
             -webkit-background-size: contain;
             -moz-background-size: contain;
             -o-background-size: contain;
-            background-color: white;
-            border: 1px solid #d3d3d3;
-            border-radius: 20px;
-            opacity: .8
+            /*background-color: white;*/
+            /*border: 1px solid white;*/
+            /*border-radius: 50px;*/
+            opacity: .8;
+            /*cursor: pointer;*/
         }
 
         /* The dots/bullets/indicators */
@@ -930,11 +927,11 @@
                 margin-bottom: 50px;
             }
 
-            /*.slideImg {
-                width: 250px;
-                height: 230px;*/
+            .modal-content, .popupslideImg /*, .slideImg*/ {
+                width: 400px;
+                /*height: 400px;*/
                 /*margin-top: 25px;*/
-            /*}*/
+            }
         }
 
         @media screen and (max-width:500px) {
@@ -1753,57 +1750,105 @@
                         <div id="popupslides" class="slideshow-popup-container">
                             <div class="swiper-container swiper2">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img style="background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg')" class="popupslideImg" />
+                                    <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <!--<div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png')" class="popupslideImg" />
+                                        <img style="background-image: url('')" class="popupslideImg" />
                                     </div>
                                     <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png')" class="popupslideImg" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img style="background-image: url('http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png')" class="popupslideImg" />
-                                    </div>
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>-->
                                 </div>
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination swiper-pagination2"></div>
@@ -2088,16 +2133,12 @@
             loop: true,
             preloadImages: false,
             lazy: true,
-            //autoplay: false,
-            //updateOnImagesReady: true,
-            //lazyLoadingInPrevNextAmount: 0,
-            //autoplayDisableOnInteraction: true,
             slidesPerView: 1,
-            spaceBetween: 200,
+            //spaceBetween: 200,
             effect: 'flip',
             flipEffect: {
-                rotate: 30,
                 slideShadows: false,
+                limitRotation: true,
             },
             pagination: {
                 el: '.swiper-pagination1',
@@ -2109,62 +2150,29 @@
                 disableOnInteraction: false,
             },
         });
-        var swiper2 = new Swiper('.swiper2', {
-            slidesPerView: 1,
-            spaceBetween: 200,
-            loop: true,
-            effect: 'flip',
-            flipEffect: {
-                rotate: 30,
-                slideShadows: false,
-            },
-            pagination: {
-                el: '.swiper-pagination2',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next2',
-                prevEl: '.swiper-button-prev2',
-            },
-            // Enable lazy loading
-            lazy: {
-                //  tell swiper to load images before they appear
-                loadPrevNext: true,
-                // amount of images to load
-                loadPrevNextAmount: 5,
-            },
-        });
     </script>
 
     <script>
         function openModal(index) {
             document.getElementById("myModal").style.display = "block";
-            swiper2.destroy();
-            swiper2 = new Swiper('.swiper2', {
-                slidesPerView: 1,
-                spaceBetween: 200,
+            var swiper2 = new Swiper('.swiper2', {
+                preloadImages: false,
+                lazy: true,
                 loop: true,
+                slidesPerView: 1,
+                //spaceBetween: 200,
                 effect: 'flip',
                 flipEffect: {
-                    rotate: 30,
                     slideShadows: false,
+                    limitRotation: true,
                 },
                 pagination: {
                     el: '.swiper-pagination2',
                     clickable: true,
-                    dynamicBullets: true,
                 },
                 navigation: {
                     nextEl: '.swiper-button-next2',
                     prevEl: '.swiper-button-prev2',
-                },
-                // Enable lazy loading
-                lazy: {
-                    //  tell swiper to load images before they appear
-                    loadPrevNext: true,
-                    // amount of images to load
-                    loadPrevNextAmount: 5,
                 },
             });
             swiper2.slideTo(index, false, false);
