@@ -2128,7 +2128,7 @@
 
     <!-- Initialize Swiper -->
     <script>
-        var swiper1 = new Swiper('.swiper1', {
+        var swiper1 = new Swiper('.swiper1', {          
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -2159,6 +2159,10 @@
         function openModal(index) {
             document.getElementById("myModal").style.display = "block";
             var swiper2 = new Swiper('.swiper2', {
+                navigation: {
+                    nextEl: '.swiper-button-next2',
+                    prevEl: '.swiper-button-prev2',
+                },
                 preloadImages: false,
                 lazy: true,
                 loop: true,
@@ -2172,11 +2176,7 @@
                 pagination: {
                     el: '.swiper-pagination2',
                     clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next2',
-                    prevEl: '.swiper-button-prev2',
-                },
+                },             
             });
             swiper2.slideTo(index);
             //swiper2.slideToLoop(index);
