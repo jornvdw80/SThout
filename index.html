@@ -697,6 +697,14 @@
         .swiper-block {
             width: 500px;
             height: 300px;
+            background-size: contain;
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            opacity: .8
         }
 
         .slideImg {
@@ -2073,16 +2081,12 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper1 = new Swiper('.swiper1', {
-            //nextButton: ".swiper-button-next1",
-            //prevButton: ".swiper-button-prev1",
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
             loop: true,
-            // Disable preloading of all images
             preloadImages: false,
-            // Enable lazy loading
             lazy: true,
             //autoplay: false,
             //updateOnImagesReady: true,
@@ -2100,16 +2104,6 @@
                 clickable: true,
                 dynamicBullets: true,
             },
-            //navigation: {
-            //    nextEl: '.swiper-button-next1',
-            //    prevEl: '.swiper-button-prev1',
-            //},
-            //onLazyImageReady(s) {
-            //    if (!s.params.autoplay) {
-            //        s.params.autoplay = 2500;
-            //        s.startAutoplay();
-            //    }
-            //},
             autoplay: {
                 delay: 3500,
                 disableOnInteraction: false,
