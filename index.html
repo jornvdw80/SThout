@@ -2239,24 +2239,24 @@
 
                 //swiper2.destroy();
                 var swiper2 = new Swiper('.swiper2', {
-                    navigation: {
-                        nextEl: '.swiper-button-next2',
-                        prevEl: '.swiper-button-prev2',
-                    },
+                    slidesPerView: 1,
+                    spaceBetween: 200,
                     loop: true,
                     preloadImages: false,
                     lazy: true,
-                    slidesPerView: 1,
-                    spaceBetween: 200,
                     effect: 'flip',
                     flipEffect: {
+                        rotate: 30,
                         slideShadows: false,
-                        limitRotation: true,
                     },
                     pagination: {
                         el: '.swiper-pagination2',
                         clickable: true,
                         dynamicBullets: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next2',
+                        prevEl: '.swiper-button-prev2',
                     },
                 });
                 //swiper2.slideTo(index);
