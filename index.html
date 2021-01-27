@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!--ONLINE DEMO @ https://jornvdw80.github.io/SThout/-->
 <html lang="nl-be" xmlns="http://www.w3.org/1999/xhtml" onselectstart='return false;'>
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0" />
@@ -14,12 +14,18 @@
 
     <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_lightbox-->
     <style>
+
+        /*http://jquery.eisbehr.de/lazy/example_basic-usage*/
+        .lazy {
+            visibility: hidden;
+        }
+
         /* The Modal (background) */
         .modal {
             display: none;
             position: fixed;
             z-index: 99999;
-            padding-top:20px;
+            padding-top: 20px;
             left: 0;
             top: 0;
             width: 100%;
@@ -73,7 +79,7 @@
             width: 100%;
             height: 100%;
             margin-left: auto;
-            margin-right: auto;
+            margin-right: auto;            
         }
 
         .swiper-slide {
@@ -92,7 +98,6 @@
             -webkit-box-align: center;
             -ms-flex-align: center;
             -webkit-align-items: center;
-            align-items: center;
         }
 
         .swiper-pagination {
@@ -467,9 +472,9 @@
             color: #000;
         }
 
-            .past article a, .past .newsSubTitle, .future .newsSubTitle {
-                font-size: 18px;
-            }
+        .past article a, .past .newsSubTitle, .future .newsSubTitle {
+            font-size: 18px;
+        }
 
         /*.past .eventInfo p {
             color: #00008b;
@@ -685,18 +690,35 @@
             overflow: hidden;
         }
 
+        .swiper-block {
+            width: 300px;
+            height: 300px;         
+        }
+
         .slideImg {
-            margin: auto;
+            /*margin: auto;
             width: 300px;
             height: 300px;
             left: -600px;
             clip: rect(0 200px 200px 0);
-            border-radius: 24px;
+            border-radius: 24px;*/
             /*margin-top: 20px;*/
-            text-align: center;
+            /*text-align: center;
             vertical-align: top;
             object-fit: scale-down;
-            cursor: pointer;
+            cursor: pointer;*/
+            /*width: 50px;
+            height: 300px;*/
+            width: 300px;
+            height: 300px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
+            border-radius: 20px;
+            opacity: .8
         }
 
         .popupslideImg {
@@ -896,11 +918,11 @@
                 margin-bottom: 50px;
             }
 
-            .slideImg {
+            /*.slideImg {
                 width: 250px;
-                height: 230px;
+                height: 230px;*/
                 /*margin-top: 25px;*/
-            }
+            /*}*/
         }
 
         @media screen and (max-width:500px) {
@@ -1488,31 +1510,25 @@
             <section>
                 <div id="mainslides" class="slideshow-container">
                     <div class="swiper-container swiper1">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="slideImg" onclick="selectProducts('meubel')"
-                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397572-salonTafel-e4da3.png" alt="lamp" title="portfolio | lamp" />
+                        <div class="swiper-wrapper swiper-block">
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397572-salonTafel-e4da3.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')">
+                                <div class="swiper-lazy-preloader"></div>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="slideImg" onclick="selectProducts('verlichting')"
-                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png" alt="lamp" title="portfolio | lamp" />
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('verlichting')">
+                                <div class="swiper-lazy-preloader"></div>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="slideImg" onclick="selectProducts('decoratie')"
-                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397569-dino-d3d94.png" alt="dino" title="portfolio | decoratie" />
+                            <div data-background="https://jornvdw80.github.io/SThout/Images/dino.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('decoratie')" style="height:170px; margin-top:80px">
+                                <div class="swiper-lazy-preloader"></div>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="slideImg" onclick="selectProducts('meubel')"
-                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397568-bijzettafel-6512b.png" alt="bijzettafel" title="portfolio | meubel" />
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397568-bijzettafel-6512b.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')">
+                                <div class="swiper-lazy-preloader"></div>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="slideImg" onclick="selectProducts('decoratie')"
-                                     src="https://jornvdw80.github.io/SThout/Images/Common/Duif.png" alt="duif" title="portfolio | decoratie" />
+                            <div data-background="https://jornvdw80.github.io/SThout/Images/Common/Duif.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('decoratie')" style="height:270px; margin-top:20px">
+                                <div class="swiper-lazy-preloader"></div>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="slideImg" onclick="selectProducts('meubel')"
-                                     src="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" alt="tafel" title="portfolio | meubel" />
-                            </div>-->
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')" style="height:200px; margin-top:80px">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination swiper-pagination1"></div>
@@ -2053,17 +2069,21 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper1 = new Swiper('.swiper1', {
+            loop: true,
+            // Disable preloading of all images
+            preloadImages: true,
+            // Enable lazy loading
+            lazy: true,
+            autoplay: false,
+            updateOnImagesReady: true,
+            lazyLoadingInPrevNextAmount: 0,
+            autoplayDisableOnInteraction: false,
             slidesPerView: 1,
             spaceBetween: 200,
-            loop: true,
             effect: 'flip',
             flipEffect: {
                 rotate: 30,
                 slideShadows: false,
-            },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
             },
             pagination: {
                 el: '.swiper-pagination1',
@@ -2073,6 +2093,16 @@
             navigation: {
                 nextEl: '.swiper-button-next1',
                 prevEl: '.swiper-button-prev1',
+            },
+            onLazyImageReady(s) {
+                if (!s.params.autoplay) {
+                    s.params.autoplay = 2500;
+                    s.startAutoplay();
+                }
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
             },
         });
         var swiper2 = new Swiper('.swiper2', {
