@@ -1526,7 +1526,7 @@
                             <div data-background="https://jornvdw80.github.io/SThout/Images/Common/Duif.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('decoratie')" style="height:270px; margin-top:20px">
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
-                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')" style="height:200px; margin-top:80px">
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')" style="height:200px; margin-top:50px">
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                         </div>
@@ -2069,15 +2069,21 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper1 = new Swiper('.swiper1', {
+            //nextButton: ".swiper-button-next1",
+            //prevButton: ".swiper-button-prev1",
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
             loop: true,
             // Disable preloading of all images
-            preloadImages: true,
+            preloadImages: false,
             // Enable lazy loading
             lazy: true,
-            autoplay: false,
-            updateOnImagesReady: true,
-            lazyLoadingInPrevNextAmount: 0,
-            autoplayDisableOnInteraction: false,
+            //autoplay: false,
+            //updateOnImagesReady: true,
+            //lazyLoadingInPrevNextAmount: 0,
+            //autoplayDisableOnInteraction: true,
             slidesPerView: 1,
             spaceBetween: 200,
             effect: 'flip',
@@ -2090,16 +2096,16 @@
                 clickable: true,
                 dynamicBullets: true,
             },
-            navigation: {
-                nextEl: '.swiper-button-next1',
-                prevEl: '.swiper-button-prev1',
-            },
-            onLazyImageReady(s) {
-                if (!s.params.autoplay) {
-                    s.params.autoplay = 2500;
-                    s.startAutoplay();
-                }
-            },
+            //navigation: {
+            //    nextEl: '.swiper-button-next1',
+            //    prevEl: '.swiper-button-prev1',
+            //},
+            //onLazyImageReady(s) {
+            //    if (!s.params.autoplay) {
+            //        s.params.autoplay = 2500;
+            //        s.startAutoplay();
+            //    }
+            //},
             autoplay: {
                 delay: 3500,
                 disableOnInteraction: false,
