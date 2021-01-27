@@ -12,6 +12,44 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+    <style type="text/css">
+        /*SOURCE: https://smallenvelop.com/display-loading-icon-page-loads-completely/*/
+        /* Paste this css to your style sheet file or under head tag */
+        /* This only works with JavaScript, if it's not present, don't show loader */
+        .no-js #loader {
+            display: none;
+        }
+
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('https://jornvdw80.github.io/SThout/Images/Common/loader.gif') center no-repeat #fff;
+        }
+    </style>
+
+    <!--Loading website-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");
+        });
+    </script>
+
     <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_lightbox-->
     <style>
 
@@ -43,13 +81,13 @@
             margin: auto;
             /*margin-left:5px;*/
             /*margin-right:5px;*/
-            padding:0;
-  /*          padding-left: 5px;
+            padding: 0;
+            /*          padding-left: 5px;
             padding-right: 5px;*/
             width: 100%;
             height: 100%;
             /*background-color: white;*/
-/*            border: 2px solid #d3d3d3;*/
+            /*            border: 2px solid #d3d3d3;*/
             /*border-radius: 20px;*/
             overflow: hidden;
         }
@@ -86,7 +124,7 @@
             width: 100%;
             height: 100%;
             margin-left: auto;
-            margin-right: auto;             
+            margin-right: auto;
         }
 
         .swiper-slide {
@@ -699,7 +737,7 @@
 
         .swiper-block {
             width: 500px;
-            height: 300px;           
+            height: 300px;
         }
 
         .slideImg {
@@ -716,7 +754,7 @@
             cursor: pointer;*/
             /*width: 50px;
             height: 300px;*/
-/*            width: 350px;
+            /*            width: 350px;
             height: 350px;*/
             background-size: contain;
             -webkit-background-size: contain;
@@ -1398,786 +1436,841 @@
 </head>
 
 <!--<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" oncopy='return false' oncut='return false'>-->
-    <body>
-        <header id="header">
-            <section id="navigate" ondblclick="goToActive()">
-                <ul>
-                    <li class="menu">
-                        <img class="menu-icon"
-                             style="width:25px;height:25px;padding:0px;padding-left:5px"
-                             src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png"
-                             alt="upcycling"
-                             title="menu"
-                             onclick="toggleMenuClick()">
-                    </li>
-                    <li>
-                        <ul id="sub-header">
-                            <li class="previous">
-                                <img class="menu-icon-light"
-                                     style="width:15px;height:15px;margin:0px;padding:0px"
-                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
-                                     alt="vorige"
-                                     title="vorige"
-                                     onclick="goToPrevious()">
-                            </li>
-                            <li class="next">
-                                <img class="menu-icon-light"
-                                     style="width:15px;height:15px;margin:0px;padding:0px"
-                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                     alt="volgende"
-                                     title="volgende"
-                                     onclick="goToNext()">
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <nav id="main-nav">
-                <ul class="nav">
-                    <li>
-                        <a id="first" name="#home" class="active" onclick="goTo('home')">
-                            <img id="menu-img-home"
-                                 style="margin-bottom:-5px;width:90px;padding-left:15px"
-                                 src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                                 alt="STHOUT"
-                                 title="SThout">
-                            <!--<img id="menu-img-home"
-                            style="margin-bottom:-5px;width:90px;padding-left:15px"
-                            src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                            alt="STHOUT"
-                            title="SThout">-->
-                        </a>
-                    </li>
-                    <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
-                    <li><a id="page5" name="#news" class="link" onclick="goTo('news')">WERELD</a></li>
-                    <li><a id="page3" name="#portfolio" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
-                    <li><a id="page4" name="#events" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
-                    <li><a id="last" name="#contact" class="link" onclick="goTo('contact')">CONTACT</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <aside>
-            <nav id="aside-nav">
-                <ul class="nav">
-                    <li>
-                        <ul>
-                            <li class="previous">
-                                <img class="menu-icon-light"
-                                     style="width:15px;height:15px;margin:0px;padding:0px"
-                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
-                                     alt="vorige"
-                                     title="vorige"
-                                     onclick="goToPrevious()">
-                            </li>
-                            <li class="next">
-                                <img class="menu-icon-light"
-                                     style="width:15px;height:15px;margin:0px;padding:0px"
-                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                     alt="volgende"
-                                     title="volgende"
-                                     onclick="goToNext()">
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a id="first" name="#home" class="active" onclick="goTo('home')">
-                            <img id="menu-img-home"
-                                 style="margin-bottom:-5px;width:90px;padding-left:15px"
-                                 src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                                 alt="STHOUT"
-                                 title="SThout">
-                            <!--<img id="menu-img-home"
-                            style="margin-bottom:-5px;width:90px;padding-left:15px"
-                            src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                            alt="STHOUT"
-                            title="SThout">-->
-                        </a>
-                    </li>
-                    <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
-                    <li><a id="page5" name="#news" class="link" onclick="goTo('news')">WERELD</a></li>
-                    <li><a id="page3" name="#portfolio" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
-                    <li><a id="page4" name="#events" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
-                    <li><a id="last" name="#contact" class="link" onclick="goTo('contact')">CONTACT</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <div class="content">
-            <section id="home" data-role="page" class="page1">
-                <section>
-                    <a class="link" onclick="goTo('about')">
-                        <img class="logo"
-                             id="front-logo"
+<body>
+    <div class="se-pre-con"></div>
+    <header id="header">
+        <section id="navigate" ondblclick="goToActive()">
+            <ul>
+                <li class="menu">
+                    <img class="menu-icon"
+                         style="width:25px;height:25px;padding:0px;padding-left:5px"
+                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png"
+                         alt="upcycling"
+                         title="menu"
+                         onclick="toggleMenuClick()">
+                </li>
+                <li>
+                    <ul id="sub-header">
+                        <li class="previous">
+                            <img class="menu-icon-light"
+                                 style="width:15px;height:15px;margin:0px;padding:0px"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
+                                 alt="vorige"
+                                 title="vorige"
+                                 onclick="goToPrevious()">
+                        </li>
+                        <li class="next">
+                            <img class="menu-icon-light"
+                                 style="width:15px;height:15px;margin:0px;padding:0px"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                 alt="volgende"
+                                 title="volgende"
+                                 onclick="goToNext()">
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <nav id="main-nav">
+            <ul class="nav">
+                <li>
+                    <a id="first" name="#home" class="active" onclick="goTo('home')">
+                        <img id="menu-img-home"
+                             style="margin-bottom:-5px;width:90px;padding-left:15px"
                              src="https://jornvdw80.github.io/SThout/Images/stHout.png"
                              alt="STHOUT"
                              title="SThout">
-                        <!--<img class="logo"
-                        id="front-logo"
+                        <!--<img id="menu-img-home"
+                        style="margin-bottom:-5px;width:90px;padding-left:15px"
                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
                         alt="STHOUT"
                         title="SThout">-->
                     </a>
-                </section>
-                <!-- Swiper 1-->
-                <section>
-                    <div id="mainslides" class="slideshow-container">
-                        <div class="swiper-container swiper1">
-                            <div class="swiper-wrapper swiper-block">
-                                <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397572-salonTafel-e4da3.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')">
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('verlichting')">
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div data-background="https://jornvdw80.github.io/SThout/Images/dino.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('decoratie')" style="height:170px; margin-top:80px">
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397568-bijzettafel-6512b.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')">
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div data-background="https://jornvdw80.github.io/SThout/Images/Common/Duif.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('decoratie')" style="height:270px; margin-top:20px">
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')" style="height:200px; margin-top:50px">
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
+                </li>
+                <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
+                <li><a id="page5" name="#news" class="link" onclick="goTo('news')">WERELD</a></li>
+                <li><a id="page3" name="#portfolio" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
+                <li><a id="page4" name="#events" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
+                <li><a id="last" name="#contact" class="link" onclick="goTo('contact')">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <nav id="aside-nav">
+            <ul class="nav">
+                <li>
+                    <ul>
+                        <li class="previous">
+                            <img class="menu-icon-light"
+                                 style="width:15px;height:15px;margin:0px;padding:0px"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
+                                 alt="vorige"
+                                 title="vorige"
+                                 onclick="goToPrevious()">
+                        </li>
+                        <li class="next">
+                            <img class="menu-icon-light"
+                                 style="width:15px;height:15px;margin:0px;padding:0px"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                 alt="volgende"
+                                 title="volgende"
+                                 onclick="goToNext()">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a id="first" name="#home" class="active" onclick="goTo('home')">
+                        <img id="menu-img-home"
+                             style="margin-bottom:-5px;width:90px;padding-left:15px"
+                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                             alt="STHOUT"
+                             title="SThout">
+                        <!--<img id="menu-img-home"
+                        style="margin-bottom:-5px;width:90px;padding-left:15px"
+                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                        alt="STHOUT"
+                        title="SThout">-->
+                    </a>
+                </li>
+                <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
+                <li><a id="page5" name="#news" class="link" onclick="goTo('news')">WERELD</a></li>
+                <li><a id="page3" name="#portfolio" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
+                <li><a id="page4" name="#events" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
+                <li><a id="last" name="#contact" class="link" onclick="goTo('contact')">CONTACT</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <section id="home" data-role="page" class="page1">
+            <section>
+                <a class="link" onclick="goTo('about')">
+                    <img class="logo"
+                         id="front-logo"
+                         src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                         alt="STHOUT"
+                         title="SThout">
+                    <!--<img class="logo"
+                    id="front-logo"
+                    src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                    alt="STHOUT"
+                    title="SThout">-->
+                </a>
+            </section>
+            <!-- Swiper 1-->
+            <section>
+                <div id="mainslides" class="slideshow-container">
+                    <div class="swiper-container swiper1">
+                        <div class="swiper-wrapper swiper-block">
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397572-salonTafel-e4da3.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')">
+                                <div class="swiper-lazy-preloader"></div>
                             </div>
-                            <!-- Add Pagination -->
-                            <div class="swiper-pagination swiper-pagination1"></div>
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next swiper-button-next1"></div>
-                            <div class="swiper-button-prev swiper-button-next1"></div>
-                            <article>
-                                <a class="link" onclick="goTo('about')">
-                                    <p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p>
-                                </a>
-                            </article>
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('verlichting')">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div data-background="https://jornvdw80.github.io/SThout/Images/dino.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('decoratie')" style="height:170px; margin-top:80px">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397568-bijzettafel-6512b.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div data-background="https://jornvdw80.github.io/SThout/Images/Common/Duif.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('decoratie')" style="height:270px; margin-top:20px">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" class="swiper-slide swiper-lazy slideImg" onclick="selectProducts('meubel')" style="height:200px; margin-top:50px">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </section>
-
-            <section id="about" class="page2">
-                <h1>
-                    <span>
-                        <a class="link" onclick="goTo('home')">
-                            <img class="logo"
-                                 style="margin:-8px;width:90px;padding-left:15px"
-                                 src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                                 alt="STHOUT"
-                                 title="SThout">
-                            <!--<img class="logo"
-                            style="margin:-8px;width:90px;padding-left:15px"
-                            src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                            alt="STHOUT"
-                            title="SThout">-->
-                        </a>
-                        <strong> | </strong>
-                    </span>
-                    <a class="link" onclick="goTo('about')">UPCYCLING MET EEN VERHAAL</a>
-                </h1>
-                <article>
-                    <p>
-                        Ik geef oude materialen een nieuwe bestemming, met als resultaat "industrieel interieurdesign", waarbij de focus ligt op verlichting.
-                    </p>
-                    <p>
-                        In mijn jarenlange constante zoektocht naar ideaal bronmateriaal schuim ik rommelmarkten, kringwinkels, brocantehuizen of stockverkopen af.  Daar zoek ik naar oude spullen die mij pakken en doen dromen.  Ze moeten interessant genoeg zijn om te kunnen herwerken tot een nieuw functioneel interieurelement, waarbij ik steeds een glimlach probeer uit te lokken. Zo krijg je duurzame, nieuwe "piece-uniques" met een apart verhaal, kortweg
-                        <a class="link" onclick="goTo('portfolio')">SThout</a>.
-                    </p>
-                    <p>
-                        Indien jullie zelf gehecht zijn aan bepaalde elementen met emotionele waarde (uit grootmoeders tijd, industrieel erfstuk,...), herwerk ik deze graag in samenspraak!
-                    </p>
-                    <p>
-                        Aarzel niet om me vrijblijvend te <a class="link" onclick="goTo('contact')">contacteren</a>!
-                    </p>
-                </article>
-            </section>
-
-            <section id="news" class="page4">
-                <h2>
-                    <span>
-                        <a class="link" onclick="goTo('home')">
-                            <img class="logo"
-                                 style="margin:-8px;width:90px;padding-left:15px"
-                                 src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                                 alt="STHOUT"
-                                 title="SThout">
-                        </a>
-                        <strong> | </strong>
-                    </span>
-                    <a class="link" onclick="goTo('news')">IN DE WERELD</a>
-                </h2>
-                <section id="newsBloc" class="btn-group">
-                    <button onclick="hideAllNews()" class="newsBtn" data-toggle="collapse" data-target="#actueel">actueel</button>
-                    <button onclick="hideAllNews()" class="newsBtn" data-toggle="collapse" data-target="#nieuwsarchief">nieuwsarchief</button>
-                </section>
-                <section id="newsSection">
-                    <div id="actueel" class="collapse">
-                        <ul id="newsList">
-                            <li id="2020-09-01" class="hasInfo past" onclick="toggleNewsInfo(this, '#info003')">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/Common/Duif.png')" class="preview"></div>
-                                    <img id="more"
-                                         class="menu-icon-light"
-                                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                    <p class="newsTitle">SThout is geselecteerd als</p>
-                                    <a title="https://www.toerisme-leiestreek.be/nl/leiespots/sthout" class="newsSubTitle" onclick="openUrl(this.title);">
-                                        Leiespot 2020
-                                    </a>
-                                    <div class="eventInfo" id='info003'>
-                                        <p>Dit is wat bijkomende info</p>
-                                        <img class="thumbNewsInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
-                                        <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li id="2020-09-05" class="noInfo past">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="newsTitle">In de gazet</p>
-                                    <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
-                                        SThout Art & Design 2020
-                                    </a>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="nieuwsarchief" class="collapse">
-                        <ul id="newsList">
-                            <li id="2016-11-19" class="noInfo past">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">blabla</p>
-                                    <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
-                                        POPUP
-                                    </a>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </section>
-
-            <section id="portfolio" class="page3">
-                <h2>
-                    <span>
-                        <a class="link" onclick="goTo('home')">
-                            <img class="logo"
-                                 style="margin:-8px;width:90px;padding-left:15px;"
-                                 src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                                 alt="STHOUT"
-                                 title="SThout">
-                            <!--<img class="logo"
-                            style="margin:-8px;width:90px;padding-left:15px;"
-                            src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                            alt="STHOUT"
-                            title="SThout">-->
-                        </a>
-                        <strong> | </strong>
-                    </span>
-                    <a class="link" onclick="goTo('portfolio')">PORTFOLIO</a>
-                </h2>
-                <section id="products" class="btn-group">
-                    <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#meubel">meubel</button>
-                    <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#verlichting">verlichting</button>
-                    <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#decoratie">decoratie</button>
-                    <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#popup">pop-up</button>
-                </section>
-                <section class="thumbs">
-                    <div id="meubel" class="collapse">
-                        <a>
-                            <img title="Nieuw samengesteld gezin" alt="Nieuw samengesteld gezin" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="enlarge" onclick="openModal(1);" />
-                        </a>
-                        <a>
-                            <img title="sthout06" alt="sthout06" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png" class="enlarge" onclick="openModal(2);" />
-                        </a>
-                        <a>
-                            <img title="sthout01" alt="sthout01" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60769-IMG_1188.png" class="enlarge" onclick="openModal(3);" />
-                        </a>
-                        <a>
-                            <img title="sthout04" alt="sthout04" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60770-IMG_1193.png" class="enlarge" onclick="openModal(4);" />
-                        </a>
-                    </div>
-                    <div id="verlichting" class="collapse">
-                        <a>
-                            <img alt="sthout08" title="sthout08" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60772-IMG_1222.png" class="enlarge" onclick="openModal(5);" />
-                        </a>
-                        <a>
-                            <img alt="sthout09" title="sthout09" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60774-IMG_1230.png" class="enlarge" onclick="openModal(6);" />
-                        </a>
-                        <a>
-                            <img alt="sthout10" title="sthout10" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60780-IMG_1260.png" class="enlarge" onclick="openModal(7);" />
-                        </a>
-                        <a>
-                            <img alt="sthout11" title="sthout11" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60775-IMG_1235.png" class="enlarge" onclick="openModal(8);" />
-                        </a>
-                        <a>
-                            <img alt="sthout12" title="sthout12" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60776-IMG_1238.png" class="enlarge" onclick="openModal(9);" />
-                        </a>
-                        <a>
-                            <img alt="sthout13" title="sthout13" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60773-IMG_1226.png" class="enlarge" onclick="openModal(10);" />
-                        </a>
-                        <a>
-                            <img alt="sthout14" title="sthout14" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60782-IMG_1270.png" class="enlarge" onclick="openModal(11);" />
-                        </a>
-                        <a>
-                            <img alt="sthout15" title="sthout15" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60783-IMG_1284.png" class="enlarge" onclick="openModal(12);" />
-                        </a>
-                        <a>
-                            <img alt="sthout16" title="sthout16" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60777-IMG_1247.png" class="enlarge" onclick="openModal(13);" />
-                        </a>
-                        <a>
-                            <img alt="sthout17" title="sthout17" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60784-IMG_1285.png" class="enlarge" onclick="openModal(14);" />
-                        </a>
-                    </div>
-                    <div id="decoratie" class="collapse">
-                        <a>
-                            <img alt="sthout05" title="sthout05" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60781-IMG_1266.png" class="enlarge" onclick="openModal(15);" />
-                        </a>
-                        <a>
-                            <img alt="sthout02" title="sthout02" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60779-IMG_1259.png" class="enlarge" onclick="openModal(16);" />
-                        </a>
-                        <a>
-                            <img alt="sthout07" title="sthout07" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" class="enlarge" onclick="openModal(17);" />
-                        </a>
-                    </div>
-                </section>
-                <!--PopUp-->
-                <div id="myModal" class="modal" onscroll="return false">
-                    <span class="close cursor" onclick="closeModal()">&times;</span>
-                    <div class="modal-content">
-                        <!-- Swiper 2-->
-                        <section>
-                            <div id="popupslides" class="slideshow-popup-container">
-                                <div class="swiper-container swiper2">
-                                    <div class="swiper-wrapper">
-                                        <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                            <div class="swiper-lazy-preloader"></div>
-                                        </div>
-                                        <!--<div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img style="background-image: url('')" class="popupslideImg" />
-                                        </div>-->
-                                    </div>
-                                    <!-- Add Pagination -->
-                                    <div class="swiper-pagination swiper-pagination2"></div>
-                                    <!-- Add Arrows -->
-                                    <div class="swiper-button-next swiper-button-next2"></div>
-                                    <div class="swiper-button-prev swiper-button-prev2"></div>
-                                </div>
-                            </div>
-                        </section>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination swiper-pagination1"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next swiper-button-next1"></div>
+                        <div class="swiper-button-prev swiper-button-next1"></div>
+                        <article>
+                            <a class="link" onclick="goTo('about')">
+                                <p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p>
+                            </a>
+                        </article>
                     </div>
                 </div>
             </section>
+        </section>
 
-            <section id="events" class="page4">
-                <h2>
-                    <span>
-                        <a class="link" onclick="goTo('home')">
-                            <img class="logo"
-                                 style="margin:-8px;width:90px;padding-left:15px"
-                                 src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                                 alt="STHOUT"
-                                 title="SThout">
-                            <!--<img class="logo"
-                            style="margin:-8px;width:90px;padding-left:15px"
-                            src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                            alt="STHOUT"
-                            title="SThout">-->
-                        </a>
-                        <strong> | </strong>
-                    </span>
-                    <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
-                </h2>
-                <section id="years" class="btn-group">
-                    <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#recent">recent</button>
-                    <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#archief">archief</button>
-                </section>
-                <section id="eventsSection">
-                    <div id="recent" class="collapse">
-                        <ul id="eventsList">
-                            <li id="2020-10-07" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png') " class="preview"></div>
-                                    <p class="eventTitle">7 oktober 2020 (fictief)</p>
-                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Mars</a>
-                                </article>
-                            </li>
-                            <li id="2020-08-07" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">7 augustus 2020 (fictief)</p>
-                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Timboektoe</a>
-                                </article>
-                            </li>
-                            <li id="2020-06-07" class="hasInfo" onclick="toggleEventsInfo(this, '#info002')">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/Common/Duif.png')" class="preview"></div>
-                                    <img id="more"
-                                         class="menu-icon-light"
-                                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                    <p class="eventTitle">7 juni 2020 (fictief)</p>
-                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Antwerpen</a>
-                                    <div class="eventInfo" id='info002'>
-                                        <p>Dit is wat bijkomende info</p>
-                                        <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
-                                        <img class="thumbEventInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
-                                        <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li id="2020-01-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info001')">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <img id="more"
-                                         class="menu-icon-light"
-                                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                    <p class="eventTitle">19 januari 2020 (fictief)</p>
-                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event abc | Zwevezele</a>
-                                    <div class="eventInfo" id='info001'>
-                                        <img class="thumbEventInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60772-IMG_1222.png" />
-                                        <p>Dit is wat bijkomende info</p>
-                                        <p>kjvghsdkjsdbv;dfbvk:vn: dfvbnsdf;bnsdf; vjkdfnkvbdfn</p>
-                                    </div>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="archief" class="collapse">
-                        <ul id="eventsList">
-                            <li id="2016-11-19" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">3 en 4 december 2016</p>
-                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">Braderie de l'Art | Roubaix</a>
-                                </article>
-                            </li>
-                            <li id="2016-11-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info000')">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <img id="more"
-                                         class="menu-icon-light"
-                                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                    <p class="eventTitle">19 en 20 november 2016</p>
-                                    <a title="https://www.facebook.com/events/1815157395384830/" onclick="openUrl(this.title);">Maker City | Gent</a>
-                                    <div class="eventInfo" id='info000'>
-                                        <p>Dit is wat bijkomende info</p>
-                                        <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li id="2016-05-13" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">13 tot 15 mei 2016</p>
-                                    <a title="https://www.facebook.com/events/754602384640862/" onclick="openUrl(this.title);">Fashion & Art Event | Gent </a>
-                                </article>
-                            </li>
-                            <li id="2016-03-17" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">17 maart 2016</p>
-                                    <a title="http://www.straatwoordenaar.be/" onclick="openUrl(this.title);">Eco-design | Gent</a>
-                                </article>
-                            </li>
-                            <li id="2016-03-13" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">13 maart 2016</p>
-                                    <a title="https://www.facebook.com/recreationhall" onclick="openUrl(this.title);">Re-Creation Hall Market | Brussel</a>
-                                </article>
-                            </li>
-                            <li id="2016-02-14" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">13 & 14 februari 2016</p>
-                                    <a title="https://www.facebook.com/events/1682977095316523/" onclick="openUrl(this.title);">Wild Jo's Market | Antwerpen</a>
-                                </article>
-                            </li>
-                            <li id="2016-02-06" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">6 februari 2016</p>
-                                    <a title="https://www.facebook.com/Iederszennemeug/?fref=ts" onclick="openUrl(this.title);">Ieders Zenne Meug | Antwerpen</a>
-                                </article>
-                            </li>
-                            <li id="2016-01-31" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">januari 2016</p>
-                                    <a title="https://www.facebook.com/EcomooseBarLokeren/" onclick="openUrl(this.title);">Ecomoose | Lokeren</a>
-                                </article>
-                            </li>
-                            <li id="2015-12-31" class="noInfo">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <p class="eventTitle">december 2015</p>
-                                    <a title="https://www.facebook.com/media/set/?set=a.738764329600965.1073741832.709516979192367&type=3" onclick="openUrl(this.title);">Wij gaan lokaal | Zele</a>
-                                </article>
-                            </li>
-                            <li id="2015-11-29" class="hasInfo" onclick="toggleEventsInfo(this, '#info012')">
-                                <article>
-                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
-                                    <img id="more"
-                                         class="menu-icon-light"
-                                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                         alt="..."
-                                         title="meer...">
-                                    <p class="eventTitle">29 november 2015</p>
-                                    <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Brugge</a>
-                                    <div class="eventInfo" id='info012'>
-                                        <p>Dit is wat bijkomende info</p>
-                                        <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
-                                    </div>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+        <section id="about" class="page2">
+            <h1>
+                <span>
+                    <a class="link" onclick="goTo('home')">
+                        <img class="logo"
+                             style="margin:-8px;width:90px;padding-left:15px"
+                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                             alt="STHOUT"
+                             title="SThout">
+                        <!--<img class="logo"
+                        style="margin:-8px;width:90px;padding-left:15px"
+                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                        alt="STHOUT"
+                        title="SThout">-->
+                    </a>
+                    <strong> | </strong>
+                </span>
+                <a class="link" onclick="goTo('about')">UPCYCLING MET EEN VERHAAL</a>
+            </h1>
+            <article>
+                <p>
+                    Ik geef oude materialen een nieuwe bestemming, met als resultaat "industrieel interieurdesign", waarbij de focus ligt op verlichting.
+                </p>
+                <p>
+                    In mijn jarenlange constante zoektocht naar ideaal bronmateriaal schuim ik rommelmarkten, kringwinkels, brocantehuizen of stockverkopen af.  Daar zoek ik naar oude spullen die mij pakken en doen dromen.  Ze moeten interessant genoeg zijn om te kunnen herwerken tot een nieuw functioneel interieurelement, waarbij ik steeds een glimlach probeer uit te lokken. Zo krijg je duurzame, nieuwe "piece-uniques" met een apart verhaal, kortweg
+                    <a class="link" onclick="goTo('portfolio')">SThout</a>.
+                </p>
+                <p>
+                    Indien jullie zelf gehecht zijn aan bepaalde elementen met emotionele waarde (uit grootmoeders tijd, industrieel erfstuk,...), herwerk ik deze graag in samenspraak!
+                </p>
+                <p>
+                    Aarzel niet om me vrijblijvend te <a class="link" onclick="goTo('contact')">contacteren</a>!
+                </p>
+            </article>
+        </section>
+
+        <section id="news" class="page4">
+            <h2>
+                <span>
+                    <a class="link" onclick="goTo('home')">
+                        <img class="logo"
+                             style="margin:-8px;width:90px;padding-left:15px"
+                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                             alt="STHOUT"
+                             title="SThout">
+                    </a>
+                    <strong> | </strong>
+                </span>
+                <a class="link" onclick="goTo('news')">IN DE WERELD</a>
+            </h2>
+            <section id="newsBloc" class="btn-group">
+                <button onclick="hideAllNews()" class="newsBtn" data-toggle="collapse" data-target="#actueel">actueel</button>
+                <button onclick="hideAllNews()" class="newsBtn" data-toggle="collapse" data-target="#nieuwsarchief">nieuwsarchief</button>
             </section>
-
-            <section id="contact" class="page5">
-                <h2>
-                    <span>
-                        <a class="link" onclick="goTo('home')">
-                            <img class="logo"
-                                 style="margin:-8px;width:90px;padding-left:15px"
-                                 src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                                 alt="STHOUT"
-                                 title="SThout">
-                            <!--<img class="logo"
-                            style="margin:-8px;width:90px;padding-left:15px"
-                            src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                            alt="STHOUT"
-                            title="SThout">-->
-                        </a>
-                        <strong> | </strong>
-                    </span>
-                    <a class="link" onclick="goTo('contact')">CONTACT</a>
-                </h2>
-                <section id="link">
-                    <ul class="contact">
-                        <li>
-                            <a class="link" title='mailto:info@sthout.be' onclick="openUrl(this.title);" alt="mail">info@sthout.be</a>
+            <section id="newsSection">
+                <div id="actueel" class="collapse">
+                    <ul id="newsList">
+                        <li id="2020-09-01" class="hasInfo past" onclick="toggleNewsInfo(this, '#info003')">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/Common/Duif.png')" class="preview"></div>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
+                                <p class="newsTitle">SThout is geselecteerd als</p>
+                                <a title="https://www.toerisme-leiestreek.be/nl/leiespots/sthout" class="newsSubTitle" onclick="openUrl(this.title);">
+                                    Leiespot 2020
+                                </a>
+                                <div class="eventInfo" id='info003'>
+                                    <p>Dit is wat bijkomende info</p>
+                                    <img class="thumbNewsInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
+                                    <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                </div>
+                            </article>
                         </li>
-                        <li>
-                            <a class="link" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);">
-                                <img class="menu-icon"
-                                     style="width:35px;height:35px;margin:0px;padding:5px"
-                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
-                                     alt="sthout | facebook"
-                                     title="sthout | facebook">
-                            </a>
+                        <li id="2020-09-05" class="noInfo past">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="newsTitle">In de gazet</p>
+                                <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
+                                    SThout Art & Design 2020
+                                </a>
+                            </article>
                         </li>
                     </ul>
-                </section>
+                </div>
+                <div id="nieuwsarchief" class="collapse">
+                    <ul id="newsList">
+                        <li id="2016-11-19" class="noInfo past">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">blabla</p>
+                                <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
+                                    POPUP
+                                </a>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
             </section>
-        </div>
+        </section>
 
+        <section id="portfolio" class="page3">
+            <h2>
+                <span>
+                    <a class="link" onclick="goTo('home')">
+                        <img class="logo"
+                             style="margin:-8px;width:90px;padding-left:15px;"
+                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                             alt="STHOUT"
+                             title="SThout">
+                        <!--<img class="logo"
+                        style="margin:-8px;width:90px;padding-left:15px;"
+                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                        alt="STHOUT"
+                        title="SThout">-->
+                    </a>
+                    <strong> | </strong>
+                </span>
+                <a class="link" onclick="goTo('portfolio')">PORTFOLIO</a>
+            </h2>
+            <section id="products" class="btn-group">
+                <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#meubel">meubel</button>
+                <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#verlichting">verlichting</button>
+                <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#decoratie">decoratie</button>
+                <button onclick="hideAllProducts()" class="productBtn" data-toggle="collapse" data-target="#popup">pop-up</button>
+            </section>
+            <section class="thumbs">
+                <div id="meubel" class="collapse">
+                    <a>
+                        <img title="Nieuw samengesteld gezin" alt="Nieuw samengesteld gezin" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="enlarge" onclick="openModal(1);" />
+                    </a>
+                    <a>
+                        <img title="sthout06" alt="sthout06" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png" class="enlarge" onclick="openModal(2);" />
+                    </a>
+                    <a>
+                        <img title="sthout01" alt="sthout01" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60769-IMG_1188.png" class="enlarge" onclick="openModal(3);" />
+                    </a>
+                    <a>
+                        <img title="sthout04" alt="sthout04" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60770-IMG_1193.png" class="enlarge" onclick="openModal(4);" />
+                    </a>
+                </div>
+                <div id="verlichting" class="collapse">
+                    <a>
+                        <img alt="sthout08" title="sthout08" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60772-IMG_1222.png" class="enlarge" onclick="openModal(5);" />
+                    </a>
+                    <a>
+                        <img alt="sthout09" title="sthout09" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60774-IMG_1230.png" class="enlarge" onclick="openModal(6);" />
+                    </a>
+                    <a>
+                        <img alt="sthout10" title="sthout10" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60780-IMG_1260.png" class="enlarge" onclick="openModal(7);" />
+                    </a>
+                    <a>
+                        <img alt="sthout11" title="sthout11" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60775-IMG_1235.png" class="enlarge" onclick="openModal(8);" />
+                    </a>
+                    <a>
+                        <img alt="sthout12" title="sthout12" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60776-IMG_1238.png" class="enlarge" onclick="openModal(9);" />
+                    </a>
+                    <a>
+                        <img alt="sthout13" title="sthout13" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60773-IMG_1226.png" class="enlarge" onclick="openModal(10);" />
+                    </a>
+                    <a>
+                        <img alt="sthout14" title="sthout14" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60782-IMG_1270.png" class="enlarge" onclick="openModal(11);" />
+                    </a>
+                    <a>
+                        <img alt="sthout15" title="sthout15" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60783-IMG_1284.png" class="enlarge" onclick="openModal(12);" />
+                    </a>
+                    <a>
+                        <img alt="sthout16" title="sthout16" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60777-IMG_1247.png" class="enlarge" onclick="openModal(13);" />
+                    </a>
+                    <a>
+                        <img alt="sthout17" title="sthout17" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60784-IMG_1285.png" class="enlarge" onclick="openModal(14);" />
+                    </a>
+                </div>
+                <div id="decoratie" class="collapse">
+                    <a>
+                        <img alt="sthout05" title="sthout05" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60781-IMG_1266.png" class="enlarge" onclick="openModal(15);" />
+                    </a>
+                    <a>
+                        <img alt="sthout02" title="sthout02" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60779-IMG_1259.png" class="enlarge" onclick="openModal(16);" />
+                    </a>
+                    <a>
+                        <img alt="sthout07" title="sthout07" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" class="enlarge" onclick="openModal(17);" />
+                    </a>
+                </div>
+            </section>
+            <!--PopUp-->
+            <div id="myModal" class="modal" onscroll="return false">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <!-- Swiper 2-->
+                    <section>
+                        <div id="popupslides" class="slideshow-popup-container">
+                            <div class="swiper-container swiper2">
+                                <div class="swiper-wrapper">
+                                    <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <!--<div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img style="background-image: url('')" class="popupslideImg" />
+                                    </div>-->
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination swiper-pagination2"></div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next swiper-button-next2"></div>
+                                <div class="swiper-button-prev swiper-button-prev2"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
 
-        <script type="text/javascript">
-            function isIE() {
-                ua = navigator.userAgent;
-                /* MSIE used to detect old browsers and Trident used to newer ones*/
-                var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-                return is_ie;
+        <section id="events" class="page4">
+            <h2>
+                <span>
+                    <a class="link" onclick="goTo('home')">
+                        <img class="logo"
+                             style="margin:-8px;width:90px;padding-left:15px"
+                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                             alt="STHOUT"
+                             title="SThout">
+                        <!--<img class="logo"
+                        style="margin:-8px;width:90px;padding-left:15px"
+                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                        alt="STHOUT"
+                        title="SThout">-->
+                    </a>
+                    <strong> | </strong>
+                </span>
+                <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
+            </h2>
+            <section id="years" class="btn-group">
+                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#recent">recent</button>
+                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#archief">archief</button>
+            </section>
+            <section id="eventsSection">
+                <div id="recent" class="collapse">
+                    <ul id="eventsList">
+                        <li id="2020-10-07" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png') " class="preview"></div>
+                                <p class="eventTitle">7 oktober 2020 (fictief)</p>
+                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Mars</a>
+                            </article>
+                        </li>
+                        <li id="2020-08-07" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">7 augustus 2020 (fictief)</p>
+                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Timboektoe</a>
+                            </article>
+                        </li>
+                        <li id="2020-06-07" class="hasInfo" onclick="toggleEventsInfo(this, '#info002')">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/Common/Duif.png')" class="preview"></div>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
+                                <p class="eventTitle">7 juni 2020 (fictief)</p>
+                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Antwerpen</a>
+                                <div class="eventInfo" id='info002'>
+                                    <p>Dit is wat bijkomende info</p>
+                                    <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                    <img class="thumbEventInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60778-IMG_1248.png" />
+                                    <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li id="2020-01-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info001')">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
+                                <p class="eventTitle">19 januari 2020 (fictief)</p>
+                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event abc | Zwevezele</a>
+                                <div class="eventInfo" id='info001'>
+                                    <img class="thumbEventInfo" src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60772-IMG_1222.png" />
+                                    <p>Dit is wat bijkomende info</p>
+                                    <p>kjvghsdkjsdbv;dfbvk:vn: dfvbnsdf;bnsdf; vjkdfnkvbdfn</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+                <div id="archief" class="collapse">
+                    <ul id="eventsList">
+                        <li id="2016-11-19" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">3 en 4 december 2016</p>
+                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">Braderie de l'Art | Roubaix</a>
+                            </article>
+                        </li>
+                        <li id="2016-11-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info000')">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
+                                <p class="eventTitle">19 en 20 november 2016</p>
+                                <a title="https://www.facebook.com/events/1815157395384830/" onclick="openUrl(this.title);">Maker City | Gent</a>
+                                <div class="eventInfo" id='info000'>
+                                    <p>Dit is wat bijkomende info</p>
+                                    <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li id="2016-05-13" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">13 tot 15 mei 2016</p>
+                                <a title="https://www.facebook.com/events/754602384640862/" onclick="openUrl(this.title);">Fashion & Art Event | Gent </a>
+                            </article>
+                        </li>
+                        <li id="2016-03-17" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">17 maart 2016</p>
+                                <a title="http://www.straatwoordenaar.be/" onclick="openUrl(this.title);">Eco-design | Gent</a>
+                            </article>
+                        </li>
+                        <li id="2016-03-13" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">13 maart 2016</p>
+                                <a title="https://www.facebook.com/recreationhall" onclick="openUrl(this.title);">Re-Creation Hall Market | Brussel</a>
+                            </article>
+                        </li>
+                        <li id="2016-02-14" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">13 & 14 februari 2016</p>
+                                <a title="https://www.facebook.com/events/1682977095316523/" onclick="openUrl(this.title);">Wild Jo's Market | Antwerpen</a>
+                            </article>
+                        </li>
+                        <li id="2016-02-06" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">6 februari 2016</p>
+                                <a title="https://www.facebook.com/Iederszennemeug/?fref=ts" onclick="openUrl(this.title);">Ieders Zenne Meug | Antwerpen</a>
+                            </article>
+                        </li>
+                        <li id="2016-01-31" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">januari 2016</p>
+                                <a title="https://www.facebook.com/EcomooseBarLokeren/" onclick="openUrl(this.title);">Ecomoose | Lokeren</a>
+                            </article>
+                        </li>
+                        <li id="2015-12-31" class="noInfo">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <p class="eventTitle">december 2015</p>
+                                <a title="https://www.facebook.com/media/set/?set=a.738764329600965.1073741832.709516979192367&type=3" onclick="openUrl(this.title);">Wij gaan lokaal | Zele</a>
+                            </article>
+                        </li>
+                        <li id="2015-11-29" class="hasInfo" onclick="toggleEventsInfo(this, '#info012')">
+                            <article>
+                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png')" class="preview"></div>
+                                <img id="more"
+                                     class="menu-icon-light"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
+                                     alt="..."
+                                     title="meer...">
+                                <p class="eventTitle">29 november 2015</p>
+                                <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Brugge</a>
+                                <div class="eventInfo" id='info012'>
+                                    <p>Dit is wat bijkomende info</p>
+                                    <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+
+        <section id="contact" class="page5">
+            <h2>
+                <span>
+                    <a class="link" onclick="goTo('home')">
+                        <img class="logo"
+                             style="margin:-8px;width:90px;padding-left:15px"
+                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
+                             alt="STHOUT"
+                             title="SThout">
+                        <!--<img class="logo"
+                        style="margin:-8px;width:90px;padding-left:15px"
+                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
+                        alt="STHOUT"
+                        title="SThout">-->
+                    </a>
+                    <strong> | </strong>
+                </span>
+                <a class="link" onclick="goTo('contact')">CONTACT</a>
+            </h2>
+            <section id="link">
+                <ul class="contact">
+                    <li>
+                        <a class="link" title='mailto:info@sthout.be' onclick="openUrl(this.title);" alt="mail">info@sthout.be</a>
+                    </li>
+                    <li>
+                        <a class="link" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);">
+                            <img class="menu-icon"
+                                 style="width:35px;height:35px;margin:0px;padding:5px"
+                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
+                                 alt="sthout | facebook"
+                                 title="sthout | facebook">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </div>
+
+    <script type="text/javascript">
+        function isIE() {
+            ua = navigator.userAgent;
+            /* MSIE used to detect old browsers and Trident used to newer ones*/
+            var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+            return is_ie;
+        }
+        /* Create an alert to show if the browser is IE or not */
+        if (isIE()) {
+            alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak gebruik van een recentere browser!');
+        }
+    </script>
+
+    <script>
+        function openUrl(url) {
+            return !window.open(url);
+        }
+    </script>
+
+    <!-- Background image = NOT USED -->
+    <script>
+        function easy_background(selector, a1, a2, b1, b2, c1, c2, d1, d2, e1, e2) {
+            function empty_var(x) { if (x) { return x; } else { return 0; } }
+            function empty_img(x) { if (x) { return "<img src='" + x + "'>"; } else { return ""; } }
+            var p = document.createElement("div"); p.innerHTML = " "; p.classList.add("easy_slider"); document.body.insertBefore(p, document.body.firstChild); document.querySelector(".easy_slider").innerHTML = empty_img(a2) + empty_img(b2) + empty_img(c2) + empty_img(d2) + empty_img(e2); document.querySelector(".easy_slider").style.display = "none"; tot_time = empty_var(a1) + empty_var(b1) + empty_var(c1) + empty_var(d1) + empty_var(e1); console.log(tot_time); function slider() {
+                if (a1) { setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + a2 + "')"; }, 0000); }
+                if (b1) { var delay = a1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + b2 + "')"; }, delay); }
+                if (c1) { var delay = a1 + b1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + c2 + "')"; }, delay); }
+                if (d1) { var delay = a1 + b1 + c1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + d2 + "')"; }, delay); }
+                if (e1) { var delay = a1 + b1 + c1 + d1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + e2 + "')"; }, delay); }
+            }; slider(); setInterval(function () { slider(); console.log(tot_time); }, tot_time);
+        }
+
+        //easy_background("body", 2000, "images/Kader.jpg", 2000, "images/bijzettafel Achtergrond.png");
+    </script>
+
+    <script>
+        document.onkeydown = function (evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                //alert('Esc key pressed.');
+                closeModal();
             }
-            /* Create an alert to show if the browser is IE or not */
-            if (isIE()) {
-                alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak gebruik van een recentere browser!');
-            }
-        </script>
+        };
+    </script>
 
-        <script>
-            function openUrl(url) {
-                return !window.open(url);
-            }
-        </script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-        <!-- Background image = NOT USED -->
-        <script>
-            function easy_background(selector, a1, a2, b1, b2, c1, c2, d1, d2, e1, e2) {
-                function empty_var(x) { if (x) { return x; } else { return 0; } }
-                function empty_img(x) { if (x) { return "<img src='" + x + "'>"; } else { return ""; } }
-                var p = document.createElement("div"); p.innerHTML = " "; p.classList.add("easy_slider"); document.body.insertBefore(p, document.body.firstChild); document.querySelector(".easy_slider").innerHTML = empty_img(a2) + empty_img(b2) + empty_img(c2) + empty_img(d2) + empty_img(e2); document.querySelector(".easy_slider").style.display = "none"; tot_time = empty_var(a1) + empty_var(b1) + empty_var(c1) + empty_var(d1) + empty_var(e1); console.log(tot_time); function slider() {
-                    if (a1) { setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + a2 + "')"; }, 0000); }
-                    if (b1) { var delay = a1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + b2 + "')"; }, delay); }
-                    if (c1) { var delay = a1 + b1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + c2 + "')"; }, delay); }
-                    if (d1) { var delay = a1 + b1 + c1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + d2 + "')"; }, delay); }
-                    if (e1) { var delay = a1 + b1 + c1 + d1; setTimeout(function () { document.querySelector(selector).style.backgroundImage = "url('" + e2 + "')"; }, delay); }
-                }; slider(); setInterval(function () { slider(); console.log(tot_time); }, tot_time);
-            }
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper1 = new Swiper('.swiper1', {
+            slidesPerView: 1,
+            spaceBetween: 200,
+            loop: true,
+            preloadImages: false,
+            lazy: true,
+            effect: 'flip',
+            flipEffect: {
+                rotate: 30,
+                slideShadows: false,
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination1',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
 
-            //easy_background("body", 2000, "images/Kader.jpg", 2000, "images/bijzettafel Achtergrond.png");
-        </script>
+        var swiper2 = new Swiper('.swiper2', {
+            slidesPerView: 1,
+            spaceBetween: 200,
+            loop: true,
+            preloadImages: false,
+            lazy: true,
+            effect: 'flip',
+            flipEffect: {
+                rotate: 30,
+                slideShadows: false,
+            },
+            pagination: {
+                el: '.swiper-pagination2',
+                clickable: true,
+                dynamicBullets: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next2',
+                prevEl: '.swiper-button-prev2',
+            },
+        });
 
-        <script>
-            document.onkeydown = function (evt) {
-                evt = evt || window.event;
-                if (evt.keyCode == 27) {
-                    //alert('Esc key pressed.');
-                    closeModal();
-                }
-            };
-        </script>
+        //var swiper2 = new Swiper('.swiper2', {
+        //    slidesPerView: 1,
+        //    spaceBetween: 200,
+        //    loop: true,
+        //    effect: 'flip',
+        //    flipEffect: {
+        //        rotate: 30,
+        //        slideShadows: false,
+        //    },
+        //    pagination: {
+        //        el: '.swiper-pagination2',
+        //        clickable: true,
+        //        dynamicBullets: true,
+        //    },
+        //    navigation: {
+        //        nextEl: '.swiper-button-next2',
+        //        prevEl: '.swiper-button-prev2',
+        //    },
+        //    // Enable lazy loading
+        //    lazy: {
+        //        //  tell swiper to load images before they appear
+        //        loadPrevNext: true,
+        //        // amount of images to load
+        //        loadPrevNextAmount: 5,
+        //    },
+        //});
 
-        <!-- Swiper JS -->
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        //var swiper2 = new Swiper('.swiper2', {
+        //    navigation: {
+        //        nextEl: '.swiper-button-next2',
+        //        prevEl: '.swiper-button-prev2',
+        //    },
+        //    preloadImages: false,
+        //    lazy: true,
+        //    loop: false,
+        //    slidesPerView: 1,
+        //    //spaceBetween: 200,
+        //    effect: 'flip',
+        //    flipEffect: {
+        //        slideShadows: false,
+        //        limitRotation: true,
+        //    },
+        //    pagination: {
+        //        el: '.swiper-pagination2',
+        //        clickable: true,
+        //    },
+        //});
+        //swiper2.destroy();
+    </script>
 
-        <!-- Initialize Swiper -->
-        <script>
-            var swiper1 = new Swiper('.swiper1', {
-                slidesPerView: 1,
-                spaceBetween: 200,
-                loop: true,
-                preloadImages: false,
-                lazy: true,
-                effect: 'flip',
-                flipEffect: {
-                    rotate: 30,
-                    slideShadows: false,
-                },
-                autoplay: {
-                    delay: 3500,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination1',
-                    clickable: true,
-                    dynamicBullets: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
+    <script>
+        function openModal(index) {
+            document.getElementById("myModal").style.display = "block";
 
-            var swiper2 = new Swiper('.swiper2', {
-                slidesPerView: 1,
-                spaceBetween: 200,
-                loop: true,
-                preloadImages: false,
-                lazy: true,
-                effect: 'flip',
-                flipEffect: {
-                    rotate: 30,
-                    slideShadows: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination2',
-                    clickable: true,
-                    dynamicBullets: false,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next2',
-                    prevEl: '.swiper-button-prev2',
-                },
-            });
-
-            //var swiper2 = new Swiper('.swiper2', {
+            //swiper2.destroy();
+            //swiper2 = new Swiper('.swiper2', {
             //    slidesPerView: 1,
             //    spaceBetween: 200,
             //    loop: true,
@@ -2203,370 +2296,315 @@
             //        loadPrevNextAmount: 5,
             //    },
             //});
+            //swiper2.slideTo(index, false, false);
 
-            //var swiper2 = new Swiper('.swiper2', {
-            //    navigation: {
-            //        nextEl: '.swiper-button-next2',
-            //        prevEl: '.swiper-button-prev2',
-            //    },
-            //    preloadImages: false,
-            //    lazy: true,
-            //    loop: false,
-            //    slidesPerView: 1,
-            //    //spaceBetween: 200,
-            //    effect: 'flip',
-            //    flipEffect: {
-            //        slideShadows: false,
-            //        limitRotation: true,
-            //    },
-            //    pagination: {
-            //        el: '.swiper-pagination2',
-            //        clickable: true,
-            //    },
-            //});
+            swiper2.destroy(false, false); //important!!!!
+            swiper2 = new Swiper('.swiper2', {
+                slidesPerView: 1,
+                spaceBetween: 200,
+                loop: true,
+                preloadImages: false,
+                lazy: true,
+                effect: 'flip',
+                flipEffect: {
+                    rotate: 30,
+                    slideShadows: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination2',
+                    clickable: true,
+                    dynamicBullets: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next2',
+                    prevEl: '.swiper-button-prev2',
+                },
+            });
+            //swiper2.slideTo(index);
+            swiper2.slideToLoop(index - 1);
+        }
+
+        function closeModal() {
+            goTo('portfolio');
+            document.getElementById("myModal").style.display = "none";
+            goTo('portfolio');
             //swiper2.destroy();
-        </script>
+        }
+    </script>
 
-        <script>
-            function openModal(index) {
-                document.getElementById("myModal").style.display = "block";
+    <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
+    <!--Automatic Slideshow-->
+    <script>
+        var timeout;
+        var slideIndex = 0;
+        showSlides();
 
-                //swiper2.destroy();
-                //swiper2 = new Swiper('.swiper2', {
-                //    slidesPerView: 1,
-                //    spaceBetween: 200,
-                //    loop: true,
-                //    effect: 'flip',
-                //    flipEffect: {
-                //        rotate: 30,
-                //        slideShadows: false,
-                //    },
-                //    pagination: {
-                //        el: '.swiper-pagination2',
-                //        clickable: true,
-                //        dynamicBullets: true,
-                //    },
-                //    navigation: {
-                //        nextEl: '.swiper-button-next2',
-                //        prevEl: '.swiper-button-prev2',
-                //    },
-                //    // Enable lazy loading
-                //    lazy: {
-                //        //  tell swiper to load images before they appear
-                //        loadPrevNext: true,
-                //        // amount of images to load
-                //        loadPrevNextAmount: 5,
-                //    },
-                //});
-                //swiper2.slideTo(index, false, false);
-
-                swiper2.destroy(false, false); //important!!!!
-                swiper2 = new Swiper('.swiper2', {
-                    slidesPerView: 1,
-                    spaceBetween: 200,
-                    loop: true,
-                    preloadImages: false,
-                    lazy: true,
-                    effect: 'flip',
-                    flipEffect: {
-                        rotate: 30,
-                        slideShadows: false,
-                    },
-                    pagination: {
-                        el: '.swiper-pagination2',
-                        clickable: true,
-                        dynamicBullets: false,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next2',
-                        prevEl: '.swiper-button-prev2',
-                    },
-                });
-                //swiper2.slideTo(index);
-                swiper2.slideToLoop(index - 1);
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
-
-            function closeModal() {
-                goTo('portfolio');
-                document.getElementById("myModal").style.display = "none";
-                goTo('portfolio');
-                //swiper2.destroy();
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            if (slideIndex < 1) { slideIndex = slides.length }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" current", "");
             }
-        </script>
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " current";
+            timeout = setTimeout(showSlides, 4500);
+        }
 
-        <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
-        <!--Automatic Slideshow-->
-        <script>
-            var timeout;
-            var slideIndex = 0;
+        function selectWithIndicator(index) {
+            clearTimeout(timeout);
+            slideIndex = index;
             showSlides();
+        }
 
-            function showSlides() {
-                var i;
-                var slides = document.getElementsByClassName("slides");
-                var dots = document.getElementsByClassName("dot");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) { slideIndex = 1; }
-                if (slideIndex < 1) { slideIndex = slides.length }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" current", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " current";
-                timeout = setTimeout(showSlides, 4500);
+        function selectWithArrow(index) {
+            clearTimeout(timeout);
+            slideIndex += (index - 1);
+            showSlides();
+        }
+    </script>
+
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("years");
+        var btns = header.getElementsByClassName("yearBtn");
+        for (var i = 0; i < btns.length; i++) {
+            var item = btns[i];
+            var currentYear = new Date().getFullYear();
+            var currentItem = new Date(item.innerHTML).getFullYear();
+            if (currentItem == currentYear || i == 0) {
+                item.className += " activeYearBtn";
+                document.getElementById(item.innerHTML).className = "collapse in";
             }
+            item.addEventListener("click", function () {
+                var current = document.getElementsByClassName("activeYearBtn");
+                current[0].className = current[0].className.replace(" activeYearBtn", "");
+                this.className += " activeYearBtn";
+            });
+        }
 
-            function selectWithIndicator(index) {
-                clearTimeout(timeout);
-                slideIndex = index;
-                showSlides();
+        var header = document.getElementById("products");
+        var btns = header.getElementsByClassName("productBtn");
+        for (var i = 0; i < btns.length; i++) {
+            var item = btns[i];
+            if (i == 0) {
+                item.className += " activeProductBtn";
+                document.getElementById(item.innerHTML).className = "collapse in";
             }
+            item.addEventListener("click", function () {
+                var current = document.getElementsByClassName("activeProductBtn");
+                current[0].className = current[0].className.replace(" activeProductBtn", "");
+                this.className += " activeProductBtn";
+            });
+        }
 
-            function selectWithArrow(index) {
-                clearTimeout(timeout);
-                slideIndex += (index - 1);
-                showSlides();
+        var header = document.getElementById("news");
+        var btns = header.getElementsByClassName("newsBtn");
+        for (var i = 0; i < btns.length; i++) {
+            var item = btns[i];
+            var currentYear = new Date().getFullYear();
+            var currentItem = new Date(item.innerHTML).getFullYear();
+            if (currentItem == currentYear || i == 0) {
+                item.className += " activeNewsBtn";
+                document.getElementById(item.innerHTML).className = "collapse in";
             }
-        </script>
+            item.addEventListener("click", function () {
+                var current = document.getElementsByClassName("activeNewsBtn");
+                current[0].className = current[0].className.replace(" activeNewsBtn", "");
+                this.className += " activeNewsBtn";
+            });
+        }
+    </script>
 
-        <script>
-            // Add active class to the current button (highlight it)
-            var header = document.getElementById("years");
-            var btns = header.getElementsByClassName("yearBtn");
-            for (var i = 0; i < btns.length; i++) {
-                var item = btns[i];
-                var currentYear = new Date().getFullYear();
-                var currentItem = new Date(item.innerHTML).getFullYear();
-                if (currentItem == currentYear || i == 0) {
-                    item.className += " activeYearBtn";
-                    document.getElementById(item.innerHTML).className = "collapse in";
-                }
-                item.addEventListener("click", function () {
-                    var current = document.getElementsByClassName("activeYearBtn");
-                    current[0].className = current[0].className.replace(" activeYearBtn", "");
-                    this.className += " activeYearBtn";
-                });
-            }
-
+    <script>
+        function selectProducts(target) {
+            goTo('portfolio');
             var header = document.getElementById("products");
             var btns = header.getElementsByClassName("productBtn");
             for (var i = 0; i < btns.length; i++) {
                 var item = btns[i];
-                if (i == 0) {
+                item.className = item.className.replace(" activeProductBtn", "");
+                if (item.innerHTML === target) {
                     item.className += " activeProductBtn";
                     document.getElementById(item.innerHTML).className = "collapse in";
                 }
-                item.addEventListener("click", function () {
-                    var current = document.getElementsByClassName("activeProductBtn");
-                    current[0].className = current[0].className.replace(" activeProductBtn", "");
-                    this.className += " activeProductBtn";
-                });
+                else {
+                    document.getElementById(item.innerHTML).className = "collapse";
+                }
             }
+        }
+    </script>
 
-            var header = document.getElementById("news");
-            var btns = header.getElementsByClassName("newsBtn");
+    <!--Collapse-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function hideAllEvents() {
+            var btns = document.getElementsByClassName("yearBtn");
             for (var i = 0; i < btns.length; i++) {
                 var item = btns[i];
-                var currentYear = new Date().getFullYear();
-                var currentItem = new Date(item.innerHTML).getFullYear();
-                if (currentItem == currentYear || i == 0) {
-                    item.className += " activeNewsBtn";
-                    document.getElementById(item.innerHTML).className = "collapse in";
-                }
-                item.addEventListener("click", function () {
-                    var current = document.getElementsByClassName("activeNewsBtn");
-                    current[0].className = current[0].className.replace(" activeNewsBtn", "");
-                    this.className += " activeNewsBtn";
-                });
-            }
-        </script>
+                document.getElementById(item.innerHTML).className = "collapse";
+            };
+        }
+    </script>
 
-        <script>
-            function selectProducts(target) {
-                goTo('portfolio');
-                var header = document.getElementById("products");
-                var btns = header.getElementsByClassName("productBtn");
-                for (var i = 0; i < btns.length; i++) {
-                    var item = btns[i];
-                    item.className = item.className.replace(" activeProductBtn", "");
-                    if (item.innerHTML === target) {
-                        item.className += " activeProductBtn";
-                        document.getElementById(item.innerHTML).className = "collapse in";
-                    }
-                    else {
-                        document.getElementById(item.innerHTML).className = "collapse";
-                    }
-                }
-            }
-        </script>
+    <script>
+        function toggleEventsInfo(e, info) {
+            var test = true;
+            if ($(info).is(":visible")) { test = false; }
+            $(".eventInfo").slideUp();
+            if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+            //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
+        }
+    </script>
 
-        <!--Collapse-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script>
-            function hideAllEvents() {
-                var btns = document.getElementsByClassName("yearBtn");
-                for (var i = 0; i < btns.length; i++) {
-                    var item = btns[i];
-                    document.getElementById(item.innerHTML).className = "collapse";
-                };
-            }
-        </script>
+    <script>
+        function hideAllNews() {
+            var btns = document.getElementsByClassName("newsBtn");
+            for (var i = 0; i < btns.length; i++) {
+                var item = btns[i];
+                document.getElementById(item.innerHTML).className = "collapse";
+            };
+        }
+    </script>
 
-        <script>
-            function toggleEventsInfo(e, info) {
-                var test = true;
-                if ($(info).is(":visible")) { test = false; }
-                $(".eventInfo").slideUp();
-                if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
-                e.scrollIntoView({ behavior: "smooth", block: "center" });
-                //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
-            }
-        </script>
+    <script>
+        function toggleNewsInfo(e, info) {
+            var test = true;
+            if ($(info).is(":visible")) { test = false; }
+            $(".newsInfo").slideUp();
+            if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+            //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
+        }
+    </script>
 
-        <script>
-            function hideAllNews() {
-                var btns = document.getElementsByClassName("newsBtn");
-                for (var i = 0; i < btns.length; i++) {
-                    var item = btns[i];
-                    document.getElementById(item.innerHTML).className = "collapse";
-                };
-            }
-        </script>
+    <script>
+        function hideAllProducts() {
+            var btns = document.getElementsByClassName("productBtn");
+            for (var i = 0; i < btns.length; i++) {
+                var item = btns[i];
+                document.getElementById(item.innerHTML).className = "collapse";
+            };
+        }
+    </script>
 
-        <script>
-            function toggleNewsInfo(e, info) {
-                var test = true;
-                if ($(info).is(":visible")) { test = false; }
-                $(".newsInfo").slideUp();
-                if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
-                e.scrollIntoView({ behavior: "smooth", block: "center" });
-                //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
-            }
-        </script>
+    <!--Scroll to page-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () { function e(e) { return e.replace(/^\//, "").replace(/(index|default).[a-zA-Z]{3,4}$/, "").replace(/\/$/, "") } $("a[href*=#]").each(function () { if (e(location.pathname) == e(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, "")) { var a = $(this.hash), n = $("[name=" + this.hash.slice(1) + "]"), h = a.length ? a : n.length ? n : !1; h && $(this).click(function () { return $("#main-nav ul").slideUp(300), $("#main-nav").removeClass("menu-down"), $("#header").css({ opacity: "0.9" }), goTo(this.hash.slice(1)), !1 }) } }) });
+    </script>
 
-        <script>
-            function hideAllProducts() {
-                var btns = document.getElementsByClassName("productBtn");
-                for (var i = 0; i < btns.length; i++) {
-                    var item = btns[i];
-                    document.getElementById(item.innerHTML).className = "collapse";
-                };
-            }
-        </script>
+    <!-- First load -->
+    <script>
+        function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) } var initialLoad = !0; $(document).ready(function () { initialLoad && (setEvents(), goTo(getActiveMenu())), resizeLastPage(), $("#circle-action").css("visibility", "hidden"), $("footer").css("visibility", "hidden"), initialLoad = !1 });
+    </script>
 
-        <!--Scroll to page-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-        <script>
-            $(document).ready(function () { function e(e) { return e.replace(/^\//, "").replace(/(index|default).[a-zA-Z]{3,4}$/, "").replace(/\/$/, "") } $("a[href*=#]").each(function () { if (e(location.pathname) == e(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, "")) { var a = $(this.hash), n = $("[name=" + this.hash.slice(1) + "]"), h = a.length ? a : n.length ? n : !1; h && $(this).click(function () { return $("#main-nav ul").slideUp(300), $("#main-nav").removeClass("menu-down"), $("#header").css({ opacity: "0.9" }), goTo(this.hash.slice(1)), !1 }) } }) });
-        </script>
+    <!--Responsive with animation-->
+    <script>
+        function doResize() { goTo(e), document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250), resizeLastPage() } function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") } var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }(); $(window).resize(function () { e = getActiveMenu(), waitForFinalEvent(function () { doResize() }, 200, "2") });
+    </script>
 
-        <!-- First load -->
-        <script>
-            function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) } var initialLoad = !0; $(document).ready(function () { initialLoad && (setEvents(), goTo(getActiveMenu())), resizeLastPage(), $("#circle-action").css("visibility", "hidden"), $("footer").css("visibility", "hidden"), initialLoad = !1 });
-        </script>
+    <!--Highlight active page on menu-->
+    <script>
+        function onScroll(t) {
+            toggleMenu();
+            var o = $(document).scrollTop() + 156, a = $(".active");
+            $("#main-nav a").each(function () {
+                var t = $(this), a = $(t.attr("name"));
+                a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+            }),
+                $("#aside-nav a").each(function () {
+                    var t = $(this), a = $(t.attr("name"));
+                    a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+                }), 0 == $(".active").length && a.addClass("active")
+        }
+        var t = -1; $(document).ready(function () {
+            t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100)
+        });
+    </script>
 
-        <!--Responsive with animation-->
-        <script>
-            function doResize() { goTo(e), document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250), resizeLastPage() } function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") } var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }(); $(window).resize(function () { e = getActiveMenu(), waitForFinalEvent(function () { doResize() }, 200, "2") });
-        </script>
-
-        <!--Highlight active page on menu-->
-        <script>
-            function onScroll(t) {
-                toggleMenu();
-                var o = $(document).scrollTop() + 156, a = $(".active");
+    <!--GoTo using id-->
+    <script>
+        function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); goTo(o) } }
+        function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); goTo(o) } }
+        function goTo(o) {
+            $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
+            if (o != $(".active").attr("name").replace("#", "")) {
                 $("#main-nav a").each(function () {
                     var t = $(this), a = $(t.attr("name"));
                     a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-                }),
-                    $("#aside-nav a").each(function () {
-                        var t = $(this), a = $(t.attr("name"));
-                        a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-                    }), 0 == $(".active").length && a.addClass("active")
+                });
+                $("#aside-nav a").each(function () {
+                    var t = $(this), a = $(t.attr("name"));
+                    a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+                });
             }
-            var t = -1; $(document).ready(function () {
-                t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100)
-            });
-        </script>
+        }
+        function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
+    </script>
 
-        <!--GoTo using id-->
-        <script>
-            function goToPrevious() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("name").replace("#", ""); goTo(o) } }
-            function goToNext() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("name").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("name").replace("#", ""); goTo(o) } }
-            function goTo(o) {
-                $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
-                if (o != $(".active").attr("name").replace("#", "")) {
-                    $("#main-nav a").each(function () {
-                        var t = $(this), a = $(t.attr("name"));
-                        a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-                    });
-                    $("#aside-nav a").each(function () {
-                        var t = $(this), a = $(t.attr("name"));
-                        a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-                    });
-                }
-            }
-            function goToActive() { goTo($(".active")[0].getAttribute("name").replace("#", "")); }
-        </script>
+    <!--GoTo using class-->
+    <!--<script>
+        function goToPreviousX() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
+        function goToNextX() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
+        function goToX(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
+        function goToActiveX() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
+    </script>-->
+    <!-- Set upcoming and past events -->
+    <script>
+        function setEvents() { $("#eventsList li").each(function () { var t = "future", e = (new Date).toDateString(); Date.parse(e) > Date.parse($(this).attr("id")) && (t = "past"), $(this).addClass(t) }) }
+    </script>
 
-        <!--GoTo using class-->
-        <!--<script>
-            function goToPreviousX() { if ($(".active")[0].id == "first") { goTo(document.getElementById("last").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").prev("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-            function goToNextX() { if ($(".active")[0].id == "last") { goTo(document.getElementById("first").getAttribute("href").replace("#", "")) } else { var o = $(".active").closest("li").next("li").find("a").attr("href").replace("#", ""); $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900) } }
-            function goToX(o) { $("html,body").animate({ scrollTop: $("." + o).offset().top - 78 }, 900) }
-            function goToActiveX() { goTo($(".active")[0].getAttribute("href").replace("#", "")); }
-        </script>-->
-        <!-- Set upcoming and past events -->
-        <script>
-            function setEvents() { $("#eventsList li").each(function () { var t = "future", e = (new Date).toDateString(); Date.parse(e) > Date.parse($(this).attr("id")) && (t = "past"), $(this).addClass(t) }) }
-        </script>
+    <!--Add some animation to the menu-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        function doNothing() { }
+        function showNavigate() { $("#navigate ul").css({ opacity: "0.9" }) }
+        function hideNavigate() { $("#navigate ul").css({ opacity: "0.5" }) }
+        function makeTall() { $("#main-nav").addClass("menu-down"), $("#header").css({ opacity: "1" }), document.body.clientWidth > 950 && $("aside").slideUp(250), $("#main-nav ul").slideDown(250) }
+        function makeShort() { $("#main-nav").removeClass("menu-down"), $("#main-nav ul").slideUp(250), document.body.clientWidth > 950 && $("aside").slideDown(250), $("#header").css({ opacity: "0.9" }) }
+        function toggleMenu() { $("#main-nav.menu-down") && makeShort() } $(document).ready(function () { $("#header").hoverIntent(makeTall, doNothing, ".menu-icon"), $("#main-nav ul").hover(doNothing, makeShort), $("#navigate ul").hover(showNavigate, hideNavigate) });
 
-        <!--Add some animation to the menu-->
-        <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            function doNothing() { }
-            function showNavigate() { $("#navigate ul").css({ opacity: "0.9" }) }
-            function hideNavigate() { $("#navigate ul").css({ opacity: "0.5" }) }
-            function makeTall() { $("#main-nav").addClass("menu-down"), $("#header").css({ opacity: "1" }), document.body.clientWidth > 950 && $("aside").slideUp(250), $("#main-nav ul").slideDown(250) }
-            function makeShort() { $("#main-nav").removeClass("menu-down"), $("#main-nav ul").slideUp(250), document.body.clientWidth > 950 && $("aside").slideDown(250), $("#header").css({ opacity: "0.9" }) }
-            function toggleMenu() { $("#main-nav.menu-down") && makeShort() } $(document).ready(function () { $("#header").hoverIntent(makeTall, doNothing, ".menu-icon"), $("#main-nav ul").hover(doNothing, makeShort), $("#navigate ul").hover(showNavigate, hideNavigate) });
+        //function toggleMenuClick() { $("#main-nav").slideToggle("menu-down"); alert('test'); }
+        function toggleMenuClick() {
+            var isVisible = false;
+            if ($(".menu-down").is(":visible")) { isVisible = true; }
+            $(".menu-down").slideUp();
+            if (isVisible) { $(".menu-down").slideUp(); } else { $(".menu-down").slideDown(); }
+        }
 
-            //function toggleMenuClick() { $("#main-nav").slideToggle("menu-down"); alert('test'); }
-            function toggleMenuClick() {
-                var isVisible = false;
-                if ($(".menu-down").is(":visible")) { isVisible = true; }
-                $(".menu-down").slideUp();
-                if (isVisible) { $(".menu-down").slideUp(); } else { $(".menu-down").slideDown(); }
-            }
+    </script>
 
-        </script>
+    <!-- PLUGINS -->
+    <!-- Image viewing -->
+    <script>
+        /*! Swipebox v1.4.1 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
+        !function (a, b, c, d) { c.swipebox = function (e, f) { var g, h, i = { useCSS: !0, useSVG: !1, initialIndexOnArray: 0, removeBarsOnMobile: !0, hideCloseButtonOnMobile: !1, hideBarsDelay: 3e3, videoMaxWidth: 1140, vimeoColor: "cccccc", beforeOpen: null, afterOpen: null, afterClose: null, nextSlide: null, prevSlide: null, loopAtEnd: !1, autoplayVideos: !1, queryStringData: {}, toggleClassOnLoad: "" }, j = this, k = [], l = e.selector, m = c(l), n = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i), o = null !== n || b.createTouch !== d || "ontouchstart" in a || "onmsgesturechange" in a || navigator.msMaxTouchPoints, p = !!b.createElementNS && !!b.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect, q = a.innerWidth ? a.innerWidth : c(a).width(), r = a.innerHeight ? a.innerHeight : c(a).height(), s = 0, t = '<div id="swipebox-overlay">					<div id="swipebox-container">						<div id="swipebox-slider"></div>						<div id="swipebox-top-bar">							<div id="swipebox-title"></div>						</div>						<div id="swipebox-bottom-bar">							<div id="swipebox-arrows">								<a id="swipebox-prev"></a>								<a id="swipebox-next"></a>							</div>						</div>						<a id="swipebox-close"></a>					</div>			</div>'; j.settings = {}, c.swipebox.close = function () { g.closeSlide() }, c.swipebox.extend = function () { return g }, j.init = function () { j.settings = c.extend({}, i, f), c.isArray(e) ? (k = e, g.target = c(a), g.init(j.settings.initialIndexOnArray)) : c(b).on("click", l, function (a) { if ("slide current" === a.target.parentNode.className) return !1; c.isArray(e) || (g.destroy(), h = c(l), g.actions()), k = []; var b, d, f; f || (d = "data-rel", f = c(this).attr(d)), f || (d = "rel", f = c(this).attr(d)), h = f && "" !== f && "nofollow" !== f ? m.filter("[" + d + '="' + f + '"]') : c(l), h.each(function () { var a = null, b = null; c(this).attr("title") && (a = c(this).attr("title")), c(this).attr("href") && (b = c(this).attr("href")), k.push({ href: b, title: a }) }), b = h.index(c(this)), a.preventDefault(), a.stopPropagation(), g.target = c(a.target), g.init(b) }) }, g = { init: function (a) { j.settings.beforeOpen && j.settings.beforeOpen(), this.target.trigger("swipebox-start"), c.swipebox.isOpen = !0, this.build(), this.openSlide(a), this.openMedia(a), this.preloadMedia(a + 1), this.preloadMedia(a - 1), j.settings.afterOpen && j.settings.afterOpen() }, build: function () { var a, b = this; c("body").append(t), p && j.settings.useSVG === !0 && (a = c("#swipebox-close").css("background-image"), a = a.replace("png", "svg"), c("#swipebox-prev, #swipebox-next, #swipebox-close").css({ "background-image": a })), n && j.settings.removeBarsOnMobile && c("#swipebox-bottom-bar, #swipebox-top-bar").remove(), c.each(k, function () { c("#swipebox-slider").append('<div class="slide"></div>') }), b.setDim(), b.actions(), o && b.gesture(), b.keyboard(), b.animBars(), b.resize() }, setDim: function () { var b, d, e = {}; "onorientationchange" in a ? a.addEventListener("orientationchange", function () { 0 === a.orientation ? (b = q, d = r) : (90 === a.orientation || -90 === a.orientation) && (b = r, d = q) }, !1) : (b = a.innerWidth ? a.innerWidth : c(a).width(), d = a.innerHeight ? a.innerHeight : c(a).height()), e = { width: b, height: d }, c("#swipebox-overlay").css(e) }, resize: function () { var b = this; c(a).resize(function () { b.setDim() }).resize() }, supportTransition: function () { var a, c = "transition WebkitTransition MozTransition OTransition msTransition KhtmlTransition".split(" "); for (a = 0; a < c.length; a++) if (b.createElement("div").style[c[a]] !== d) return c[a]; return !1 }, doCssTrans: function () { return j.settings.useCSS && this.supportTransition() ? !0 : void 0 }, gesture: function () { var a, b, d, e, f, g, h = this, i = !1, j = !1, l = 10, m = 50, n = {}, o = {}, p = c("#swipebox-top-bar, #swipebox-bottom-bar"), r = c("#swipebox-slider"); p.addClass("visible-bars"), h.setTimeout(), c("body").bind("touchstart", function (h) { return c(this).addClass("touching"), a = c("#swipebox-slider .slide").index(c("#swipebox-slider .slide.current")), o = h.originalEvent.targetTouches[0], n.pageX = h.originalEvent.targetTouches[0].pageX, n.pageY = h.originalEvent.targetTouches[0].pageY, c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + s + "%, 0, 0)", transform: "translate3d(" + s + "%, 0, 0)" }), c(".touching").bind("touchmove", function (h) { if (h.preventDefault(), h.stopPropagation(), o = h.originalEvent.targetTouches[0], !j && (f = d, d = o.pageY - n.pageY, Math.abs(d) >= m || i)) { var p = .75 - Math.abs(d) / r.height(); r.css({ top: d + "px" }), r.css({ opacity: p }), i = !0 } e = b, b = o.pageX - n.pageX, g = 100 * b / q, !j && !i && Math.abs(b) >= l && (c("#swipebox-slider").css({ "-webkit-transition": "", transition: "" }), j = !0), j && (b > 0 ? 0 === a ? c("#swipebox-overlay").addClass("leftSpringTouch") : (c("#swipebox-overlay").removeClass("leftSpringTouch").removeClass("rightSpringTouch"), c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + (s + g) + "%, 0, 0)", transform: "translate3d(" + (s + g) + "%, 0, 0)" })) : 0 > b && (k.length === a + 1 ? c("#swipebox-overlay").addClass("rightSpringTouch") : (c("#swipebox-overlay").removeClass("leftSpringTouch").removeClass("rightSpringTouch"), c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + (s + g) + "%, 0, 0)", transform: "translate3d(" + (s + g) + "%, 0, 0)" })))) }), !1 }).bind("touchend", function (a) { if (a.preventDefault(), a.stopPropagation(), c("#swipebox-slider").css({ "-webkit-transition": "-webkit-transform 0.4s ease", transition: "transform 0.4s ease" }), d = o.pageY - n.pageY, b = o.pageX - n.pageX, g = 100 * b / q, i) if (i = !1, Math.abs(d) >= 2 * m && Math.abs(d) > Math.abs(f)) { var k = d > 0 ? r.height() : -r.height(); r.animate({ top: k + "px", opacity: 0 }, 300, function () { h.closeSlide() }) } else r.animate({ top: 0, opacity: 1 }, 300); else j ? (j = !1, b >= l && b >= e ? h.getPrev() : -l >= b && e >= b && h.getNext()) : p.hasClass("visible-bars") ? (h.clearTimeout(), h.hideBars()) : (h.showBars(), h.setTimeout()); c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + s + "%, 0, 0)", transform: "translate3d(" + s + "%, 0, 0)" }), c("#swipebox-overlay").removeClass("leftSpringTouch").removeClass("rightSpringTouch"), c(".touching").off("touchmove").removeClass("touching") }) }, setTimeout: function () { if (j.settings.hideBarsDelay > 0) { var b = this; b.clearTimeout(), b.timeout = a.setTimeout(function () { b.hideBars() }, j.settings.hideBarsDelay) } }, clearTimeout: function () { a.clearTimeout(this.timeout), this.timeout = null }, showBars: function () { var a = c("#swipebox-top-bar, #swipebox-bottom-bar"); this.doCssTrans() ? a.addClass("visible-bars") : (c("#swipebox-top-bar").animate({ top: 0 }, 500), c("#swipebox-bottom-bar").animate({ bottom: 0 }, 500), setTimeout(function () { a.addClass("visible-bars") }, 1e3)) }, hideBars: function () { var a = c("#swipebox-top-bar, #swipebox-bottom-bar"); this.doCssTrans() ? a.removeClass("visible-bars") : (c("#swipebox-top-bar").animate({ top: "-50px" }, 500), c("#swipebox-bottom-bar").animate({ bottom: "-50px" }, 500), setTimeout(function () { a.removeClass("visible-bars") }, 1e3)) }, animBars: function () { var a = this, b = c("#swipebox-top-bar, #swipebox-bottom-bar"); b.addClass("visible-bars"), a.setTimeout(), c("#swipebox-slider").click(function () { b.hasClass("visible-bars") || (a.showBars(), a.setTimeout()) }), c("#swipebox-bottom-bar").hover(function () { a.showBars(), b.addClass("visible-bars"), a.clearTimeout() }, function () { j.settings.hideBarsDelay > 0 && (b.removeClass("visible-bars"), a.setTimeout()) }) }, keyboard: function () { var b = this; c(a).bind("keyup", function (a) { a.preventDefault(), a.stopPropagation(), 37 === a.keyCode ? b.getPrev() : 39 === a.keyCode ? b.getNext() : 27 === a.keyCode && b.closeSlide() }) }, actions: function () { var a = this, b = "touchend click"; k.length < 2 ? (c("#swipebox-bottom-bar").hide(), d === k[1] && c("#swipebox-top-bar").hide()) : (c("#swipebox-prev").bind(b, function (b) { b.preventDefault(), b.stopPropagation(), a.getPrev(), a.setTimeout() }), c("#swipebox-next").bind(b, function (b) { b.preventDefault(), b.stopPropagation(), a.getNext(), a.setTimeout() })), c("#swipebox-close").bind(b, function () { a.closeSlide() }) }, setSlide: function (a, b) { b = b || !1; var d = c("#swipebox-slider"); s = 100 * -a, this.doCssTrans() ? d.css({ "-webkit-transform": "translate3d(" + 100 * -a + "%, 0, 0)", transform: "translate3d(" + 100 * -a + "%, 0, 0)" }) : d.animate({ left: 100 * -a + "%" }), c("#swipebox-slider .slide").removeClass("current"), c("#swipebox-slider .slide").eq(a).addClass("current"), this.setTitle(a), b && d.fadeIn(), c("#swipebox-prev, #swipebox-next").removeClass("disabled"), 0 === a ? c("#swipebox-prev").addClass("disabled") : a === k.length - 1 && j.settings.loopAtEnd !== !0 && c("#swipebox-next").addClass("disabled") }, openSlide: function (b) { c("html").addClass("swipebox-html"), o ? (c("html").addClass("swipebox-touch"), j.settings.hideCloseButtonOnMobile && c("html").addClass("swipebox-no-close-button")) : c("html").addClass("swipebox-no-touch"), c(a).trigger("resize"), this.setSlide(b, !0) }, preloadMedia: function (a) { var b = this, c = null; k[a] !== d && (c = k[a].href), b.isVideo(c) ? b.openMedia(a) : setTimeout(function () { b.openMedia(a) }, 1e3) }, openMedia: function (a) { var b, e, f = this; return k[a] !== d && (b = k[a].href), 0 > a || a >= k.length ? !1 : (e = c("#swipebox-slider .slide").eq(a), void (f.isVideo(b) ? e.html(f.getVideo(b)) : (e.addClass("slide-loading"), f.loadMedia(b, function () { e.removeClass("slide-loading"), e.html(this) })))) }, setTitle: function (a) { var b = null; c("#swipebox-title").empty(), k[a] !== d && (b = k[a].title), b ? (c("#swipebox-top-bar").show(), c("#swipebox-title").append(b)) : c("#swipebox-top-bar").hide() }, isVideo: function (a) { if (a) { if (a.match(/(youtube\.com|youtube-nocookie\.com)\/watch\?v=([a-zA-Z0-9\-_]+)/) || a.match(/vimeo\.com\/([0-9]*)/) || a.match(/youtu\.be\/([a-zA-Z0-9\-_]+)/)) return !0; if (a.toLowerCase().indexOf("swipeboxvideo=1") >= 0) return !0 } }, parseUri: function (a, d) { var e = b.createElement("a"), f = {}; return e.href = decodeURIComponent(a), e.search && (f = JSON.parse('{"' + e.search.toLowerCase().replace("?", "").replace(/&/g, '","').replace(/=/g, '":"') + '"}')), c.isPlainObject(d) && (f = c.extend(f, d, j.settings.queryStringData)), c.map(f, function (a, b) { return a && a > "" ? encodeURIComponent(b) + "=" + encodeURIComponent(a) : void 0 }).join("&") }, getVideo: function (a) { var b = "", c = a.match(/((?:www\.)?youtube\.com|(?:www\.)?youtube-nocookie\.com)\/watch\?v=([a-zA-Z0-9\-_]+)/), d = a.match(/(?:www\.)?youtu\.be\/([a-zA-Z0-9\-_]+)/), e = a.match(/(?:www\.)?vimeo\.com\/([0-9]*)/), f = ""; return c || d ? (d && (c = d), f = g.parseUri(a, { autoplay: j.settings.autoplayVideos ? "1" : "0", v: "" }), b = '<iframe width="560" height="315" src="//' + c[1] + "/embed/" + c[2] + "?" + f + '" frameborder="0" allowfullscreen></iframe>') : e ? (f = g.parseUri(a, { autoplay: j.settings.autoplayVideos ? "1" : "0", byline: "0", portrait: "0", color: j.settings.vimeoColor }), b = '<iframe width="560" height="315"  src="//player.vimeo.com/video/' + e[1] + "?" + f + '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>') : b = '<iframe width="560" height="315" src="' + a + '" frameborder="0" allowfullscreen></iframe>', '<div class="swipebox-video-container" style="max-width:' + j.settings.videoMaxWidth + 'px"><div class="swipebox-video">' + b + "</div></div>" }, loadMedia: function (a, b) { if (0 === a.trim().indexOf("#")) b.call(c("<div>", { "class": "swipebox-inline-container" }).append(c(a).clone().toggleClass(j.settings.toggleClassOnLoad))); else if (!this.isVideo(a)) { var d = c("<img>").on("load", function () { b.call(d) }); d.attr("src", a) } }, getNext: function () { var a, b = this, d = c("#swipebox-slider .slide").index(c("#swipebox-slider .slide.current")); d + 1 < k.length ? (a = c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src"), c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src", a), d++, b.setSlide(d), b.preloadMedia(d + 1), j.settings.nextSlide && j.settings.nextSlide()) : j.settings.loopAtEnd === !0 ? (a = c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src"), c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src", a), d = 0, b.preloadMedia(d), b.setSlide(d), b.preloadMedia(d + 1), j.settings.nextSlide && j.settings.nextSlide()) : (c("#swipebox-overlay").addClass("rightSpring"), setTimeout(function () { c("#swipebox-overlay").removeClass("rightSpring") }, 500)) }, getPrev: function () { var a, b = c("#swipebox-slider .slide").index(c("#swipebox-slider .slide.current")); b > 0 ? (a = c("#swipebox-slider .slide").eq(b).contents().find("iframe").attr("src"), c("#swipebox-slider .slide").eq(b).contents().find("iframe").attr("src", a), b--, this.setSlide(b), this.preloadMedia(b - 1), j.settings.prevSlide && j.settings.prevSlide()) : (c("#swipebox-overlay").addClass("leftSpring"), setTimeout(function () { c("#swipebox-overlay").removeClass("leftSpring") }, 500)) }, nextSlide: function () { }, prevSlide: function () { }, closeSlide: function () { c("html").removeClass("swipebox-html"), c("html").removeClass("swipebox-touch"), c(a).trigger("resize"), this.destroy() }, destroy: function () { c(a).unbind("keyup"), c("body").unbind("touchstart"), c("body").unbind("touchmove"), c("body").unbind("touchend"), c("#swipebox-slider").unbind(), c("#swipebox-overlay").remove(), c.isArray(e) || e.removeData("_swipebox"), this.target && this.target.trigger("swipebox-destroy"), c.swipebox.isOpen = !1, j.settings.afterClose && j.settings.afterClose() } }, j.init() }, c.fn.swipebox = function (a) { if (!c.data(this, "_swipebox")) { var b = new c.swipebox(this, a); this.data("_swipebox", b) } return this.data("_swipebox") } }(window, document, jQuery);</script>
 
-        <!-- PLUGINS -->
-        <!-- Image viewing -->
-        <script>
-            /*! Swipebox v1.4.1 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
-            !function (a, b, c, d) { c.swipebox = function (e, f) { var g, h, i = { useCSS: !0, useSVG: !1, initialIndexOnArray: 0, removeBarsOnMobile: !0, hideCloseButtonOnMobile: !1, hideBarsDelay: 3e3, videoMaxWidth: 1140, vimeoColor: "cccccc", beforeOpen: null, afterOpen: null, afterClose: null, nextSlide: null, prevSlide: null, loopAtEnd: !1, autoplayVideos: !1, queryStringData: {}, toggleClassOnLoad: "" }, j = this, k = [], l = e.selector, m = c(l), n = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i), o = null !== n || b.createTouch !== d || "ontouchstart" in a || "onmsgesturechange" in a || navigator.msMaxTouchPoints, p = !!b.createElementNS && !!b.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect, q = a.innerWidth ? a.innerWidth : c(a).width(), r = a.innerHeight ? a.innerHeight : c(a).height(), s = 0, t = '<div id="swipebox-overlay">					<div id="swipebox-container">						<div id="swipebox-slider"></div>						<div id="swipebox-top-bar">							<div id="swipebox-title"></div>						</div>						<div id="swipebox-bottom-bar">							<div id="swipebox-arrows">								<a id="swipebox-prev"></a>								<a id="swipebox-next"></a>							</div>						</div>						<a id="swipebox-close"></a>					</div>			</div>'; j.settings = {}, c.swipebox.close = function () { g.closeSlide() }, c.swipebox.extend = function () { return g }, j.init = function () { j.settings = c.extend({}, i, f), c.isArray(e) ? (k = e, g.target = c(a), g.init(j.settings.initialIndexOnArray)) : c(b).on("click", l, function (a) { if ("slide current" === a.target.parentNode.className) return !1; c.isArray(e) || (g.destroy(), h = c(l), g.actions()), k = []; var b, d, f; f || (d = "data-rel", f = c(this).attr(d)), f || (d = "rel", f = c(this).attr(d)), h = f && "" !== f && "nofollow" !== f ? m.filter("[" + d + '="' + f + '"]') : c(l), h.each(function () { var a = null, b = null; c(this).attr("title") && (a = c(this).attr("title")), c(this).attr("href") && (b = c(this).attr("href")), k.push({ href: b, title: a }) }), b = h.index(c(this)), a.preventDefault(), a.stopPropagation(), g.target = c(a.target), g.init(b) }) }, g = { init: function (a) { j.settings.beforeOpen && j.settings.beforeOpen(), this.target.trigger("swipebox-start"), c.swipebox.isOpen = !0, this.build(), this.openSlide(a), this.openMedia(a), this.preloadMedia(a + 1), this.preloadMedia(a - 1), j.settings.afterOpen && j.settings.afterOpen() }, build: function () { var a, b = this; c("body").append(t), p && j.settings.useSVG === !0 && (a = c("#swipebox-close").css("background-image"), a = a.replace("png", "svg"), c("#swipebox-prev, #swipebox-next, #swipebox-close").css({ "background-image": a })), n && j.settings.removeBarsOnMobile && c("#swipebox-bottom-bar, #swipebox-top-bar").remove(), c.each(k, function () { c("#swipebox-slider").append('<div class="slide"></div>') }), b.setDim(), b.actions(), o && b.gesture(), b.keyboard(), b.animBars(), b.resize() }, setDim: function () { var b, d, e = {}; "onorientationchange" in a ? a.addEventListener("orientationchange", function () { 0 === a.orientation ? (b = q, d = r) : (90 === a.orientation || -90 === a.orientation) && (b = r, d = q) }, !1) : (b = a.innerWidth ? a.innerWidth : c(a).width(), d = a.innerHeight ? a.innerHeight : c(a).height()), e = { width: b, height: d }, c("#swipebox-overlay").css(e) }, resize: function () { var b = this; c(a).resize(function () { b.setDim() }).resize() }, supportTransition: function () { var a, c = "transition WebkitTransition MozTransition OTransition msTransition KhtmlTransition".split(" "); for (a = 0; a < c.length; a++) if (b.createElement("div").style[c[a]] !== d) return c[a]; return !1 }, doCssTrans: function () { return j.settings.useCSS && this.supportTransition() ? !0 : void 0 }, gesture: function () { var a, b, d, e, f, g, h = this, i = !1, j = !1, l = 10, m = 50, n = {}, o = {}, p = c("#swipebox-top-bar, #swipebox-bottom-bar"), r = c("#swipebox-slider"); p.addClass("visible-bars"), h.setTimeout(), c("body").bind("touchstart", function (h) { return c(this).addClass("touching"), a = c("#swipebox-slider .slide").index(c("#swipebox-slider .slide.current")), o = h.originalEvent.targetTouches[0], n.pageX = h.originalEvent.targetTouches[0].pageX, n.pageY = h.originalEvent.targetTouches[0].pageY, c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + s + "%, 0, 0)", transform: "translate3d(" + s + "%, 0, 0)" }), c(".touching").bind("touchmove", function (h) { if (h.preventDefault(), h.stopPropagation(), o = h.originalEvent.targetTouches[0], !j && (f = d, d = o.pageY - n.pageY, Math.abs(d) >= m || i)) { var p = .75 - Math.abs(d) / r.height(); r.css({ top: d + "px" }), r.css({ opacity: p }), i = !0 } e = b, b = o.pageX - n.pageX, g = 100 * b / q, !j && !i && Math.abs(b) >= l && (c("#swipebox-slider").css({ "-webkit-transition": "", transition: "" }), j = !0), j && (b > 0 ? 0 === a ? c("#swipebox-overlay").addClass("leftSpringTouch") : (c("#swipebox-overlay").removeClass("leftSpringTouch").removeClass("rightSpringTouch"), c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + (s + g) + "%, 0, 0)", transform: "translate3d(" + (s + g) + "%, 0, 0)" })) : 0 > b && (k.length === a + 1 ? c("#swipebox-overlay").addClass("rightSpringTouch") : (c("#swipebox-overlay").removeClass("leftSpringTouch").removeClass("rightSpringTouch"), c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + (s + g) + "%, 0, 0)", transform: "translate3d(" + (s + g) + "%, 0, 0)" })))) }), !1 }).bind("touchend", function (a) { if (a.preventDefault(), a.stopPropagation(), c("#swipebox-slider").css({ "-webkit-transition": "-webkit-transform 0.4s ease", transition: "transform 0.4s ease" }), d = o.pageY - n.pageY, b = o.pageX - n.pageX, g = 100 * b / q, i) if (i = !1, Math.abs(d) >= 2 * m && Math.abs(d) > Math.abs(f)) { var k = d > 0 ? r.height() : -r.height(); r.animate({ top: k + "px", opacity: 0 }, 300, function () { h.closeSlide() }) } else r.animate({ top: 0, opacity: 1 }, 300); else j ? (j = !1, b >= l && b >= e ? h.getPrev() : -l >= b && e >= b && h.getNext()) : p.hasClass("visible-bars") ? (h.clearTimeout(), h.hideBars()) : (h.showBars(), h.setTimeout()); c("#swipebox-slider").css({ "-webkit-transform": "translate3d(" + s + "%, 0, 0)", transform: "translate3d(" + s + "%, 0, 0)" }), c("#swipebox-overlay").removeClass("leftSpringTouch").removeClass("rightSpringTouch"), c(".touching").off("touchmove").removeClass("touching") }) }, setTimeout: function () { if (j.settings.hideBarsDelay > 0) { var b = this; b.clearTimeout(), b.timeout = a.setTimeout(function () { b.hideBars() }, j.settings.hideBarsDelay) } }, clearTimeout: function () { a.clearTimeout(this.timeout), this.timeout = null }, showBars: function () { var a = c("#swipebox-top-bar, #swipebox-bottom-bar"); this.doCssTrans() ? a.addClass("visible-bars") : (c("#swipebox-top-bar").animate({ top: 0 }, 500), c("#swipebox-bottom-bar").animate({ bottom: 0 }, 500), setTimeout(function () { a.addClass("visible-bars") }, 1e3)) }, hideBars: function () { var a = c("#swipebox-top-bar, #swipebox-bottom-bar"); this.doCssTrans() ? a.removeClass("visible-bars") : (c("#swipebox-top-bar").animate({ top: "-50px" }, 500), c("#swipebox-bottom-bar").animate({ bottom: "-50px" }, 500), setTimeout(function () { a.removeClass("visible-bars") }, 1e3)) }, animBars: function () { var a = this, b = c("#swipebox-top-bar, #swipebox-bottom-bar"); b.addClass("visible-bars"), a.setTimeout(), c("#swipebox-slider").click(function () { b.hasClass("visible-bars") || (a.showBars(), a.setTimeout()) }), c("#swipebox-bottom-bar").hover(function () { a.showBars(), b.addClass("visible-bars"), a.clearTimeout() }, function () { j.settings.hideBarsDelay > 0 && (b.removeClass("visible-bars"), a.setTimeout()) }) }, keyboard: function () { var b = this; c(a).bind("keyup", function (a) { a.preventDefault(), a.stopPropagation(), 37 === a.keyCode ? b.getPrev() : 39 === a.keyCode ? b.getNext() : 27 === a.keyCode && b.closeSlide() }) }, actions: function () { var a = this, b = "touchend click"; k.length < 2 ? (c("#swipebox-bottom-bar").hide(), d === k[1] && c("#swipebox-top-bar").hide()) : (c("#swipebox-prev").bind(b, function (b) { b.preventDefault(), b.stopPropagation(), a.getPrev(), a.setTimeout() }), c("#swipebox-next").bind(b, function (b) { b.preventDefault(), b.stopPropagation(), a.getNext(), a.setTimeout() })), c("#swipebox-close").bind(b, function () { a.closeSlide() }) }, setSlide: function (a, b) { b = b || !1; var d = c("#swipebox-slider"); s = 100 * -a, this.doCssTrans() ? d.css({ "-webkit-transform": "translate3d(" + 100 * -a + "%, 0, 0)", transform: "translate3d(" + 100 * -a + "%, 0, 0)" }) : d.animate({ left: 100 * -a + "%" }), c("#swipebox-slider .slide").removeClass("current"), c("#swipebox-slider .slide").eq(a).addClass("current"), this.setTitle(a), b && d.fadeIn(), c("#swipebox-prev, #swipebox-next").removeClass("disabled"), 0 === a ? c("#swipebox-prev").addClass("disabled") : a === k.length - 1 && j.settings.loopAtEnd !== !0 && c("#swipebox-next").addClass("disabled") }, openSlide: function (b) { c("html").addClass("swipebox-html"), o ? (c("html").addClass("swipebox-touch"), j.settings.hideCloseButtonOnMobile && c("html").addClass("swipebox-no-close-button")) : c("html").addClass("swipebox-no-touch"), c(a).trigger("resize"), this.setSlide(b, !0) }, preloadMedia: function (a) { var b = this, c = null; k[a] !== d && (c = k[a].href), b.isVideo(c) ? b.openMedia(a) : setTimeout(function () { b.openMedia(a) }, 1e3) }, openMedia: function (a) { var b, e, f = this; return k[a] !== d && (b = k[a].href), 0 > a || a >= k.length ? !1 : (e = c("#swipebox-slider .slide").eq(a), void (f.isVideo(b) ? e.html(f.getVideo(b)) : (e.addClass("slide-loading"), f.loadMedia(b, function () { e.removeClass("slide-loading"), e.html(this) })))) }, setTitle: function (a) { var b = null; c("#swipebox-title").empty(), k[a] !== d && (b = k[a].title), b ? (c("#swipebox-top-bar").show(), c("#swipebox-title").append(b)) : c("#swipebox-top-bar").hide() }, isVideo: function (a) { if (a) { if (a.match(/(youtube\.com|youtube-nocookie\.com)\/watch\?v=([a-zA-Z0-9\-_]+)/) || a.match(/vimeo\.com\/([0-9]*)/) || a.match(/youtu\.be\/([a-zA-Z0-9\-_]+)/)) return !0; if (a.toLowerCase().indexOf("swipeboxvideo=1") >= 0) return !0 } }, parseUri: function (a, d) { var e = b.createElement("a"), f = {}; return e.href = decodeURIComponent(a), e.search && (f = JSON.parse('{"' + e.search.toLowerCase().replace("?", "").replace(/&/g, '","').replace(/=/g, '":"') + '"}')), c.isPlainObject(d) && (f = c.extend(f, d, j.settings.queryStringData)), c.map(f, function (a, b) { return a && a > "" ? encodeURIComponent(b) + "=" + encodeURIComponent(a) : void 0 }).join("&") }, getVideo: function (a) { var b = "", c = a.match(/((?:www\.)?youtube\.com|(?:www\.)?youtube-nocookie\.com)\/watch\?v=([a-zA-Z0-9\-_]+)/), d = a.match(/(?:www\.)?youtu\.be\/([a-zA-Z0-9\-_]+)/), e = a.match(/(?:www\.)?vimeo\.com\/([0-9]*)/), f = ""; return c || d ? (d && (c = d), f = g.parseUri(a, { autoplay: j.settings.autoplayVideos ? "1" : "0", v: "" }), b = '<iframe width="560" height="315" src="//' + c[1] + "/embed/" + c[2] + "?" + f + '" frameborder="0" allowfullscreen></iframe>') : e ? (f = g.parseUri(a, { autoplay: j.settings.autoplayVideos ? "1" : "0", byline: "0", portrait: "0", color: j.settings.vimeoColor }), b = '<iframe width="560" height="315"  src="//player.vimeo.com/video/' + e[1] + "?" + f + '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>') : b = '<iframe width="560" height="315" src="' + a + '" frameborder="0" allowfullscreen></iframe>', '<div class="swipebox-video-container" style="max-width:' + j.settings.videoMaxWidth + 'px"><div class="swipebox-video">' + b + "</div></div>" }, loadMedia: function (a, b) { if (0 === a.trim().indexOf("#")) b.call(c("<div>", { "class": "swipebox-inline-container" }).append(c(a).clone().toggleClass(j.settings.toggleClassOnLoad))); else if (!this.isVideo(a)) { var d = c("<img>").on("load", function () { b.call(d) }); d.attr("src", a) } }, getNext: function () { var a, b = this, d = c("#swipebox-slider .slide").index(c("#swipebox-slider .slide.current")); d + 1 < k.length ? (a = c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src"), c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src", a), d++, b.setSlide(d), b.preloadMedia(d + 1), j.settings.nextSlide && j.settings.nextSlide()) : j.settings.loopAtEnd === !0 ? (a = c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src"), c("#swipebox-slider .slide").eq(d).contents().find("iframe").attr("src", a), d = 0, b.preloadMedia(d), b.setSlide(d), b.preloadMedia(d + 1), j.settings.nextSlide && j.settings.nextSlide()) : (c("#swipebox-overlay").addClass("rightSpring"), setTimeout(function () { c("#swipebox-overlay").removeClass("rightSpring") }, 500)) }, getPrev: function () { var a, b = c("#swipebox-slider .slide").index(c("#swipebox-slider .slide.current")); b > 0 ? (a = c("#swipebox-slider .slide").eq(b).contents().find("iframe").attr("src"), c("#swipebox-slider .slide").eq(b).contents().find("iframe").attr("src", a), b--, this.setSlide(b), this.preloadMedia(b - 1), j.settings.prevSlide && j.settings.prevSlide()) : (c("#swipebox-overlay").addClass("leftSpring"), setTimeout(function () { c("#swipebox-overlay").removeClass("leftSpring") }, 500)) }, nextSlide: function () { }, prevSlide: function () { }, closeSlide: function () { c("html").removeClass("swipebox-html"), c("html").removeClass("swipebox-touch"), c(a).trigger("resize"), this.destroy() }, destroy: function () { c(a).unbind("keyup"), c("body").unbind("touchstart"), c("body").unbind("touchmove"), c("body").unbind("touchend"), c("#swipebox-slider").unbind(), c("#swipebox-overlay").remove(), c.isArray(e) || e.removeData("_swipebox"), this.target && this.target.trigger("swipebox-destroy"), c.swipebox.isOpen = !1, j.settings.afterClose && j.settings.afterClose() } }, j.init() }, c.fn.swipebox = function (a) { if (!c.data(this, "_swipebox")) { var b = new c.swipebox(this, a); this.data("_swipebox", b) } return this.data("_swipebox") } }(window, document, jQuery);</script>
+    <script type="text/javascript">
+        !function (e) { e(".swipebox").swipebox() }(jQuery);
+    </script>
 
-        <script type="text/javascript">
-            !function (e) { e(".swipebox").swipebox() }(jQuery);
-        </script>
+    <!-- hoverIntent -->
+    <script>
+        /*!
+        * hoverIntent v1.8.1 // 2014.08.11 // jQuery v1.9.1+
+        * http://cherne.net/brian/resources/jquery.hoverIntent.html
+        *
+        * You may use hoverIntent under the terms of the MIT license. Basically that
+        * means you are free to use hoverIntent as long as this header is left intact.
+        * Copyright 2007, 2014 Brian Cherne
+        */
+        !function (e) { e.fn.hoverIntent = function (t, n, o) { var r = { interval: 400, sensitivity: 6, timeout: 0 }; r = "object" == typeof t ? e.extend(r, t) : e.isFunction(n) ? e.extend(r, { over: t, out: n, selector: o }) : e.extend(r, { over: t, out: t, selector: n }); var v, i, u, s, h = function (e) { v = e.pageX, i = e.pageY }, I = function (t, n) { return n.hoverIntent_t = clearTimeout(n.hoverIntent_t), Math.sqrt((u - v) * (u - v) + (s - i) * (s - i)) < r.sensitivity ? (e(n).off("mousemove.hoverIntent", h), n.hoverIntent_s = !0, r.over.apply(n, [t])) : (u = v, s = i, n.hoverIntent_t = setTimeout(function () { I(t, n) }, r.interval), void 0) }, a = function (e, t) { return t.hoverIntent_t = clearTimeout(t.hoverIntent_t), t.hoverIntent_s = !1, r.out.apply(t, [e]) }, c = function (t) { var n = e.extend({}, t), o = this; o.hoverIntent_t && (o.hoverIntent_t = clearTimeout(o.hoverIntent_t)), "mouseenter" === t.type ? (u = n.pageX, s = n.pageY, e(o).on("mousemove.hoverIntent", h), o.hoverIntent_s || (o.hoverIntent_t = setTimeout(function () { I(n, o) }, r.interval))) : (e(o).off("mousemove.hoverIntent", h), o.hoverIntent_s && (o.hoverIntent_t = setTimeout(function () { a(n, o) }, r.timeout))) }; return this.on({ "mouseenter.hoverIntent": c, "mouseleave.hoverIntent": c }, r.selector) } }(jQuery);
+    </script>
 
-        <!-- hoverIntent -->
-        <script>
-            /*!
-            * hoverIntent v1.8.1 // 2014.08.11 // jQuery v1.9.1+
-            * http://cherne.net/brian/resources/jquery.hoverIntent.html
-            *
-            * You may use hoverIntent under the terms of the MIT license. Basically that
-            * means you are free to use hoverIntent as long as this header is left intact.
-            * Copyright 2007, 2014 Brian Cherne
-            */
-            !function (e) { e.fn.hoverIntent = function (t, n, o) { var r = { interval: 400, sensitivity: 6, timeout: 0 }; r = "object" == typeof t ? e.extend(r, t) : e.isFunction(n) ? e.extend(r, { over: t, out: n, selector: o }) : e.extend(r, { over: t, out: t, selector: n }); var v, i, u, s, h = function (e) { v = e.pageX, i = e.pageY }, I = function (t, n) { return n.hoverIntent_t = clearTimeout(n.hoverIntent_t), Math.sqrt((u - v) * (u - v) + (s - i) * (s - i)) < r.sensitivity ? (e(n).off("mousemove.hoverIntent", h), n.hoverIntent_s = !0, r.over.apply(n, [t])) : (u = v, s = i, n.hoverIntent_t = setTimeout(function () { I(t, n) }, r.interval), void 0) }, a = function (e, t) { return t.hoverIntent_t = clearTimeout(t.hoverIntent_t), t.hoverIntent_s = !1, r.out.apply(t, [e]) }, c = function (t) { var n = e.extend({}, t), o = this; o.hoverIntent_t && (o.hoverIntent_t = clearTimeout(o.hoverIntent_t)), "mouseenter" === t.type ? (u = n.pageX, s = n.pageY, e(o).on("mousemove.hoverIntent", h), o.hoverIntent_s || (o.hoverIntent_t = setTimeout(function () { I(n, o) }, r.interval))) : (e(o).off("mousemove.hoverIntent", h), o.hoverIntent_s && (o.hoverIntent_t = setTimeout(function () { a(n, o) }, r.timeout))) }; return this.on({ "mouseenter.hoverIntent": c, "mouseleave.hoverIntent": c }, r.selector) } }(jQuery);
-        </script>
-
-    </body>
+</body>
 </html>
