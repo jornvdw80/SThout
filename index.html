@@ -561,15 +561,25 @@
             /*cursor: pointer;*/
         }
 
-            #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
+             #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
                 background-color: #fbfbfb;
                 /*border: 3px dotted;*/
                 border-color: #808080;
             }
 
-        .past .eventTitle, .future .eventTitle, .hasInfo .eventTitle {
-            margin-bottom: 3px;
-        }
+                #eventsList li article:hover .preview, #newsList li article:hover .preview {
+                    background-color: white;
+                    /*border: 2px solid;*/
+                    border-color: #808080;
+                    opacity: .9;
+                }
+
+                /*.preview:hover {
+            border: 1px solid #808080;
+        }*/
+                .past .eventTitle, .future .eventTitle, .hasInfo .eventTitle {
+                    margin-bottom: 3px;
+                }
 
         .past .newsTitle, .future .newsTitle, .hasInfo .newsTitle {
             margin-bottom: 3px;
@@ -610,8 +620,11 @@
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
-            background-color: white;
-            border: 2px solid #d3d3d3;
+            background-color: #fbfbfb;
+            /*border: 2px solid #d3d3d3;*/
+            /*border: 1px solid #fbfbfb;*/
+            /*border: 1px solid #808080;*/
+            border: 1px solid #d3d3d3;
             border-radius: 50%;
             opacity: .7;
             filter: grayscale(100%);
@@ -2207,98 +2220,19 @@
             pagination: {
                 el: '.swiper-pagination2',
                 clickable: true,
-                dynamicBullets: false,
+                dynamicBullets: true,
             },
             navigation: {
                 nextEl: '.swiper-button-next2',
                 prevEl: '.swiper-button-prev2',
             },
         });
-
-        //var swiper2 = new Swiper('.swiper2', {
-        //    slidesPerView: 1,
-        //    spaceBetween: 200,
-        //    loop: true,
-        //    effect: 'flip',
-        //    flipEffect: {
-        //        rotate: 30,
-        //        slideShadows: false,
-        //    },
-        //    pagination: {
-        //        el: '.swiper-pagination2',
-        //        clickable: true,
-        //        dynamicBullets: true,
-        //    },
-        //    navigation: {
-        //        nextEl: '.swiper-button-next2',
-        //        prevEl: '.swiper-button-prev2',
-        //    },
-        //    // Enable lazy loading
-        //    lazy: {
-        //        //  tell swiper to load images before they appear
-        //        loadPrevNext: true,
-        //        // amount of images to load
-        //        loadPrevNextAmount: 5,
-        //    },
-        //});
-
-        //var swiper2 = new Swiper('.swiper2', {
-        //    navigation: {
-        //        nextEl: '.swiper-button-next2',
-        //        prevEl: '.swiper-button-prev2',
-        //    },
-        //    preloadImages: false,
-        //    lazy: true,
-        //    loop: false,
-        //    slidesPerView: 1,
-        //    //spaceBetween: 200,
-        //    effect: 'flip',
-        //    flipEffect: {
-        //        slideShadows: false,
-        //        limitRotation: true,
-        //    },
-        //    pagination: {
-        //        el: '.swiper-pagination2',
-        //        clickable: true,
-        //    },
-        //});
-        //swiper2.destroy();
     </script>
 
     <script>
         function openModal(index) {
             document.getElementById("myModal").style.display = "block";
-
-            //swiper2.destroy();
-            //swiper2 = new Swiper('.swiper2', {
-            //    slidesPerView: 1,
-            //    spaceBetween: 200,
-            //    loop: true,
-            //    effect: 'flip',
-            //    flipEffect: {
-            //        rotate: 30,
-            //        slideShadows: false,
-            //    },
-            //    pagination: {
-            //        el: '.swiper-pagination2',
-            //        clickable: true,
-            //        dynamicBullets: true,
-            //    },
-            //    navigation: {
-            //        nextEl: '.swiper-button-next2',
-            //        prevEl: '.swiper-button-prev2',
-            //    },
-            //    // Enable lazy loading
-            //    lazy: {
-            //        //  tell swiper to load images before they appear
-            //        loadPrevNext: true,
-            //        // amount of images to load
-            //        loadPrevNextAmount: 5,
-            //    },
-            //});
-            //swiper2.slideTo(index, false, false);
-
-            swiper2.destroy(false, false); //important!!!!
+            swiper2.destroy(false, false); //important, otherwise freaky behaviour!!!!
             swiper2 = new Swiper('.swiper2', {
                 slidesPerView: 1,
                 spaceBetween: 200,
@@ -2313,7 +2247,7 @@
                 pagination: {
                     el: '.swiper-pagination2',
                     clickable: true,
-                    dynamicBullets: false,
+                    dynamicBullets: true,
                 },
                 navigation: {
                     nextEl: '.swiper-button-next2',
@@ -2328,7 +2262,6 @@
             goTo('portfolio');
             document.getElementById("myModal").style.display = "none";
             goTo('portfolio');
-            //swiper2.destroy();
         }
     </script>
 
