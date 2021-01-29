@@ -61,8 +61,8 @@
         .brands ul {
             text-align: center;
             margin: auto;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-top: 0px;
+            margin-bottom: 10px;
         }
 
         .brands li {
@@ -233,9 +233,23 @@
             -webkit-align-items: center;
         }
 
+            .swiper-slide .title {
+                bottom: -80px;
+                left: 20px;
+                float: left;
+                position: absolute;
+                width: 100%;
+                z-index: 9999;
+                color: black;
+                font-size: 0.75em;
+                margin-bottom: 50px;
+                font-weight: bold;
+                color: #808080;
+            }
+
         .swiper-pagination {
             position: relative;
-            margin-top: 30px;
+            margin-top: 60px;
         }
 
         .swiper-button-prev, .swiper-button-next {
@@ -864,6 +878,12 @@
             opacity: .8;
             /*cursor: pointer;*/
         }
+
+            .slideImg .clickZone {
+                width: 250px;
+                height: 250px;
+                cursor: pointer
+            }
 
         .popupslideImg {
             width: 500px;
@@ -1612,27 +1632,27 @@
                     <div class="swiper-container swiper1">
                         <div class="swiper-wrapper swiper-block">
                             <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397572-salonTafel-e4da3.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="selectProducts('meubel')" style="width:250px; height:250px;cursor:pointer"></div>
+                                <div onclick="selectProducts('meubel')" class="clickZone"></div>
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397571-lampenblusser-9bf31.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="selectProducts('verlichting')" style="width:250px; height:250px;cursor:pointer"></div>
+                                <div onclick="selectProducts('verlichting')" class="clickZone"></div>
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <div data-background="https://jornvdw80.github.io/SThout/Images/dino.png" class="swiper-slide swiper-lazy slideImg" style="height:170px; margin-top:80px">
-                                <div onclick="selectProducts('decoratie')" style="width:250px; height:250px;cursor:pointer"></div>
+                                <div onclick="selectProducts('decoratie')" class="clickZone"></div>
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397568-bijzettafel-6512b.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="selectProducts('meubel')" style="width:250px; height:250px;cursor:pointer"></div>
+                                <div onclick="selectProducts('meubel')" class="clickZone"></div>
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <div data-background="https://jornvdw80.github.io/SThout/Images/Common/Duif.png" class="swiper-slide swiper-lazy slideImg" style="height:270px; margin-top:20px">
-                                <div onclick="selectProducts('decoratie')" style="width:250px; height:250px;cursor:pointer"></div>
+                                <div onclick="selectProducts('decoratie')" class="clickZone"></div>
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <div data-background="https://static.websitecreator.eu/var/m_0/03/03f/1089/397573-frametafel-c20ad.png" class="swiper-slide swiper-lazy slideImg" style="height:200px; margin-top:50px">
-                                <div onclick="selectProducts('meubel')" style="width:250px; height:250px;cursor:pointer"></div>
+                                <div onclick="selectProducts('meubel')" class="clickZone"></div>
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                         </div>
@@ -1864,56 +1884,72 @@
                             <div class="swiper-container swiper2">
                                 <div class="swiper-wrapper">
                                     <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
-                                        <!--<p>Test ksdfbkjs</p>-->
+                                        <!--<p style="margin-top: -550px; color: blue;">meubel | nieuw samengesteld gezin</p>-->
+                                        <div class="title" id="title_#">meubel | nieuw samengesteld gezin</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <!--<p>abc</p>-->
+                                        <div class="title" id="title_#">meubel | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">meubel | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">meubel | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">verlichting | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">decoratie | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">decoratie | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <div class="title" id="title_#">decoratie | ...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <!--<div class="swiper-slide">
