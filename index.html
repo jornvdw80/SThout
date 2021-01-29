@@ -200,11 +200,11 @@
         }
 
         /*remove highlight content smartphones after sliding*/
-        @media(hover: hover) and (pointer: fine) {
+        /*@media(hover: hover) and (pointer: fine) {
             .brandBullet:hover, .brandBullet.closeBullet:hover {
                 opacity:.3;
             }
-        }
+        }*/
     </style>
 
     <style>
@@ -1838,9 +1838,9 @@
                 <div class="brands">
                     <ul>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
-                        <li><span class="brandBullet" onclick="selectPopupSlide(1)"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(5)"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(15)"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(1); resetHover(this)"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(5); resetHover(this)"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(15); resetHover(this)"></span></li>
                         <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
@@ -2322,6 +2322,11 @@
         function selectPopupSlide(index) {
             swiper2.slideToLoop(index - 1);
         }
+
+        function resetHover(e) {
+            e.style.opacity = 0.3;
+        }
+
     </script>
 
     <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
