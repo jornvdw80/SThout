@@ -73,14 +73,15 @@
         .brandBullet {
             position: relative;
             margin: 0 auto;
-            width: 15px;
-            height: 15px;
+            /*margin-top: -10px;*/
+            width: 8px;
+            height: 8px;
             /*margin-right: 10px;*/
-            margin-right: 10px;
+            margin-right: 15px;
             display: inline-block;
             border-radius: 50%;
-            background: #000;
-            opacity: 0.2;
+            background: #595959;
+            opacity: 0.3;
             cursor: pointer;
             /*width: 100px;
             height: 50px;
@@ -94,21 +95,43 @@
             cursor: pointer;*/
         }
 
-        .brandBullet:hover {
-            opacity: .4;
-        }
+            .brandBullet.closeBullet {
+                /*padding-bottom: 20px;*/
+                background-image: url('https://jornvdw80.github.io/SThout/Images/Common/close.ico');
+                background-color: transparent;
+                background-position: center center;
+                background-repeat: no-repeat;
+                /*background-attachment: fixed;*/
+                background-size: contain;
+                -webkit-background-size: contain;
+                -moz-background-size: contain;
+                -o-background-size: contain;
+                /*opacity: .6;*/
+                width: 15px;
+                height: 15px;
+                border-radius: 0;
+                /*margin-left: 5px;*/
+            }
 
-        .brandImg {
-            width: 20px;
-            height: 20px;
-            margin-right: 20px;
-            margin-right: 20px;
-            border: 1px solid #d3d3d3;
-            border-radius: 50%;
-            opacity: .35;
-            filter: grayscale(100%);
-            cursor: pointer;
-        }
+                .brandBullet:hover, .brandBullet.closeBullet:hover {
+                    opacity: .8;
+                }
+
+            /*.brandBullet.closeBullet:hover{
+                opacity:.8
+            }*/
+
+            .brandImg {
+                width: 20px;
+                height: 20px;
+                margin-right: 20px;
+                margin-right: 20px;
+                border: 1px solid #d3d3d3;
+                border-radius: 50%;
+                opacity: .35;
+                filter: grayscale(100%);
+                cursor: pointer;
+            }
 
             .brandImg:hover
             {
@@ -174,6 +197,13 @@
             background-color: black;
             padding: 2px 16px;
             color: black;
+        }
+
+        /*remove highlight content smartphones after sliding*/
+        @media(hover: hover) and (pointer: fine) {
+            .brandBullet:hover, .brandBullet.closeBullet:hover {
+                opacity:.3;
+            }
         }
     </style>
 
@@ -1807,10 +1837,11 @@
                 <!--<div><span class="close cursor" onclick="closeModal()">&times;</span></div>-->
                 <div class="brands">
                     <ul>
-                        <li><span class="close cursor" onclick="closeModal()">&times;</span></li>
+                        <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <li><span class="brandBullet" onclick="selectPopupSlide(1)"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(5)"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(15)"></span></li>
+                        <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
     <li><img src="https://jornvdw80.github.io/SThout/Images/Common/lamp.ico" onclick="selectPopupSlide(5)" title="verlichting" class="brandImg"></li>
