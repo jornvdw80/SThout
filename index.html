@@ -70,13 +70,41 @@
             list-style: none;
         }
 
+        .brandBullet {
+            position: relative;
+            margin: 0 auto;
+            width: 15px;
+            height: 15px;
+            /*margin-right: 10px;*/
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 50%;
+            background: #000;
+            opacity: 0.2;
+            cursor: pointer;
+            /*width: 100px;
+            height: 50px;
+            margin-right: 20px;
+            margin-right: 20px;
+            background-color: #d3d3d3;
+            border: 1px solid #d3d3d3;
+            border-radius: 50%;
+            opacity: .35;
+            filter: grayscale(100%);
+            cursor: pointer;*/
+        }
+
+        .brandBullet:hover {
+            opacity: .4;
+        }
+
         .brandImg {
             width: 20px;
             height: 20px;
             margin-right: 20px;
             margin-right: 20px;
-            /*border: 1px solid #d3d3d3;
-            border-radius: 50%;*/
+            border: 1px solid #d3d3d3;
+            border-radius: 50%;
             opacity: .35;
             filter: grayscale(100%);
             cursor: pointer;
@@ -124,10 +152,11 @@
         /* The Close Button */
         .close {
             color: #999;
-            /*position: absolute;*/
+            position: absolute;
             margin: 0 auto;
-            /*top: 10px;
-            right: 25px;*/
+            /*margin-right: 200px;*/
+            top: 22px;
+            /*right: 0;*/
             font-size: 35px;
             font-weight: bold;
             /*background-position: 15px 12px*/
@@ -135,7 +164,7 @@
 
             .close:hover,
             .close:focus {
-                color: black;
+                color: #808080;
                 text-decoration: none;
                 cursor: pointer;
             }
@@ -1775,14 +1804,19 @@
             </section>
             <!--PopUp-->
             <div id="myModal" class="modal" onscroll="return false">
-                <!--<span class="close cursor" onclick="closeModal()">&times;</span>-->
+                <!--<div><span class="close cursor" onclick="closeModal()">&times;</span></div>-->
                 <div class="brands">
                     <ul>
-                        <li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
-                        <li><img src="https://jornvdw80.github.io/SThout/Images/Common/lamp.ico" onclick="selectPopupSlide(5)" title="verlichting" class="brandImg"></li>
-                        <li><img src="https://jornvdw80.github.io/SThout/Images/Common/decoration.ico" onclick="selectPopupSlide(15)" title="decoratie" class="brandImg"></li>
+                        <li><span class="close cursor" onclick="closeModal()">&times;</span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(1)"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(5)"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(15)"></span></li>
+                        <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
+                        <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
+    <li><img src="https://jornvdw80.github.io/SThout/Images/Common/lamp.ico" onclick="selectPopupSlide(5)" title="verlichting" class="brandImg"></li>
+    <li><img src="https://jornvdw80.github.io/SThout/Images/Common/decoration.ico" onclick="selectPopupSlide(15)" title="decoratie" class="brandImg"></li>-->
                         <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/popup.ico" onclick="selectPopupSlide(18)" title="popup" class="brandImg"></li>-->
-                        <li><img src="https://jornvdw80.github.io/SThout/Images/Common/close.ico" onclick="closeModal()" class="brandImg" title="sluiten" style="width:18px;height:18px"></li>
+                        <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/close.ico" onclick="closeModal()" class="brandImg" title="sluiten" style="width:18px;height:18px"></li>-->
                         <!--<span class="close cursor" onclick="closeModal()">&times;</span>-->
                     </ul>
                 </div>
@@ -1793,9 +1827,11 @@
                             <div class="swiper-container swiper2">
                                 <div class="swiper-wrapper">
                                     <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
+                                        <!--<p>Test ksdfbkjs</p>-->
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
+                                        <!--<p>abc</p>-->
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
