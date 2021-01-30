@@ -1272,6 +1272,13 @@
         .page2 h1, .page3 h2, .page4 h2, .page5 h2 {
             margin-top: 10px;
         }
+
+        @media(hover: hover) and (pointer: fine) {
+            .brandBullet:hover {
+                opacity:.8;
+            }
+        }
+
     </style>
 
     <style>
@@ -1895,10 +1902,10 @@
                 <div class="brands">
                     <ul>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
-                        <li><span class="brandBullet" onclick="selectPopupSlide(1); resetHover(this)"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(5); resetHover(this)"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(15); resetHover(this)"></span></li>
-                        <li><span class="brandBullet infoBullet" onclick="showInfo();resetHover(this)"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(1);"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(5);"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(15);"></span></li>
+                        <li><span class="brandBullet infoBullet" onclick="showInfo();"></span></li>
                         <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
@@ -2402,6 +2409,7 @@
         }
 
         function resetHover(e) {
+            //TODO: when clicked, no more hover afterwards
             e.style.opacity = 0.3;
         }
 
