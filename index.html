@@ -106,7 +106,7 @@
                 -webkit-background-size: contain;
                 -moz-background-size: contain;
                 -o-background-size: contain;
-                /*opacity: .6;*/
+                opacity: .3;
                 width: 15px;
                 height: 15px;
                 border-radius: 0;
@@ -2390,8 +2390,12 @@
                     prevEl: '.swiper-button-prev2',
                 },
                 on: {
-                    slideChange: function () {
-                        //document.getElementByClass("modal").focus();
+                    slideChange: function slideChange(swiper2) {
+                        swiper2.update();
+                        alert(swiper2.activeIndex);
+                        //if (swiper.history.initialized && swiper.params.cssMode) {
+                        //    swiper.history.setHistory(swiper.params.history.key, swiper.activeIndex);
+                        //}
                     }
                 }
             });
