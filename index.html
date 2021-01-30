@@ -1898,7 +1898,7 @@
                         <li><span class="brandBullet" onclick="selectPopupSlide(1); resetHover(this)"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(5); resetHover(this)"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(15); resetHover(this)"></span></li>
-                        <li><span class="brandBullet infoBullet" onclick=""></span></li>
+                        <li><span class="brandBullet infoBullet" onclick="showInfo();resetHover(this)"></span></li>
                         <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
@@ -1937,7 +1937,7 @@
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
@@ -2395,6 +2395,10 @@
 
         function selectPopupSlide(index) {
             swiper2.slideToLoop(index - 1);
+        }
+
+        function showInfo() {
+            alert("TODO");
         }
 
         function resetHover(e) {
