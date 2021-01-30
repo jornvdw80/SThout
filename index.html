@@ -113,6 +113,24 @@
                 /*margin-left: 5px;*/
             }
 
+            .brandBullet.infoBullet {
+                /*padding-bottom: 20px;*/
+                background-image: url('https://jornvdw80.github.io/SThout/Images/Common/info.ico');
+                background-color: transparent;
+                background-position: center center;
+                background-repeat: no-repeat;
+                /*background-attachment: fixed;*/
+                background-size: contain;
+                -webkit-background-size: contain;
+                -moz-background-size: contain;
+                -o-background-size: contain;
+                /*opacity: .6;*/
+                width: 15px;
+                height: 15px;
+                border-radius: 0;
+                /*margin-left: 5px;*/
+            }
+
                 .brandBullet:hover, .brandBullet.closeBullet:hover {
                     opacity: .8;
                 }
@@ -241,15 +259,25 @@
                 text-align:center;
                 position: absolute;
                 width: 100%;
-                z-index: 9999;
+                /*z-index: 9999;*/
                 color: black;
-                font-size: 0.75em;
+                font-size: 12px;
                 margin-bottom: 50px;
-                font-weight: bold;
+                /*font-weight: bold;*/
                 color: #808080;
             }
 
-        .swiper-pagination {
+            .swiper-slide .title span{
+                font-size: 13px;
+                color: #808080;
+            }
+
+                .swiper-pagination {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .swiper-pagination-title {
             position: relative;
             margin-top: 60px;
         }
@@ -884,7 +912,8 @@
             .slideImg .clickZone {
                 width: 250px;
                 height: 250px;
-                cursor: pointer
+                cursor: pointer;
+                /*border: 1px solid black;*/
             }
 
         .popupslideImg {
@@ -1869,6 +1898,7 @@
                         <li><span class="brandBullet" onclick="selectPopupSlide(1); resetHover(this)"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(5); resetHover(this)"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(15); resetHover(this)"></span></li>
+                        <li><span class="brandBullet infoBullet" onclick=""></span></li>
                         <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
@@ -1887,23 +1917,23 @@
                                 <div class="swiper-wrapper">
                                     <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
                                         <!--<p style="margin-top: -550px; color: blue;">meubel | nieuw samengesteld gezin</p>-->
-                                        <div class="title" id="title_#">meubel | nieuw samengesteld gezin</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>nieuw samengesteld gezin</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">meubel | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">meubel | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">meubel | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
@@ -1911,47 +1941,47 @@
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">verlichting | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">verlichting | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">decoratie | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">decoratie | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#">decoratie | ...</div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <!--<div class="swiper-slide">
@@ -2004,7 +2034,7 @@
                                     </div>-->
                                 </div>
                                 <!-- Add Pagination -->
-                                <div class="swiper-pagination swiper-pagination2"></div>
+                                <div class="swiper-pagination swiper-pagination-title swiper-pagination2"></div>
                                 <!-- Add Arrows -->
                                 <div class="swiper-button-next swiper-button-next2"></div>
                                 <div class="swiper-button-prev swiper-button-prev2"></div>
