@@ -131,9 +131,9 @@
                 /*margin-left: 5px;*/
             }
 
-                .brandBullet:hover, .brandBullet.closeBullet:hover {
-                    opacity: .8;
-                }
+            .brandBullet:hover, .brandBullet.closeBullet:hover, .brandBullet:focus, .brandBullet.closeBullet:focus, .brandBullet:active, .brandBullet.closeBullet:active {
+                opacity: .8;
+            }
 
             /*.brandBullet.closeBullet:hover{
                 opacity:.8
@@ -1902,11 +1902,11 @@
                 <div class="brands">
                     <ul>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
-                        <li><span class="brandBullet" onclick="selectPopupSlide(1);"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(5);"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(15);"></span></li>
-                        <li><span class="brandBullet infoBullet" onclick="showInfo();"></span></li>
-                        <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(1);" aria-haspopup="true"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(5);" aria-haspopup="true"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(15);" aria-haspopup="true"></span></li>
+                        <li><span class="brandBullet infoBullet" onclick="showInfo();" aria-haspopup="true"></span></li>
+                        <li><span class="brandBullet closeBullet" onclick="closeModal()" aria-haspopup="true"></span></li>
                         <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
     <li><img src="https://jornvdw80.github.io/SThout/Images/Common/lamp.ico" onclick="selectPopupSlide(5)" title="lamp" class="brandImg"></li>
