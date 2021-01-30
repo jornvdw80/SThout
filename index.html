@@ -2389,6 +2389,11 @@
                     nextEl: '.swiper-button-next2',
                     prevEl: '.swiper-button-prev2',
                 },
+                on: {
+                    slideChange: function () {
+                        //document.getElementByClass("modal").focus();
+                    }
+                }
             });
             //swiper2.slideTo(index);
             swiper2.slideToLoop(index - 1);
@@ -2407,12 +2412,6 @@
         function showInfo() {
             alert("TODO");
         }
-
-        function resetHover(e) {
-            //TODO: when clicked, no more hover afterwards
-            e.style.opacity = 0.3;
-        }
-
     </script>
 
     <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
