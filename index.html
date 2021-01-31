@@ -670,6 +670,31 @@
             text-decoration: none;
         }
 
+        .swiper-slide article {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+            margin: 0;
+            /*position: relative;*/
+            display: inline-block;
+            width: 300px;
+            height: auto;
+            padding: 0;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border: 2px solid;
+            border-color: #808080;
+            border-radius: 20px;
+            text-align: center;
+            background-color: #fff;
+            opacity: .9;
+            cursor: pointer;
+        }
+
         /*.eventInfo,*/
         #eventsList li article, #newsList li article {
             position: relative;
@@ -690,11 +715,15 @@
             /*cursor: pointer;*/
         }
 
-            #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
+            .swiper-slide article:hover, #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
                 background-color: #fbfbfb;
                 /*border: 3px dotted;*/
                 border-color: #808080;
             }
+
+        .modal .swiper-slide, .swiper-slide article {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
 
                 #eventsList li article:hover .preview, #newsList li article:hover .preview {
                     background-color: white;
@@ -1274,8 +1303,14 @@
         }
 
         @media(hover: hover) and (pointer: fine) {
-            .brandBullet:hover {
+            .brandBullet:hover, .brandBullet.closeBullet:hover {
                 opacity:.8;
+            }
+        }
+
+        @media(hover: hover) and (pointer: fine) {
+            .brandBullet, .brandBullet.closeBullet {
+                opacity: .3;
             }
         }
 
@@ -1898,22 +1933,13 @@
             </section>
             <!--PopUp-->
             <div id="myModal" class="modal" onscroll="return false">
-                <!--<div><span class="close cursor" onclick="closeModal()">&times;</span></div>-->
                 <div class="brands">
                     <ul>
-                        <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
                         <li><span class="brandBullet" onclick="selectPopupSlide(1);" aria-haspopup="true"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(5);" aria-haspopup="true"></span></li>
                         <li><span class="brandBullet" onclick="selectPopupSlide(15);" aria-haspopup="true"></span></li>
-                        <li><span class="brandBullet infoBullet" onclick="showInfo();" aria-haspopup="true"></span></li>
+                        <li><span class="brandBullet infoBullet" onclick="togglePopupInfo();" aria-haspopup="true"></span></li>
                         <li><span class="brandBullet closeBullet" onclick="closeModal()" aria-haspopup="true"></span></li>
-                        <!--<li><span class="close cursor" onclick="closeModal()">&times;</span></li>-->
-                        <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/furniture.ico" onclick="selectPopupSlide(1)" title="meubel" class="brandImg"></li>
-    <li><img src="https://jornvdw80.github.io/SThout/Images/Common/lamp.ico" onclick="selectPopupSlide(5)" title="lamp" class="brandImg"></li>
-    <li><img src="https://jornvdw80.github.io/SThout/Images/Common/decoration.ico" onclick="selectPopupSlide(15)" title="decoratie" class="brandImg"></li>-->
-                        <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/popup.ico" onclick="selectPopupSlide(18)" title="popup" class="brandImg"></li>-->
-                        <!--<li><img src="https://jornvdw80.github.io/SThout/Images/Common/close.ico" onclick="closeModal()" class="brandImg" title="sluiten" style="width:18px;height:18px"></li>-->
-                        <!--<span class="close cursor" onclick="closeModal()">&times;</span>-->
                     </ul>
                 </div>
                 <div class="modal-content">
@@ -1923,73 +1949,101 @@
                             <div class="swiper-container swiper2">
                                 <div class="swiper-wrapper">
                                     <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
-                                        <!--<p style="margin-top: -550px; color: blue;">meubel | nieuw samengesteld gezin</p>-->
-                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>nieuw samengesteld gezin</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>nieuw samengesteld gezin</div>
+                                        <article class="popupInfo" style="display:none">
+                                            <div style="background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg')" class="preview"></div>
+                                            <img id="more"
+                                                 class="menu-icon-light"
+                                                 src="https://jornvdw80.github.io/SThout/Images/Common/close.ico"
+                                                 alt="..."
+                                                 title="sluiten"
+                                                 onclick="togglePopupInfo()">
+                                            <p class="eventTitle">29 november 2015</p>
+                                            <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Brugge</a>
+                                            <p>Dit is wat bijkomende info</p>
+                                            <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                        </article>
+
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>...</div>
+                                        <article class="popupInfo" style="display:none">
+                                            <div style="background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png') " class="preview"></div>
+                                            <img id="more"
+                                                 class="menu-icon-light"
+                                                 src="https://jornvdw80.github.io/SThout/Images/Common/close.ico"
+                                                 alt="..."
+                                                 title="sluiten"
+                                                 onclick="togglePopupInfo()">
+                                            <p class="eventTitle">29 november 2020</p>
+                                            <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Balen</a>
+                                            <div class="eventInfo" id='info012'>
+                                                <p>Dit is een test</p>
+                                                <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                            </div>
+                                        </article>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61952-IMG_1193_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61954-IMG_1222_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61956-IMG_1230_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61962-IMG_1260_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61957-IMG_1235_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61958-IMG_1238_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61955-IMG_1226_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61964-IMG_1270_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61965-IMG_1284_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61959-IMG_1247_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61966-IMG_1285_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">lamp | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61963-IMG_1266_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61961-IMG_1259_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                         <div class="swiper-lazy-preloader"></div>
+                                        <div class="title" id="title_#"><span style="font-weight:bold">decoratie | </span>...</div>
                                     </div>
                                     <!--<div class="swiper-slide">
                                         <img style="background-image: url('')" class="popupslideImg" />
@@ -2368,6 +2422,7 @@
     <script>
         function openModal(index) {
             document.getElementById("myModal").style.display = "block";
+            //document.getElementsByClassName("popupInfo").style.display = "none";
             swiper2.destroy(false, false); //important, otherwise freaky behaviour!!!!
             swiper2 = new Swiper('.swiper2', {
                 slidesPerView: 1,
@@ -2389,16 +2444,23 @@
                     nextEl: '.swiper-button-next2',
                     prevEl: '.swiper-button-prev2',
                 },
-                on: {
-                    slideChange: function slideChange(swiper2) {
-                        swiper2.update();
-                        //alert(swiper2.activeIndex);
-                        //if (swiper.history.initialized && swiper.params.cssMode) {
-                        //    swiper.history.setHistory(swiper.params.history.key, swiper.activeIndex);
-                        //}
-                    }
-                }
+                //on: {
+                //    slideChange: function slideChange(swiper2) {
+                //        //onClick.bind(swiper2)
+                //        //swiper2.update();
+                //        //alert(swiper2.activeIndex);
+                //        //if (swiper.history.initialized && swiper.params.cssMode) {
+                //        //    swiper.history.setHistory(swiper.params.history.key, swiper.activeIndex);
+                //        //}
+                //    }
+                //}
             });
+
+            swiper2.on('slideChange', function () {
+                $(".popupInfo").hide(); //.slideUp('fast');
+                //$(".popupInfo").style.display = "none";
+            });
+
             //swiper2.slideTo(index);
             swiper2.slideToLoop(index - 1);
         }
@@ -2409,12 +2471,20 @@
             goTo('portfolio');
         }
 
+        function closePopupInfo(e) {
+            e.slideUp();
+            //document.getElementByClass("popupInfo").style.display = "none";
+        }
+
         function selectPopupSlide(index) {
             swiper2.slideToLoop(index - 1);
         }
 
-        function showInfo() {
-            alert("TODO");
+        function togglePopupInfo() {
+            var isVisible = false;
+            if ($(".popupInfo").is(":visible")) { isVisible = true; }
+            $(".popupInfo").fadeOut(1000);
+            if (isVisible) { $(".popupInfo").fadeOut(1000); } else { $(".popupInfo").fadeIn(1000); }
         }
     </script>
 
