@@ -861,11 +861,11 @@
             .preview.info {
                 width: 50px;
                 height: 50px;
-                background-image: url('https://jornvdw80.github.io/SThout/Images/Common/info.ico');
-                background-size: contain;
-                -webkit-background-size: contain;
-                -moz-background-size: contain;
-                -o-background-size: contain;
+                background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png');
+                background-size: cover;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
             }
 
         .hasInfo {
@@ -2573,6 +2573,12 @@
             if ($(".popupInfo").is(":visible")) { isVisible = true; }
             $(".popupInfo").fadeOut(duration);
             if (isVisible) { $(".popupInfo").fadeOut(duration); } else { $(".popupInfo").fadeIn(duration); }
+
+            //var test = true;
+            //if ($(".popupInfo").is(":visible")) { test = false; }
+            //$(".popupInfo").slideUp('fast');
+            //if (test) { $(".popupInfo").slideDown('fast'); } else { $(".popupInfo").slideUp('fast'); };
+            ////e.scrollIntoView({ behavior: "smooth", block: "center" });
         }
     </script>
 
