@@ -58,14 +58,14 @@
             visibility: hidden;
         }*/
 
-        .brands ul {
+        .brands ul, .title ul {
             text-align: center;
             margin: auto;
             margin-top: 10px;
             margin-bottom: 10px;
         }
 
-        .brands li {
+        .brands li, .title li {
             display: inline;
             list-style: none;
         }
@@ -130,6 +130,14 @@
                 border-radius: 0;
                 /*margin-left: 5px;*/
             }
+
+                .brandBullet.infoBullet.hasInfo {
+                    opacity: .8;
+                    /*animation: blink 2s step-start 0s infinite;
+                    -webkit-animation: blink 2s step-start 0s infinite;*/
+                    /*float:right;
+                    right: 20%;*/
+                }
 
             .brandBullet:hover, .brandBullet.closeBullet:hover, .brandBullet:focus, .brandBullet.closeBullet:focus, .brandBullet:active, .brandBullet.closeBullet:active {
                 opacity: .8;
@@ -265,6 +273,7 @@
                 margin-bottom: 50px;
                 /*font-weight: bold;*/
                 color: #808080;
+                /*cursor: pointer;*/
             }
 
             .swiper-slide .title span{
@@ -646,6 +655,10 @@
             color: #000;
         }
 
+        .swiper-slide article p {
+            font-size: 14px;
+        }
+
         .past article a, .past .newsSubTitle, .future .newsSubTitle {
             font-size: 18px;
         }
@@ -670,7 +683,7 @@
             text-decoration: none;
         }
 
-        .swiper-slide article {
+        .swiper-slide article /*, .hasPopupInfo*/ {
             position: fixed;
             top: 50%;
             left: 50%;
@@ -695,25 +708,82 @@
             cursor: pointer;
         }
 
-        /*.eventInfo,*/
-        #eventsList li article, #newsList li article {
-            position: relative;
-            display: inline-block;
-            width: 100%;
+        .swiper-slide .popupClickZone {
             margin: 0;
-            padding: 0;
-            padding-top: 7px;
-            padding-bottom: 7px;
-            padding-left: 15px;
-            padding-right: 15px;
-            border: 3px dotted;
-            border-color: #d3d3d3;
-            border-radius: 20px;
-            text-align: center;
-            background-color: #fff;
-            opacity: .9;
-            /*cursor: pointer;*/
+            width: 300px;
+            height: 100%;
+/*            border: 2px solid;
+            border-color: #808080;*/
+            cursor:pointer;
         }
+
+        .hasPopupInfo {
+            /*            width: 10px;
+            height: 10px;*/
+            /*border: none;*/
+            opacity: 0.8;
+            /*animation: blink 1s step-start 0s infinite;
+            -webkit-animation: blink 1s step-start 0s infinite;*/
+            cursor: pointer;
+            /*width: auto;
+            height: 80px;*/
+            margin: 0 auto;
+            padding: 0;
+            /*padding-top: 15px;*/
+            float: left;
+            border: 2px solid #DCDCDC;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            /*left: 20px;*/
+            background-image: url('https://jornvdw80.github.io/SThout/Images/Common/info.ico');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
+            background-color: #fbfbfb;
+            /*border: 2px solid #d3d3d3;*/
+            /*border: 1px solid #fbfbfb;*/
+            /*border: 1px solid #808080;*/
+            /*border: 1px solid #d3d3d3;*/
+            /* border-radius: 0;
+            opacity: .7;*/
+            /*filter: grayscale(100%);*/
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+            /*.eventInfo,*/
+            #eventsList li article, #newsList li article {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border: 3px dotted;
+                border-color: #d3d3d3;
+                border-radius: 20px;
+                text-align: center;
+                background-color: #fff;
+                opacity: .9;
+                /*cursor: pointer;*/
+            }
 
             .swiper-slide article:hover, #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
                 background-color: #fbfbfb;
@@ -725,12 +795,12 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
-                #eventsList li article:hover .preview, #newsList li article:hover .preview {
-                    background-color: white;
-                    /*border: 2px solid;*/
-                    /*border-color: #808080;*/
-                    opacity: .9;
-                }
+        #eventsList li article:hover .preview, #newsList li article:hover .preview {
+            background-color: white;
+            /*border: 2px solid;*/
+            /*border-color: #808080;*/
+            opacity: .9;
+        }
 
         /*.preview:hover {
             border: 1px solid #808080;
@@ -787,6 +857,16 @@
             opacity: .7;
             filter: grayscale(100%);
         }
+
+            .preview.info {
+                width: 50px;
+                height: 50px;
+                background-image: url('https://jornvdw80.github.io/SThout/Images/Common/info.ico');
+                background-size: contain;
+                -webkit-background-size: contain;
+                -moz-background-size: contain;
+                -o-background-size: contain;
+            }
 
         .hasInfo {
             cursor: pointer;
@@ -1950,39 +2030,46 @@
                                 <div class="swiper-wrapper">
                                     <div data-background="http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>nieuw samengesteld gezin</div>
-                                        <article class="popupInfo" style="display:none">
-                                            <div style="background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/42249-nieuw samengesteld gezin.jpg')" class="preview"></div>
+                                        <!--<div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>nieuw samengesteld gezin</div>-->
+                                        <!--<ul class="title" sty>
+                                            <li><span class="brandBullet infoBullet hasInfo" onclick="togglePopupInfo();"> | </span></li>
+                                            <li><span style="font-weight:bold">meubel</span> | </li>
+                                            <li><span>nieuw samengesteld gezin</span></li>
+                                        </ul>-->
+                                        <div class="popupClickZone" onclick="togglePopupInfo()"></div>
+                                        <div class="title">
+                                            <span style="font-weight:bold">meubel | </span>nieuw samengesteld gezin
+                                        </div>
+                                        <article class="popupInfo" onclick="togglePopupInfo()">
+                                            <div class="preview info"></div>
                                             <img id="more"
                                                  class="menu-icon-light"
                                                  src="https://jornvdw80.github.io/SThout/Images/Common/close.ico"
                                                  alt="..."
                                                  title="sluiten"
                                                  onclick="togglePopupInfo()">
-                                            <p class="eventTitle">29 november 2015</p>
-                                            <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Brugge</a>
+                                            <a>nieuw samengesteld gezin</a>
                                             <p>Dit is wat bijkomende info</p>
                                             <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
                                         </article>
-
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61953-IMG_1206_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="title" id="title_#"><span style="font-weight:bold">meubel | </span>...</div>
-                                        <article class="popupInfo" style="display:none">
-                                            <div style="background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/60771-IMG_1206.png') " class="preview"></div>
+                                        <div class="popupClickZone" onclick="togglePopupInfo()"></div>
+                                        <div class="title">
+                                            <span style="font-weight:bold">meubel | </span>...
+                                        </div>
+                                        <article class="popupInfo" onclick="togglePopupInfo()">
+                                            <div class="preview info"></div>
                                             <img id="more"
                                                  class="menu-icon-light"
                                                  src="https://jornvdw80.github.io/SThout/Images/Common/close.ico"
                                                  alt="..."
                                                  title="sluiten"
                                                  onclick="togglePopupInfo()">
-                                            <p class="eventTitle">29 november 2020</p>
-                                            <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Balen</a>
-                                            <div class="eventInfo" id='info012'>
-                                                <p>Dit is een test</p>
-                                                <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
-                                            </div>
+                                            <a>skeetzit</a>
+                                            <p>Dit is wat bijkomende info</p>
+                                            <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
                                         </article>
                                     </div>
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61951-IMG_1188_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
@@ -2422,7 +2509,7 @@
     <script>
         function openModal(index) {
             document.getElementById("myModal").style.display = "block";
-            //document.getElementsByClassName("popupInfo").style.display = "none";
+            $(".popupInfo").hide();
             swiper2.destroy(false, false); //important, otherwise freaky behaviour!!!!
             swiper2 = new Swiper('.swiper2', {
                 slidesPerView: 1,
@@ -2471,10 +2558,10 @@
             goTo('portfolio');
         }
 
-        function closePopupInfo(e) {
-            e.slideUp();
-            //document.getElementByClass("popupInfo").style.display = "none";
-        }
+        //function closePopupInfo(e) {
+        //    e.slideUp();
+        //    //document.getElementByClass("popupInfo").style.display = "none";
+        //}
 
         function selectPopupSlide(index) {
             swiper2.slideToLoop(index - 1);
@@ -2482,9 +2569,10 @@
 
         function togglePopupInfo() {
             var isVisible = false;
+            var duration = 500;
             if ($(".popupInfo").is(":visible")) { isVisible = true; }
-            $(".popupInfo").fadeOut(1000);
-            if (isVisible) { $(".popupInfo").fadeOut(1000); } else { $(".popupInfo").fadeIn(1000); }
+            $(".popupInfo").fadeOut(duration);
+            if (isVisible) { $(".popupInfo").fadeOut(duration); } else { $(".popupInfo").fadeIn(duration); }
         }
     </script>
 
