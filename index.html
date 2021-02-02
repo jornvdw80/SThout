@@ -139,9 +139,9 @@
                     right: 20%;*/
                 }
 
-            .brandBullet:hover, .brandBullet.closeBullet:hover, .brandBullet .hover {
-                opacity: .8;
-            }
+                .brandBullet:hover, .brandBullet.closeBullet:hover, .brandBullet.infoBullet:hover, .brandBullet.hover, .brandBullet.closeBullet.hover, .brandBullet.infoBullet.hover {
+                    opacity: .8;
+                }
 
             /*.brandBullet.closeBullet:hover{
                 opacity:.8
@@ -274,7 +274,7 @@
                 /*font-weight: bold;*/
                 color: #808080;
                 /*cursor: pointer;*/
-                opacity:.3;
+                opacity:.8;
             }
 
                 .swiper-slide .slideTitle span {
@@ -2610,7 +2610,7 @@
     </script>
 
     <script>
-        $('.brandBullet .taphover').on('touchstart', function (e) {
+        $('.brandBullet.taphover').on('touchstart', function (e) {
     'use strict'; //satisfy code inspectors
     var link = $(this); //preselect the link
             if (link.hasClass('hover')) {
@@ -2618,7 +2618,7 @@
         return true;
     } else {
         link.addClass('hover');
-                $('.brandBullet .taphover').not(this).removeClass('hover');
+                $('.brandBullet.taphover').not(this).removeClass('hover');
                 e.preventDefault();
                 alert('false');
         return false; //extra, and to make sure the function has consistent return points
