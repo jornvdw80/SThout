@@ -2573,8 +2573,7 @@
             swiper2.on('slideChange', function () {
                 //$(this).trigger('click');
                 $(".popupInfo").hide();
-                togglePopupInfo();
-                //.slideUp('fast');
+                togglePopupInfo();//.slideUp('fast');
                 //$(".popupInfo").style.display = "none";
                 //resetHoverTouch();
                 //resetTouchEnd();
@@ -2583,6 +2582,7 @@
 
             //swiper2.slideTo(index);
             swiper2.slideToLoop(index - 1);
+            togglePopupInfo();
         }
 
         function closeModal() {
