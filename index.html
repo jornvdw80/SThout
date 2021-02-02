@@ -2026,11 +2026,11 @@
             <div id="myModal" class="modal" onscroll="return false">
                 <div class="brands">
                     <ul>
-                        <li><span class="brandBullet taphover" onclick="selectPopupSlide(1);"></span></li>
-                        <li><span class="brandBullet taphover" onclick="selectPopupSlide(5);"></span></li>
-                        <li><span class="brandBullet taphover" onclick="selectPopupSlide(15);"></span></li>
-                        <li><span class="brandBullet infoBullet taphover" onclick="togglePopupInfo();"></span></li>
-                        <li><span class="brandBullet closeBullet taphover" onclick="closeModal()"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(1);"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(5);"></span></li>
+                        <li><span class="brandBullet" onclick="selectPopupSlide(15);"></span></li>
+                        <li><span class="brandBullet infoBullet" onclick="togglePopupInfo();"></span></li>
+                        <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
                     </ul>
                 </div>
                 <div class="modal-content">
@@ -2623,7 +2623,13 @@
                     e.preventDefault();
                     //alert('end')
                     $('.brandBullet').style.opacity = .3;
-                    //return $(this).trigger('click');
+                    return $(this).trigger('click');
+                });
+                $('.brandBullet').bind('touchend', function (e) {
+                    //e.preventDefault();
+                    //alert('end')
+                    $('.brandBullet').style.opacity = .3;
+                    //return $(this).trigger('togglePopupInfo');
                 });
             }
 
@@ -2647,13 +2653,13 @@
         }
     </script>
 
-    <script>
+    <!--<script>
         function resetTouchEnd() {
             $('.brandBullet.taphover').on('touchend', function (e) {
                 $('.brandBullet.taphover').removeClass('hover');
             });
         }
-    </script>
+    </script>-->
 
     <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
     <!--Automatic Slideshow-->
