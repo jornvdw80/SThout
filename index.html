@@ -2595,6 +2595,7 @@
 
         function selectPopupSlide(index) {
             swiper2.slideToLoop(index - 1);
+            $(".slideTitle").focus();
         }
 
         function togglePopupInfo() {
@@ -2603,6 +2604,7 @@
             if ($(".popupInfo").is(":visible")) { isVisible = true; }
             $(".popupInfo").fadeOut(duration);
             if (isVisible) { $(".popupInfo").fadeOut(duration); } else { $(".popupInfo").fadeIn(duration); }
+            $(".slideTitle").focus();
 
             //var test = true;
             //if ($(".popupInfo").is(":visible")) { test = false; }
