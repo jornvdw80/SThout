@@ -2573,6 +2573,8 @@
             swiper2.on('slideChange', function () {
                 $(".popupInfo").hide(); //.slideUp('fast');
                 //$(".popupInfo").style.display = "none";
+                resetHoverTouch();
+                //alert('test');
             });
 
             //swiper2.slideTo(index);
@@ -2610,20 +2612,23 @@
     </script>
 
     <script>
-        $('.brandBullet.taphover').on('touchstart', function (e) {
-    'use strict'; //satisfy code inspectors
-    var link = $(this); //preselect the link
-            if (link.hasClass('hover')) {
-                alert('true');
-        return true;
-    } else {
-        link.addClass('hover');
-                $('.brandBullet.taphover').not(this).removeClass('hover');
-                e.preventDefault();
-                alert('false');
-        return false; //extra, and to make sure the function has consistent return points
-    }
-});
+        function resetHoverTouch() {
+            $('.brandBullet.taphover').on('touchstart', function (e) {
+                'use strict'; //satisfy code inspectors
+                var link = $(this); //preselect the link
+                if (link.hasClass('hover')) {
+                    //alert('true');
+                    return true;
+                } else {
+                    link.addClass('hover');
+                    $('.brandBullet.taphover').not(this).removeClass('hover');
+                    e.preventDefault();
+                    //alert('false');
+                    return false; //extra, and to make sure the function has consistent return points
+                }
+
+            });
+        }
     </script>
 
     <!--CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h-->
