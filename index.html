@@ -2617,11 +2617,13 @@
             if (window.Touch) {
                 $('.brandBullet').bind('touchstart', function (e) {
                     e.preventDefault();
+                    $('.brandBullet').style.opacity = .8;
                 });
                 $('.brandBullet').bind('touchend', function (e) {
                     e.preventDefault();
                     //alert('end')
-                    return $(this).trigger('click');
+                    $('.brandBullet').style.opacity = .3;
+                    //return $(this).trigger('click');
                 });
             }
 
