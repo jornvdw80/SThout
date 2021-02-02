@@ -2571,8 +2571,10 @@
             });
 
             swiper2.on('slideChange', function () {
-                $(this).trigger('click');
-                $(".popupInfo").hide(); //.slideUp('fast');
+                //$(this).trigger('click');
+                $(".popupInfo").hide();
+                togglePopupInfo();
+                //.slideUp('fast');
                 //$(".popupInfo").style.display = "none";
                 //resetHoverTouch();
                 //resetTouchEnd();
