@@ -2625,11 +2625,11 @@
                     $('.brandBullet').style.opacity = .3;
                     return $(this).trigger('click');
                 });
-                $('.brandBullet').bind('touchend', function (e) {
+                $('.brandBullet.infoBullet').bind('touchend', function (e) {
                     //e.preventDefault();
                     //alert('end')
-                    $('.brandBullet').style.opacity = .3;
-                    //return $(this).trigger('togglePopupInfo');
+                    $('.brandBullet.infoBullet').style.opacity = .3;
+                    //return $(this).trigger('click');
                 });
             }
 
