@@ -2573,7 +2573,8 @@
             swiper2.on('slideChange', function () {
                 $(".popupInfo").hide(); //.slideUp('fast');
                 //$(".popupInfo").style.display = "none";
-                resetHoverTouch();
+                //resetHoverTouch();
+                resetTouchEnd();
                 //alert('test');
             });
 
@@ -2627,6 +2628,14 @@
                     return false; //extra, and to make sure the function has consistent return points
                 }
 
+            });
+        }
+    </script>
+
+    <script>
+        function resetTouchEnd() {
+            $('.brandBullet.taphover').on('touchend', function (e) {
+                $('.brandBullet.taphover').removeClass('hover');
             });
         }
     </script>
