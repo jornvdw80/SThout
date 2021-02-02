@@ -2569,11 +2569,12 @@
                 //    }
                 //}
             });
-
+            var toggle = true;
             swiper2.on('slideChange', function () {
                 //$(this).trigger('click');
                 $(".popupInfo").hide();
                 togglePopupInfo();//.slideUp('fast');
+                toggle = false;
                 //$(".popupInfo").style.display = "none";
                 //resetHoverTouch();
                 //resetTouchEnd();
@@ -2582,7 +2583,9 @@
 
             //swiper2.slideTo(index);
             swiper2.slideToLoop(index - 1);
-            togglePopupInfo();
+            if (toggle) {
+                togglePopupInfo();
+            }
         }
 
         function closeModal() {
