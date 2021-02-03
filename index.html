@@ -166,6 +166,7 @@
 
             /* The Modal (background) */
             .modal {
+                margin: 0 auto;
                 display: none;
                 position: fixed;
                 z-index: 99999;
@@ -261,7 +262,7 @@
 
             .swiper-slide .slideTitle {
                 margin: 0 auto;
-                bottom: -80px;
+                bottom: -90px;
                 /*left: 20px;*/
                 /*float: left;*/
                 text-align: center;
@@ -786,11 +787,11 @@
                 /*cursor: pointer;*/
             }
 
-            .swiper-slide article:hover, #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
-                background-color: #fbfbfb;
-                /*border: 3px dotted;*/
-                border-color: #808080;
-            }
+                .swiper-slide article:hover, #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
+                    background-color: #fbfbfb;
+                    /*border: 3px dotted;*/
+                    border-color: #808080;
+                }
 
         .modal .swiper-slide, .swiper-slide article {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -2621,25 +2622,26 @@
     </script>
 
     <script>
-        function resetHoverTouch() {
-            if (window.Touch) {
-                $('.brandBullet').bind('touchstart', function (e) {
-                    //e.preventDefault();
-                    $('.brandBullet').style.opacity = .3;
-                });
-                //$('.brandBullet').bind('touchend', function (e) {
-                //    e.preventDefault();
-                //    //alert('end')
-                //    $('.brandBullet').style.opacity = .3;
-                //    //return $(this).trigger('click');
-                //});
-                //$('.brandBullet.infoBullet').bind('touchend', function (e) {
-                //    //e.preventDefault();
-                //    //alert('end')
-                //    $('.brandBullet.infoBullet').style.opacity = .3;
-                //    //return $(this).trigger('click');
-                //});
-            }
+        //function resetHoverTouch() {
+        //    if (window.Touch) {
+        //        $('.brandBullet').bind('touchstart', function (e) {
+        //            e.preventDefault();
+        //            //$('.brandBullet').style.opacity = .3;
+        //        });
+        //        //$('.brandBullet').bind('touchend', function (e) {
+        //        //    e.preventDefault();
+        //        //    //alert('end')
+        //        //    //$('.brandBullet').style.opacity = .3;
+        //        //    //return $(this).trigger('click');
+        //        //});
+        //        $('.brandBullet').bind('touchend', function (e) {
+        //            e.preventDefault();
+        //            //alert('end')
+        //            //$('.brandBullet.infoBullet').style.opacity = .3;
+        //            touch
+        //            return $(this).trigger('click');
+        //        });
+        //    }
 
 
             //$('.brandBullet.taphover').on('touchstart', function (e) {
