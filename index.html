@@ -473,8 +473,8 @@
 
         #sub-header {
             position: absolute;
-            top: 12px;
-            right: 20px;
+            top: 15px;
+            right: 30px;
             height: auto;
             z-index: 10;
             background-color: transparent;
@@ -498,7 +498,8 @@
         }
 
         #main-nav ul {
-            display: none
+            display: none;
+            margin-top:-10px;
         }
 
             #aside-nav ul li a, #main-nav ul li a, .link {
@@ -710,11 +711,11 @@
             cursor: pointer;
         }
 
-        .swiper-slide .popupClickZone {
+        .swiper-slide .popupClickZone, .menuClickZone {
             margin: 0;
             width: 300px;
             height: 100%;
-/*            border: 2px solid;
+            /*border: 2px solid;
             border-color: #808080;*/
             cursor:pointer;
         }
@@ -1674,9 +1675,9 @@
     <header id="header">
         <section id="navigate" ondblclick="goToActive()">
             <ul>
-                <li class="menu">
-                    <img class="menu-icon"
-                         style="width:25px;height:25px;padding:0px;padding-left:5px"
+                <li class="menu" >
+                    <img class="menu-icon menuClickZone"
+                         style="width:25px;height:25px;padding:0px;margin-left:-200px;margin-top:-10px;padding-left:200px; padding-right:200px; padding-top:5px; padding-bottom: 5px;"
                          src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png"
                          alt="upcycling"
                          title="menu"
