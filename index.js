@@ -3,20 +3,21 @@
 //First load: 
 //=============
 $(document).ready(function () {
-    setEvents();
-    goTo(getActiveMenu());
-    initializeNews();
-    initializeProducts();
-    initializeEvents();
+    alert('test'),
+    setEvents(),
+    goTo(getActiveMenu()),
+    initializeNews(),
+    initializeProducts(),
+    initializeEvents(),
 
     $(window).resize(function () {
-        doResize();
+        doResize()
     });
 });
 
 document.addEventListener('scroll', function (e) {
-    hideMenu();
-    highLightActivePage();
+    hideMenu(),
+    highLightActivePage()
 });
 
 //==============
