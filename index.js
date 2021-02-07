@@ -269,7 +269,64 @@ var swiper2 = new Swiper();
 
 //Initialize Swipers
 function initializeSwipers() {
-    
+    swiper1 = new Swiper('.swiper1', {
+        slidesPerView: 1,
+        spaceBetween: 200,
+        loop: true,
+        preloadImages: false,
+        lazy: true,
+        effect: 'flip',
+        flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination1',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+    });
+
+    swiper2 = new Swiper('.swiper2', {
+        slidesPerView: 1,
+        spaceBetween: 200,
+        loop: true,
+        preloadImages: false,
+        lazy: true,
+        effect: 'flip',
+        flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination2',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+        mousewheel: {
+            invert: true,
+        },
+    }); 
 }
 
 function openModal(index) {
