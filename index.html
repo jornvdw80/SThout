@@ -12,12 +12,11 @@
     <!--Custom resources-->
     <link rel="stylesheet" href="index.css">
 
-
-
     <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
 
     <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.10.1/jquery.hoverIntent.min.js"></script>-->
@@ -799,167 +798,6 @@
     </div>
 
 
-
-
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper1 = new Swiper('.swiper1', {
-            slidesPerView: 1,
-            spaceBetween: 200,
-            loop: true,
-            preloadImages: false,
-            lazy: true,
-            effect: 'flip',
-            flipEffect: {
-                rotate: 30,
-                slideShadows: false,
-            },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination1',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: false,
-            },
-        });
-
-        var swiper2 = new Swiper('.swiper2', {
-            slidesPerView: 1,
-            spaceBetween: 200,
-            loop: true,
-            preloadImages: false,
-            lazy: true,
-            effect: 'flip',
-            flipEffect: {
-                rotate: 30,
-                slideShadows: false,
-            },
-            pagination: {
-                el: '.swiper-pagination2',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next2',
-                prevEl: '.swiper-button-prev2',
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: false,
-            },
-            mousewheel: {
-                invert: true,
-            },
-        });
-    </script>
-
-    <script>
-        function openModal(index) {
-            $(".popupInfo").hide();
-            document.getElementById("myModal").style.display = "block";
-            swiper2.destroy(false, false); //important, otherwise freaky behaviour!!!!
-            swiper2 = new Swiper('.swiper2', {
-                slidesPerView: 1,
-                spaceBetween: 200,
-                loop: true,
-                preloadImages: false,
-                lazy: true,
-                effect: 'flip',
-                flipEffect: {
-                    rotate: 30,
-                    slideShadows: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination2',
-                    clickable: true,
-                    dynamicBullets: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next2',
-                    prevEl: '.swiper-button-prev2',
-                },
-                keyboard: {
-                    enabled: true,
-                    onlyInViewport: false,
-                },
-                mousewheel: {
-                    invert: true,
-                },
-                //on: {
-                //    slideChange: function slideChange(swiper2) {
-                //        //onClick.bind(swiper2)
-                //        //swiper2.update();
-                //        //alert(swiper2.activeIndex);
-                //        //if (swiper.history.initialized && swiper.params.cssMode) {
-                //        //    swiper.history.setHistory(swiper.params.history.key, swiper.activeIndex);
-                //        //}
-                //    }
-                //}
-            });
-            var toggle = true;
-            swiper2.on('slideChange', function () {
-                //$(this).trigger('click');
-                $(".popupInfo").hide();
-                togglePopupInfo();//.slideUp('fast');
-                toggle = false;
-                //$(".popupInfo").style.display = "none";
-                //resetHoverTouch();
-                //resetTouchEnd();
-                //alert('test');
-            });
-
-            //swiper2.slideTo(index);
-            swiper2.slideToLoop(index - 1);
-            if (toggle) {
-                togglePopupInfo();
-            }
-        }
-
-        ////////////function closeModal() {
-        ////////////    goTo('portfolio');
-        ////////////    document.getElementById("myModal").style.display = "none";
-        ////////////    goTo('portfolio');
-        ////////////}
-
-        //function closePopupInfo(e) {
-        //    e.slideUp();
-        //    //document.getElementByClass("popupInfo").style.display = "none";
-        //}
-
-        function selectPopupSlide(index) {
-            swiper2.slideToLoop(index - 1);
-            $(".slideTitle").focus();
-        }
-
-        function togglePopupInfo() {
-            var isVisible = false;
-            var duration = 500;
-            if ($(".popupInfo").is(":visible")) { isVisible = true; }
-            $(".popupInfo").fadeOut(duration);
-            if (isVisible) { $(".popupInfo").fadeOut(duration); } else { $(".popupInfo").fadeIn(duration); }
-            $(".slideTitle").focus();
-
-            //var test = true;
-            //if ($(".popupInfo").is(":visible")) { test = false; }
-            //$(".popupInfo").slideUp('fast');
-            //if (test) { $(".popupInfo").slideDown('fast'); } else { $(".popupInfo").slideUp('fast'); };
-            ////e.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-    </script>
 
     <script>
                                                                 //function resetHoverTouch() {
