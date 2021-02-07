@@ -264,7 +264,7 @@ document.onkeydown = function (evt) {
 //==============
 //Image swipers:
 //==============
-const swiper1 = new Swiper('.swiper1', {
+var swiper1 = new Swiper('.swiper1', {
     slidesPerView: 1,
     spaceBetween: 200,
     loop: true,
@@ -298,7 +298,7 @@ var swiper2 = new Swiper();
 
 //Initialize Swipers
 function initializeSwipers() {
-    
+    swiper1.update();
 
     swiper2 = new Swiper('.swiper2', {
         slidesPerView: 1,
