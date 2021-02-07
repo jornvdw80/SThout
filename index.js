@@ -3,7 +3,6 @@
 //First load: 
 //=============
 $(document).ready(function () {
-    alert('test'),
     setEvents(),
     goTo(getActiveMenu()),
     initializeNews(),
@@ -368,41 +367,3 @@ function highLightActivePage() {
             a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
         }), 0 == $(".active").length && a.addClass("active");
 }
-
-////==============================
-////Automatic Slideshow: NOT USED
-////==============================
-////CHECK: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h
-//var timeout;
-//var slideIndex = 0;
-//showSlides();
-
-//function showSlides() {
-//    var i;
-//    var slides = document.getElementsByClassName("slides");
-//    var dots = document.getElementsByClassName("dot");
-//    for (i = 0; i < slides.length; {
-//        slides[i].style.display = "none",
-//    }
-//    slideIndex++;
-//    if (slideIndex > slides.length) {slideIndex = 1; }
-//    if (slideIndex < 1) { slideIndex = slides.length}
-//        for (i = 0; i < dots.length; {
-//            dots[i].className = dots[i].className.replace(" current", "");
-//        }
-//        slides[slideIndex - 1].style.display = "block";
-//        dots[slideIndex - 1].className += " current";
-//        timeout = setTimeout(showSlides, 4500);
-//    }
-
-//function selectWithIndicator(index) {
-//    clearTimeout(timeout);
-//    slideIndex = index;
-//    showSlides();
-//}
-
-//function selectWithArrow(index) {
-//    clearTimeout(timeout);
-//    slideIndex += (index - 1);
-//    showSlides();
-//}
