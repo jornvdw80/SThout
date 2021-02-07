@@ -39,7 +39,7 @@ if (isIE()) {
 //================================
 function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
 function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) }
-function doResize() { goTo(getActiveMenu()); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); resizeLastPage(); }
+function doResize() { hideMenu(); highLightActivePage(); goTo(getActiveMenu()); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); resizeLastPage(); }
 
 
 //==============================
