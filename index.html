@@ -597,8 +597,8 @@
                 <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
             </h2>
             <section id="years" class="btn-group">
-                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#recent">recent</button>
-                <button onclick="hideAllEvents()" class="yearBtn" data-toggle="collapse" data-target="#archief">archief</button>
+                <button class="yearBtn" onclick="showEvents('recent')">recent</button>
+                <button class="yearBtn" onclick="showEvents('archief')">archief</button>
             </section>
             <section id="eventsSection">
                 <div id="recent" class="collapse">
@@ -1012,61 +1012,11 @@
     </script>-->
 
 
-    <script>
-        // Add active class to the current button (highlight it)
-        var header = document.getElementById("years");
-        var btns = header.getElementsByClassName("yearBtn");
-        for (var i = 0; i < btns.length; i++) {
-            var item = btns[i];
-            var currentYear = new Date().getFullYear();
-            var currentItem = new Date(item.innerHTML).getFullYear();
-            if (currentItem == currentYear || i == 0) {
-                item.className += " activeYearBtn";
-                document.getElementById(item.innerHTML).className = "collapse in";
-            }
-            item.addEventListener("click", function () {
-                var current = document.getElementsByClassName("activeYearBtn");
-                current[0].className = current[0].className.replace(" activeYearBtn", "");
-                this.className += " activeYearBtn";
-            });
-        }
 
 
 
 
-    </script>
 
-    <!--Collapse-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
-    <script>
-        function hideAllEvents() {
-            var btns = document.getElementsByClassName("yearBtn");
-            for (var i = 0; i < btns.length; i++) {
-                var item = btns[i];
-                document.getElementById(item.innerHTML).className = "collapse";
-            };
-        }
-    </script>
-
-    <script>
-        function toggleEventsInfo(e, info) {
-            var test = true;
-            if ($(info).is(":visible")) { test = false; }
-            $(".eventInfo").slideUp();
-            if (test) { $(info).slideDown(); } else { $(info).slideUp(); };
-            e.scrollIntoView({ behavior: "smooth", block: "center" });
-            //setTimeout(function () { e.scrollIntoView({ behavior: "smooth", block: "center" }); }, 150);
-        }
-    </script>
-
-
-    <!--Responsive aside with animation--> => KEEP IT!!!
-    <script>
-        //function doResize() { goTo(e), document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250), resizeLastPage() } function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") } var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }(); $(window).resize(function () { e = getActiveMenu(), waitForFinalEvent(function () { doResize() }, 200, "2") });
-        var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
-        $(window).resize(function () { getActiveMenu(), waitForFinalEvent(function () { doResize() }, 200, "2"); });
-    </script>
 
 
 
