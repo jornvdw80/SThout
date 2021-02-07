@@ -6,10 +6,8 @@
     <title>STHOUT | upcycling met een verhaal</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!--Custom resources-->
     <link rel="stylesheet" href="index.css">
 
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -17,22 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
     <script src="index.js"></script>
-
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.10.1/jquery.hoverIntent.min.js"></script>-->
-    <!--Collapse-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
-    <!--Scroll to page-->
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>-->
-    <!--Loading website-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>-->
-    <!-- Swiper JS -->
-    <!--<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>-->
-    <!--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
-
 
     <script>
         // Wait for window load
@@ -45,6 +28,30 @@
 
 <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" oncopy='return false' oncut='return false'>
     <div class="se-pre-con"></div>
+
+    <div>
+        <ul id="social-media-left">
+            <li>
+                <a class="link" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);">
+                    <img class="menu-icon"
+                         style="width:35px;height:35px;"
+                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
+                         alt="sthout | facebook"
+                         title="sthout | facebook">
+                </a>
+            </li>
+            <li>
+                <a class="link" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);">
+                    <img class="menu-icon"
+                         style="width:35px;height:35px;"
+                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
+                         alt="sthout | facebook"
+                         title="sthout | facebook">
+                </a>
+            </li>
+        </ul>
+    </div>
+
     <header id="header">
         <section id="navigate" ondblclick="goToActive()">
             <ul>
@@ -54,7 +61,7 @@
                          alt="upcycling"
                          title="menu"
                          onclick="toggleMenuClick()">
-                         <!--onclick="toggleMenuClick()" ontouchstart="toggleMenuClick()">-->
+                    <!--onclick="toggleMenuClick()" ontouchstart="toggleMenuClick()">-->
                 </li>
                 <li>
                     <ul id="sub-header">
@@ -76,6 +83,28 @@
                         </li>
                     </ul>
                 </li>
+                <!--<li>
+                    <ul id="social-media">
+                        <li>
+                            <a class="link" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);">
+                                <img class="menu-icon"
+                                     style="width:35px;height:35px;"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
+                                     alt="sthout | facebook"
+                                     title="sthout | facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);">
+                                <img class="menu-icon"
+                                     style="width:35px;height:35px;"
+                                     src="http://static.websitecreator.eu/var/m_0/03/03f/1089/60118-facebook.png"
+                                     alt="sthout | facebook"
+                                     title="sthout | facebook">
+                            </a>
+                        </li>
+                    </ul>
+                </li>-->
             </ul>
         </section>
         <nav id="main-nav">
@@ -841,7 +870,6 @@
                                                                     //});
                                                                 //}
     </script>-->
-
     <!--<script>
         function resetTouchEnd() {
             $('.brandBullet.taphover').on('touchend', function (e) {
@@ -849,8 +877,6 @@
             });
         }
     </script>-->
-
-
     <!--Initialize Swipers-->
     <!--Keep it here!-->
     <script>
@@ -911,7 +937,7 @@
             mousewheel: {
                 invert: true,
             },
-        }); 
+        });
     </script>
 </body>
 </html>
