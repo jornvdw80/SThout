@@ -2,23 +2,22 @@
 //=============
 //First load: 
 //=============
-var initialLoad = !0;
 $(document).ready(function () {
-    initialLoad && (
-        setEvents(),
-        goTo(getActiveMenu())),
-        resizeLastPage(),
-        initializeNews(),
-        initializeProducts(),
-        initializeEvents(),
-        initializeSwipers(),
-        $("#circle-action").css("visibility", "hidden"), $("footer").css("visibility", "hidden"),
-        initialLoad = !1;
+    setEvents();
+    goTo(getActiveMenu());
+    initializeNews();
+    initializeProducts();
+    initializeEvents();
+
     $(window).resize(function () {
         doResize();
     });
 });
 
+document.addEventListener('scroll', function (e) {
+    hideMenu();
+    highLightActivePage();
+});
 
 //==============
 //Check browser:
@@ -233,8 +232,6 @@ function goToActive() {
 }
 
 function goTo(o) {
-    //initializeNews();
-    //initializeProducts();
     $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
     if (o != $(".active").attr("name").replace("#", "")) {
         $("#main-nav a").each(function () {
@@ -262,15 +259,8 @@ document.onkeydown = function (evt) {
 
 
 //==============
-//Image swipers:
+//Image swiper:
 //==============
-//var swiper1 = new Swiper();
-//var swiper2 = new Swiper();
-
-//Initialize Swipers
-function initializeSwipers() {
-    
-}
 
 function openModal(index) {
     $(".popupInfo").hide();
@@ -341,61 +331,42 @@ function selectPopupSlide(index) {
 function togglePopupInfo() {
     var isVisible = false;
     var duration = 500;
-    if ($(".popupInfo").is(":visible")) { isVisible = true; }
-    $(".popupInfo").fadeOut(duration);
-    if (isVisible) { $(".popupInfo").fadeOut(duration); } else { $(".popupInfo").fadeIn(duration); }
-    $(".slideTitle").focus();
+    var item = $(".popupInfo");
+    if (item.is(":visible")) { isVisible = true; }
+    item.fadeOut(duration);
+    if (isVisible) { item.fadeOut(duration); } else { item.fadeIn(duration); }
+    $(".slideTitle").focus(); //TODO: keep?
 }
 
 
-////===============================
-////Add some animation to the menu:
-////===============================
-////<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-//function doNothing() { }
-//function showNavigate() { $("#navigate ul").css({ opacity: "0.9" }) }
-//function hideNavigate() { $("#navigate ul").css({ opacity: "0.5" }) }
-//function makeTall() { $("#main-nav").addClass("menu-down"), $("#header").css({ opacity: "1" }), document.body.clientWidth > 950 && $("aside").slideUp(250), $("#main-nav ul").slideDown(250) }
-//function makeShort() { $("#main-nav").removeClass("menu-down"), $("#main-nav ul").slideUp(250), document.body.clientWidth > 950 && $("aside").slideDown(250), $("#header").css({ opacity: "0.9" }) }
-//function toggleMenu() { $("#main-nav.menu-down") && makeShort() } $(document).ready(function () { $("#header").hoverIntent(makeTall, doNothing, ".menu-icon"), $("#main-nav ul").hover(doNothing, makeShort), $("#navigate ul").hover(showNavigate, hideNavigate) });
+//===============================
+//Add some animation to the menu:
+//===============================
+function toggleMenuClick() {
+    var isVisible = false;
+    if ($("#main-nav ul").is(":visible")) { isVisible = true; }
+    $("#main-nav ul").slideUp(250);
+    if (isVisible) { $("aside").slideDown(); $("#main-nav ul").slideUp(); } else { $("aside").slideUp(); $("#main-nav ul").slideDown(); }
+}
 
-//function toggleMenuClick() {
-//    var isVisible = false;
-//    if ($("#main-nav ul").is(":visible")) { isVisible = true; }
-//    $("#main-nav ul").slideUp(250);
-//    if (isVisible) { $("aside").slideDown(); $("#main-nav ul").slideUp(); } else { $("aside").slideUp(); $("#main-nav ul").slideDown(); }
-//}
+function hideMenu() {
+    var isVisible = false;
+    if ($("#main-nav ul").is(":visible")) { isVisible = true; }
+    if (isVisible) { $("aside").slideDown(); $("#main-nav ul").slideUp(); }
+}
 
-
-////==============================
-////Highlight active page on menu:
-////==============================
-//function onScroll(t) {
-//    toggleMenu();
-//    var o = $(document).scrollTop() + 156, a = $(".active");
-//    $("#main-nav a").each(function () {
-//        var t = $(this), a = $(t.attr("name"));
-//        a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-//    }),
-//    $("#aside-nav a").each(function () {
-//        var t = $(this), a = $(t.attr("name"));
-//        a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-//        }), 0 == $(".active").length && a.addClass("active")
-//    }
-//    var t = -1; $(document).ready(function () {
-//    t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100)
-//});
-
-
-////==============
-////hoverIntent v1.8.1 // 2014.08.11 // jQuery v1.9.1+
-////==============
-////http://cherne.net/brian/resources/jquery.hoverIntent.html
-////You may use hoverIntent under the terms of the MIT license. Basically that
-////means you are free to use hoverIntent as long as this header is left intact.
-////Copyright 2007, 2014 Brian Cherne
-//!function (e) { e.fn.hoverIntent = function (t, n, o) { var r = { interval: 400, sensitivity: 6, timeout: 0 }; r = "object" == typeof t ? e.extend(r, t) : e.isFunction(n) ? e.extend(r, { over: t, out: n, selector: o }) : e.extend(r, { over: t, out: t, selector: n }); var v, i, u, s, h = function (e) { v = e.pageX, i = e.pageY }, I = function (t, n) { return n.hoverIntent_t = clearTimeout(n.hoverIntent_t), Math.sqrt((u - v) * (u - v) + (s - i) * (s - i)) < r.sensitivity ? (e(n).off("mousemove.hoverIntent", h), n.hoverIntent_s = !0, r.over.apply(n, [t])) : (u = v, s = i, n.hoverIntent_t = setTimeout(function () { I(t, n) }, r.interval), void 0) }, a = function (e, t) { return t.hoverIntent_t = clearTimeout(t.hoverIntent_t), t.hoverIntent_s = !1, r.out.apply(t, [e]) }, c = function (t) { var n = e.extend({}, t), o = this; o.hoverIntent_t && (o.hoverIntent_t = clearTimeout(o.hoverIntent_t)), "mouseenter" === t.type ? (u = n.pageX, s = n.pageY, e(o).on("mousemove.hoverIntent", h), o.hoverIntent_s || (o.hoverIntent_t = setTimeout(function () { I(n, o) }, r.interval))) : (e(o).off("mousemove.hoverIntent", h), o.hoverIntent_s && (o.hoverIntent_t = setTimeout(function () { a(n, o) }, r.timeout))) }; return this.on({ "mouseenter.hoverIntent": c, "mouseleave.hoverIntent": c }, r.selector) } }(jQuery);
-
+//Highlight active page on menu
+function highLightActivePage() {
+    var o = $(document).scrollTop() + 156, a = $(".active");
+    $("#main-nav a").each(function () {
+        var t = $(this), a = $(t.attr("name"));
+        a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+    }),
+        $("#aside-nav a").each(function () {
+            var t = $(this), a = $(t.attr("name"));
+            a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+        }), 0 == $(".active").length && a.addClass("active");
+}
 
 ////==============================
 ////Automatic Slideshow: NOT USED
