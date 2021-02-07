@@ -9,11 +9,12 @@ $(document).ready(function () {
         resizeLastPage(),
         initializeNews(),
         initializeProducts(),
+        initializeEvents(),
         $("#circle-action").css("visibility", "hidden"), $("footer").css("visibility", "hidden"),
         initialLoad = !1;
-    //$(window).resize(function () {
-    //    animateAside();
-    //});
+    $(window).resize(function () {
+        doResize();
+    });
 });
 
 
@@ -32,32 +33,12 @@ if (isIE()) {
 }
 
 
-//===========================
-//Responsive with animation:
-//===========================
-//<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-
-//var exxx = getActiveMenu(),
-//    waitForFinalEvent = function () { var exxx = {}; return function (i, t, n) { n || (n = "1"), exxx[n] && clearTimeout(exxx[n]), exxx[n] = setTimeout(i, t) } }();
-
+//================================
+//Responsive aside with animation:
+//================================
 function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
 function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) }
-function doResize() { goTo(exxx), document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250), resizeLastPage(); }
-
-//function getValueE() {
-//    var e = getActiveMenu(),
-//        waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
-//    return e;
-//};
-
-//function animateAside() {
-//    //var e = getActiveMenu(),
-//    //    waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
-//    var exxx = getActiveMenu(),
-//        waitForFinalEvent = function () { var exxx = {}; return function (i, t, n) { n || (n = "1"), exxx[n] && clearTimeout(exxx[n]), exxx[n] = setTimeout(i, t) } }();
-//    exxx = getActiveMenu(), waitForFinalEvent(function () { doResize() }, 200, "2");
-//    //alert('fgsd');
-//};
+function doResize() { getActiveMenu(); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); resizeLastPage(); }
 
 
 //==============================
@@ -115,6 +96,7 @@ function hideAllProducts() {
 //News:
 //=====================
 
+// Add active class to the first button (highlight it)
 function initializeNews() {
     var header = document.getElementById('news');
     var btns = header.getElementsByClassName('newsBtn');
@@ -149,10 +131,11 @@ function showNews(target) {
 
 function toggleNewsInfo(e, info) {
     var isVisible = true;
+    var item = $(info);
     var element = $(".newsInfo");
-    if ($(info).is(":visible")) { isVisible = false; }
+    if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
-    if (isVisible) { $(info).slideDown(); } else { $(info).slideUp(); };
+    if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
@@ -164,6 +147,63 @@ function hideAllNews() {
         document.getElementById(item.innerHTML).className = 'collapse';
     }
 }
+
+
+//=====================
+//Events:
+//=====================
+
+// Add active class to the current button (highlight it)
+function initializeEvents() {
+    var header = document.getElementById('years');
+    var btns = header.getElementsByClassName('yearBtn');
+    for (var i = 0; i < btns.length; i++) {
+        var item = btns[i];
+        var currentYear = new Date().getFullYear();
+        var currentItem = new Date(item.innerHTML).getFullYear();
+        if (currentItem == currentYear || i == 0) {
+            item.className += " activeYearBtn";
+            document.getElementById(item.innerHTML).className = "collapse in";
+        }
+    }
+}
+
+function showEvents(target) {
+    goTo('events');
+    var header = document.getElementById("events");
+    var btns = header.getElementsByClassName("yearBtn");
+    for (var i = 0; i < btns.length; i++) {
+        var item = btns[i];
+        item.className = item.className.replace(" activeEventsBtn", "");
+        if (item.innerHTML === target) {
+            item.className += " activeEventsBtn";
+            document.getElementById(item.innerHTML).className = "collapse in";
+        }
+        else {
+            document.getElementById(item.innerHTML).className = "collapse";
+        }
+    }
+}
+
+function toggleEventsInfo(e, info) {
+    var isVisible = true;
+    var item = $(info);
+    var element = $(".eventInfo");
+    if (item.is(":visible")) { isVisible = false; }
+    element.slideUp();
+    if (isVisible) { item.slideDown(); } else { item.slideUp(); };
+    e.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+//NOT USED:
+function hideAllEvents() {
+    var btns = document.getElementsByClassName("yearBtn");
+    for (var i = 0; i < btns.length; i++) {
+        var item = btns[i];
+        document.getElementById(item.innerHTML).className = "collapse";
+    };
+}
+
 
 
 //==============
