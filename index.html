@@ -800,7 +800,7 @@
 
 
 
-    <script>
+    <!--<script>
                                                                 //function resetHoverTouch() {
                                                                 //    if (window.Touch) {
                                                                 //        $('.brandBullet').bind('touchstart', function (e) {
@@ -839,8 +839,8 @@
                                                                     //    }
 
                                                                     //});
-                                                                }
-    </script>
+                                                                //}
+    </script>-->
 
     <!--<script>
         function resetTouchEnd() {
@@ -851,7 +851,8 @@
     </script>-->
 
 
-
+    <!--Initialize Swipers-->
+    <!--Keep it here!-->
     <script>
         var swiper1 = new Swiper('.swiper1', {
             slidesPerView: 1,
@@ -912,78 +913,5 @@
             },
         }); 
     </script>
-
-
-
-
-
-
-
-
-    <!--Scroll to page-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () { function e(e) { return e.replace(/^\//, "").replace(/(index|default).[a-zA-Z]{3,4}$/, "").replace(/\/$/, "") } $("a[href*=#]").each(function () { if (e(location.pathname) == e(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, "")) { var a = $(this.hash), n = $("[name=" + this.hash.slice(1) + "]"), h = a.length ? a : n.length ? n : !1; h && $(this).click(function () { return $("#main-nav ul").slideUp(300), $("#main-nav").removeClass("menu-down"), $("#header").css({ opacity: "0.9" }), goTo(this.hash.slice(1)), !1 }) } }) });
-    </script>-->
-    <!--TODO: Trying to move to index.js-->
-    <!--Add some animation to the menu-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        function doNothing() { }
-        function showNavigate() { $("#navigate ul").css({ opacity: "0.9" }) }
-        function hideNavigate() { $("#navigate ul").css({ opacity: "0.5" }) }
-        function makeTall() { $("#main-nav").addClass("menu-down"), $("#header").css({ opacity: "1" }), document.body.clientWidth > 950 && $("aside").slideUp(250), $("#main-nav ul").slideDown(250) }
-        function makeShort() { $("#main-nav").removeClass("menu-down"), $("#main-nav ul").slideUp(250), document.body.clientWidth > 950 && $("aside").slideDown(250), $("#header").css({ opacity: "0.9" }) }
-        function toggleMenu() { $("#main-nav.menu-down") && makeShort() } $(document).ready(function () { $("#header").hoverIntent(makeTall, doNothing, ".menu-icon"), $("#main-nav ul").hover(doNothing, makeShort), $("#navigate ul").hover(showNavigate, hideNavigate) });
-
-        //function toggleMenuClick() { $("#main-nav").slideToggle("menu-down"); alert('test'); }
-        function toggleMenuClick() {
-            //toggleMenu();
-            var isVisible = false;
-            if ($("#main-nav ul").is(":visible")) { isVisible = true; }
-            $("#main-nav ul").slideUp(250);
-            if (isVisible) { $("#main-nav ul").slideUp(); } else { $("#main-nav ul").slideDown(); }
-
-            //var isVisible = false;
-            //if ($(".menu-down").is(":visible")) { isVisible = true; }
-            //$(".menu-down").slideUp();
-            //if (isVisible) { $(".menu-down").slideUp(); } else { $(".menu-down").slideDown(); }
-        }
-
-    </script>
-
-    <!--Highlight active page on menu-->
-    <script>
-        function onScroll(t) {
-            toggleMenu();
-            var o = $(document).scrollTop() + 156, a = $(".active");
-            $("#main-nav a").each(function () {
-                var t = $(this), a = $(t.attr("name"));
-                a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-            }),
-                $("#aside-nav a").each(function () {
-                    var t = $(this), a = $(t.attr("name"));
-                    a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-                }), 0 == $(".active").length && a.addClass("active")
-        }
-        var t = -1; $(document).ready(function () {
-            t && clearTimeout(t), t = setTimeout($(window).on("scroll", onScroll), 100)
-        });
-    </script>
-
-    <!--hoverIntent-->
-    <script>
-        /*!
-        * hoverIntent v1.8.1 // 2014.08.11 // jQuery v1.9.1+
-        * http://cherne.net/brian/resources/jquery.hoverIntent.html
-        *
-        * You may use hoverIntent under the terms of the MIT license. Basically that
-        * means you are free to use hoverIntent as long as this header is left intact.
-        * Copyright 2007, 2014 Brian Cherne
-        */
-        !function (e) { e.fn.hoverIntent = function (t, n, o) { var r = { interval: 400, sensitivity: 6, timeout: 0 }; r = "object" == typeof t ? e.extend(r, t) : e.isFunction(n) ? e.extend(r, { over: t, out: n, selector: o }) : e.extend(r, { over: t, out: t, selector: n }); var v, i, u, s, h = function (e) { v = e.pageX, i = e.pageY }, I = function (t, n) { return n.hoverIntent_t = clearTimeout(n.hoverIntent_t), Math.sqrt((u - v) * (u - v) + (s - i) * (s - i)) < r.sensitivity ? (e(n).off("mousemove.hoverIntent", h), n.hoverIntent_s = !0, r.over.apply(n, [t])) : (u = v, s = i, n.hoverIntent_t = setTimeout(function () { I(t, n) }, r.interval), void 0) }, a = function (e, t) { return t.hoverIntent_t = clearTimeout(t.hoverIntent_t), t.hoverIntent_s = !1, r.out.apply(t, [e]) }, c = function (t) { var n = e.extend({}, t), o = this; o.hoverIntent_t && (o.hoverIntent_t = clearTimeout(o.hoverIntent_t)), "mouseenter" === t.type ? (u = n.pageX, s = n.pageY, e(o).on("mousemove.hoverIntent", h), o.hoverIntent_s || (o.hoverIntent_t = setTimeout(function () { I(n, o) }, r.interval))) : (e(o).off("mousemove.hoverIntent", h), o.hoverIntent_s && (o.hoverIntent_t = setTimeout(function () { a(n, o) }, r.timeout))) }; return this.on({ "mouseenter.hoverIntent": c, "mouseleave.hoverIntent": c }, r.selector) } }(jQuery);
-    </script>
-
-
 </body>
 </html>
