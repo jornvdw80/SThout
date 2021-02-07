@@ -346,13 +346,13 @@ function toggleMenuClick() {
     var isVisible = false;
     if ($("#main-nav ul").is(":visible")) { isVisible = true; }
     $("#main-nav ul").slideUp(250);
-    if (isVisible) { $("aside").slideDown(); $("#main-nav ul").slideUp(); } else { $("aside").slideUp(); $("#main-nav ul").slideDown(); }
+    if (isVisible) { document.body.clientWidth > 950 && $("aside").slideDown(); $("#main-nav ul").slideUp(); } else { $("aside").slideUp(); $("#main-nav ul").slideDown(); }
 }
 
 function hideMenu() {
     var isVisible = false;
     if ($("#main-nav ul").is(":visible")) { isVisible = true; }
-    if (isVisible) { $("aside").slideDown(); $("#main-nav ul").slideUp(); }
+    if (isVisible) { document.body.clientWidth > 950 && $("aside").slideDown(); $("#main-nav ul").slideUp(); }
 }
 
 //Highlight active page on menu
