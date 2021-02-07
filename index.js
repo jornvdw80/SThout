@@ -1,3 +1,4 @@
+
 //=============
 //First load: 
 //=============
@@ -10,6 +11,7 @@ $(document).ready(function () {
         initializeNews(),
         initializeProducts(),
         initializeEvents(),
+        initializeSwipers(),
         $("#circle-action").css("visibility", "hidden"), $("footer").css("visibility", "hidden"),
         initialLoad = !1;
     $(window).resize(function () {
@@ -205,7 +207,6 @@ function hideAllEvents() {
 }
 
 
-
 //==============
 //Navigation:
 //==============
@@ -257,6 +258,150 @@ document.onkeydown = function (evt) {
         //alert('Esc key pressed.');
         closeModal();
     }
+}
+
+
+//==============
+//Image swipers:
+//==============
+var swiper1 = new Swiper();
+var swiper2 = new Swiper();
+
+//Initialize Swipers
+function initializeSwipers() {
+    swiper1 = new Swiper('.swiper1', {
+        slidesPerView: 1,
+        spaceBetween: 200,
+        loop: true,
+        preloadImages: false,
+        lazy: true,
+        effect: 'flip',
+        flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination1',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+    });
+
+    swiper2 = new Swiper('.swiper2', {
+        slidesPerView: 1,
+        spaceBetween: 200,
+        loop: true,
+        preloadImages: false,
+        lazy: true,
+        effect: 'flip',
+        flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination2',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+        mousewheel: {
+            invert: true,
+        },
+    });
+}
+
+function openModal(index) {
+    $(".popupInfo").hide();
+    document.getElementById("myModal").style.display = "block";
+    swiper2.destroy(false, false); //important, otherwise freaky behaviour!!!!
+    swiper2 = new Swiper('.swiper2', {
+        slidesPerView: 1,
+        spaceBetween: 200,
+        loop: true,
+        preloadImages: false,
+        lazy: true,
+        effect: 'flip',
+        flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination2',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+        mousewheel: {
+            invert: true,
+        },
+        //on: {
+        //    slideChange: function slideChange(swiper2) {
+        //        //onClick.bind(swiper2)
+        //        //swiper2.update();
+        //        //alert(swiper2.activeIndex);
+        //        //if (swiper.history.initialized && swiper.params.cssMode) {
+        //        //    swiper.history.setHistory(swiper.params.history.key, swiper.activeIndex);
+        //        //}
+        //    }
+        //}
+    });
+    var toggle = true;
+    swiper2.on('slideChange', function () {
+        //$(this).trigger('click');
+        $(".popupInfo").hide();
+        togglePopupInfo();//.slideUp('fast');
+        toggle = false;
+        //$(".popupInfo").style.display = "none";
+        //resetHoverTouch();
+        //resetTouchEnd();
+        //alert('test');
+    });
+
+    //swiper2.slideTo(index);
+    swiper2.slideToLoop(index - 1);
+    if (toggle) {
+        togglePopupInfo();
+    }
+}
+
+function selectPopupSlide(index) {
+    swiper2.slideToLoop(index - 1);
+    $(".slideTitle").focus();
+}
+
+function togglePopupInfo() {
+    var isVisible = false;
+    var duration = 500;
+    if ($(".popupInfo").is(":visible")) { isVisible = true; }
+    $(".popupInfo").fadeOut(duration);
+    if (isVisible) { $(".popupInfo").fadeOut(duration); } else { $(".popupInfo").fadeIn(duration); }
+    $(".slideTitle").focus();
 }
 
 
