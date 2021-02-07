@@ -14,9 +14,22 @@ $(document).ready(function () {
     });
 });
 
+
+function debounce(func, time) {
+    var time = time || 100; // 100 by default if no param
+    var timer;
+    return function (event) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(func, time, event);
+    };
+}
+
+//window.addEventListener("resize", debounce(doResize, 150));
+
+
 document.addEventListener('scroll', function (e) {
-    hideMenu(),
-    highLightActivePage()
+    highLightActivePage(),
+    hideMenu()
 });
 
 //==============
@@ -39,7 +52,7 @@ if (isIE()) {
 //================================
 function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
 function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) }
-function doResize() { hideMenu(); highLightActivePage(); goTo(getActiveMenu()); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); resizeLastPage(); }
+function doResize() { hideMenu(); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); }
 
 
 //==============================
