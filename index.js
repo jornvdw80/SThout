@@ -174,9 +174,9 @@ function showEvents(target) {
     var btns = header.getElementsByClassName("yearBtn");
     for (var i = 0; i < btns.length; i++) {
         var item = btns[i];
-        item.className = item.className.replace(" activeEventsBtn", "");
+        item.className = item.className.replace(" activeYearBtn", "");
         if (item.innerHTML === target) {
-            item.className += " activeEventsBtn";
+            item.className += " activeYearBtn";
             document.getElementById(item.innerHTML).className = "collapse in";
         }
         else {
