@@ -264,41 +264,40 @@ document.onkeydown = function (evt) {
 //==============
 //Image swipers:
 //==============
-var swiper1 = new Swiper('.swiper1', {
-    slidesPerView: 1,
-    spaceBetween: 200,
-    loop: true,
-    preloadImages: false,
-    lazy: true,
-    effect: 'flip',
-    flipEffect: {
-        rotate: 30,
-        slideShadows: false,
-    },
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination1',
-        clickable: true,
-        dynamicBullets: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    keyboard: {
-        enabled: true,
-        onlyInViewport: false,
-    },
-});
-
+var swiper1 = new Swiper();
 var swiper2 = new Swiper();
 
 //Initialize Swipers
 function initializeSwipers() {
-    swiper1.update();
+    swiper1 = new Swiper('.swiper1', {
+        slidesPerView: 1,
+        spaceBetween: 200,
+        loop: true,
+        preloadImages: false,
+        lazy: true,
+        effect: 'flip',
+        flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination1',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+    });
 
     swiper2 = new Swiper('.swiper2', {
         slidesPerView: 1,
