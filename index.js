@@ -264,7 +264,7 @@ document.onkeydown = function (evt) {
 //==============
 //Image swipers:
 //==============
-var swiper1 = new Swiper();
+const swiper1 = new Swiper();
 var swiper2 = new Swiper();
 
 //Initialize Swipers
