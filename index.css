@@ -641,12 +641,12 @@ aside {
     padding: 0;
     opacity: .7;
     font-size: 14px;
-    color: #000;
-}
-
-.future article p {
     color: #00008b;
 }
+
+/*.future article p {
+    color: #00008b;
+}*/
 
     #eventsList li.future article, #newsList li.future article {
     /*background-color: #f9f9ff;*/
@@ -840,6 +840,11 @@ aside {
     opacity: .7;
     filter: grayscale(100%);
 }
+
+/*.future .preview {
+    filter: grayscale(50%);
+    background-color: slateblue;
+}*/
 
     .preview.info {
         width: 50px;
