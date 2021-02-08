@@ -23,6 +23,25 @@
     background: url('https://jornvdw80.github.io/SThout/Images/Common/loader.gif') center no-repeat #fff;
 }
 
+.imgBtn {
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    width: 22px;
+    height: 22px;
+}
+
+    .imgBtn.facebookBtn {
+        background-image: url('https://jornvdw80.github.io/SThout/Images/Common/facebook.ico');
+    }
+
+    .imgBtn.mailBtn {
+        background-image: url('https://jornvdw80.github.io/SThout/Images/Common/mail.ico');
+    }
 
 
 /*http://jquery.eisbehr.de/lazy/example_basic-usage*/
@@ -67,12 +86,10 @@
 }
 
     .brandBullet.closeBullet {
-        /*padding-bottom: 20px;*/
         background-image: url('https://jornvdw80.github.io/SThout/Images/Common/close.ico');
         background-color: transparent;
         background-position: center center;
         background-repeat: no-repeat;
-        /*background-attachment: fixed;*/
         background-size: contain;
         -webkit-background-size: contain;
         -moz-background-size: contain;
@@ -81,25 +98,20 @@
         width: 15px;
         height: 15px;
         border-radius: 0;
-        /*margin-left: 5px;*/
     }
 
     .brandBullet.infoBullet {
-        /*padding-bottom: 20px;*/
         background-image: url('https://jornvdw80.github.io/SThout/Images/Common/info.ico');
         background-color: transparent;
         background-position: center center;
         background-repeat: no-repeat;
-        /*background-attachment: fixed;*/
         background-size: contain;
         -webkit-background-size: contain;
         -moz-background-size: contain;
         -o-background-size: contain;
-        /*opacity: .6;*/
         width: 15px;
         height: 15px;
         border-radius: 0;
-        /*margin-left: 5px;*/
     }
 
         .brandBullet.infoBullet.hasInfo {
@@ -449,7 +461,7 @@ html {
     margin-left: 15px;
     margin-top: 20px;
     z-index: 999;
-    opacity:.5;
+    opacity:.7;
 /*    border: 1px solid black;*/
 }
 
@@ -467,6 +479,7 @@ html {
     .social-media-left li a{
         display: block;
     }
+
         /*    #social-media-left img{
         border: 1px solid black;
         border-radius: 50%;
