@@ -1,4 +1,6 @@
 
+//var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
+
 //=============
 //First load: 
 //=============
@@ -11,18 +13,20 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         doResize()
+        //e = getActiveMenu();
+        //waitForFinalEvent(function () { doResize() }, 200, "2")
     });
 });
 
 
-function debounce(func, time) {
-    var time = time || 100; // 100 by default if no param
-    var timer;
-    return function (event) {
-        if (timer) clearTimeout(timer);
-        timer = setTimeout(func, time, event);
-    };
-}
+//function debounce(func, time) {
+//    var time = time || 100; // 100 by default if no param
+//    var timer;
+//    return function (event) {
+//        if (timer) clearTimeout(timer);
+//        timer = setTimeout(func, time, event);
+//    };
+//}
 
 //window.addEventListener("resize", debounce(doResize, 150));
 
@@ -50,6 +54,15 @@ if (isIE()) {
 //================================
 //Responsive aside with animation:
 //================================
+
+
+    //function doResize() {goTo(e), document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250), resizeLastPage()}
+    //function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
+
+//$(window).resize(function () {e = getActiveMenu(), waitForFinalEvent(function () { doResize() }, 200, "2")});
+
+
+
 function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
 function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) }
 function doResize() { hideMenu(); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); }
@@ -355,17 +368,38 @@ function togglePopupInfo() {
 //===============================
 //Add some animation to the menu:
 //===============================
+
+function showNavigate() { $("#navigate ul").css({ opacity: "0.9" }) }
+function hideNavigate() { $("#navigate ul").css({ opacity: "0.5" }) }
+function makeTall() { $("#main-nav").addClass("menu-down"), $("#header").css({ opacity: "1" }), document.body.clientWidth > 950 && $("aside").slideUp(250), $("#main-nav ul").slideDown(250) }
+function makeShort() { $("#main-nav").removeClass("menu-down"), $("#main-nav ul").slideUp(250), document.body.clientWidth > 950 && $("aside").slideDown(250), $("#header").css({ opacity: "0.9" }) }
+
 function toggleMenuClick() {
     var isVisible = false;
     if ($("#main-nav ul").is(":visible")) { isVisible = true; }
     $("#main-nav ul").slideUp(250);
-    if (isVisible) { document.body.clientWidth > 950 && $("aside").slideDown(); $("#main-nav ul").slideUp(); } else { $("aside").slideUp(); $("#main-nav ul").slideDown(); }
+    if (isVisible) {
+        hideNavigate();
+        makeShort();
+        //document.body.clientWidth > 950 && $("aside").slideDown();
+        //$("#main-nav ul").slideUp();
+    } else {
+        showNavigate();
+        makeTall();
+        //$("aside").slideUp();
+        //$("#main-nav ul").slideDown();
+    }
 }
 
 function hideMenu() {
     var isVisible = false;
     if ($("#main-nav ul").is(":visible")) { isVisible = true; }
-    if (isVisible) { document.body.clientWidth > 950 && $("aside").slideDown(); $("#main-nav ul").slideUp(); }
+    if (isVisible) {
+        hideNavigate();
+        makeShort();
+        //document.body.clientWidth > 950 && $("aside").slideDown();
+        //$("#main-nav ul").slideUp();
+    }
 }
 
 //Highlight active page on menu
