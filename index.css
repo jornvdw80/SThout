@@ -924,7 +924,7 @@ aside {
     /*cursor: pointer;*/
 }
 
-    .swiper-slide article:hover, #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
+    .page5 #link:hover, .swiper-slide article:hover, #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
         background-color: #fbfbfb;
         /*border: 3px dotted;*/
         border-color: #808080;
