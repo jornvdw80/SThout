@@ -68,48 +68,22 @@
         </nav>
     </header>
 
+    <!--Aside menublock-->
     <aside>
         <nav id="aside-nav">
             <ul class="nav">
                 <li>
                     <ul>
-                        <li class="previous">
-                            <img class="menu-icon-light"
-                                 style="width:15px;height:15px;margin:0px;padding:0px"
-                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59329-up.png"
-                                 alt="vorige"
-                                 title="vorige"
-                                 onclick="goToPrevious()">
-                        </li>
-                        <li class="next">
-                            <img class="menu-icon-light"
-                                 style="width:15px;height:15px;margin:0px;padding:0px"
-                                 src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59328-down.png"
-                                 alt="volgende"
-                                 title="volgende"
-                                 onclick="goToNext()">
-                        </li>
+                        <li class="previous"><div class="imgBtn upBtn" onclick="goToPrevious()"></div></li>
+                        <li class="next"><div class="imgBtn downBtn" onclick="goToNext()"></div></li>
                     </ul>
                 </li>
-                <li>
-                    <a id="first" name="#home" class="active" onclick="goTo('home')">
-                        <img id="menu-img-home"
-                             style="margin-bottom:-5px;width:90px;padding-left:15px"
-                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                             alt="STHOUT"
-                             title="SThout">
-                        <!--<img id="menu-img-home"
-                        style="margin-bottom:-5px;width:90px;padding-left:15px"
-                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                        alt="STHOUT"
-                        title="SThout">-->
-                    </a>
-                </li>
-                <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
-                <li><a id="page5" name="#news" class="link" onclick="goTo('news')">WERELD</a></li>
-                <li><a id="page3" name="#portfolio" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
-                <li><a id="page4" name="#events" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
-                <li><a id="last" name="#contact" class="link" onclick="goTo('contact')">CONTACT</a></li>
+                <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn logoBtn"></div></a></li>
+                <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about">VERHAAL</a></li>
+                <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
+                <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
+                <li><a onclick="goTo(this.name)" class="link" id="page4" name="#events">EVENEMENTEN</a></li>
+                <li><a onclick="goTo(this.name)" class="link" id="last" name="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </aside>
