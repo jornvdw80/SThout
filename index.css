@@ -1378,6 +1378,10 @@ img.menu-icon {
         margin-right: 30px;
     }
 
+    .imgBtn.logoBtn{
+        margin-left:10px;
+    }
+
     h1, h2 {
         margin-bottom: 5px;
     }
