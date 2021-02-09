@@ -243,6 +243,18 @@ function openGoogleMaps() {
     return !window.open('https://goo.gl/maps/BfYjKcqTqG8SBHtn8');
 }
 
+//TODO:
+function copyToClipboard() {
+    let text = document.getElementById("gsm").innerHTML;
+    navigator.clipboard.writeText(text)
+        //.then(() => {
+        //    alert('Text copied to clipboard');
+        //})
+        .catch(err => {
+            alert('Error in copying text: ', err);
+        });
+}
+
 function closeModal() {
     goTo('portfolio');
     document.getElementById("myModal").style.display = "none";
