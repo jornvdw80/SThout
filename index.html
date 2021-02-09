@@ -58,7 +58,7 @@
         </section>
         <nav id="main-nav">
             <ul class="nav">
-                <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn logoBtn"></div></a></li>
+                <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn menulogoBtn"></div></a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about" >VERHAAL</a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
@@ -78,7 +78,7 @@
                         <li class="next"><div class="imgBtn downBtn" onclick="goToNext()"></div></li>
                     </ul>
                 </li>
-                <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn logoBtn"></div></a></li>
+                <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn menulogoBtn"></div></a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about">VERHAAL</a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
@@ -88,21 +88,11 @@
         </nav>
     </aside>
 
+    <!--Actual content-->
     <div class="content">
         <section id="home" data-role="page" class="page1">
             <section>
-                <a class="link" onclick="goTo('about')">
-                    <img class="logo"
-                         id="front-logo"
-                         src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                         alt="STHOUT"
-                         title="SThout">
-                    <!--<img class="logo"
-                    id="front-logo"
-                    src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                    alt="STHOUT"
-                    title="SThout">-->
-                </a>
+                <a class="link imgBtn mainlogoBtn" onclick="goTo('about')"></a>
             </section>
             <!-- Swiper 1-->
             <section>
@@ -151,21 +141,7 @@
 
         <section id="about" class="page2">
             <h1>
-                <span>
-                    <a class="link" onclick="goTo('home')">
-                        <img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px"
-                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                             alt="STHOUT"
-                             title="SThout">
-                        <!--<img class="logo"
-                        style="margin:-8px;width:90px;padding-left:15px"
-                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                        alt="STHOUT"
-                        title="SThout">-->
-                    </a>
-                    <strong> | </strong>
-                </span>
+                <a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong>
                 <a class="link" onclick="goTo('about')">UPCYCLING MET EEN VERHAAL</a>
             </h1>
             <article>
@@ -187,16 +163,7 @@
 
         <section id="news" class="page4">
             <h2>
-                <span>
-                    <a class="link" onclick="goTo('home')">
-                        <img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px"
-                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                             alt="STHOUT"
-                             title="SThout">
-                    </a>
-                    <strong> | </strong>
-                </span>
+                <a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong>
                 <a class="link" onclick="goTo('news')">IN DE WERELD</a>
             </h2>
             <section id="newsBloc" class="btn-group">
@@ -254,21 +221,7 @@
 
         <section id="portfolio" class="page3">
             <h2>
-                <span>
-                    <a class="link" onclick="goTo('home')">
-                        <img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px;"
-                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                             alt="STHOUT"
-                             title="SThout">
-                        <!--<img class="logo"
-                        style="margin:-8px;width:90px;padding-left:15px;"
-                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                        alt="STHOUT"
-                        title="SThout">-->
-                    </a>
-                    <strong> | </strong>
-                </span>
+                <a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong>
                 <a class="link" onclick="goTo('portfolio')">PORTFOLIO</a>
             </h2>
             <section id="products" class="btn-group">
@@ -518,21 +471,7 @@
 
         <section id="events" class="page4">
             <h2>
-                <span>
-                    <a class="link" onclick="goTo('home')">
-                        <img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px"
-                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                             alt="STHOUT"
-                             title="SThout">
-                        <!--<img class="logo"
-                        style="margin:-8px;width:90px;padding-left:15px"
-                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                        alt="STHOUT"
-                        title="SThout">-->
-                    </a>
-                    <strong> | </strong>
-                </span>
+                <a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong>
                 <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
             </h2>
             <section id="years" class="btn-group">
@@ -701,21 +640,7 @@
 
         <section id="contact" class="page5">
             <h2>
-                <span>
-                    <a class="link" onclick="goTo('home')">
-                        <img class="logo"
-                             style="margin:-8px;width:90px;padding-left:15px"
-                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                             alt="STHOUT"
-                             title="SThout">
-                        <!--<img class="logo"
-                        style="margin:-8px;width:90px;padding-left:15px"
-                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                        alt="STHOUT"
-                        title="SThout">-->
-                    </a>
-                    <strong> | </strong>
-                </span>
+                <a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong>
                 <a class="link" onclick="goTo('contact')">CONTACT</a>
             </h2>
             <section id="link">
