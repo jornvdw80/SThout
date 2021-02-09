@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="nl-be" xmlns="http://www.w3.org/1999/xhtml" onselectstart='return false;'>
+
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0" />
     <meta name="description" content="TODO" />
     <title>STHOUT | upcycling met een verhaal</title>
+    <!--Browser icon-->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+    <!--External stylesheet-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--Custom stylesheet-->
     <link rel="stylesheet" href="index.css">
 
+    <!--External javascript-->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--Custom javascript-->
     <script src="index.js"></script>
 
+    <!--Show a loading gif on the opening of the website-->
     <script>
-        // Wait for window load
         $(window).load(function () {
-            // Animate loader off screen
             $(".se-pre-con").fadeOut("slow");
         });
     </script>
@@ -30,24 +35,20 @@
     <!--Loading site-->
     <div class="se-pre-con"></div>
 
-    <!--Top left link buttons-->
-    <div class="social-media-left">
+    <!--Top left link buttons on menubar-->
+    <div class="social-media-top-left">
         <ul>
-            <li><a  class="imgBtn facebookBtn" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);"></a></li>
-            <li><a  class="imgBtn mailBtn" title="mailto:info@sthout.be" onclick="openUrl(this.title);"></a></li>
+            <li><a class="imgBtn facebookBtn" title="https://www.facebook.com/sthout.be/" onclick="openUrl(this.title);"></a></li>
+            <li><a class="imgBtn mailBtn" title="mailto:info@sthout.be" onclick="openUrl(this.title);"></a></li>
         </ul>
     </div>
 
+    <!--Main menubar-->
     <header id="header">
         <section id="navigate" ondblclick="goToActive()">
             <ul>
-                <li class="menu">
-                    <img class="menu-icon"
-                         src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png"
-                         alt="upcycling"
-                         title="menu"
-                         onclick="toggleMenuClick()">
-                    <!--onclick="toggleMenuClick()" ontouchstart="toggleMenuClick()">-->
+                <li title="menu" class="menu imgBtn upcyclingBtn">
+                    <div onclick="toggleMenuClick();" class="clickZone"></div>
                 </li>
                 <li>
                     <ul id="sub-header">
@@ -73,25 +74,12 @@
         </section>
         <nav id="main-nav">
             <ul class="nav">
-                <li>
-                    <a id="first" name="#home" class="active" onclick="goTo('home')">
-                        <img id="menu-img-home"
-                             style="margin-bottom:-5px;width:90px;padding-left:15px"
-                             src="https://jornvdw80.github.io/SThout/Images/stHout.png"
-                             alt="STHOUT"
-                             title="SThout">
-                        <!--<img id="menu-img-home"
-                        style="margin-bottom:-5px;width:90px;padding-left:15px"
-                        src="http://static.websitecreator.eu/var/m_0/03/03f/1089/59326-sthout.png"
-                        alt="STHOUT"
-                        title="SThout">-->
-                    </a>
-                </li>
-                <li><a id="page2" name="#about" class="link" onclick="goTo('about')">VERHAAL</a></li>
-                <li><a id="page5" name="#news" class="link" onclick="goTo('news')">WERELD</a></li>
-                <li><a id="page3" name="#portfolio" class="link" onclick="goTo('portfolio')">PORTFOLIO</a></li>
-                <li><a id="page4" name="#events" class="link" onclick="goTo('events')">EVENEMENTEN</a></li>
-                <li><a id="last" name="#contact" class="link" onclick="goTo('contact')">CONTACT</a></li>
+                <li><a id="first" name="#home" class="active" onclick="goTo(this.name)"><div class="imgBtn logoBtn"></div></a></li>
+                <li><a id="page2" name="#about" class="link" onclick="goTo(this.name)">VERHAAL</a></li>
+                <li><a id="page5" name="#news" class="link" onclick="goTo(this.name)">WERELD</a></li>
+                <li><a id="page3" name="#portfolio" class="link" onclick="goTo(this.name)">PORTFOLIO</a></li>
+                <li><a id="page4" name="#events" class="link" onclick="goTo(this.name)">EVENEMENTEN</a></li>
+                <li><a id="last" name="#contact" class="link" onclick="goTo(this.name)">CONTACT</a></li>
             </ul>
         </nav>
     </header>
