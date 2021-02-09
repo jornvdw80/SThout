@@ -239,6 +239,10 @@ function openUrl(url) {
     return !window.open(url);
 }
 
+function openGoogleMaps() {
+    return !window.open('https://www.google.be/maps/place/Dorpsstraat+77,+9870+Zulte/@50.9591711,3.4848161,17z/data=!4m5!3m4!1s0x47c314d31576094b:0xf7388f5238b80bf2!8m2!3d50.9591677!4d3.4870048');
+}
+
 function closeModal() {
     goTo('portfolio');
     document.getElementById("myModal").style.display = "none";
