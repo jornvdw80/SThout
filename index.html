@@ -63,7 +63,7 @@
         <nav id="main-nav">
             <ul class="nav">
                 <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn menulogoBtn"></div></a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about" >VERHAAL</a></li>
+                <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about">VERHAAL</a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
                 <li><a onclick="goTo(this.name)" class="link" id="page4" name="#events">EVENEMENTEN</a></li>
@@ -151,15 +151,21 @@
                 <a class="link" onclick="goTo('about')">UPCYCLING MET EEN VERHAAL</a>
             </h1>
             <article>
-                <p><a class="link" onclick="goTo('portfolio')">SThout</a> ontstond uit mijn liefde voor ons Belgisch erfgoed én... hout. 
-                Ik probeer zo veel mogelijk oude materialen een nieuwe bestemming te geven. 
-                Naast het herwerken van oude (industriële) elementen, geef ik de andere eye-catchers een opfrisbeurt zodat ze passen in ieders interieur.</p>
-                <p>In mijn jarenlange constante zoektocht naar ideaal bronmateriaal schuim ik rommelmarkten, kringwinkels, brocantehuizen of stockverkopen af. 
-                Daar zoek ik naar oude spullen die mij pakken en doen dromen. 
-                Ze moeten interessant genoeg zijn om te kunnen herwerken tot een nieuw functioneel interieurelement, waarbij ik steeds een glimlach probeer uit te lokken. 
-                Zo krijg je duurzame, nieuwe <a class="link" onclick="goTo('portfolio')">"piece-uniques"</a> met een apart verhaal, kortweg SThout.</p>
-                <p>Indien jullie zelf gehecht zijn aan bepaalde elementen met emotionele waarde (uit grootmoeders tijd, industrieel erfstuk,...),
-                herwerk ik deze graag, steeds in samenspraak! </p>
+                <p>
+                    <a class="link" onclick="goTo('portfolio')">SThout</a> ontstond uit mijn liefde voor ons Belgisch erfgoed én... hout.
+                    Ik probeer zo veel mogelijk oude materialen een nieuwe bestemming te geven.
+                    Naast het herwerken van oude (industriële) elementen, geef ik de andere eye-catchers een opfrisbeurt zodat ze passen in ieders interieur.
+                </p>
+                <p>
+                    In mijn jarenlange constante zoektocht naar ideaal bronmateriaal schuim ik rommelmarkten, kringwinkels, brocantehuizen of stockverkopen af.
+                    Daar zoek ik naar oude spullen die mij pakken en doen dromen.
+                    Ze moeten interessant genoeg zijn om te kunnen herwerken tot een nieuw functioneel interieurelement, waarbij ik steeds een glimlach probeer uit te lokken.
+                    Zo krijg je duurzame, nieuwe <a class="link" onclick="goTo('portfolio')">"piece-uniques"</a> met een apart verhaal, kortweg SThout.
+                </p>
+                <p>
+                    Indien jullie zelf gehecht zijn aan bepaalde elementen met emotionele waarde (uit grootmoeders tijd, industrieel erfstuk,...),
+                    herwerk ik deze graag, steeds in samenspraak!
+                </p>
                 <p>Aarzel niet om me vrijblijvend te <a class="link" onclick="goTo('contact')">contacteren</a>!</p>
             </article>
         </section>
@@ -281,10 +287,10 @@
                                         <div class="swiper-lazy-preloader"></div>
                                         <!--<div class="title" id="title_#"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>-->
                                         <!--<ul class="title" sty>
-        <li><span class="brandBullet infoBullet hasInfo" onclick="togglePopupInfo();"> | </span></li>
-        <li><span style="font-weight:bold">meubilair</span> | </li>
-        <li><span>nieuw samengesteld gezin</span></li>
-    </ul>-->
+                                            <li><span class="brandBullet infoBullet hasInfo" onclick="togglePopupInfo();"> | </span></li>
+                                            <li><span style="font-weight:bold">meubilair</span> | </li>
+                                            <li><span>nieuw samengesteld gezin</span></li>
+                                        </ul>-->
                                         <div class="popupClickZone" onclick="togglePopupInfo()"></div>
                                         <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>
                                         <article class="popupInfo" onclick="togglePopupInfo()">
@@ -378,7 +384,7 @@
                                     <div data-background="http://eclipse.websitecreator.eu/var/m_0/03/03f/1089/61960-IMG_1248_BIG.png" class="swiper-slide swiper-lazy popupslideImg">
                                         <div class="swiper-lazy-preloader"></div>
                                         <div class="slideTitle"><span style="font-weight:bold">decoratie | </span>...</div>
-                                    </div>                                   
+                                    </div>
                                 </div>
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination swiper-pagination-title swiper-pagination2"></div>
@@ -580,7 +586,7 @@
                         </div>
                     </li>
                     <li>
-                        <p>+32 476 42 46 26</p><a class="link" onclick="openGoogleMaps();">Dorpsstraat 77 | BE - 9870 Zulte</a>
+                        <p id="gsm" class="link" onclick="copyToClipboard()">+32 476 42 46 26</p><a class="link" onclick="openGoogleMaps();">Dorpsstraat 77 | BE - 9870 Zulte</a>
                     </li>
                     <li>
                         <div class="imgBtn storeImg" onclick="openGoogleMaps();"></div>
@@ -589,7 +595,6 @@
             </section>
         </section>
     </div>
-
 
 
     <!--<script>
