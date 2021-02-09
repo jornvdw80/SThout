@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: url('https://jornvdw80.github.io/SThout/Images/Common/loader.gif') center no-repeat #fff;
+    background: url('Images/Common/loader.gif') center no-repeat #fff;
 }
 
 .menu{
@@ -56,23 +56,23 @@
 }*/
 
     .imgBtn.facebookBtn {
-        background-image: url('https://jornvdw80.github.io/SThout/Images/Common/facebook.ico');
+        background-image: url('Images/Common/facebook.ico');
     }
 
     .imgBtn.mailBtn {
-        background-image: url('https://jornvdw80.github.io/SThout/Images/Common/mail.ico');
+        background-image: url('Images/Common/mail.ico');
     }
 
     .imgBtn.upcyclingBtn {
-        background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png');
+        background-image: url('Images/Common/upcycling.ico');
         width: 25px;
         height: 25px;
     }
 
     .imgBtn.logoBtn {
         margin: 0 auto;
-        background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png');
-        margin-left:10px;
+        background-image: url('Images/Common/stHout.png');
+        margin-left: 10px;
         margin-bottom: -10px;
         width: 90px;
         height: 40px;
