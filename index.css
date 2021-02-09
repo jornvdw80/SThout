@@ -20,7 +20,18 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: url('Images/Common/loader.gif') center no-repeat #fff;
+    background: url('Images/Common/upcycling.ico') center no-repeat #fff;
+    animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(359deg);
+    }
 }
 
 .menu{
@@ -283,6 +294,17 @@
                 opacity:.3;
             }
         }*/
+
+.swiper-lazy-preloader {
+    background: url('Images/Common/upcycling.ico') center no-repeat transparent;
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    border: none;
+    border-radius: unset;
+    animation: rotation 0.5s infinite linear;
+}
 
 .swiper-container {
     width: 100%;
