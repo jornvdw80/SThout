@@ -75,13 +75,13 @@
         height:100%;
     }*/
 
-    .imgBtn.popupImg {
+    .imgBtn.storeImg {
         background-image: url('Images/Common/popup.png');
-        width:250px;
-        height:250px;
+        width: 250px;
+        height: 250px;
         margin-top: -40px;
         margin-bottom: -40px;
-        opacity:.7;
+        opacity: .7;
     }
 
     .imgBtn.facebookBtn {
@@ -566,7 +566,7 @@ html {
     top: 25px;*/
     margin: 0 auto;
     width: 300px;
-    /*margin-top: -2.5em;*/
+    margin-top: -1em;
     /*    margin-left: 15px;
     margin-top: 20px;*/
     /*z-index: 999;*/
@@ -594,7 +594,8 @@ html {
         width: auto;
         display: inline-block;
         margin: 0 auto;
-        margin-right: 5px;
+        padding-right: 10px;
+        /*margin-right: 5px;*/
         /*margin-right: -8px;*/
         /*border: 1px solid black;
         z-index: 9999999;*/
@@ -603,7 +604,7 @@ html {
         .social-media-middle li{
             opacity:1;
             display: block;
-            padding-left: 10px;
+            /*padding-left: 10px;*/
         }
 
         .social-media-top-left li a, .social-media-middle li a {
@@ -1064,9 +1065,11 @@ aside {
         padding: 0
     }
 
-    .page5 p, .page5 a {
+    .page5 .contact p, .page5 .contact a {
         font-size: 14px;
         font-weight: bold;
+        padding-top:10px;
+        padding-bottom: 10px;
     }
 
     .page5 #link, .page5 h2 {
