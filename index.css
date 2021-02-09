@@ -78,9 +78,8 @@
     .imgBtn.storeImg {
         background-image: url('Images/Common/popup.png');
         width: 250px;
-        height: 250px;
-        margin-top: -40px;
-        margin-bottom: -40px;
+        height: 150px;
+        margin-bottom: 15px;
         opacity: .7;
     }
 
@@ -90,6 +89,10 @@
 
     .imgBtn.mailBtn {
         background-image: url('Images/Common/mail.ico');
+    }
+
+    .imgBtn.pinBtn {
+        background-image: url('Images/Common/pin.ico');
     }
 
     .imgBtn.upBtn {
@@ -405,8 +408,8 @@
 }
 
 body, .modal, .modal-content {
-    //background-image: url("Images/Common/backgroundBody.jpg");
-    background-image: url("https://jornvdw80.github.io/SThout/Images/Common/backgroundBody.jpg");
+    background-image: url("Images/Common/backgroundBody.jpg");
+    /*background-image: url("https://jornvdw80.github.io/SThout/Images/Common/backgroundBody.jpg");*/
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -415,60 +418,6 @@ body, .modal, .modal-content {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
-
-/*        body {
-            -webkit-transition: all 0.5s ease-in;
-            -moz-transition: all 0.5s ease-in;
-            -ms-transition: all 0.5s ease-in;
-            -o-transition: all 0.5s ease-in;
-            transition: all 0.5s ease-in;
-            background-position: center top;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            height: 100%;
-            width: 100%;
-        }*/
-
-/*.page2 {
-            margin: auto;
-            background: linear-gradient(0deg,hsla(0,0%,100%,0),#edf2f7);
-            opacity: .8;
-        }*/
-
-/*.page4 {
-            margin: auto;
-            background: linear-gradient(0deg,#edf2f7,hsla(0,0%,100%,0));
-            opacity: .8;
-        }*/
-
-/*.page5 {
-            margin: auto;
-            background: linear-gradient(0deg,hsla(0,0%,100%,0),#edf2f7);
-            opacity: .8;
-        }*/
-
-/*.page1, .page2, .page3, .page4, .page5 {
-            background-position: center top;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }*/
-
-/*aside {
-            background-position: center center;
-            background-size: cover;
-        }*/
-
-/*.page2, .page5 {
-                background-position: center bottom;
-            }
-        .page4, .page5 {
-            background-image: url("images/Kader.jpg");
-        }
-        .page2 {
-            background-image: url("images/Kader.jpg");
-        }*/
 
 aside {
     background-image: url("https://jornvdw80.github.io/SThout/Images/Common/backgroundAside.png");
@@ -650,7 +599,7 @@ aside {
         font-weight: 700
     }
 
-        /*.swiper-slide .slideTitle:hover,*/ #aside-nav ul li a.active, #aside-nav ul li a:hover, #main-nav ul li a.active, #main-nav ul li a:hover, .future article a:hover, .link:hover, .past article a:hover, .page1 article a p:hover {
+        #aside-nav ul li a.active, #aside-nav ul li a:hover, #main-nav ul li a.active, #main-nav ul li a:hover, .future article a:hover, .link:hover, .past article a:hover, .page1 article a p:hover {
             color: #46b8da
         }
 
