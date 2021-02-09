@@ -23,6 +23,20 @@
     background: url('https://jornvdw80.github.io/SThout/Images/Common/loader.gif') center no-repeat #fff;
 }
 
+.menu{
+    margin-left: 10px;
+}
+
+.menu .clickZone {
+    margin: 0;
+    margin-left:-90px;
+    width: 200px;
+    height: 100%;
+/*    border: 2px solid;
+    border-color: #808080;*/
+    cursor: pointer;
+}
+
 .imgBtn {
     background-color: transparent;
     background-position: center center;
@@ -31,9 +45,15 @@
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
+    cursor: pointer;
+    opacity:.8;
     width: 22px;
     height: 22px;
 }
+
+    /*.social-media-top-left ul .imgBtn:hover {
+    opacity: .9;
+}*/
 
     .imgBtn.facebookBtn {
         background-image: url('https://jornvdw80.github.io/SThout/Images/Common/facebook.ico');
@@ -41,6 +61,21 @@
 
     .imgBtn.mailBtn {
         background-image: url('https://jornvdw80.github.io/SThout/Images/Common/mail.ico');
+    }
+
+    .imgBtn.upcyclingBtn {
+        background-image: url('http://static.websitecreator.eu/var/m_0/03/03f/1089/59312-upcycling.png');
+        width: 25px;
+        height: 25px;
+    }
+
+    .imgBtn.logoBtn {
+        margin: 0 auto;
+        background-image: url('https://jornvdw80.github.io/SThout/Images/stHout.png');
+        margin-left:10px;
+        margin-bottom: -10px;
+        width: 90px;
+        height: 40px;
     }
 
 
@@ -452,7 +487,7 @@ html {
     border-bottom: 3px dotted #d3d3d3;
 }
 
-.social-media-left {
+.social-media-top-left {
     position: fixed;
     /*left: -40px;
     top: 25px;*/
@@ -461,11 +496,11 @@ html {
     margin-left: 15px;
     margin-top: 20px;
     z-index: 999;
-    opacity:.7;
-/*    border: 1px solid black;*/
+    opacity: .7;
+    /*    border: 1px solid black;*/
 }
 
-    .social-media-left li {
+    .social-media-top-left li {
         filter: grayscale(100%);
         opacity: .3;
         width: 30px;
@@ -476,23 +511,10 @@ html {
         z-index: 9999999;*/
     }
 
-    .social-media-left li a{
-        display: block;
-    }
+        .social-media-top-left li a {
+            display: block;
+        }
 
-        /*    #social-media-left img{
-        border: 1px solid black;
-        border-radius: 50%;
-    }*/
-        /*#social-media {
-    position: absolute;
-    top: 100px;
-    left: 5px;
-    height: auto;*/
-        /*z-index: 10;*/
-        /*background-color: transparent;
-    opacity: .9
-}*/
         #sub-header {
         position: absolute;
         top: 15px;
@@ -525,6 +547,8 @@ aside {
 }
 
     #aside-nav ul li a, #main-nav ul li a, .link {
+        display: inline-block;
+        width: auto;
         color: #191919;
         font-size: 16px;
         font-weight: 700
@@ -743,12 +767,12 @@ aside {
     cursor: pointer;
 }
 
-.swiper-slide .popupClickZone {
+.swiper-slide .popupClickZone{
     margin: 0;
     width: 300px;
     height: 100%;
-    /*border: 2px solid;
-            border-color: #808080;*/
+    border: 2px solid;
+    border-color: #808080;
     cursor: pointer;
 }
 
