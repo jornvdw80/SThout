@@ -800,6 +800,11 @@ aside {
     color: #00008b;
 }
 
+.productBtn.new {
+    font-weight: bold;
+    color: #00008b;
+}
+
 /*.future article p {
     color: #00008b;
 }*/
@@ -1544,7 +1549,7 @@ img.menu-icon {
     margin: auto;
 }
 
-.activeYearBtn, .activeNewsBtn, .activeProductBtn {
+.activeYearBtn, .activeNewsBtn, .activeProductBtn, .activeProductBtn.new {
     background-color: #46b8da;
     color: white;
 }
