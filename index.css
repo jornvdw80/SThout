@@ -21,7 +21,7 @@
     height: 100%;
     z-index: 9999;
     background: url('Images/Common/loader.gif') center no-repeat #fff;
-/*    background: url('Images/Common/upcycling.ico') center no-repeat lightgreen;
+    /*    background: url('Images/Common/upcycling.ico') center no-repeat lightgreen;
     animation: rotation 1s infinite linear;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
@@ -545,6 +545,21 @@ html {
     border-bottom: 3px dotted #d3d3d3;
 }
 
+.social-media-middle {
+    position: center;
+    /*left: -40px;
+    top: 25px;*/
+    margin: 0 auto;
+    width: 300px;
+    /*margin-top: -2.5em;*/
+    /*    margin-left: 15px;
+    margin-top: 20px;*/
+    /*z-index: 999;*/
+    opacity: .7;
+    /*    border: 1px solid black;*/
+/*    border: 1px solid black;*/
+}
+
 .social-media-top-left {
     position: fixed;
     /*left: -40px;
@@ -558,18 +573,25 @@ html {
     /*    border: 1px solid black;*/
 }
 
-    .social-media-top-left li {
+    .social-media-top-left li, .social-media-middle li {
         filter: grayscale(100%);
         opacity: .3;
-        width: 30px;
+        width: auto;
         display: inline-block;
         margin: 0 auto;
+        margin-right: 5px;
         /*margin-right: -8px;*/
         /*border: 1px solid black;
         z-index: 9999999;*/
     }
 
-        .social-media-top-left li a {
+        .social-media-middle li{
+            opacity:1;
+            display: block;
+            padding-left: 10px;
+        }
+
+        .social-media-top-left li a, .social-media-middle li a {
             display: block;
         }
 
@@ -1022,9 +1044,24 @@ aside {
         padding: 0
     }
 
+    .page5 p {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
     .page5 #link, .page5 h2 {
         position: relative;
         top: 15%;
+    }
+
+    .page5 #link {
+        background-color: #fff;
+        border: 3px dotted #d3d3d3;
+        border-radius: 20px;
+        opacity: 1;
+        text-align: center;
+        width: 300px;
+        margin-top: 25px;
     }
 
         .page5 #link ul {
