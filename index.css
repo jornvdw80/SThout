@@ -598,7 +598,7 @@ html {
         #sub-header {
         position: absolute;
         top: 15px;
-        right: 5px;
+        right: 10px;
         height: auto;
         z-index: 10;
         background-color: transparent;
