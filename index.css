@@ -63,6 +63,20 @@
         background-image: url('Images/Common/mail.ico');
     }
 
+    .imgBtn.upBtn {
+        background-image: url('Images/Common/up.ico');
+        width: 15px;
+        height: 15px;
+        margin-top: -5px;
+        margin-bottom: 5px;
+    }
+
+    .imgBtn.downBtn {
+        background-image: url('Images/Common/down.ico');
+        width: 15px;
+        height: 15px;
+    }
+
     .imgBtn.upcyclingBtn {
         background-image: url('Images/Common/upcycling.ico');
         width: 25px;
