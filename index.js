@@ -258,6 +258,7 @@ function goToActive() {
 }
 
 function goTo(o) {
+    o = o.replace("#", "");
     $("html,body").animate({ scrollTop: $("#" + o).offset().top - 78 }, 900);
     if (o != $(".active").attr("name").replace("#", "")) {
         $("#main-nav a").each(function () {
