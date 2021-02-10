@@ -31,7 +31,7 @@
     </script>
 </head>
 
-<body oncontextmenu='return false;' onselectstart='return false;' ondragstart='return false;' oncopy='return false;' oncut='return false;'>
+<body oncontextmenu='return false;' onselectstart='return false;' ondragstart='return false;' oncut='return false;'>
     <!--Loading site-->
     <div class="se-pre-con"></div>
 
@@ -586,7 +586,8 @@
                         </div>
                     </li>
                     <li>
-                        <p id="gsm" class="link" onclick="copyToClipboard()">+32 476 42 46 26</p><a class="link" onclick="openGoogleMaps();">Dorpsstraat 77 | BE - 9870 Zulte</a>
+                        <textarea id="gsm" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>+32 476 42 46 26</textarea>
+                        <a class="link" onclick="openGoogleMaps();">Dorpsstraat 77 | BE - 9870 Zulte</a>
                     </li>
                     <li>
                         <div class="imgBtn storeImg" onclick="openGoogleMaps();"></div>
@@ -595,6 +596,23 @@
             </section>
         </section>
     </div>
+
+
+    <!--<script>
+        copyTextBtn = document.querySelector('#copyTextBtn');
+        copyTextBtn.addEventListener('click', function (event) {
+            let copyTextarea = document.querySelector('#copytextarea');
+            copyTextarea.focus();
+            copyTextarea.select();
+            try {
+                let successful = document.execCommand('copy');
+                let msg = successful ? 'successful' : 'unsuccessful';
+                alert('Copy text command was ' + msg);
+            } catch (err) {
+                alert('Unable to copy');
+            }
+        });
+    </script>-->
 
 
     <!--<script>
