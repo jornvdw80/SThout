@@ -118,6 +118,12 @@
         height: 25px;
     }
 
+    .imgBtn.menuBtn {
+        background-image: url('Images/Common/menu.ico');
+        width: 25px;
+        height: 25px;
+    }
+
     .imgBtn.logoBtn {
         /*margin: 0 auto;*/
         background-image: url('Images/Common/stHout.png');
