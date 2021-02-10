@@ -1,6 +1,50 @@
 
-//var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
+//=============
+//First load: 
+//=============
+$(document).ready(function () {
+    getOSSettings();
+    setEvents(),
+    goTo(getActiveMenu()),
+    initializeNews(),
+    initializeProducts(),
+    initializeEvents()
+});
 
+$(window).bind('resizeEnd', function () {
+    doResize();
+});
+
+$(window).resize(function () {
+    if (this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function () {
+        $(this).trigger('resizeEnd');
+    }, 300);
+});
+
+document.addEventListener('scroll', function (e) {
+    highLightActivePage(),
+    hideMenu()
+});
+
+//==============
+//Check browser:
+//==============
+function isIE() {
+    ua = navigator.userAgent;
+    //MSIE used to detect old browsers and Trident used to newer ones
+    var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+    return is_ie;
+}
+//Create an alert to show if the browser is IE or not
+if (isIE()) {
+    alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak gebruik van een recentere browser!');
+}
+
+
+//================
+//Set click event:
+//================
 function getOSSettings() {
     //if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     //    // true for mobile device
@@ -43,72 +87,12 @@ function getOSSettings() {
 }
 
 
-//=============
-//First load: 
-//=============
-$(document).ready(function () {
-    getOSSettings();
-    setEvents(),
-    goTo(getActiveMenu()),
-    initializeNews(),
-    initializeProducts(),
-    initializeEvents(),
-
-    $(window).resize(function () {
-        doResize()
-        //e = getActiveMenu();
-        //waitForFinalEvent(function () { doResize() }, 200, "2")
-    });
-});
-
-
-//function debounce(func, time) {
-//    var time = time || 100; // 100 by default if no param
-//    var timer;
-//    return function (event) {
-//        if (timer) clearTimeout(timer);
-//        timer = setTimeout(func, time, event);
-//    };
-//}
-
-//window.addEventListener("resize", debounce(doResize, 150));
-
-
-document.addEventListener('scroll', function (e) {
-    highLightActivePage(),
-    hideMenu()
-});
-
-//==============
-//Check browser:
-//==============
-function isIE() {
-    ua = navigator.userAgent;
-    //MSIE used to detect old browsers and Trident used to newer ones
-    var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-    return is_ie;
-}
-//Create an alert to show if the browser is IE or not
-if (isIE()) {
-    alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak gebruik van een recentere browser!');
-}
-
-
 //================================
 //Responsive aside with animation:
 //================================
-
-
-    //function doResize() {goTo(e), document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250), resizeLastPage()}
-    //function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
-
-//$(window).resize(function () {e = getActiveMenu(), waitForFinalEvent(function () { doResize() }, 200, "2")});
-
-
-
 function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
 function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) }
-function doResize() { hideMenu(); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); }
+function doResize() { goTo(getActiveMenu()); document.body.clientWidth <= 950 ? $("aside").slideUp(250) : $("aside").slideDown(250); resizeLastPage(); }
 
 
 //==============================
