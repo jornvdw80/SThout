@@ -253,11 +253,9 @@ function copyToClipboard(id) {
         let msg = successful ? 'successful' : 'unsuccessful';
         //alert('Copy text command was ' + msg);
         toggleTooltip(id);
-        document.getSelection().removeAllRanges();
     } catch (err) {
-        //alert('Unable to copy');
+        alert('Unable to copy');
     }
-    document.getSelection().removeAllRanges();
 }
 
 function toggleTooltip(id) {
@@ -265,10 +263,17 @@ function toggleTooltip(id) {
     var element = 'copy' + id;
     var popup = document.getElementById(element);
     popup.classList.toggle("show");
-    popup.classList.fadeOut('fast');
+    //popup.fadeOut('fast'); => gives exception!
     var timeout = setTimeout(function () {
         document.getElementById(element).classList.toggle("show");
-    }, 100);   
+    }, 2000);   
+}
+
+function clearSelection() {
+    if (document.selection)
+        document.selection.empty();
+    else if (window.getSelection)
+        window.getSelection().removeAllRanges();
 }
 
 function closeModal() {
