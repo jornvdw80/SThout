@@ -243,31 +243,32 @@ function openGoogleMaps() {
     return !window.open('https://goo.gl/maps/BfYjKcqTqG8SBHtn8');
 }
 
-//TODO:
+//TODO: test on iPhone?
 function copyToClipboard(id) {
+    let copyTextarea = document.querySelector('#' + id);
+    copyTextarea.focus();
+    copyTextarea.select();
+    try {
+        let successful = document.execCommand('copy');
+        let msg = successful ? 'successful' : 'unsuccessful';
+        //alert('Copy text command was ' + msg);
+        toggleTooltip(id);
+        document.getSelection().removeAllRanges();
+    } catch (err) {
+        //alert('Unable to copy');
+    }
+    document.getSelection().removeAllRanges();
+}
 
-    //copyTextBtn = document.querySelector('#copyTextBtn');
-    //copyTextBtn.addEventListener('click', function (event) {
-        let copyTextarea = document.querySelector('#' + id);
-        copyTextarea.focus();
-        copyTextarea.select();
-        try {
-            let successful = document.execCommand('copy');
-            let msg = successful ? 'successful' : 'unsuccessful';
-            alert('Copy text command was ' + msg);
-        } catch (err) {
-            alert('Unable to copy');
-        }
-    //});
-    //alert(copyTextarea.innerHTML);
-    //let text = document.getElementById("gsm").innerHTML;
-    //navigator.clipboard.writeText(text)
-    //    //.then(() => {
-    //    //    alert('Text copied to clipboard');
-    //    //})
-    //    .catch(err => {
-    //        alert('Error in copying text: ', err);
-    //    });
+function toggleTooltip(id) {
+    clearTimeout(timeout);
+    var element = 'copy' + id;
+    var popup = document.getElementById(element);
+    popup.classList.toggle("show");
+    popup.classList.fadeOut('fast');
+    var timeout = setTimeout(function () {
+        document.getElementById(element).classList.toggle("show");
+    }, 100);   
 }
 
 function closeModal() {
