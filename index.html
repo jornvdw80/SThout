@@ -586,8 +586,10 @@
                         </div>
                     </li>
                     <li>
-                        <textarea id="gsm" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>+32 476 42 46 26</textarea>
-                        <a class="link" onclick="openGoogleMaps();">Dorpsstraat 77 | BE - 9870 Zulte</a>
+                        <div class="tooltip"><span class="popuptext" id="copygsm">Het nummer is gekopieerd.</span></div>
+                        <textarea readonly id="gsm" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>+32 476 42 46 26</textarea>
+                        <div class="tooltip"><span class="popuptext" id="copyaddress">Het adres is gekopieerd.</span></div>
+                        <textarea readonly id="address" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>Dorpsstraat 77 | BE - 9870 Zulte</textarea>
                     </li>
                     <li>
                         <div class="imgBtn storeImg" onclick="openGoogleMaps();"></div>
@@ -596,23 +598,6 @@
             </section>
         </section>
     </div>
-
-
-    <!--<script>
-        copyTextBtn = document.querySelector('#copyTextBtn');
-        copyTextBtn.addEventListener('click', function (event) {
-            let copyTextarea = document.querySelector('#copytextarea');
-            copyTextarea.focus();
-            copyTextarea.select();
-            try {
-                let successful = document.execCommand('copy');
-                let msg = successful ? 'successful' : 'unsuccessful';
-                alert('Copy text command was ' + msg);
-            } catch (err) {
-                alert('Unable to copy');
-            }
-        });
-    </script>-->
 
 
     <!--<script>
