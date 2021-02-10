@@ -13,31 +13,31 @@ function getOS() {
 
     var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "click");
     $("a").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
     $("li").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
     $("button").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
     $("textarea").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
     //$("img").bind(clickHandler, function (e) {
     //    alert("clicked or tapped. This button used: " + clickHandler);
     //});
     $(".brandBullet").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
     $(".clickZone").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
     $(".popupClickZone").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
     $(".popupInfo").bind(clickHandler, function (e) {
-        alert("clicked or tapped. This button used: " + clickHandler);
+        //alert("clicked or tapped. This button used: " + clickHandler);
     });
 
     //var ua = navigator.userAgent.toLowerCase();
