@@ -1,6 +1,15 @@
 
 //var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
 
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+if (isAndroid) {
+    // Do something!
+    // Redirect to Android-site?
+    alert('GREAT! You are an android!');
+}
+
+
 //=============
 //First load: 
 //=============
