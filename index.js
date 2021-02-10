@@ -4,13 +4,14 @@
 function getOS() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // true for mobile device
-        alert("mobile device");
+        alert("GREAT! You are using a mobile device.");
 
     } else {
         // false for not mobile device
-        alert("not mobile device");
+        alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
     }
 
+    //Making "clicking" work on mobile devices, especially on iPhones:
     var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "click");
     $("a").bind(clickHandler, function (e) {
         //alert("clicked or tapped. This button used: " + clickHandler);
@@ -39,15 +40,6 @@ function getOS() {
     $(".popupInfo").bind(clickHandler, function (e) {
         //alert("clicked or tapped. This button used: " + clickHandler);
     });
-
-    //var ua = navigator.userAgent.toLowerCase();
-    //var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-    //if (isAndroid) {
-    //    // Do something!
-    //    // Redirect to Android-site?
-    //    alert('GREAT! You are an android!');
-    //}
-    //else { alert('something else'); }
 }
 
 
