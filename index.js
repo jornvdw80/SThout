@@ -2,14 +2,21 @@
 //var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
 
 function getOS() {
-    var ua = navigator.userAgent.toLowerCase();
-    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-    if (isAndroid) {
-        // Do something!
-        // Redirect to Android-site?
-        alert('GREAT! You are an android!');
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // true for mobile device
+        alert("mobile device");
+    } else {
+        // false for not mobile device
+        alert("not mobile device");
     }
-    else { alert('something else'); }
+    //var ua = navigator.userAgent.toLowerCase();
+    //var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    //if (isAndroid) {
+    //    // Do something!
+    //    // Redirect to Android-site?
+    //    alert('GREAT! You are an android!');
+    //}
+    //else { alert('something else'); }
 }
 
 
