@@ -244,15 +244,30 @@ function openGoogleMaps() {
 }
 
 //TODO:
-function copyToClipboard() {
-    let text = document.getElementById("gsm").innerHTML;
-    navigator.clipboard.writeText(text)
-        //.then(() => {
-        //    alert('Text copied to clipboard');
-        //})
-        .catch(err => {
-            alert('Error in copying text: ', err);
-        });
+function copyToClipboard(id) {
+
+    //copyTextBtn = document.querySelector('#copyTextBtn');
+    //copyTextBtn.addEventListener('click', function (event) {
+        let copyTextarea = document.querySelector('#' + id);
+        copyTextarea.focus();
+        copyTextarea.select();
+        try {
+            let successful = document.execCommand('copy');
+            let msg = successful ? 'successful' : 'unsuccessful';
+            alert('Copy text command was ' + msg);
+        } catch (err) {
+            alert('Unable to copy');
+        }
+    //});
+    //alert(copyTextarea.innerHTML);
+    //let text = document.getElementById("gsm").innerHTML;
+    //navigator.clipboard.writeText(text)
+    //    //.then(() => {
+    //    //    alert('Text copied to clipboard');
+    //    //})
+    //    .catch(err => {
+    //        alert('Error in copying text: ', err);
+    //    });
 }
 
 function closeModal() {
