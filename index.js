@@ -266,7 +266,7 @@ function toggleTooltip(id) {
     //popup.fadeOut('fast'); => gives exception!
     var timeout = setTimeout(function () {
         document.getElementById(element).classList.toggle("show");
-    }, 2000);   
+    }, 1500);   
 }
 
 function clearSelection() {
