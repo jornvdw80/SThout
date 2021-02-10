@@ -5,10 +5,17 @@ function getOS() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // true for mobile device
         alert("mobile device");
+
     } else {
         // false for not mobile device
         alert("not mobile device");
     }
+
+    var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "click");
+    $("a").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
+
     //var ua = navigator.userAgent.toLowerCase();
     //var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
     //if (isAndroid) {
