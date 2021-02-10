@@ -1,15 +1,15 @@
 
 //var e = getActiveMenu(), waitForFinalEvent = function () { var e = {}; return function (i, t, n) { n || (n = "1"), e[n] && clearTimeout(e[n]), e[n] = setTimeout(i, t) } }();
 
-function getOS() {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // true for mobile device
-        alert("GREAT! You are using a mobile device.");
+function getOSSettings() {
+    //if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    //    // true for mobile device
+    //    alert("GREAT! You are using a mobile device.");
 
-    } else {
-        // false for not mobile device
-        alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
-    }
+    //} else {
+    //    // false for not mobile device
+    //    alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
+    //}
 
     //Making "clicking" work on mobile devices, especially on iPhones:
     var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "click");
@@ -47,7 +47,7 @@ function getOS() {
 //First load: 
 //=============
 $(document).ready(function () {
-    getOS();
+    getOSSettings();
     setEvents(),
     goTo(getActiveMenu()),
     initializeNews(),
