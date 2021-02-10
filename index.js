@@ -15,6 +15,30 @@ function getOS() {
     $("a").bind(clickHandler, function (e) {
         alert("clicked or tapped. This button used: " + clickHandler);
     });
+    $("li").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
+    $("button").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
+    $("textarea").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
+    //$("img").bind(clickHandler, function (e) {
+    //    alert("clicked or tapped. This button used: " + clickHandler);
+    //});
+    $(".brandBullet").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
+    $(".clickZone").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
+    $(".popupClickZone").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
+    $(".popupInfo").bind(clickHandler, function (e) {
+        alert("clicked or tapped. This button used: " + clickHandler);
+    });
 
     //var ua = navigator.userAgent.toLowerCase();
     //var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
