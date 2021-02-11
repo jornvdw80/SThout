@@ -1340,9 +1340,10 @@ img.menu-icon {
 }
 
 @media screen and (max-width:950px) {
-    aside {
+    /*Do not use this, solved with javascript, which gives the expected result on load
+    /*aside {
         display: none
-    }
+    }*/
 }
 
 @media screen and (max-width:750px) {
