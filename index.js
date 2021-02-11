@@ -34,8 +34,8 @@ $(window).resize(function () {
 });
 
 document.addEventListener('scroll', function (e) {
-    highLightActivePage(),
-        hideMenu()
+    highLightActivePage();
+    hideMenu();
 });
 
 //==============
@@ -104,7 +104,7 @@ function getOSSettings() {
 function getActiveMenu() { return $("#aside-nav ul li a.active").attr("name").replace("#", "") }
 function resizeLastPage() { $height = $(window).innerHeight() - 240, $(".page5").height($height) }
 function doResize() { goTo(getActiveMenu()); }
-function animateAside() { hideMenu(); document.body.clientWidth <= 950 ? $('aside').slideUp('fast') : $("aside").slideDown('fast'); }
+function animateAside() { hideMenu(); document.body.clientWidth <= 950 ? $('aside').slideUp(250) : $("aside").slideDown(250); }
 
 
 //==============================
