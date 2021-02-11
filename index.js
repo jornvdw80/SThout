@@ -2,13 +2,23 @@
 //=============
 //First load: 
 //=============
+
+$(window).load(function () {
+    //Show a loading gif on the opening of the website
+    $(".se-pre-con").fadeOut("slow");
+    //Ensure navigation menu's are shown correctly in all (!) circumstances.
+    hideNavigate();
+    makeShort();
+    animateAside();
+});
+
 $(document).ready(function () {
     getOSSettings();
-    setEvents(),
-    goTo(getActiveMenu()),
-    initializeNews(),
-    initializeProducts(),
-    initializeEvents()
+    setEvents();
+    goTo(getActiveMenu());
+    initializeNews();
+    initializeProducts();
+    initializeEvents();   
 });
 
 $(window).bind('resizeEnd', function () {
@@ -25,7 +35,7 @@ $(window).resize(function () {
 
 document.addEventListener('scroll', function (e) {
     highLightActivePage(),
-    hideMenu()
+        hideMenu()
 });
 
 //==============
@@ -39,7 +49,7 @@ function isIE() {
 }
 //Create an alert to show if the browser is IE or not
 if (isIE()) {
-    alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak gebruik van een recentere browser!');
+    alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak indien mogelijk, gebruik van een recentere browser voor een beter resultaat!');
 }
 
 
@@ -100,7 +110,7 @@ function animateAside() { hideMenu(); document.body.clientWidth <= 950 ? $('asid
 //==============================
 //Set upcoming and past events:
 //==============================
-function setEvents() {$("#eventsList li").each(function () { var t = "future", e = (new Date).toDateString(); Date.parse(e) > Date.parse($(this).attr("id")) && (t = "past"), $(this).addClass(t) })}
+function setEvents() { $("#eventsList li").each(function () { var t = "future", e = (new Date).toDateString(); Date.parse(e) > Date.parse($(this).attr("id")) && (t = "past"), $(this).addClass(t) }) }
 
 
 //=====================
@@ -295,7 +305,7 @@ function toggleTooltip(id) {
     //popup.fadeOut('fast'); => gives exception!
     var timeout = setTimeout(function () {
         document.getElementById(element).classList.toggle("show");
-    }, 1500);   
+    }, 1500);
 }
 
 function clearSelection() {
@@ -336,6 +346,7 @@ function goTo(o) {
             a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
         });
     }
+    hideMenu();
 }
 
 
