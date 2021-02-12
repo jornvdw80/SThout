@@ -4,9 +4,8 @@
 //=============
 
 $(window).load(function () {
-    //Show a loading gif on the opening of the website
+    //Show a loading gif on loading, with a timeout:
     setTimeout(() => { $(".se-pre-con").fadeOut(750); }, 1000);
-    //$(".se-pre-con").fadeOut("slow");
     //Set up swipers:
     initializeSwipers();
     //Ensure navigation menu's are shown correctly in all (!) circumstances.
@@ -62,7 +61,7 @@ if (isIE()) {
 function getOSSettings() {
     //if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     //    // true for mobile device
-    //    alert("GREAT! You are using a mobile device.");
+    //    alert("BUMMER! You are using a mobile device.");
 
     //} else {
     //    // false for not mobile device
