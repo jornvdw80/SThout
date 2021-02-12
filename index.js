@@ -5,7 +5,8 @@
 
 $(window).load(function () {
     //Show a loading gif on the opening of the website
-    $(".se-pre-con").fadeOut("slow");
+    setTimeout(() => { $(".se-pre-con").fadeOut("slow"); }, 2000);
+    //$(".se-pre-con").fadeOut("slow");
     //Set up swipers:
     initializeSwipers();
     //Ensure navigation menu's are shown correctly in all (!) circumstances.
