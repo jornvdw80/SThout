@@ -6,6 +6,8 @@
 $(window).load(function () {
     //Show a loading gif on the opening of the website
     $(".se-pre-con").fadeOut("slow");
+    //Set up swipers:
+    initializeSwipers();
     //Ensure navigation menu's are shown correctly in all (!) circumstances.
     hideNavigate();
     makeShort();
@@ -370,6 +372,14 @@ document.onkeydown = function (evt) {
 //==============
 //Image swiper:
 //==============
+
+var swiper1;
+var swiper2;
+
+function initializeSwipers() {
+    swiper1 = new Swiper(".swiper1", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, autoplay: { delay: 3500, disableOnInteraction: !1 }, pagination: { el: ".swiper-pagination1", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, keyboard: { enabled: !0, onlyInViewport: !1 } });
+    swiper2 = new Swiper(".swiper2", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, pagination: { el: ".swiper-pagination2", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next2", prevEl: ".swiper-button-prev2" }, keyboard: { enabled: !0, onlyInViewport: !1 }, mousewheel: { invert: !0 } });
+}
 
 function openModal(index) {
     $(".popupInfo").hide();
