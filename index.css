@@ -22,7 +22,19 @@
     z-index: 9999;
     /*background: url('Images/Common/loader.gif') center no-repeat #fff;*/
     background: url('Images/Common/upcycling.gif') center no-repeat #fff;
+    /*    background: url('Images/Common/upcycling.ico') center no-repeat lightgreen;
+    animation: rotation 1s infinite linear;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
+
+.centered {
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
 
 @keyframes rotation {
     from {
