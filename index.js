@@ -5,7 +5,7 @@
 
 $(window).load(function () {
     //Show a loading gif on the opening of the website
-    setTimeout(() => { $(".se-pre-con").fadeOut("slow"); }, 2000);
+    setTimeout(() => { $(".se-pre-con").fadeOut("slow"); }, 1000);
     //$(".se-pre-con").fadeOut("slow");
     //Set up swipers:
     initializeSwipers();
