@@ -24,7 +24,7 @@
     <script src="index.js"></script>
 </head>
 
-<body oncontextmenu='return false;' onselectstart='return false;' ondragstart='return false;' oncut='return false;'>
+<body oncontextmenu='return false;' onselectstart='return false;' ondragstart='return false;' oncopy='return true;' oncut='return false;'>
     <!--Loading site-->
     <div class="se-pre-con"></div>
 
@@ -579,12 +579,5 @@
             </section>
         </section>
     </div>
-
-    <!--Initialize Swipers-->
-    <!--Keep it here!-->
-    <script>
-        var swiper1 = new Swiper(".swiper1", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, autoplay: { delay: 3500, disableOnInteraction: !1 }, pagination: { el: ".swiper-pagination1", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, keyboard: { enabled: !0, onlyInViewport: !1 } });
-        var swiper2 = new Swiper(".swiper2", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, pagination: { el: ".swiper-pagination2", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next2", prevEl: ".swiper-button-prev2" }, keyboard: { enabled: !0, onlyInViewport: !1 }, mousewheel: { invert: !0 } });
-    </script>
 </body>
 </html>
