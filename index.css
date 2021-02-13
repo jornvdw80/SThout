@@ -127,8 +127,8 @@
     .imgBtn.downBtn {
         /*margin: 0 auto;*/
         background-image: url('Images/Common/down.ico');
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
     }
 
     .imgBtn.upcyclingBtn {
@@ -161,6 +161,14 @@
         margin-bottom: -12px;
         width: 90px;
         height: 40px;
+    }
+
+    .imgBtn.logoPreview {
+        background-image: url('Images/Common/stHout.png');
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
     }
 
     .imgBtn.mainlogoBtn {
@@ -975,6 +983,26 @@ aside {
     padding: 0;
     padding-top: 15px;
     float: right;
+}
+
+
+.more {
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 15px;
+    float: right;
+    background-image: url('Images/Common/down.ico');
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    cursor: pointer;
+    opacity: .8;
 }
 
 .preview {
