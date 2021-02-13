@@ -118,9 +118,9 @@
     .imgBtn.upBtn {
         /*margin: 0 auto;*/
         background-image: url('Images/Common/up.ico');
-        width: 15px;
-        height: 15px;
-        margin-top: -5px;
+        width: 10px;
+        height: 10px;
+        /*margin-top: -5px;*/
         margin-bottom: 10px;
     }
 
