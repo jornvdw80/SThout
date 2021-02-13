@@ -105,6 +105,16 @@
         background-image: url('Images/Common/pin.ico');
     }
 
+    .imgBtn.arrowBtn {
+        background-image: url('Images/Common/arrow.ico');
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        width: 22px;
+        height: 22px;
+    }
+
     .imgBtn.upBtn {
         /*margin: 0 auto;*/
         background-image: url('Images/Common/up.ico');
@@ -125,6 +135,16 @@
         background-image: url('Images/Common/upcycling.ico');
         width: 25px;
         height: 25px;
+    }
+
+    .imgBtn.upcyclingAni {
+        background: url('Images/Common/upcycling.gif') center no-repeat #fff;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        width: 22px;
+        height: 22px;
     }
 
     .imgBtn.menuBtn {
