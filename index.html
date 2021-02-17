@@ -28,7 +28,6 @@
     <!--Loading site-->
     <div class="se-pre-con"></div>
 
-
     <!--Top left link buttons on menubar-->
     <div class="social-media-top-left">
         <ul>
@@ -94,8 +93,10 @@
             <section>
                 <a class="link imgBtn mainlogoBtn" onclick="goTo('about')"></a>
             </section>
-            <!-- Swiper 1-->
             <section>
+                <!--Internet explorer version = no swiper-->
+                <div id="ieHome" class="imgBtn storeImg" onclick="goTo('about')" style="height:250px; margin-top:20px"></div>
+                <!-- Swiper 1-->
                 <div id="mainslides" class="slideshow-container">
                     <div class="swiper-container swiper1">
                         <div class="swiper-wrapper swiper-block">
@@ -129,11 +130,14 @@
                         <!-- Add Arrows -->
                         <div class="swiper-button-next swiper-button-next1"></div>
                         <div class="swiper-button-prev swiper-button-next1"></div>
-                        <article>
-                            <a class="link" onclick="goTo('about')"><p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p></a>
-                        </article>
+                        <!--<article>
+                        <a class="link" onclick="goTo('about')"><p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p></a>
+                    </article>-->
                     </div>
                 </div>
+                <article>
+                    <a class="link" onclick="goTo('about')"><p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p></a>
+                </article>
             </section>
         </section>
 
@@ -264,15 +268,15 @@
                                         <div class="swiper-lazy-preloader"></div>
                                         <!--<div class="title" id="title_#"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>-->
                                         <!--<ul class="title" sty>
-                                            <li><span class="brandBullet infoBullet hasInfo" onclick="togglePopupInfo();"> | </span></li>
-                                            <li><span style="font-weight:bold">meubilair</span> | </li>
-                                            <li><span>nieuw samengesteld gezin</span></li>
-                                        </ul>-->
+                                        <li><span class="brandBullet infoBullet hasInfo" onclick="togglePopupInfo();"> | </span></li>
+                                        <li><span style="font-weight:bold">meubilair</span> | </li>
+                                        <li><span>nieuw samengesteld gezin</span></li>
+                                    </ul>-->
                                         <div class="popupClickZone" onclick="togglePopupInfo()"></div>
                                         <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>
                                         <article class="popupInfo" onclick="togglePopupInfo()">
                                             <div class="preview info"></div>
-                                            <div class="more"></div>
+                                            <div class="closeInfo"></div>
                                             <p class="popupTitle">meubilair</p>
                                             <a class="popupSubTitle">Nieuw samengesteld gezin</a>
                                             <p>Dit is wat bijkomende info</p>
@@ -285,7 +289,7 @@
                                         <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>...</div>
                                         <article class="popupInfo" onclick="togglePopupInfo()">
                                             <div class="preview info"></div>
-                                            <div class="more"></div>
+                                            <div class="closeInfo"></div>
                                             <p class="popupTitle">meubilair</p>
                                             <a class="popupSubTitle">Skates</a>
                                             <p>Dit is wat bijkomende info</p>
@@ -544,6 +548,11 @@
                 </ul>
             </section>
         </section>
+
+        <div id="warnings" class="footer">
+            <p class="isIE">U maakt gebruik van Internet Explorer. Deze website werkt daardoor niet optimaal. Maak indien mogelijk, gebruik van een recentere browser voor een beter resultaat!</p>
+        </div>
+
     </div>
 
     <noscript> <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorPage.html"> </noscript>
