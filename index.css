@@ -35,6 +35,24 @@
     transform: translate(-50%, -50%);
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
 
 @keyframes rotation {
     from {
@@ -706,9 +724,10 @@ aside {
 
 .page1 article {
     padding: 0;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
     position: relative;
     margin: auto;
+    margin-top: -30px;
     text-align: center;
     width: 220px;
 }
@@ -994,6 +1013,25 @@ aside {
     padding-top: 15px;
     float: right;
     background-image: url('Images/Common/down.ico');
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.closeInfo {
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 15px;
+    float: right;
+    background-image: url('Images/Common/close.ico');
     background-color: transparent;
     background-position: center center;
     background-repeat: no-repeat;
