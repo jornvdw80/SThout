@@ -111,6 +111,14 @@
         opacity: .7;
     }
 
+    .imgBtn.homeImg {
+        background-image: url('Images/Common/popup.png');
+        width: 350px;
+        height: 350px;
+        margin-bottom: 15px;
+        opacity: .7;
+    }
+
     .imgBtn.facebookBtn {
         background-image: url('Images/Common/facebook.ico');
     }
