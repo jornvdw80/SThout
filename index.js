@@ -3,9 +3,11 @@
 //First load: 
 //=============
 
+//TODO: IExplorer
+
 $(window).load(function () {
     //Show a loading gif on loading, with a timeout:
-    setTimeout(() => { $(".se-pre-con").fadeOut(750); }, 1000);
+    setTimeout(function () { resetLoader() }, 1000);
     //Set up swipers:
     initializeSwipers();
     //Ensure navigation menu's are shown correctly in all (!) circumstances.
@@ -15,6 +17,8 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
+    //Check if Internet Explorer:
+    setBrowserStyle();
     getOSSettings();
     setEvents();
     goTo(getActiveMenu());
@@ -40,6 +44,10 @@ document.addEventListener('scroll', function (e) {
     hideMenu();
 });
 
+function resetLoader() {
+    $(".se-pre-con").fadeOut(750);
+}
+
 //==============
 //Check browser:
 //==============
@@ -49,9 +57,18 @@ function isIE() {
     var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
     return is_ie;
 }
-//Create an alert to show if the browser is IE or not
-if (isIE()) {
-    alert('U maakt gebruik van Internet Explorer.\n Deze website werkt daardoor niet optimaal. \n Maak indien mogelijk, gebruik van een recentere browser voor een beter resultaat!');
+
+function setBrowserStyle() {
+    if (!isIE()) {
+        document.getElementById("warnings").style.display = "none";
+        document.getElementById("mainslides").style.display = "block";
+        document.getElementById("ieHome").style.display = "none";
+    }
+    else {
+        document.getElementById("warnings").style.display = "block";
+        document.getElementById("mainslides").style.display = "none";
+        document.getElementById("ieHome").style.display = "block";
+    }
 }
 
 
@@ -291,11 +308,11 @@ function copyToClipboard(id) {
     copyTextarea.select();
     try {
         let successful = document.execCommand('copy');
-        let msg = successful ? 'successful' : 'unsuccessful';
+        //let msg = successful ? 'successful' : 'unsuccessful';
         //alert('Copy text command was ' + msg);
         toggleTooltip(id);
     } catch (err) {
-        alert('Unable to copy');
+        alert('Het kopiëren is mislukt!');
     }
 }
 
@@ -377,68 +394,55 @@ var swiper1;
 var swiper2;
 
 function initializeSwipers() {
-    swiper1 = new Swiper(".swiper1", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, autoplay: { delay: 3500, disableOnInteraction: !1 }, pagination: { el: ".swiper-pagination1", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, keyboard: { enabled: !0, onlyInViewport: !1 } });
-    swiper2 = new Swiper(".swiper2", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, pagination: { el: ".swiper-pagination2", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next2", prevEl: ".swiper-button-prev2" }, keyboard: { enabled: !0, onlyInViewport: !1 }, mousewheel: { invert: !0 } });
+    if (!isIE()) {
+        swiper1 = new Swiper(".swiper1", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, autoplay: { delay: 3500, disableOnInteraction: !1 }, pagination: { el: ".swiper-pagination1", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, keyboard: { enabled: !0, onlyInViewport: !1 } });
+        swiper2 = new Swiper(".swiper2", { slidesPerView: 1, spaceBetween: 200, loop: !0, preloadImages: !1, lazy: !0, effect: "flip", flipEffect: { rotate: 30, slideShadows: !1 }, pagination: { el: ".swiper-pagination2", clickable: !0, dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next2", prevEl: ".swiper-button-prev2" }, keyboard: { enabled: !0, onlyInViewport: !1 }, mousewheel: { invert: !0 } });
+    }
 }
 
 function openModal(index) {
-    $(".popupInfo").hide();
-    document.getElementById("myModal").style.display = "block";
-    swiper2.destroy(false, false); //important, otherwise freaky behaviour!!!!
-    swiper2 = new Swiper('.swiper2', {
-        slidesPerView: 1,
-        spaceBetween: 200,
-        loop: true,
-        preloadImages: false,
-        lazy: true,
-        effect: 'flip',
-        flipEffect: {
-            rotate: 30,
-            slideShadows: false,
-        },
-        pagination: {
-            el: '.swiper-pagination2',
-            clickable: true,
-            dynamicBullets: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next2',
-            prevEl: '.swiper-button-prev2',
-        },
-        keyboard: {
-            enabled: true,
-            onlyInViewport: false,
-        },
-        mousewheel: {
-            invert: true,
-        },
-        //on: {
-        //    slideChange: function slideChange(swiper2) {
-        //        //onClick.bind(swiper2)
-        //        //swiper2.update();
-        //        //alert(swiper2.activeIndex);
-        //        //if (swiper.history.initialized && swiper.params.cssMode) {
-        //        //    swiper.history.setHistory(swiper.params.history.key, swiper.activeIndex);
-        //        //}
-        //    }
-        //}
-    });
-    var toggle = true;
-    swiper2.on('slideChange', function () {
-        //$(this).trigger('click');
+    if (!isIE()) {
         $(".popupInfo").hide();
-        togglePopupInfo();//.slideUp('fast');
-        toggle = false;
-        //$(".popupInfo").style.display = "none";
-        //resetHoverTouch();
-        //resetTouchEnd();
-        //alert('test');
-    });
-
-    //swiper2.slideTo(index);
-    swiper2.slideToLoop(index - 1);
-    if (toggle) {
-        togglePopupInfo();
+        document.getElementById("myModal").style.display = "block";
+        swiper2.destroy(false, false); //important, otherwise freaky behaviour!!!!
+        swiper2 = new Swiper('.swiper2', {
+            slidesPerView: 1,
+            spaceBetween: 200,
+            loop: true,
+            preloadImages: false,
+            lazy: true,
+            effect: 'flip',
+            flipEffect: {
+                rotate: 30,
+                slideShadows: false,
+            },
+            pagination: {
+                el: '.swiper-pagination2',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next2',
+                prevEl: '.swiper-button-prev2',
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
+            },
+            mousewheel: {
+                invert: true,
+            },
+        });
+        var toggle = true;
+        swiper2.on('slideChange', function () {
+            $(".popupInfo").hide();
+            togglePopupInfo();//.slideUp('fast');
+            toggle = false;
+        });
+        swiper2.slideToLoop(index - 1);
+        if (toggle) {
+            togglePopupInfo();
+        }
     }
 }
 
@@ -454,7 +458,6 @@ function togglePopupInfo() {
     if (item.is(":visible")) { isVisible = true; }
     item.fadeOut(duration);
     if (isVisible) { item.fadeOut(duration); } else { item.fadeIn(duration); }
-    $(".slideTitle").focus(); //TODO: keep?
 }
 
 
@@ -474,13 +477,9 @@ function toggleMenuClick() {
     if (isVisible) {
         hideNavigate();
         makeShort();
-        //document.body.clientWidth > 950 && $("aside").slideDown();
-        //$("#main-nav ul").slideUp();
     } else {
         showNavigate();
         makeTall();
-        //$("aside").slideUp();
-        //$("#main-nav ul").slideDown();
     }
 }
 
@@ -490,8 +489,6 @@ function hideMenu() {
     if (isVisible) {
         hideNavigate();
         makeShort();
-        //document.body.clientWidth > 950 && $("aside").slideDown();
-        //$("#main-nav ul").slideUp();
     }
 }
 
