@@ -298,7 +298,7 @@ function openUrl(url) {
 }
 
 function openGoogleMaps() {
-    return !window.open('https://goo.gl/maps/BfYjKcqTqG8SBHtn8');
+    return !window.open('https://goo.gl/maps/rth2eMBuX1s8G3udA');
 }
 
 //TODO: test on iPhone?
