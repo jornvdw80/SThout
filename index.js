@@ -7,7 +7,7 @@
 
 $(window).load(function () {
     //Show a loading gif on loading, with a timeout:
-    setTimeout(function () { resetLoader() }, 1000);
+    //setTimeout(function () { resetLoader() }, 1000);
     //Set up swipers:
     initializeSwipers();
     //Ensure navigation menu's are shown correctly in all (!) circumstances.
