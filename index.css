@@ -43,26 +43,17 @@
     background-color: red;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 
-.footer p {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-
-@keyframes rotation {
-    from {
-        transform: rotateY(0deg);
+    .footer p {
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
     }
-
-    to {
-        transform: rotateY(359deg);
-    }
-}
 
 .menu{
     margin-left: 10px;
@@ -385,15 +376,48 @@
             }
         }*/
 
+@keyframes spin-horizontal {
+    0% {
+        transform: rotateZ('angle');
+    }
+
+    100% {
+        transform: rotateZ(30deg);
+    }
+}
+
+@keyframes rotation {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
 .swiper-lazy-preloader {
-    background: url('Images/Common/upcycling.ico') center no-repeat transparent;
+    background: url('Images/Common/upcycling.gif') center no-repeat transparent;
     background-size: contain;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     border: none;
     border-radius: unset;
-    animation: rotation 0.5s infinite linear;
+    /*animation: rotation 0.5s infinite linear;*/
+    /*-webkit-animation: spin-horizontal .5s linear infinite;
+    -moz-animation: spin-horizontal 0.5s linear infinite;
+    -ms-animation: spin-horizontal 0.5s linear infinite;
+    -o-animation: spin-horizontal 0.5s linear infinite;
+    animation: spin-horizontal 0.5s linear infinite;*/
 }
 
 .swiper-container {
