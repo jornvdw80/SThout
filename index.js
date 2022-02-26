@@ -1,13 +1,65 @@
 
+//https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file?page=1&tab=votes#tab-top
+//https://www.beyondjava.net/html-includes
+
 //=============
 //First load: 
 //=============
+
+//function includeHtml () {
+//    var includes = $('[data-include]')
+//    $.each(includes, function () {
+//        //var file = 'views/' + $(this).data('include') + '.html';
+//        var file = $(this).data('include') + '.html';
+//        $(this).load(file);
+//        //alert(file);
+//    })
+//}
+
+//$(function () {
+//    var includes = $('[data-include]')
+//    $.each(includes, function () {
+//        var file = $(this).data('include') + '.html'
+//        $(this).load(file)
+//        //alert(file)
+//    })
+//})
+
+//function includeHTML() {
+//    var z, i, elmnt, file, xhttp;
+//    /*loop through a collection of all HTML elements:*/
+//    z = document.getElementsByTagName("*");
+//    for (i = 0; i < z.length; i++) {
+//        elmnt = z[i];
+//        /*search for elements with a certain atrribute:*/
+//        file = elmnt.getAttribute("w3-include-html");
+//        if (file) {
+//            /*make an HTTP request using the attribute value as the file name:*/
+//            xhttp = new XMLHttpRequest();
+//            xhttp.onreadystatechange = function () {
+//                if (this.readyState == 4) {
+//                    if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+//                    if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+//                    /*remove the attribute, and call this function once more:*/
+//                    elmnt.removeAttribute("w3-include-html");
+//                    includeHTML();
+//                }
+//            }
+//            xhttp.open("GET", file, true);
+//            xhttp.send();
+//            /*exit the function:*/
+//            return;
+//        }
+//    }
+//}
+
 
 //TODO: IExplorer
 
 $(window).load(function () {
     //Show a loading gif on loading, with a timeout:
     setTimeout(function () { resetLoader() }, 1000);
+    //includeHtml();
     //Set up swipers:
     initializeSwipers();
     //Ensure navigation menu's are shown correctly in all (!) circumstances.
@@ -17,7 +69,6 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
-    //Check if Internet Explorer:
     setBrowserStyle();
     getOSSettings();
     setEvents();
@@ -60,14 +111,23 @@ function isIE() {
 
 function setBrowserStyle() {
     if (!isIE()) {
-        document.getElementById("warnings").style.display = "none";
         document.getElementById("mainslides").style.display = "block";
-        document.getElementById("ieHome").style.display = "none";
+        setStyle('basicMode', 'none');
+        setStyle('warnings', 'none');
+        setStyle('isIE', 'none');
     }
     else {
-        document.getElementById("warnings").style.display = "block";
         document.getElementById("mainslides").style.display = "none";
-        document.getElementById("ieHome").style.display = "block";
+        setStyle('basicMode', 'block');
+        setStyle('warnings', 'block');
+        setStyle('isIE', 'block');
+    }
+}
+
+function setStyle(name, setting) {
+    var items = document.getElementsByClassName(name);
+    for (var i = 0; i < items.length; i++) {
+        items[i].style.display = setting;
     }
 }
 
@@ -332,6 +392,10 @@ function clearSelection() {
         document.selection.empty();
     else if (window.getSelection)
         window.getSelection().removeAllRanges();
+}
+
+function closeWarning () {
+    document.getElementById("warning").style.display = "none";
 }
 
 function closeModal() {
