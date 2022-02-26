@@ -404,9 +404,11 @@
     }
 }
 
-/*.swiper-lazy-preloader {
+.swiper-lazy-preloader {
     background: url('Images/Common/upcycling.ico') center no-repeat transparent;
     background-size: contain;
+    border: none;
+    border-radius: unset;
     width: 42px;
     height: 42px;
     position: absolute;
@@ -416,24 +418,24 @@
     margin-top: -21px;
     z-index: 10;
     transform-origin: 50%;
-    animation: swiper-preloader-spin 1s steps(12, end) infinite;
-}*/
+    animation: swiper-preloader-spin .5s steps(12, end) infinite;
+}
 
-.swiper-lazy-preloader {
+/*.swiper-lazy-preloader {
     background: url('Images/Common/upcycling.ico') center no-repeat transparent;
     background-size: contain;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     border: none;
-    border-radius: unset;
+    border-radius: unset;*/
     /*animation: rotation 0.5s infinite linear;*/
    /* -webkit-animation: spin-horizontal 0.2s linear infinite;
     -moz-animation: spin-horizontal 0.2s linear infinite;
     -ms-animation: spin-horizontal 0.2s linear infinite;
     -o-animation: spin-horizontal 0.2s linear infinite;
     animation: spin-horizontal 0.2s linear infinite;*/
-}
+/*}*/
 
 .swiper-container {
     width: 100%;
