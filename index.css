@@ -13,7 +13,7 @@
     top: 0;
 }
 
-.se-pre-con {
+.se-pre-con/*, .swiper-lazy-preloader*/ {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -378,11 +378,11 @@
 
 @keyframes spin-horizontal {
     0% {
-        transform: rotateZ('angle');
+        transform: rotateZ(0deg);
     }
 
     100% {
-        transform: rotateZ(30deg);
+        transform: rotateZ(360deg);
     }
 }
 
@@ -413,11 +413,11 @@
     border: none;
     border-radius: unset;
     /*animation: rotation 0.5s infinite linear;*/
-    /*-webkit-animation: spin-horizontal .5s linear infinite;
-    -moz-animation: spin-horizontal 0.5s linear infinite;
-    -ms-animation: spin-horizontal 0.5s linear infinite;
-    -o-animation: spin-horizontal 0.5s linear infinite;
-    animation: spin-horizontal 0.5s linear infinite;*/
+    /*-webkit-animation: spin-horizontal 0.2s linear infinite;
+    -moz-animation: spin-horizontal 0.2s linear infinite;
+    -ms-animation: spin-horizontal 0.2s linear infinite;
+    -o-animation: spin-horizontal 0.2s linear infinite;
+    animation: spin-horizontal 0.2s linear infinite;*/
 }
 
 .swiper-container {
