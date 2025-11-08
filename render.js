@@ -33,7 +33,7 @@ fetch('Data/users.json')
             title.textContent = news.firstname
             subTitle.textContent = news.lastname
             subTitle.title = news.website;
-            container.append(listItem)
+            container.append(item)
         })
     })
     .catch(error => console.error(error))
