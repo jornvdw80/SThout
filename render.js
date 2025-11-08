@@ -28,7 +28,7 @@ fetch('Data/users.json')
             const email = card.querySelector('.newsSubTitle')
             name.textContent = user.firstname
             email.textContent = user.email
-            card.title = "https://stackoverflow.com/questions/26454316/javascript-to-get-and-change-element-title";
+            email.title = "https://stackoverflow.com/questions/26454316/javascript-to-get-and-change-element-title";
             container.append(card)
         })
     })
