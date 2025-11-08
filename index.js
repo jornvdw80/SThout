@@ -357,6 +357,10 @@ function openUrl(url) {
     return !window.open(url);
 }
 
+function openUrlOfNode(node) {
+    return !window.open(node.title);
+}
+
 function openGoogleMaps() {
     return !window.open('https://goo.gl/maps/rth2eMBuX1s8G3udA');
 }
