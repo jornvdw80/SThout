@@ -18,17 +18,16 @@
 
 const newsTemplate = document.querySelector('.data-news');
 const container = document.querySelector('.container');
-'#info003'
 
 fetch('Data/users.json')
     .then(response => response.json())
     .then(data => {
         data.map(news => {
             const item = newsTemplate.content.cloneNode(true).children[0]
-            //const newsItem = item.querySelector('.newsItem')
-            //const newsInfo = item.querySelector('.newsInfo')
-            //newsItem.id = news.id
-            //newsInfo.id = news.id
+            const newsItem = item.querySelector('.newsItem')
+            const newsInfo = item.querySelector('.newsInfo')
+            newsItem.id = '#' + news.id
+            newsInfo.id = news.id
             const title = item.querySelector('.newsTitle')
             const subTitle = item.querySelector('.newsSubTitle')
             title.textContent = news.firstname
