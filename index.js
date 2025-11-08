@@ -276,7 +276,7 @@ function showNews(target) {
 
 function toggleNewsInfo(e, info) {
     var isVisible = true;
-    var item = '#${info}';
+    var item = '#' + $(info);
     var element = $(".newsInfo");
     if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
