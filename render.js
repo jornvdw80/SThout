@@ -16,20 +16,25 @@
 ////    })
 ////    .catch(error => console.error(error))
 
-const news = document.querySelector('.data-news');
+const newsTemplate = document.querySelector('.data-news');
 const container = document.querySelector('.container');
+'#info003'
 
 fetch('Data/users.json')
     .then(response => response.json())
     .then(data => {
-        data.map(user => {
-            const card = news.content.cloneNode(true).children[0]
-            const name = card.querySelector('.newsTitle')
-            const email = card.querySelector('.newsSubTitle')
-            name.textContent = user.firstname
-            email.textContent = user.lastname
-            email.title = user.website;
-            container.append(card)
+        data.map(news => {
+            const item = newsTemplate.content.cloneNode(true).children[0]
+            const newsItem = item.querySelector('.newsItem')
+            const newsInfo = item.querySelector('.newsInfo')
+            newsItem.id = news.id
+            newsInfo.id = news.id
+            const title = item.querySelector('.newsTitle')
+            const subTitle = item.querySelector('.newsSubTitle')
+            title.textContent = news.firstname
+            subTitle.textContent = news.lastname
+            subTitle.title = news.website;
+            container.append(listItem)
         })
     })
     .catch(error => console.error(error))
