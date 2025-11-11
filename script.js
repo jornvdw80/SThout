@@ -283,7 +283,9 @@ function toggleNewsInfo(e, info) {
     var item = $(info);
     var element = $(".newsInfo");
     if (item.is(":visible")) { isVisible = false; }
-    element.slideUp();
+    setTimeout(() => {
+        element.slideUp();;
+    }, 200);
     e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     setTimeout(() => {
         if (isVisible) { item.slideDown(); } else { item.slideUp(); };
@@ -341,7 +343,9 @@ function toggleEventsInfo(e, info) {
     var item = $(info);
     var element = $(".eventInfo");
     if (item.is(":visible")) { isVisible = false; }
-    element.slideUp();
+    setTimeout(() => {
+        element.slideUp();;
+    }, 200);
     e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     setTimeout(() => {
         if (isVisible) { item.slideDown(); } else { item.slideUp(); };
