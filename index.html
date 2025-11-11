@@ -16,544 +16,575 @@
 
     <!--External javascript-->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/swiper@8.4.6/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper@8.4.6/swiper-bundle.min.js"></script>
     <!--Custom javascript-->
     <script src="index.js"></script>
+    <script src="render.js" defer></script>
 </head>
 
-<body oncontextmenu='return false;' onselectstart='return false;' ondragstart='return false;' oncopy='return true;' oncut='return false;'>
-    <!--Loading site-->
-    <div class="se-pre-con"></div>
+<!--<body oncontextmenu='return false;' onselectstart='return false;' ondragstart='return false;' oncopy='return true;' oncut='return false;'>-->
+<body>
+        <!--Loading site-->
+        <div class="se-pre-con"></div>
 
-    <!--Top left link buttons on menubar-->
-    <div class="social-media-top-left">
-        <ul>
-            <li><a onclick="openGoogleMaps();" title="Google maps" class="imgBtn pinBtn"></a></li>
-            <li><a onclick="openUrl(this.title);" title="https://www.facebook.com/sthout.be/" class="imgBtn facebookBtn"></a></li>
-            <li><a onclick="openUrl(this.title);" title="mailto:info@sthout.be" class="imgBtn mailBtn"></a></li>
-        </ul>
-    </div>
-
-
-    <!--Main menubar-->
-    <header id="header">
-        <section id="navigate" ondblclick="goToActive()">
+        <!--Top left link buttons on menubar-->
+        <div class="social-media-top-left">
             <ul>
-                <li title="menu" class="menu imgBtn menuBtn"><div class="clickZone" onclick="toggleMenuClick();"></div></li>
-                <li>
-                    <ul id="sub-header">
-                        <li class="previous"><div class="imgBtn upBtn" onclick="goToPrevious()"></div></li>
-                        <li class="next"><div class="imgBtn downBtn" onclick="goToNext()"></div></li>
-                    </ul>
-                </li>
+                <li><a onclick="openGoogleMaps();" title="Google maps" class="imgBtn pinBtn"></a></li>
+                <li><a onclick="openUrl(this.title);" title="https://www.facebook.com/sthout.be/" class="imgBtn facebookBtn"></a></li>
+                <li><a onclick="openUrl(this.title);" title="mailto:info@sthout.be" class="imgBtn mailBtn"></a></li>
             </ul>
-        </section>
-        <nav id="main-nav">
-            <ul class="nav">
-                <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn menulogoBtn"></div></a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about">VERHAAL</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page4" name="#events">EVENEMENTEN</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="last" name="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+        </div>
 
 
-    <!--Aside menublock-->
-    <aside>
-        <nav id="aside-nav">
-            <ul class="nav">
-                <li>
-                    <ul>
-                        <li class="previous"><div class="imgBtn upBtn" onclick="goToPrevious()"></div></li>
-                        <li class="next"><div class="imgBtn downBtn" onclick="goToNext()"></div></li>
-                    </ul>
-                </li>
-                <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn menulogoBtn"></div></a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about">VERHAAL</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="page4" name="#events">EVENEMENTEN</a></li>
-                <li><a onclick="goTo(this.name)" class="link" id="last" name="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </aside>
-
-    <!--Actual content-->
-    <div class="content">
-        <section id="home" data-role="page" class="page1">
-            <section>
-                <a class="link imgBtn mainlogoBtn" onclick="goTo('about')"></a>
-            </section>
-            <section>
-                <!--Internet explorer version = no swiper-->
-                <div class="basicMode imgBtn homeImg" onclick="goTo('about')"></div>
-                <!-- Swiper 1-->
-                <div id="mainslides" class="slideshow-container">
-                    <div class="swiper-container swiper1">
-                        <div class="swiper-wrapper swiper-block">
-                            <div data-background="Images/Portfolio/salonTafel.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="showProducts('meubilair')" class="clickZone"></div>
-                                <div class="swiper-lazy-preloader"></div>
-                            </div>
-                            <div data-background="Images/Portfolio/lampenblusser.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="showProducts('verlichting')" class="clickZone"></div>
-                                <div class="swiper-lazy-preloader"></div>
-                            </div>
-                            <div data-background="Images/Portfolio/dino.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="showProducts('decoratie')" class="clickZone"></div>
-                                <div class="swiper-lazy-preloader"></div>
-                            </div>
-                            <div data-background="Images/Portfolio/bijzettafel.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="showProducts('meubilair')" class="clickZone"></div>
-                                <div class="swiper-lazy-preloader"></div>
-                            </div>
-                            <div data-background="Images/Portfolio/duif.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="showProducts('decoratie')" class="clickZone"></div>
-                                <div class="swiper-lazy-preloader"></div>
-                            </div>
-                            <div data-background="Images/Portfolio/frametafel.png" class="swiper-slide swiper-lazy slideImg">
-                                <div onclick="showProducts('meubilair')" class="clickZone"></div>
-                                <div class="swiper-lazy-preloader"></div>
-                            </div>
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination swiper-pagination1"></div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next swiper-button-next1"></div>
-                        <div class="swiper-button-prev swiper-button-next1"></div>
-                        <!--<article>
-                        <a class="link" onclick="goTo('about')"><p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p></a>
-                    </article>-->
-                    </div>
-                </div>
-                <article>
-                    <a class="link" onclick="goTo('about')"><p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p></a>
-                </article>
-            </section>
-        </section>
-
-
-        <section id="about" class="page2">
-            <h1>
-                <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
-                <a class="link" onclick="goTo('about')">UPCYCLING MET EEN VERHAAL</a>
-            </h1>
-            <article>
-                <p><a class="link" onclick="goTo('portfolio')">SThout</a> ontstond uit mijn liefde voor ons Belgisch erfgoed én... hout. Ik probeer zo veel mogelijk oude materialen een nieuwe bestemming te geven. Naast het herwerken van oude (industriële) elementen, geef ik de andere eye-catchers een opfrisbeurt zodat ze passen in ieders interieur.</p>
-                <p> In mijn jarenlange constante zoektocht naar ideaal bronmateriaal schuim ik rommelmarkten, kringwinkels, brocantehuizen of stockverkopen af. Daar zoek ik naar oude spullen die mij pakken en doen dromen. Ze moeten interessant genoeg zijn om te kunnen herwerken tot een nieuw functioneel interieurelement, waarbij ik steeds een glimlach probeer uit te lokken. Zo krijg je duurzame, nieuwe <a class="link" onclick="goTo('portfolio')">"piece-uniques"</a> met een apart verhaal, kortweg SThout.</p>
-                <p>Indien jullie zelf gehecht zijn aan bepaalde elementen met emotionele waarde (uit grootmoeders tijd, industrieel erfstuk,...), herwerk ik deze graag, steeds in samenspraak!</p>
-                <p>Aarzel niet om me vrijblijvend te <a class="link" onclick="goTo('contact')">contacteren</a>!</p>
-            </article>
-        </section>
-
-
-        <section id="news" class="page4">
-            <h2>
-                <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
-                <a class="link" onclick="goTo('news')">IN DE WERELD</a>
-            </h2>
-            <section id="newsBloc" class="btn-group">
-                <button class="newsBtn" onclick="showNews('actueel')">actueel</button>
-                <button class="newsBtn" onclick="showNews('nieuwsarchief')">nieuwsarchief</button>
-            </section>
-            <section id="newsSection">
-                <div id="actueel" class="collapse">
-                    <ul id="newsList">
-                        <li id="2020-09-01" class="hasInfo past" onclick="toggleNewsInfo(this, '#info003')">
-                            <article>
-                                <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/Common/Duif.png')" class="preview"></div>
-                                <div class="more"></div>
-                                <p class="newsTitle">SThout is geselecteerd als</p>
-                                <a title="https://www.toerisme-leiestreek.be/nl/leiespots/sthout" class="newsSubTitle" onclick="openUrl(this.title);">
-                                    Leiespot 2020
-                                </a>
-                                <div class="eventInfo" id='info003'>
-                                    <p>Dit is wat bijkomende info</p>
-                                    <img class="thumbNewsInfo" src="Images/Portfolio/60778-img_1248.png" />
-                                    <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
-                                </div>
-                            </article>
-                        </li>
-                        <li id="2020-09-05" class="noInfo past">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="newsTitle">In de gazet</p>
-                                <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
-                                    SThout Art & Design 2020
-                                </a>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
-                <div id="nieuwsarchief" class="collapse">
-                    <ul id="newsList">
-                        <li id="2016-11-19" class="noInfo past">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">blabla</p>
-                                <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
-                                    POPUP
-                                </a>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </section>
-
-
-        <section id="portfolio" class="page3">
-            <h2>
-                <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
-                <a class="link" onclick="goTo('portfolio')">PORTFOLIO</a>
-            </h2>
-            <section id="products" class="btn-group">
-                <button class="productBtn" onclick="showProducts('meubilair');">meubilair</button>
-                <button class="productBtn" onclick="showProducts('verlichting');">verlichting</button>
-                <button class="productBtn" onclick="showProducts('decoratie');">decoratie</button>
-                <button class="productBtn new" onclick="showProducts('nieuw');">nieuw</button>
-            </section>
-            <section class="thumbs">
-                <div id="meubilair" class="collapse">
-                    <a><img title="Nieuw samengesteld gezin" alt="Nieuw samengesteld gezin" src="Images/Portfolio/42249-nieuw+samengesteld+gezin.jpg" class="enlarge" onclick="openModal(1);" /></a>
-                    <a><img title="sthout06" alt="sthout06" src="Images/Portfolio/60771-img_1206.png" class="enlarge" onclick="openModal(2);" /></a>
-                    <a><img title="sthout01" alt="sthout01" src="Images/Portfolio/60769-img_1188.png" class="enlarge" onclick="openModal(3);" /></a>
-                    <a><img title="sthout04" alt="sthout04" src="Images/Portfolio/60770-img_1193.png" class="enlarge" onclick="openModal(4);" /></a>
-                </div>
-                <div id="verlichting" class="collapse">
-                    <a><img alt="sthout08" title="sthout08" src="Images/Portfolio/60772-img_1222.png" class="enlarge" onclick="openModal(5);" /></a>
-                    <a><img alt="sthout09" title="sthout09" src="Images/Portfolio/60774-img_1230.png" class="enlarge" onclick="openModal(6);" /></a>
-                    <a><img alt="sthout10" title="sthout10" src="Images/Portfolio/60780-img_1260.png" class="enlarge" onclick="openModal(7);" /></a>
-                    <a><img alt="sthout11" title="sthout11" src="Images/Portfolio/60775-img_1235.png" class="enlarge" onclick="openModal(8);" /></a>
-                    <a><img alt="sthout12" title="sthout12" src="Images/Portfolio/60776-img_1238.png" class="enlarge" onclick="openModal(9);" /></a>
-                    <a><img alt="sthout13" title="sthout13" src="Images/Portfolio/60773-img_1226.png" class="enlarge" onclick="openModal(10);" /></a>
-                    <a><img alt="sthout14" title="sthout14" src="Images/Portfolio/60782-img_1270.png" class="enlarge" onclick="openModal(11);" /></a>
-                    <a><img alt="sthout15" title="sthout15" src="Images/Portfolio/60783-img_1284.png" class="enlarge" onclick="openModal(12);" /></a>
-                    <a><img alt="sthout16" title="sthout16" src="Images/Portfolio/60777-img_1247.png" class="enlarge" onclick="openModal(13);" /></a>
-                    <a><img alt="sthout17" title="sthout17" src="Images/Portfolio/60784-img_1285.png" class="enlarge" onclick="openModal(14);" /></a>
-                </div>
-                <div id="decoratie" class="collapse">
-                    <a><img alt="sthout05" title="sthout05" src="Images/Portfolio/60781-img_1266.png" class="enlarge" onclick="openModal(15);" /></a>
-                    <a><img alt="sthout02" title="sthout02" src="Images/Portfolio/60779-img_1259.png" class="enlarge" onclick="openModal(16);" /></a>
-                    <a><img alt="sthout07" title="sthout07" src="Images/Portfolio/60778-img_1248.png" class="enlarge" onclick="openModal(17);" /></a>
-                </div>
-            </section>
-            <!--PopUp-->
-            <div id="myModal" class="modal" onscroll="return false">
-                <div class="brands">
-                    <ul>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(1);"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(5);"></span></li>
-                        <li><span class="brandBullet" onclick="selectPopupSlide(15);"></span></li>
-                        <li><span class="brandBullet infoBullet" onclick="togglePopupInfo();"></span></li>
-                        <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
-                    </ul>
-                </div>
-                <div class="modal-content">
-                    <!-- Swiper 2-->
-                    <section>
-                        <div id="popupslides" class="slideshow-popup-container">
-                            <div class="swiper-container swiper2">
-                                <div class="swiper-wrapper">
-                                    <div data-background="Images/Portfolio/42249-nieuw+samengesteld+gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <!--<div class="title" id="title_#"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>-->
-                                        <!--<ul class="title" sty>
-                                        <li><span class="brandBullet infoBullet hasInfo" onclick="togglePopupInfo();"> | </span></li>
-                                        <li><span style="font-weight:bold">meubilair</span> | </li>
-                                        <li><span>nieuw samengesteld gezin</span></li>
-                                    </ul>-->
-                                        <div class="popupClickZone" onclick="togglePopupInfo()"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>
-                                        <article class="popupInfo" onclick="togglePopupInfo()">
-                                            <div class="preview info"></div>
-                                            <div class="closeInfo"></div>
-                                            <p class="popupTitle">meubilair</p>
-                                            <a class="popupSubTitle">Nieuw samengesteld gezin</a>
-                                            <p>Dit is wat bijkomende info</p>
-                                            <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
-                                        </article>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61953-img_1206_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="popupClickZone" onclick="togglePopupInfo()"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>...</div>
-                                        <article class="popupInfo" onclick="togglePopupInfo()">
-                                            <div class="preview info"></div>
-                                            <div class="closeInfo"></div>
-                                            <p class="popupTitle">meubilair</p>
-                                            <a class="popupSubTitle">Skates</a>
-                                            <p>Dit is wat bijkomende info</p>
-                                            <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
-                                        </article>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61951-img_1188_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61952-img_1193_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61954-img_1222_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61956-img_1230_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61962-img_1260_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61957-img_1235_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61958-img_1238_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61955-img_1226_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61964-img_1270_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61965-img_1284_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61959-img_1247_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61966-img_1285_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61963-img_1266_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">decoratie | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61961-img_1259_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">decoratie | </span>...</div>
-                                    </div>
-                                    <div data-background="Images/Portfolio/61960-img_1248_big.png" class="swiper-slide swiper-lazy popupslideImg">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="slideTitle"><span style="font-weight:bold">decoratie | </span>...</div>
-                                    </div>
-                                </div>
-                                <!-- Add Pagination -->
-                                <div class="swiper-pagination swiper-pagination-title swiper-pagination2"></div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next swiper-button-next2"></div>
-                                <div class="swiper-button-prev swiper-button-prev2"></div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="events" class="page4">
-            <h2>
-                <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
-                <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
-            </h2>
-            <section id="years" class="btn-group">
-                <button class="yearBtn" onclick="showEvents('recent')">recent</button>
-                <button class="yearBtn" onclick="showEvents('archief')">archief</button>
-            </section>
-            <section id="eventsSection">
-                <div id="recent" class="collapse">
-                    <ul id="eventsList">
-                        <li id="2021-10-07" class="hasInfo" onclick="toggleEventsInfo(this, '#info004')">
-                            <article>
-                                <div style="background-image: url('Images/Portfolio/lampenblusser.png') " class="preview"></div>
-                                <div class="more"></div>
-                                <p class="eventTitle">7 oktober 2021 (fictief)</p>
-                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Antwerpen</a>
-                                <div class="eventInfo" id='info004'>
-                                    <p>Dit is wat bijkomende info</p>
-                                    <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
-                                    <img class="thumbEventInfo" src="Images/Portfolio/60778-img_1248.png" />
-                                    <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
-                                </div>
-                            </article>
-                        </li>
-                        <li id="2020-08-07" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">7 augustus 2020 (fictief)</p>
-                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Timboektoe</a>
-                            </article>
-                        </li>
-                        <li id="2020-06-07" class="hasInfo" onclick="toggleEventsInfo(this, '#info002')">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <div class="more"></div>
-                                <p class="eventTitle">7 juni 2020 (fictief)</p>
-                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Antwerpen</a>
-                                <div class="eventInfo" id='info002'>
-                                    <p>Dit is wat bijkomende info</p>
-                                    <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
-                                    <img class="thumbEventInfo" src="Images/Portfolio/60778-img_1248.png" />
-                                    <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
-                                </div>
-                            </article>
-                        </li>
-                        <li id="2020-01-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info001')">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <div class="more"></div>
-                                <p class="eventTitle">19 januari 2020 (fictief)</p>
-                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event abc | Zwevezele</a>
-                                <div class="eventInfo" id='info001'>
-                                    <img class="thumbEventInfo" src="Images/Portfolio/60772-img_1222.png" />
-                                    <p>Dit is wat bijkomende info</p>
-                                    <p>kjvghsdkjsdbv;dfbvk:vn: dfvbnsdf;bnsdf; vjkdfnkvbdfn</p>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
-                <div id="archief" class="collapse">
-                    <ul id="eventsList">
-                        <li id="2016-11-19" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">3 en 4 december 2016</p>
-                                <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">Braderie de l'Art | Roubaix</a>
-                            </article>
-                        </li>
-                        <li id="2016-11-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info000')">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <div class="more"></div>
-                                <p class="eventTitle">19 en 20 november 2016</p>
-                                <a title="https://www.facebook.com/events/1815157395384830/" onclick="openUrl(this.title);">Maker City | Gent</a>
-                                <div class="eventInfo" id='info000'>
-                                    <p>Dit is wat bijkomende info</p>
-                                    <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
-                                </div>
-                            </article>
-                        </li>
-                        <li id="2016-05-13" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">13 tot 15 mei 2016</p>
-                                <a title="https://www.facebook.com/events/754602384640862/" onclick="openUrl(this.title);">Fashion & Art Event | Gent </a>
-                            </article>
-                        </li>
-                        <li id="2016-03-17" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">17 maart 2016</p>
-                                <a title="http://www.straatwoordenaar.be/" onclick="openUrl(this.title);">Eco-design | Gent</a>
-                            </article>
-                        </li>
-                        <li id="2016-03-13" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">13 maart 2016</p>
-                                <a title="https://www.facebook.com/recreationhall" onclick="openUrl(this.title);">Re-Creation Hall Market | Brussel</a>
-                            </article>
-                        </li>
-                        <li id="2016-02-14" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">13 &amp 14 februari 2016</p>
-                                <a title="https://www.facebook.com/events/1682977095316523/" onclick="openUrl(this.title);">Wild Jo's Market | Antwerpen</a>
-                            </article>
-                        </li>
-                        <li id="2016-02-06" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">6 februari 2016</p>
-                                <a title="https://www.facebook.com/Iederszennemeug/?fref=ts" onclick="openUrl(this.title);">Ieders Zenne Meug | Antwerpen</a>
-                            </article>
-                        </li>
-                        <li id="2016-01-31" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">januari 2016</p>
-                                <a title="https://www.facebook.com/EcomooseBarLokeren/" onclick="openUrl(this.title);">Ecomoose | Lokeren</a>
-                            </article>
-                        </li>
-                        <li id="2015-12-31" class="noInfo">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <p class="eventTitle">december 2015</p>
-                                <a title="https://www.facebook.com/media/set/?set=a.738764329600965.1073741832.709516979192367&type=3" onclick="openUrl(this.title);">Wij gaan lokaal | Zele</a>
-                            </article>
-                        </li>
-                        <li id="2015-11-29" class="hasInfo" onclick="toggleEventsInfo(this, '#info012')">
-                            <article>
-                                <div class="preview imgBtn logoPreview"></div>
-                                <div class="more"></div>
-                                <p class="eventTitle">29 november 2015</p>
-                                <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Brugge</a>
-                                <div class="eventInfo" id='info012'>
-                                    <p>Dit is wat bijkomende info</p>
-                                    <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </section>
-
-
-        <section id="contact" class="page5">
-            <h2>
-                <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
-                <a class="link" onclick="goTo('contact')">CONTACT</a>
-            </h2>
-            <section id="link">
-                <ul class="contact">
+        <!--Main menubar-->
+        <header id="header">
+            <section id="navigate" ondblclick="goToActive()">
+                <ul>
+                    <li title="menu" class="menu imgBtn menuBtn"><div class="clickZone" onclick="toggleMenuClick();"></div></li>
                     <li>
-                        <div class="social-media-middle">
-                            <ul>
-                                <li><a onclick="openGoogleMaps();" title="Google maps" class="imgBtn pinBtn"></a></li>
-                                <li><a onclick="openUrl(this.title);" title="https://www.facebook.com/sthout.be/" class="imgBtn facebookBtn"></a></li>
-                                <li><a onclick="openUrl(this.title);" title="mailto:info@sthout.be" class="imgBtn mailBtn"></a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tooltip"><span class="popuptext" id="copygsm">Het nummer is gekopieerd.</span></div>
-                        <textarea readonly title="Klik om te kopiëren" id="gsm" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>+32 476 42 46 26</textarea>
-                        <div class="tooltip"><span class="popuptext" id="copyaddress">Het adres is gekopieerd.</span></div>
-                        <textarea readonly title="Klik om te kopiëren" id="address" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>Dorpsstraat 77 | BE - 9870 Zulte</textarea>
-                    </li>
-                    <li>
-                        <div onclick="openGoogleMaps();" title="Google maps" class="imgBtn storeImg"></div>
+                        <ul id="sub-header">
+                            <li class="previous"><div class="imgBtn upBtn" onclick="goToPrevious()"></div></li>
+                            <li class="next"><div class="imgBtn downBtn" onclick="goToNext()"></div></li>
+                        </ul>
                     </li>
                 </ul>
             </section>
-        </section>
+            <nav id="main-nav">
+                <ul class="nav">
+                    <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn menulogoBtn"></div></a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about">VERHAAL</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page4" name="#events">EVENEMENTEN</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="last" name="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <div id="warning" class="warnings footer">
-            <div class="closeInfo" onclick="closeWarning();" style="margin: 5px;"></div>
-            <p class="isIE">U maakt gebruik van Internet Explorer. Deze website werkt daardoor niet optimaal. Maak indien mogelijk, gebruik van een recentere browser voor een beter resultaat!</p>
+
+        <!--Aside menublock-->
+        <aside>
+            <nav id="aside-nav">
+                <ul class="nav">
+                    <li>
+                        <ul>
+                            <li class="previous"><div class="imgBtn upBtn" onclick="goToPrevious()"></div></li>
+                            <li class="next"><div class="imgBtn downBtn" onclick="goToNext()"></div></li>
+                        </ul>
+                    </li>
+                    <li><a onclick="goTo(this.name)" class="active" id="first" name="#home"><div class="imgBtn menulogoBtn"></div></a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page2" name="#about">VERHAAL</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page5" name="#news">WERELD</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page3" name="#portfolio">PORTFOLIO</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="page4" name="#events">EVENEMENTEN</a></li>
+                    <li><a onclick="goTo(this.name)" class="link" id="last" name="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!--Actual content-->
+        <div class="content">
+            <section id="home" data-role="page" class="page1">
+                <section>
+                    <a class="link imgBtn mainlogoBtn" onclick="goTo('about')"></a>
+                </section>
+                <section>
+                    <!--Internet explorer version = no swiper-->
+                    <div class="basicMode imgBtn homeImg" onclick="goTo('about')"></div>
+                    <!-- Swiper 1-->
+                    <div id="mainslides" class="slideshow-container">
+                        <div class="swiper-container swiper1">
+                            <div class="swiper-wrapper swiper-block">
+                                <div data-background="Images/Portfolio/salonTafel.png" class="swiper-slide swiper-lazy slideImg">
+                                    <div onclick="showProducts('meubilair')" class="clickZone"></div>
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div data-background="Images/Portfolio/lampenblusser.png" class="swiper-slide swiper-lazy slideImg">
+                                    <div onclick="showProducts('verlichting')" class="clickZone"></div>
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div data-background="Images/Portfolio/dino.png" class="swiper-slide swiper-lazy slideImg">
+                                    <div onclick="showProducts('decoratie')" class="clickZone"></div>
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div data-background="Images/Portfolio/bijzettafel.png" class="swiper-slide swiper-lazy slideImg">
+                                    <div onclick="showProducts('meubilair')" class="clickZone"></div>
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div data-background="Images/Portfolio/duif.png" class="swiper-slide swiper-lazy slideImg">
+                                    <div onclick="showProducts('decoratie')" class="clickZone"></div>
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div data-background="Images/Portfolio/frametafel.png" class="swiper-slide swiper-lazy slideImg">
+                                    <div onclick="showProducts('meubilair')" class="clickZone"></div>
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination swiper-pagination1"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next swiper-button-next1"></div>
+                            <div class="swiper-button-prev swiper-button-next1"></div>
+                            <!--<article>
+                                <a class="link" onclick="goTo('about')"><p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p></a>
+                            </article>-->
+                        </div>
+                    </div>
+                    <article>
+                        <a class="link" onclick="goTo('about')"><p class="hashtag">#upcycling #reused #recup #interiordesign #opmaat #passievoorhout</p></a>
+                    </article>
+                </section>
+            </section>
+
+
+            <section id="about" class="page2">
+                <h1>
+                    <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
+                    <a class="link" onclick="goTo('about')">UPCYCLING MET EEN VERHAAL</a>
+                </h1>
+                <article>
+                    <p><a class="link" onclick="goTo('portfolio')">SThout</a> ontstond uit mijn liefde voor ons Belgisch erfgoed én... hout. Ik probeer zo veel mogelijk oude materialen een nieuwe bestemming te geven. Naast het herwerken van oude (industriële) elementen, geef ik de andere eye-catchers een opfrisbeurt zodat ze passen in ieders interieur.</p>
+                    <p> In mijn jarenlange constante zoektocht naar ideaal bronmateriaal schuim ik rommelmarkten, kringwinkels, brocantehuizen of stockverkopen af. Daar zoek ik naar oude spullen die mij pakken en doen dromen. Ze moeten interessant genoeg zijn om te kunnen herwerken tot een nieuw functioneel interieurelement, waarbij ik steeds een glimlach probeer uit te lokken. Zo krijg je duurzame, nieuwe <a class="link" onclick="goTo('portfolio')">"piece-uniques"</a> met een apart verhaal, kortweg SThout.</p>
+                    <p>Indien jullie zelf gehecht zijn aan bepaalde elementen met emotionele waarde (uit grootmoeders tijd, industrieel erfstuk,...), herwerk ik deze graag, steeds in samenspraak!</p>
+                    <p>Aarzel niet om me vrijblijvend te <a class="link" onclick="goTo('contact')">contacteren</a>!</p>
+                </article>
+            </section>
+
+
+            <section id="news" class="page4">
+                <h2>
+                    <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
+                    <a class="link" onclick="goTo('news')">IN DE WERELD</a>
+                </h2>
+                <section id="newsBloc" class="btn-group">
+                    <button class="newsBtn" onclick="showNews('actueel')">actueel</button>
+                    <button class="newsBtn" onclick="showNews('nieuwsarchief')">nieuwsarchief</button>
+                </section>
+                <section id="newsSection">
+                    <div id="actueel" class="collapse">
+                        <ul id="newsList">
+                            <li id="2020-09-01" class="hasInfo past" onclick="toggleNewsInfo(this, '#9999')">
+                                <article>
+                                    <div style="background-image: url('https://jornvdw80.github.io/SThout/Images/Common/Duif.png')" class="preview"></div>
+                                    <div class="more"></div>
+                                    <p class="newsTitle">SThout is geselecteerd als</p>
+                                    <a title="https://www.toerisme-leiestreek.be/nl/leiespots/sthout" class="newsSubTitle" onclick="openUrl(this.title);">
+                                        Leiespot 2020
+                                    </a>
+                                    <div class="newsInfo" id='9999'>
+                                        <p>Dit is wat bijkomende info</p>
+                                        <img class="thumbNewsInfo" src="Images/Portfolio/60778-img_1248.png" />
+                                        <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li id="2020-09-05" class="noInfo past">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="newsTitle">In de gazet</p>
+                                    <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
+                                        SThout Art & Design 2020
+                                    </a>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="nieuwsarchief" class="collapse">
+                        <!--<ul id="newsList">
+                            <li id="2016-11-19" class="noInfo past">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">blabla</p>
+                                    <a title="https://www.hln.be/zulte/steven-opent-opnieuw-sthout-art-en-design-in-machelen-dorp~aebc33b6/?referrer=https://www.google.com/" class="newsSubTitle" onclick="openUrl(this.title);">
+                                        POPUP
+                                    </a>
+                                </article>
+                            </li>
+                        </ul>-->
+
+                        <section class="container">
+                        </section>
+
+                    </div>
+
+
+                    
+
+                    <template class="data-news">
+                        <ul id="newsList">
+                            <li class="newsItem hasInfo past" onclick="toggleNewsInfo(this, this.id)">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <div class="more"></div>
+                                    <p class="newsTitle"></p>
+                                    <a class="newsSubTitle" onclick="openUrl(this.title);"></a>
+                                    <div class="newsInfo">
+                                        <p>Dit is wat bijkomende info</p>
+                                        <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                        <img class="thumbNewsInfo" src="Images/Portfolio/60778-img_1248.png" />
+                                        <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </template>
+
+
+                </section>
+            </section>
+
+
+            <section id="portfolio" class="page3">
+                <h2>
+                    <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
+                    <a class="link" onclick="goTo('portfolio')">PORTFOLIO</a>
+                </h2>
+                <section id="products" class="btn-group">
+                    <button class="productBtn" onclick="showProducts('meubilair');">meubilair</button>
+                    <button class="productBtn" onclick="showProducts('verlichting');">verlichting</button>
+                    <button class="productBtn" onclick="showProducts('decoratie');">decoratie</button>
+                    <button class="productBtn new" onclick="showProducts('nieuw');">nieuw</button>
+                </section>
+                <section class="thumbs">
+                    <div id="meubilair" class="collapse">
+                        <a><img title="Nieuw samengesteld gezin" alt="Nieuw samengesteld gezin" src="Images/Portfolio/42249-nieuw+samengesteld+gezin.jpg" class="enlarge" onclick="openModal(1);" /></a>
+                        <a><img title="sthout06" alt="sthout06" src="Images/Portfolio/60771-img_1206.png" class="enlarge" onclick="openModal(2);" /></a>
+                        <a><img title="sthout01" alt="sthout01" src="Images/Portfolio/60769-img_1188.png" class="enlarge" onclick="openModal(3);" /></a>
+                        <a><img title="sthout04" alt="sthout04" src="Images/Portfolio/60770-img_1193.png" class="enlarge" onclick="openModal(4);" /></a>
+                    </div>
+                    <div id="verlichting" class="collapse">
+                        <a><img alt="sthout08" title="sthout08" src="Images/Portfolio/60772-img_1222.png" class="enlarge" onclick="openModal(5);" /></a>
+                        <a><img alt="sthout09" title="sthout09" src="Images/Portfolio/60774-img_1230.png" class="enlarge" onclick="openModal(6);" /></a>
+                        <a><img alt="sthout10" title="sthout10" src="Images/Portfolio/60780-img_1260.png" class="enlarge" onclick="openModal(7);" /></a>
+                        <a><img alt="sthout11" title="sthout11" src="Images/Portfolio/60775-img_1235.png" class="enlarge" onclick="openModal(8);" /></a>
+                        <a><img alt="sthout12" title="sthout12" src="Images/Portfolio/60776-img_1238.png" class="enlarge" onclick="openModal(9);" /></a>
+                        <a><img alt="sthout13" title="sthout13" src="Images/Portfolio/60773-img_1226.png" class="enlarge" onclick="openModal(10);" /></a>
+                        <a><img alt="sthout14" title="sthout14" src="Images/Portfolio/60782-img_1270.png" class="enlarge" onclick="openModal(11);" /></a>
+                        <a><img alt="sthout15" title="sthout15" src="Images/Portfolio/60783-img_1284.png" class="enlarge" onclick="openModal(12);" /></a>
+                        <a><img alt="sthout16" title="sthout16" src="Images/Portfolio/60777-img_1247.png" class="enlarge" onclick="openModal(13);" /></a>
+                        <a><img alt="sthout17" title="sthout17" src="Images/Portfolio/60784-img_1285.png" class="enlarge" onclick="openModal(14);" /></a>
+                    </div>
+                    <div id="decoratie" class="collapse">
+                        <a><img alt="sthout05" title="sthout05" src="Images/Portfolio/60781-img_1266.png" class="enlarge" onclick="openModal(15);" /></a>
+                        <a><img alt="sthout02" title="sthout02" src="Images/Portfolio/60779-img_1259.png" class="enlarge" onclick="openModal(16);" /></a>
+                        <a><img alt="sthout07" title="sthout07" src="Images/Portfolio/60778-img_1248.png" class="enlarge" onclick="openModal(17);" /></a>
+                    </div>
+                </section>
+                <!--PopUp-->
+                <div id="myModal" class="modal" onscroll="return false">
+                    <div class="brands">
+                        <ul>
+                            <li><span class="brandBullet" onclick="selectPopupSlide(1);"></span></li>
+                            <li><span class="brandBullet" onclick="selectPopupSlide(5);"></span></li>
+                            <li><span class="brandBullet" onclick="selectPopupSlide(15);"></span></li>
+                            <li><span class="brandBullet infoBullet" onclick="togglePopupInfo();"></span></li>
+                            <li><span class="brandBullet closeBullet" onclick="closeModal()"></span></li>
+                        </ul>
+                    </div>
+                    <div class="modal-content">
+                        <!-- Swiper 2-->
+                        <section>
+                            <div id="popupslides" class="slideshow-popup-container">
+                                <div class="swiper-container swiper2">
+                                    <div class="swiper-wrapper">
+                                        <div data-background="Images/Portfolio/42249-nieuw+samengesteld+gezin.jpg" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <!--<div class="title" id="title_#"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>-->
+                                            <!--<ul class="title" sty>
+                                                <li><span class="brandBullet infoBullet hasInfo" onclick="togglePopupInfo();"> | </span></li>
+                                                <li><span style="font-weight:bold">meubilair</span> | </li>
+                                                <li><span>nieuw samengesteld gezin</span></li>
+                                            </ul>-->
+                                            <div class="popupClickZone" onclick="togglePopupInfo()"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>nieuw samengesteld gezin</div>
+                                            <article class="popupInfo" onclick="togglePopupInfo()">
+                                                <div class="preview info"></div>
+                                                <div class="closeInfo"></div>
+                                                <p class="popupTitle">meubilair</p>
+                                                <a class="popupSubTitle">Nieuw samengesteld gezin</a>
+                                                <p>Dit is wat bijkomende info</p>
+                                                <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                            </article>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61953-img_1206_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="popupClickZone" onclick="togglePopupInfo()"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>...</div>
+                                            <article class="popupInfo" onclick="togglePopupInfo()">
+                                                <div class="preview info"></div>
+                                                <div class="closeInfo"></div>
+                                                <p class="popupTitle">meubilair</p>
+                                                <a class="popupSubTitle">Skates</a>
+                                                <p>Dit is wat bijkomende info</p>
+                                                <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                            </article>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61951-img_1188_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">meubilair | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61952-img_1193_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61954-img_1222_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61956-img_1230_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61962-img_1260_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61957-img_1235_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61958-img_1238_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61955-img_1226_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61964-img_1270_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61965-img_1284_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61959-img_1247_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61966-img_1285_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">verlichting | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61963-img_1266_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">decoratie | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61961-img_1259_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">decoratie | </span>...</div>
+                                        </div>
+                                        <div data-background="Images/Portfolio/61960-img_1248_big.png" class="swiper-slide swiper-lazy popupslideImg">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="slideTitle"><span style="font-weight:bold">decoratie | </span>...</div>
+                                        </div>
+                                    </div>
+                                    <!-- Add Pagination -->
+                                    <div class="swiper-pagination swiper-pagination-title swiper-pagination2"></div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next swiper-button-next2"></div>
+                                    <div class="swiper-button-prev swiper-button-prev2"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="events" class="page4">
+                <h2>
+                    <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
+                    <a class="link" onclick="goTo('events')">EVENEMENTEN</a>
+                </h2>
+                <section id="years" class="btn-group">
+                    <button class="yearBtn" onclick="showEvents('recent')">recent</button>
+                    <button class="yearBtn" onclick="showEvents('archief')">archief</button>
+                </section>
+                <section id="eventsSection">
+                    <div id="recent" class="collapse">
+                        <ul id="eventsList">
+                            <li id="2021-10-07" class="hasInfo" onclick="toggleEventsInfo(this, '#info004')">
+                                <article>
+                                    <div style="background-image: url('Images/Portfolio/lampenblusser.png') " class="preview"></div>
+                                    <div class="more"></div>
+                                    <p class="eventTitle">7 oktober 2021 (fictief)</p>
+                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Antwerpen</a>
+                                    <div class="eventInfo" id='info004'>
+                                        <p>Dit is wat bijkomende info</p>
+                                        <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                        <img class="thumbEventInfo" src="Images/Portfolio/60778-img_1248.png" />
+                                        <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li id="2020-08-07" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">7 augustus 2020 (fictief)</p>
+                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Timboektoe</a>
+                                </article>
+                            </li>
+                            <li id="2020-06-07" class="hasInfo" onclick="toggleEventsInfo(this, '#info002')">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <div class="more"></div>
+                                    <p class="eventTitle">7 juni 2020 (fictief)</p>
+                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event tralala | Antwerpen</a>
+                                    <div class="eventInfo" id='info002'>
+                                        <p>Dit is wat bijkomende info</p>
+                                        <p>Komend weekend op zondag 1 december tekenen wij present op Lokaal Boetiek Deinze - dicht bij huis, een goede reden dus om ons zeker een bezoek te komen brengen!</p>
+                                        <img class="thumbEventInfo" src="Images/Portfolio/60778-img_1248.png" />
+                                        <p class="hashtag">#upcycling #recup #thuismatch #interiordesign #opmaat #workshop #passievoorhout</p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li id="2020-01-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info001')">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <div class="more"></div>
+                                    <p class="eventTitle">19 januari 2020 (fictief)</p>
+                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">event abc | Zwevezele</a>
+                                    <div class="eventInfo" id='info001'>
+                                        <img class="thumbEventInfo" src="Images/Portfolio/60772-img_1222.png" />
+                                        <p>Dit is wat bijkomende info</p>
+                                        <p>kjvghsdkjsdbv;dfbvk:vn: dfvbnsdf;bnsdf; vjkdfnkvbdfn</p>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="archief" class="collapse">
+                        <ul id="eventsList">
+                            <li id="2016-11-19" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">3 en 4 december 2016</p>
+                                    <a title="https://www.facebook.com/BraderieDeLArt/?fref =ts" onclick="openUrl(this.title);">Braderie de l'Art | Roubaix</a>
+                                </article>
+                            </li>
+                            <li id="2016-11-19" class="hasInfo" onclick="toggleEventsInfo(this, '#info000')">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <div class="more"></div>
+                                    <p class="eventTitle">19 en 20 november 2016</p>
+                                    <a title="https://www.facebook.com/events/1815157395384830/" onclick="openUrl(this.title);">Maker City | Gent</a>
+                                    <div class="eventInfo" id='info000'>
+                                        <p>Dit is wat bijkomende info</p>
+                                        <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li id="2016-05-13" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">13 tot 15 mei 2016</p>
+                                    <a title="https://www.facebook.com/events/754602384640862/" onclick="openUrl(this.title);">Fashion & Art Event | Gent </a>
+                                </article>
+                            </li>
+                            <li id="2016-03-17" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">17 maart 2016</p>
+                                    <a title="http://www.straatwoordenaar.be/" onclick="openUrl(this.title);">Eco-design | Gent</a>
+                                </article>
+                            </li>
+                            <li id="2016-03-13" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">13 maart 2016</p>
+                                    <a title="https://www.facebook.com/recreationhall" onclick="openUrl(this.title);">Re-Creation Hall Market | Brussel</a>
+                                </article>
+                            </li>
+                            <li id="2016-02-14" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">13 &amp 14 februari 2016</p>
+                                    <a title="https://www.facebook.com/events/1682977095316523/" onclick="openUrl(this.title);">Wild Jo's Market | Antwerpen</a>
+                                </article>
+                            </li>
+                            <li id="2016-02-06" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">6 februari 2016</p>
+                                    <a title="https://www.facebook.com/Iederszennemeug/?fref=ts" onclick="openUrl(this.title);">Ieders Zenne Meug | Antwerpen</a>
+                                </article>
+                            </li>
+                            <li id="2016-01-31" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">januari 2016</p>
+                                    <a title="https://www.facebook.com/EcomooseBarLokeren/" onclick="openUrl(this.title);">Ecomoose | Lokeren</a>
+                                </article>
+                            </li>
+                            <li id="2015-12-31" class="noInfo">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <p class="eventTitle">december 2015</p>
+                                    <a title="https://www.facebook.com/media/set/?set=a.738764329600965.1073741832.709516979192367&type=3" onclick="openUrl(this.title);">Wij gaan lokaal | Zele</a>
+                                </article>
+                            </li>
+                            <li id="2015-11-29" class="hasInfo" onclick="toggleEventsInfo(this, '#info012')">
+                                <article>
+                                    <div class="preview imgBtn logoPreview"></div>
+                                    <div class="more"></div>
+                                    <p class="eventTitle">29 november 2015</p>
+                                    <a title="https://www.facebook.com/events/717199101758146/" onclick="openUrl(this.title);">Markt | Brugge</a>
+                                    <div class="eventInfo" id='info012'>
+                                        <p>Dit is wat bijkomende info</p>
+                                        <p>kfjhkjfhdf ufhs hsdlgkjh kufgsl hflgkhsl lughsklugh slkghsdfkgh lkghflu hlfkgh ldkhkdfghdlfh fkghfu</p>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+
+            <section id="contact" class="page5">
+                <h2>
+                    <span><a class="link imgBtn logoBtn" onclick="goTo('home')"></a><strong> | </strong></span>
+                    <a class="link" onclick="goTo('contact')">CONTACT</a>
+                </h2>
+                <section id="link">
+                    <ul class="contact">
+                        <li>
+                            <div class="social-media-middle">
+                                <ul>
+                                    <li><a onclick="openGoogleMaps();" title="Google maps" class="imgBtn pinBtn"></a></li>
+                                    <li><a onclick="openUrl(this.title);" title="https://www.facebook.com/sthout.be/" class="imgBtn facebookBtn"></a></li>
+                                    <li><a onclick="openUrl(this.title);" title="mailto:info@sthout.be" class="imgBtn mailBtn"></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tooltip"><span class="popuptext" id="copygsm">Het nummer is gekopieerd.</span></div>
+                            <textarea readonly title="Klik om te kopiëren" id="gsm" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>+32 476 42 46 26</textarea>
+                            <div class="tooltip"><span class="popuptext" id="copyaddress">Het adres is gekopieerd.</span></div>
+                            <textarea readonly title="Klik om te kopiëren" id="address" class="link" onclick="copyToClipboard(this.id)" onselectstart='return true;'>Dorpsstraat 77 | BE - 9870 Zulte</textarea>
+                        </li>
+                        <li>
+                            <div onclick="openGoogleMaps();" title="Google maps" class="imgBtn storeImg"></div>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <div id="warning" class="warnings footer">
+                <div class="closeInfo" onclick="closeWarning();" style="margin: 5px;"></div>
+                <p class="isIE">U maakt gebruik van Internet Explorer. Deze website werkt daardoor niet optimaal. Maak indien mogelijk, gebruik van een recentere browser voor een beter resultaat!</p>
+            </div>
+
         </div>
 
-    </div>
+        <noscript> <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorPage.html"> </noscript>
 
-    <noscript> <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorPage.html"> </noscript>
-
-</body>
+    </body>
 </html>
