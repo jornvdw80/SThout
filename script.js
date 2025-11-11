@@ -79,8 +79,10 @@ $(document).ready(function () {
 });
 
 $(window).bind('resizeEnd', function () {
-    doResize();
-    alert('xx');
+    if (!disableResize) {
+        doResize();
+        alert('xx');
+    }
 });
 
 $(window).resize(function () {
@@ -91,10 +93,12 @@ $(window).resize(function () {
     }, 500);
 });
 
-
+var disableResize = false;
 document.addEventListener('scroll', function (e) {
+    var disableResize = true;
     highLightActivePage();
     hideMenu();
+    var disableResize = false;
 });
 
 function resetLoader() {
