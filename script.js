@@ -97,6 +97,15 @@ document.addEventListener('scroll', function (e) {
     hideMenu();
 });
 
+//document.addEventListener("scrollend", (event) => {
+//    output.innerHTML = `Document scrollend event fired!`;
+//});
+
+document.onscrollend = event => {
+    disableScrolling = false;
+    highLightActivePage();
+}
+
 function resetLoader() {
     $(".se-pre-con").fadeOut(750);
 }
