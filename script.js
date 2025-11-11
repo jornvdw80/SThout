@@ -142,6 +142,7 @@ function getOSSettings() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // true for mobile device
         isMobile = true;
+        document.documentElement.requestFullscreen({ navigationUI: 'hide' });
         //alert("BUMMER! You are using a mobile device.");
     } else {
         // false for not mobile device
