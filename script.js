@@ -95,10 +95,8 @@ $(window).resize(function () {
 
 var disableResize = false;
 document.addEventListener('scroll', function (e) {
-    var disableResize = true;
     highLightActivePage();
     hideMenu();
-    var disableResize = false;
 });
 
 function resetLoader() {
@@ -281,6 +279,7 @@ function showNews(target) {
 }
 
 function toggleNewsInfo(e, info) {
+    var disableResize = true;
     var isVisible = true;
     var item = $(info);
     var element = $(".newsInfo");
@@ -288,6 +287,7 @@ function toggleNewsInfo(e, info) {
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center" });
+    var disableResize = false;
 }
 
 //NOT USED:
@@ -337,6 +337,7 @@ function showEvents(target) {
 }
 
 function toggleEventsInfo(e, info) {
+    var disableResize = true;
     var isVisible = true;
     var item = $(info);
     var element = $(".eventInfo");
@@ -344,6 +345,7 @@ function toggleEventsInfo(e, info) {
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center" });
+    var disableResize = false;
 }
 
 //NOT USED:
