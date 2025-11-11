@@ -1035,7 +1035,7 @@ aside {
     margin-bottom: 3px;
 }
 
-.eventInfo, .newsInfo {
+.eventInfo {
     display: inline-block;
     margin: 0 auto;
     padding: 0;
@@ -1455,7 +1455,7 @@ img.menu-icon {
     border-radius: 10px;
 }
 
-    .thumbEventInfo:hover, .thumbNewsInfo:hover {
+    .thumbEventInfo:hover {
         opacity: 1;
     }
 
@@ -1680,7 +1680,7 @@ img.menu-icon {
     color: white;
 }
 
-.collapse, .eventInfo, .newsInfo {
+.collapse, .eventInfo {
     display: none
 }
 
