@@ -142,11 +142,11 @@ function getOSSettings() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // true for mobile device
         isMobile = true;
-        alert("BUMMER! You are using a mobile device.");
+        //alert("BUMMER! You are using a mobile device.");
     } else {
         // false for not mobile device
         isMobile = false;
-        alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
+        //alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
     }
 
     //Making "clicking" work on mobile devices, especially on iPhones:
