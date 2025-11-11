@@ -285,10 +285,7 @@ function toggleNewsInfo(e, info) {
     if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
-    if (isMobile) {
-        e.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    e.scrollIntoView({ behavior: "smooth", block: "center" });
+    e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
 }
 
 //NOT USED:
@@ -344,10 +341,7 @@ function toggleEventsInfo(e, info) {
     if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
-    if (isMobile) {
-        e.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    e.scrollIntoView({ behavior: "smooth", block: "center" });
+    e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
 }
 
 //NOT USED:
