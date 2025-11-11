@@ -142,7 +142,6 @@ function getOSSettings() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // true for mobile device
         isMobile = true;
-        document.documentElement.requestFullscreen({ navigationUI: 'hide' });
         //alert("BUMMER! You are using a mobile device.");
     } else {
         // false for not mobile device
@@ -286,6 +285,9 @@ function toggleNewsInfo(e, info) {
     if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
+    if (isMobile) {
+        e.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
     e.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
@@ -342,6 +344,9 @@ function toggleEventsInfo(e, info) {
     if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
+    if (isMobile) {
+        e.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
     e.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
