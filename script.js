@@ -78,10 +78,10 @@ $(document).ready(function () {
     initializeEvents();   
 });
 
+var isMobile = false;
 $(window).bind('resizeEnd', function () {
-    if (!disableResize) {
+    if (!isMobile) {
         doResize();
-        alert('xx');
     }
 });
 
@@ -93,7 +93,6 @@ $(window).resize(function () {
     }, 500);
 });
 
-var disableResize = false;
 document.addEventListener('scroll', function (e) {
     highLightActivePage();
     hideMenu();
@@ -140,14 +139,15 @@ function setStyle(name, setting) {
 //Set click event:
 //================
 function getOSSettings() {
-    //if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    //    // true for mobile device
-    //    alert("BUMMER! You are using a mobile device.");
-
-    //} else {
-    //    // false for not mobile device
-    //    alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
-    //}
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // true for mobile device
+        isMobile = true;
+        alert("BUMMER! You are using a mobile device.");
+    } else {
+        // false for not mobile device
+        isMobile = false;
+        alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
+    }
 
     //Making "clicking" work on mobile devices, especially on iPhones:
     var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "click");
@@ -279,7 +279,6 @@ function showNews(target) {
 }
 
 function toggleNewsInfo(e, info) {
-    var disableResize = true;
     var isVisible = true;
     var item = $(info);
     var element = $(".newsInfo");
@@ -287,7 +286,6 @@ function toggleNewsInfo(e, info) {
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center" });
-    var disableResize = false;
 }
 
 //NOT USED:
@@ -337,7 +335,6 @@ function showEvents(target) {
 }
 
 function toggleEventsInfo(e, info) {
-    var disableResize = true;
     var isVisible = true;
     var item = $(info);
     var element = $(".eventInfo");
@@ -345,7 +342,6 @@ function toggleEventsInfo(e, info) {
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center" });
-    var disableResize = false;
 }
 
 //NOT USED:
