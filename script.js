@@ -90,6 +90,8 @@ $(window).resize(function () {
     }, 500);
 });
 
+
+var disableScrolling = false;
 document.addEventListener('scroll', function (e) {
     highLightActivePage();
     hideMenu();
@@ -275,6 +277,7 @@ function showNews(target) {
 }
 
 function toggleNewsInfo(e, info) {
+    disableScrolling = true;
     var isVisible = true;
     var item = $(info);
     var element = $(".newsInfo");
@@ -282,6 +285,7 @@ function toggleNewsInfo(e, info) {
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center" });
+    disableScrolling = false;
 }
 
 //NOT USED:
@@ -331,6 +335,7 @@ function showEvents(target) {
 }
 
 function toggleEventsInfo(e, info) {
+    disableScrolling = true;
     var isVisible = true;
     var item = $(info);
     var element = $(".eventInfo");
@@ -338,6 +343,7 @@ function toggleEventsInfo(e, info) {
     element.slideUp();
     if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center" });
+    disableScrolling = false;
 }
 
 //NOT USED:
@@ -558,13 +564,15 @@ function hideMenu() {
 
 //Highlight active page on menu
 function highLightActivePage() {
-    var o = $(document).scrollTop() + 156, a = $(".active");
-    $("#main-nav a").each(function () {
-        var t = $(this), a = $(t.attr("name"));
-        a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-    }),
-        $("#aside-nav a").each(function () {
+    if (!disableScrolling) {
+        var o = $(document).scrollTop() + 156, a = $(".active");
+        $("#main-nav a").each(function () {
             var t = $(this), a = $(t.attr("name"));
             a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
-        }), 0 == $(".active").length && a.addClass("active");
+        }),
+            $("#aside-nav a").each(function () {
+                var t = $(this), a = $(t.attr("name"));
+                a.position().top <= o && a.position().top + a.height() > o ? t.addClass("active") : t.removeClass("active")
+            }), 0 == $(".active").length && a.addClass("active");
+    }
 }
