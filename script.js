@@ -284,8 +284,24 @@ function toggleNewsInfo(e, info) {
     var element = $(".newsInfo");
     if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
-    if (isVisible) { item.slideDown(); } else { item.slideUp(); };
+
+    //if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+
+    setTimeout(() => {
+        if (isVisible) { item.slideDown(); } else { item.slideUp(); };
+    }, 200);
+
+    /*if (isVisible) { item.slideDown(); } else { item.slideUp(); };*/
+    //e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+
+    //const id = 'profilePhoto';
+    var yOffset = -100;
+    //const element = document.getElementById(id);
+    var y = e.getBoundingClientRect().top + window.scrollY + yOffset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    if (isVisible) { item.slideDown(); } else { item.slideUp(); };
 }
 
 //NOT USED:
@@ -340,8 +356,23 @@ function toggleEventsInfo(e, info) {
     var element = $(".eventInfo");
     if (item.is(":visible")) { isVisible = false; }
     element.slideUp();
-    if (isVisible) { item.slideDown(); } else { item.slideUp(); };
+    //if (isVisible) { item.slideDown(); } else { item.slideUp(); };
     e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+
+    setTimeout(() => {
+        if (isVisible) { item.slideDown(); } else { item.slideUp(); };
+    }, 200);
+
+    //setTimeout(() => {
+    //    window.scrollBy(0, -200)
+    //}, 500);
+
+    //var yOffset = -100;
+    ////const element = document.getElementById(id);
+    //var y = e.getBoundingClientRect().top + window.scrollY + yOffset;
+
+    //window.scrollTo({ top: y, behavior: 'smooth' });
+    ////if (isVisible) { item.slideDown(); } else { item.slideUp(); };
 }
 
 //NOT USED:
