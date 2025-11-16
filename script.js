@@ -283,13 +283,17 @@ function toggleNewsInfo(e, info) {
     var item = $(info);
     var element = $(".newsInfo");
     if (item.is(":visible")) { isVisible = false; }
-    setTimeout(() => {
-        element.slideUp();;
-    }, 200);
-    e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-    setTimeout(() => {
-        if (isVisible) { item.slideDown(); } else { item.slideUp(); };
-    }, 200);
+    element.slideUp();
+    if (isVisible) {
+        item.slideDown(500, function () {
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    }
+    else {
+        item.slideUp(500, function () {
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    };
 }
 
 //NOT USED:
@@ -343,13 +347,19 @@ function toggleEventsInfo(e, info) {
     var item = $(info);
     var element = $(".eventInfo");
     if (item.is(":visible")) { isVisible = false; }
-    setTimeout(() => {
-        element.slideUp();;
-    }, 200);
-    e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-    setTimeout(() => {
-        if (isVisible) { item.slideDown(); } else { item.slideUp(); };
-    }, 200);
+    element.slideUp();
+    if (isVisible)
+    {
+        item.slideDown(500, function() {
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    }
+    else
+    {
+        item.slideUp(500, function () {
+            e.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    };
 }
 
 //NOT USED:
