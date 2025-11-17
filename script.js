@@ -139,18 +139,18 @@ function setStyle(name, setting) {
 //Set click event:
 //================
 function getOSSettings() {
-    var section = document.getElementsByClassName("menuBar");
+    //var section = document.getElementsByClassName("menuBar");
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // true for mobile device
         isMobile = true;
         //alert("BUMMER! You are using a mobile device.");
-        section[0].id = "footer";
+        //section[0].id = "footer";
     } else {
         // false for not mobile device
         isMobile = false;
-        section[0].id = "header";
         //alert("GREAT! You are not using a mobile device, probably it's a desktop or laptop.");
+        //section[0].id = "header";
     }
 
     //Making "clicking" work on mobile devices, especially on iPhones:
