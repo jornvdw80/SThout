@@ -35,18 +35,33 @@
     transform: translate(-50%, -50%);
 }
 
-.footer {
+#footer, .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
+    /*background-color: red;*/
+    z-index: 100;
+    /*color: white;*/
+    /*text-align: center;*/
     overflow: hidden;
+
+    /*position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;*/
+    /*opacity: .9;*/
+    background-color: #fff
 }
 
-    .footer p {
+#footer, .footer {
+    height: auto;
+    padding: 10px 0 8px;
+    border-top: 3px dotted #d3d3d3;
+}
+
+    #footer p, .footer p {
         padding: 0;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -548,6 +563,16 @@ img {
     text-align: center;
 }
 
+.menuTitle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #fff;
+    opacity: .9;
+}
+
 #header, aside {
     position: fixed;
     top: 0;
@@ -642,7 +667,7 @@ html {
     width: auto;
     /*margin-top: -2.5em;*/
     margin-left: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
     z-index: 999;
     opacity: .7;
     /*    border: 1px solid black;*/
@@ -1006,7 +1031,7 @@ aside {
     /*cursor: pointer;*/
 }
 
-    .page5 #link:hover, .swiper-slide article:hover, #header:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
+    .page5 #link:hover, .swiper-slide article:hover, #header:hover, #footer:hover, .footer:hover, #navigate ul:hover, aside:hover, .page2 article:hover, .page3 .thumbs:hover, #eventsList li article:hover, #newsList li article:hover {
         background-color: #fbfbfb;
         /*border: 3px dotted;*/
         border-color: #808080;
